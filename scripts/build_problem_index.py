@@ -26,13 +26,13 @@ def build_problem_index() -> int:
     """
     records_path = DATA_DIR / "solved_problems.json"
     if not records_path.exists():
-        print("❌ No solved_problems.json found. Run ingest_leetcode.py first.")
+        print(" No solved_problems.json found. Run ingest_leetcode.py first.")
         return 0
 
     with open(records_path, "r", encoding="utf-8") as f:
         problems = json.load(f)
 
-    print(f"📦 Found {len(problems)} problems to index.\n")
+    print(f" Found {len(problems)} problems to index.\n")
 
     documents = []
     for p in problems:
@@ -60,14 +60,14 @@ def build_problem_index() -> int:
         documents.append(doc)
         print(f"  ✓ {p['title']}")
 
-    print(f"\n🔨 Building FAISS problem index with {len(documents)} documents...")
+    print(f"\n Building FAISS problem index with {len(documents)} documents...")
     create_index(documents, "problems")
-    print("✅ Problem index saved.")
+    print(" Problem index saved.")
 
     return len(documents)
 
 
 if __name__ == "__main__":
-    print("\n📚 Building Problem FAISS Index\n")
+    print("\n Building Problem FAISS Index\n")
     count = build_problem_index()
-    print(f"\n✅ Done! Indexed {count} problems.")
+    print(f"\n Done! Indexed {count} problems.")
