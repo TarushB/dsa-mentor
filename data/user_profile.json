@@ -1,0 +1,96 @@
+{
+  "username": "TarushB",
+  "total_solved": 406,
+  "by_difficulty": {
+    "EASY": 174,
+    "MEDIUM": 207,
+    "HARD": 25
+  },
+  "pattern_mastery": {
+    "backtracking": {
+      "solved": 20,
+      "confidence": "HIGH"
+    },
+    "bfs": {
+      "solved": 28,
+      "confidence": "HIGH"
+    },
+    "binary_search": {
+      "solved": 32,
+      "confidence": "HIGH"
+    },
+    "bit_manipulation": {
+      "solved": 33,
+      "confidence": "HIGH"
+    },
+    "dfs": {
+      "solved": 39,
+      "confidence": "HIGH"
+    },
+    "dp_1d": {
+      "solved": 51,
+      "confidence": "HIGH"
+    },
+    "dp_2d": {
+      "solved": 30,
+      "confidence": "HIGH"
+    },
+    "graph_topological": {
+      "solved": 3,
+      "confidence": "MEDIUM"
+    },
+    "greedy": {
+      "solved": 31,
+      "confidence": "HIGH"
+    },
+    "heap_kth_element": {
+      "solved": 9,
+      "confidence": "HIGH"
+    },
+    "math": {
+      "solved": 77,
+      "confidence": "HIGH"
+    },
+    "monotonic_stack": {
+      "solved": 22,
+      "confidence": "HIGH"
+    },
+    "prefix_sum": {
+      "solved": 16,
+      "confidence": "HIGH"
+    },
+    "sliding_window": {
+      "solved": 92,
+      "confidence": "HIGH"
+    },
+    "trie": {
+      "solved": 1,
+      "confidence": "LOW"
+    },
+    "two_pointers": {
+      "solved": 272,
+      "confidence": "HIGH"
+    }
+  },
+  "weak_patterns": [
+    "trie"
+  ],
+  "strong_patterns": [
+    "backtracking",
+    "bfs",
+    "binary_search",
+    "bit_manipulation",
+    "dfs",
+    "dp_1d",
+    "dp_2d",
+    "greedy",
+    "heap_kth_element",
+    "math",
+    "monotonic_stack",
+    "prefix_sum",
+    "sliding_window",
+    "two_pointers"
+  ],
+  "recent_activity": [],
+  "last_updated": "2026-03-17T22:53:15.657026"
+}
