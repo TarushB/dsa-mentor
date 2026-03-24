@@ -182,7 +182,7 @@ def generate_concept_with_llm(pattern: str) -> str:
         response = llm.invoke(prompt)
         return response.content.strip()
     except Exception as e:
-        print(f"  ⚠ LLM generation failed for '{pattern}': {e}")
+        print(f"   LLM generation failed for '{pattern}': {e}")
         return None
 
 
@@ -224,7 +224,7 @@ def build_concept_index(use_llm: bool = True) -> int:
 
     for pattern in TAXONOMY:
         display_name = pattern.replace("_", " ").title()
-        print(f"  📝 Processing: {display_name}...", end=" ")
+        print(f"  Processing: {display_name}...", end=" ")
 
         # Get concept text
         concept_text = None
@@ -255,7 +255,7 @@ def build_concept_index(use_llm: bool = True) -> int:
     # Build FAISS index
     print(f"\n🔨 Building FAISS concept index with {len(documents)} documents...")
     create_index(documents, "concepts")
-    print("✅ Concept index saved.")
+    print("Concept index saved.")
 
     return len(documents)
 
@@ -266,9 +266,9 @@ def main():
                         help="Use only pre-written notes (skip Ollama)")
     args = parser.parse_args()
 
-    print("\n📚 Building DSA Concept Knowledge Base\n")
+    print("\nBuilding DSA Concept Knowledge Base\n")
     count = build_concept_index(use_llm=not args.no_llm)
-    print(f"\n✅ Done! Indexed {count} concept documents across {len(TAXONOMY)} patterns.")
+    print(f"\nDone! Indexed {count} concept documents across {len(TAXONOMY)} patterns.")
 
 
 if __name__ == "__main__":
