@@ -1,12 +1,9 @@
 """
-Build Concept Index — generates DSA concept notes and indexes them in FAISS.
+Build Concept Index — indexes pre-written DSA concept notes in FAISS.
 
 Usage:
   python scripts/build_concept_index.py
-  python scripts/build_concept_index.py --no-llm   # use pre-written notes only
 """
-import argparse
-import json
 import sys
 from pathlib import Path
 from typing import List
@@ -17,7 +14,7 @@ from langchain_core.documents import Document
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config import TAXONOMY, OLLAMA_BASE_URL, OLLAMA_MODEL, CHUNK_SIZE, CHUNK_OVERLAP
+from config import TAXONOMY, CHUNK_SIZE, CHUNK_OVERLAP
 
 
 # ── Pre-written Concept Notes (always available, no LLM needed) ─
@@ -151,41 +148,6 @@ Related problems: Climbing Stairs, Pow(x,n), Count Primes, Happy Number, Excel S
 }
 
 
-# ── LLM-Generated Concept Notes ─────────────────────────────────
-
-CONCEPT_GENERATION_PROMPT = """Generate a comprehensive DSA concept note for the algorithmic pattern: {pattern}
-
-Follow this exact format:
-Concept: {pattern_display}
-When to use: [2-3 sentences about when this pattern applies, with specific keywords to look for]
-Core template: [5-10 lines of pseudocode or step-by-step algorithm]
-Complexity: [Time and space complexity]
-Common mistakes: [3-4 common pitfalls]
-Related problems: [5 LeetCode problem names that use this pattern]
-
-Be specific and practical. Focus on intuition, not theory."""
-
-
-def generate_concept_with_llm(pattern: str) -> str:
-    """Generate a concept note using Ollama."""
-    try:
-        from langchain_ollama import ChatOllama
-        llm = ChatOllama(
-            base_url=OLLAMA_BASE_URL,
-            model=OLLAMA_MODEL,
-            temperature=0.3,
-        )
-        display_name = pattern.replace("_", " ").title()
-        prompt = CONCEPT_GENERATION_PROMPT.format(
-            pattern=pattern, pattern_display=display_name
-        )
-        response = llm.invoke(prompt)
-        return response.content.strip()
-    except Exception as e:
-        print(f"   LLM generation failed for '{pattern}': {e}")
-        return None
-
-
 # ── Chunking ─────────────────────────────────────────────────────
 
 def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> List[str]:
@@ -207,13 +169,9 @@ def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVE
 
 # ── Main Builder ─────────────────────────────────────────────────
 
-def build_concept_index(use_llm: bool = True) -> int:
+def build_concept_index() -> int:
     """
-    Build the FAISS concept index from concept notes.
-
-    Args:
-        use_llm: if True, try to generate richer notes via Ollama.
-                 Falls back to pre-written notes if LLM fails.
+    Build the FAISS concept index from pre-written concept notes.
 
     Returns:
         Number of documents indexed
@@ -226,14 +184,7 @@ def build_concept_index(use_llm: bool = True) -> int:
         display_name = pattern.replace("_", " ").title()
         print(f"  Processing: {display_name}...", end=" ")
 
-        # Get concept text
-        concept_text = None
-
-        if use_llm:
-            concept_text = generate_concept_with_llm(pattern)
-
-        if not concept_text:
-            concept_text = CONCEPT_NOTES.get(pattern, f"Concept: {display_name}\nNo detailed notes available.")
+        concept_text = CONCEPT_NOTES.get(pattern, f"Concept: {display_name}\nNo detailed notes available.")
 
         # Chunk and create documents
         chunks = chunk_text(concept_text)
@@ -245,7 +196,7 @@ def build_concept_index(use_llm: bool = True) -> int:
                     "concept_name": display_name,
                     "chunk_index": i,
                     "total_chunks": len(chunks),
-                    "source": "llm_generated" if use_llm and concept_text != CONCEPT_NOTES.get(pattern) else "pre_written",
+                    "source": "pre_written",
                 },
             )
             documents.append(doc)
@@ -261,13 +212,8 @@ def build_concept_index(use_llm: bool = True) -> int:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Build the FAISS concept knowledge base")
-    parser.add_argument("--no-llm", action="store_true",
-                        help="Use only pre-written notes (skip Ollama)")
-    args = parser.parse_args()
-
     print("\nBuilding DSA Concept Knowledge Base\n")
-    count = build_concept_index(use_llm=not args.no_llm)
+    count = build_concept_index()
     print(f"\nDone! Indexed {count} concept documents across {len(TAXONOMY)} patterns.")
 
 
