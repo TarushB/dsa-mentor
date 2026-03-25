@@ -58,6 +58,10 @@ with st.sidebar:
 st.header("🔍 Multi-Index RAG Retrieval")
 st.markdown("Test the hybrid FAISS + BM25 retrieval system across all three indexes simultaneously.")
 
+# Initialize chat history in session state
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+
 query = st.text_input("Enter a query, problem description, or concept:", "How to reverse a linked list")
 col1, col2 = st.columns(2)
 with col1:
@@ -65,17 +69,47 @@ with col1:
 with col2:
     filter_patterns = st.text_input("Optional: Filter by Patterns (comma-separated)", "")
 
-if st.button("Search All Indexes", type="primary"):
+col_search, col_clear = st.columns([3, 1])
+with col_search:
+    search_clicked = st.button("Search All Indexes", type="primary")
+with col_clear:
+    if st.button("Clear Chat History"):
+        st.session_state.chat_history = []
+        st.rerun()
+
+# Show current chat history length
+if st.session_state.chat_history:
+    st.caption(f"💬 Chat history: {len(st.session_state.chat_history)} messages (query rewriter active)")
+
+if search_clicked:
     with st.spinner("Querying FAISS Problem, Concept, and Session indexes..."):
         # Process filters
         tags_list = [t.strip() for t in filter_tags.split(",")] if filter_tags else None
         pats_list = [p.strip() for p in filter_patterns.split(",")] if filter_patterns else None
-        
-        # Run retrieval
-        results = retrieve_all(query, problem_tags=tags_list, problem_patterns=pats_list)
-        
+
+        # Run retrieval with chat history for query rewriting
+        results = retrieve_all(
+            query,
+            chat_history=st.session_state.chat_history,
+            problem_tags=tags_list,
+            problem_patterns=pats_list,
+        )
+
+        # Show rewritten query if it differs from the original
+        rewritten = results.get("rewritten_query", query)
+        if rewritten != query:
+            st.info(f"🔄 **Query rewritten:** \"{query}\" → \"{rewritten}\"")
+
+        # Update chat history with this exchange
+        st.session_state.chat_history.append({"role": "user", "content": query})
+        # Summarize what was retrieved as the "assistant" context
+        concept_names = [doc.metadata.get("pattern", "") for doc in results.get("concepts", [])]
+        problem_names = [doc.metadata.get("title", "") for doc in results.get("problems", [])]
+        assistant_summary = f"Retrieved concepts: {', '.join(concept_names)}. Problems: {', '.join(problem_names)}."
+        st.session_state.chat_history.append({"role": "assistant", "content": assistant_summary})
+
         tab1, tab2, tab3 = st.tabs(["📚 Problems", "💡 Concepts", "💬 Sessions"])
-        
+
         with tab1:
             st.subheader(f"Problem Matches ({len(results.get('problems', []))})")
             for i, doc in enumerate(results.get("problems", [])):
@@ -83,13 +117,13 @@ if st.button("Search All Indexes", type="primary"):
                     st.write("**Tags:**", ", ".join(doc.metadata.get("topic_tags", [])))
                     st.write("**Patterns:**", ", ".join(doc.metadata.get("patterns", [])))
                     st.text_area("Snippet", doc.page_content[:500] + "...", height=150, key=f"prob_{i}")
-                    
+
         with tab2:
             st.subheader(f"Concept Matches ({len(results.get('concepts', []))})")
             for i, doc in enumerate(results.get("concepts", [])):
                 with st.expander(f"{i+1}. {doc.metadata.get('pattern', 'Unknown Concept')}"):
                     st.text_area("Content", doc.page_content, height=250, key=f"conc_{i}")
-                    
+
         with tab3:
             st.subheader(f"Session Matches ({len(results.get('sessions', []))})")
             if not results.get("sessions"):
@@ -97,3 +131,4 @@ if st.button("Search All Indexes", type="primary"):
             for i, doc in enumerate(results.get("sessions", [])):
                 with st.expander(f"Session {doc.metadata.get('timestamp', 'Unknown')}"):
                     st.text_area("Log", doc.page_content, height=150, key=f"sess_{i}")
+

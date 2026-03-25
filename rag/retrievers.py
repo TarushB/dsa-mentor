@@ -208,21 +208,31 @@ class SessionRetriever:
 
 def retrieve_all(
     query: str,
+    chat_history: list = None,
     problem_tags: List[str] = None,
     problem_patterns: List[str] = None,
 ) -> Dict[str, List[Document]]:
     """
     Run retrieval across all three indexes and return organized results.
 
+    If chat_history is provided, rewrites vague follow-up queries into
+    standalone queries using the query rewriter LLM before FAISS search.
+
     Args:
         query: the user's question or problem description
+        chat_history: list of {"role": ..., "content": ...} from current session
         problem_tags: topic tags from the current problem
         problem_patterns: detected patterns of the current problem
 
     Returns:
-        Dict with keys 'problems', 'concepts', 'sessions'
+        Dict with keys 'problems', 'concepts', 'sessions', and 'rewritten_query'
     """
-    results = {}
+    # Rewrite vague follow-ups into standalone queries
+    if chat_history:
+        from rag.query_rewriter import rewrite_query
+        query = rewrite_query(query, chat_history)
+
+    results = {"rewritten_query": query}
 
     # Problem retrieval (with metadata filter)
     try:
@@ -246,3 +256,4 @@ def retrieve_all(
         results["sessions"] = []
 
     return results
+
