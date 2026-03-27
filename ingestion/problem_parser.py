@@ -97,7 +97,7 @@ class PatternTagger:
             patterns = self._parse_patterns(content)
             return patterns if patterns else self._rule_based_fallback(tags)
         except Exception as e:
-            print(f"  ⚠ LLM tagging failed for '{title}': {e}")
+            print(f"  WARNING: LLM tagging failed for '{title}': {e}")
             return self._rule_based_fallback(tags)
 
     def _parse_patterns(self, text: str) -> List[str]:

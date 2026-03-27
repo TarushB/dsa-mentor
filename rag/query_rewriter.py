@@ -127,11 +127,11 @@ def rewrite_query(
 
         # Sanity check: agar LLM empty ya bahut lamba kuch de toh original pe fall back
         if rewritten and len(rewritten) < 500:
-            print(f"  🔄 Query rewritten: '{query}' → '{rewritten}'")
+            print(f"  Query rewritten: '{query}' -> '{rewritten}'")
             return rewritten
         else:
             return query
 
     except Exception as e:
-        print(f"  ⚠ Query rewrite failed, using original: {e}")
+        print(f"  WARNING: Query rewrite failed, using original: {e}")
         return query

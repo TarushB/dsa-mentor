@@ -58,7 +58,7 @@ def build_problem_index() -> int:
             },
         )
         documents.append(doc)
-        print(f"  ✓ {p['title']}")
+        print(f"  + {p['title']}")
 
     print(f"\n Building FAISS problem index with {len(documents)} documents...")
     create_index(documents, "problems")

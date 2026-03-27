@@ -288,7 +288,7 @@ def build_concept_index() -> int:
         print(f"→ {len(chunks)} chunk(s)")
 
     # FAISS index banao
-    print(f"\n🔨 Building FAISS concept index with {len(documents)} documents...")
+    print(f"\n Building FAISS concept index with {len(documents)} documents...")
     create_index(documents, "concepts")
     print("Concept index saved.")
 

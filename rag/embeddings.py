@@ -69,7 +69,7 @@ def load_index(name: str):
         )
         return store
     except Exception as e:
-        print(f"⚠ Failed to load index '{name}': {e}")
+        print(f"WARNING: Failed to load index '{name}': {e}")
         return None
 
 

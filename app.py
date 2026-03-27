@@ -8,14 +8,14 @@ from ingestion.profile_builder import load_profile
 from rag.retrievers import retrieve_all
 
 # Streamlit page ka setup karte hain yahan
-st.set_page_config(page_title="DSA Mentor Testing", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="DSA Mentor Testing", layout="wide")
 
-st.title("🧠 DSA Mentor - Backend Test Interface")
+st.title("DSA Mentor - Backend Test Interface")
 st.markdown("This is a quick testing interface to explore the Phase 1 & 2 components you've built.")
 
 # Sidebar mein user ki profile dikhaenge
 with st.sidebar:
-    st.header("👤 User Profile")
+    st.header("User Profile")
     try:
         profile = load_profile()
         st.subheader(f"Username: {profile.username}")
@@ -55,7 +55,7 @@ with st.sidebar:
         st.error(f"Failed to load profile: {e}")
 
 # Main body — yahan RAG retrieval test karenge
-st.header("🔍 Multi-Index RAG Retrieval")
+st.header("Multi-Index RAG Retrieval")
 st.markdown("Test the hybrid FAISS + BM25 retrieval system across all three indexes simultaneously.")
 
 # Chat history ko session state mein init karo agar pehle se nahi hai
@@ -79,7 +79,7 @@ with col_clear:
 
 # Dikhao kitne messages hain abhi chat history mein
 if st.session_state.chat_history:
-    st.caption(f"💬 Chat history: {len(st.session_state.chat_history)} messages (query rewriter active)")
+    st.caption(f"Chat history: {len(st.session_state.chat_history)} messages (query rewriter active)")
 
 if search_clicked:
     with st.spinner("Querying FAISS Problem, Concept, and Session indexes..."):
@@ -98,7 +98,7 @@ if search_clicked:
         # Agar query rewrite hui hai toh user ko dikhao kya badla
         rewritten = results.get("rewritten_query", query)
         if rewritten != query:
-            st.info(f"🔄 **Query rewritten:** \"{query}\" → \"{rewritten}\"")
+            st.info(f"**Query rewritten:** \"{query}\" → \"{rewritten}\"")
 
         # Is exchange ko chat history mein add karo
         st.session_state.chat_history.append({"role": "user", "content": query})
@@ -108,7 +108,7 @@ if search_clicked:
         assistant_summary = f"Retrieved concepts: {', '.join(concept_names)}. Problems: {', '.join(problem_names)}."
         st.session_state.chat_history.append({"role": "assistant", "content": assistant_summary})
 
-        tab1, tab2, tab3 = st.tabs(["📚 Problems", "💡 Concepts", "💬 Sessions"])
+        tab1, tab2, tab3 = st.tabs(["Problems", "Concepts", "Sessions"])
 
         with tab1:
             st.subheader(f"Problem Matches ({len(results.get('problems', []))})")
