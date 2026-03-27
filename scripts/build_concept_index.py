@@ -145,6 +145,90 @@ Core template: GCD: Euclidean algorithm. Modular arithmetic: (a*b) % m = ((a%m)*
 Complexity: Varies; GCD is O(log min(a,b)), Sieve is O(n log log n)
 Common mistakes: Integer overflow in intermediate calculations. Negative modulo edge cases. Floating point precision issues in geometry.
 Related problems: Climbing Stairs, Pow(x,n), Count Primes, Happy Number, Excel Sheet Column Number""",
+
+    "divide_and_conquer": """Concept: Divide and Conquer
+When to use: Problems where you can split the input into smaller subproblems, solve them independently, and combine results. Keywords: "merge sort", "quick select", "closest pair", "count inversions".
+Core template: Split input into halves → recursively solve each half → merge/combine results. Base case: single element or empty. Key insight: the "combine" step is where the magic happens.
+Complexity: Usually O(n log n) time. Space depends on whether in-place (O(log n) stack) or not (O(n)).
+Common mistakes: Forgetting base case. Inefficient combine step making it O(n^2). Not handling odd-sized splits. Confusing with plain recursion — D&C specifically splits the problem into independent subproblems.
+Related problems: Merge Sort, Quick Select (Kth Largest), Count of Smaller Numbers After Self, Closest Pair of Points, Maximum Subarray (Kadane's D&C variant)""",
+
+    "segment_tree": """Concept: Segment Tree
+When to use: Range queries + point/range updates on arrays. Keywords: "range sum query", "range minimum", "update and query", "lazy propagation".
+Core template: Build tree of size 4*n. Each node stores aggregate (sum/min/max) for a range. Build: O(n). Query [l, r]: traverse tree, combine overlapping segments. Update: modify leaf, propagate up. Lazy propagation for range updates.
+Complexity: O(n) build, O(log n) per query/update
+Common mistakes: Array size should be 4*n not 2*n. Off-by-one in range boundaries. Forgetting to push lazy updates before querying children. Not handling the "no overlap" and "total overlap" cases correctly.
+Related problems: Range Sum Query - Mutable, Count of Range Sum, Falling Squares, My Calendar series, Rectangle Area II""",
+
+    "binary_indexed_tree": """Concept: Binary Indexed Tree (Fenwick Tree)
+When to use: Prefix sum queries with point updates. Lighter than segment tree when you don't need range updates. Keywords: "prefix sum with updates", "count inversions", "cumulative frequency".
+Core template: Array of size n+1. Update(i, delta): while i <= n, tree[i] += delta, i += i & (-i). Query(i) (prefix sum 1..i): while i > 0, sum += tree[i], i -= i & (-i). The magic is i & (-i) which gives the lowest set bit.
+Complexity: O(n) build, O(log n) per query/update, O(n) space — simpler and faster constant than segment tree
+Common mistakes: 1-indexed (not 0-indexed). Forgetting the +1 in array size. Using it for range updates without proper modification (need two BITs for that). Not understanding what i & (-i) does.
+Related problems: Range Sum Query - Mutable, Count of Smaller Numbers After Self, Reverse Pairs, Create Sorted Array through Instructions""",
+
+    "graph_shortest_path": """Concept: Graph Shortest Path
+When to use: Finding shortest/cheapest path in weighted graphs. Keywords: "shortest path", "minimum cost", "cheapest flight", "network delay".
+Core template: Dijkstra (non-negative weights): min-heap priority queue, relax edges greedily. Bellman-Ford (negative weights OK): relax all edges V-1 times. Floyd-Warshall (all pairs): dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]) for all k.
+Complexity: Dijkstra O((V+E) log V), Bellman-Ford O(VE), Floyd-Warshall O(V^3)
+Common mistakes: Using Dijkstra with negative weights (doesn't work). Not detecting negative cycles with Bellman-Ford. Forgetting to use visited set with Dijkstra. Using BFS instead of Dijkstra for weighted graphs.
+Related problems: Network Delay Time, Cheapest Flights Within K Stops, Path With Minimum Effort, Shortest Path in Binary Matrix, Find the City With the Smallest Number of Neighbors""",
+
+    "hashing": """Concept: Hashing / Hash Map Techniques
+When to use: Frequency counting, lookup optimization, duplicate detection, two-sum style problems. Keywords: "frequency", "count occurrences", "subarray sum", "anagram", "two sum".
+Core template: Use dict/hashmap for O(1) lookup. For subarray sum = k: prefix_sum + hashmap of (sum: count). For anagrams: sorted string or char frequency tuple as key. For duplicates: set membership check.
+Complexity: O(1) average lookup/insert, O(n) space
+Common mistakes: Hash collisions in custom hash functions. Not handling the initial prefix sum = 0 case. Confusing "subarray" (contiguous) with "subsequence" (non-contiguous). Using mutable types as dict keys.
+Related problems: Two Sum, Group Anagrams, Subarray Sum Equals K, Longest Consecutive Sequence, Top K Frequent Elements, Contains Duplicate II""",
+
+    "linked_list": """Concept: Linked List Techniques
+When to use: In-place list manipulation, cycle detection, merge operations. Keywords: "reverse linked list", "merge lists", "detect cycle", "remove nth node", "palindrome list".
+Core template: Reversal: prev=None, while curr: next=curr.next, curr.next=prev, prev=curr, curr=next. Fast/slow pointers: slow moves 1 step, fast moves 2 steps — they meet in a cycle, slow reaches middle in non-cycle. Dummy head: dummy=ListNode(0), dummy.next=head — simplifies edge cases.
+Complexity: O(n) time, O(1) space for most operations
+Common mistakes: Losing reference to next node during reversal. Not handling empty list or single node. Forgetting to update head after reversal. Off-by-one in "remove nth from end" (use dummy node).
+Related problems: Reverse Linked List, Merge Two Sorted Lists, Linked List Cycle, Remove Nth Node From End, Palindrome Linked List, Reorder List""",
+
+    "stack_queue": """Concept: Stack and Queue
+When to use: LIFO/FIFO processing, parentheses matching, expression evaluation, BFS. Keywords: "valid parentheses", "evaluate expression", "implement queue using stacks", "decode string".
+Core template: Stack: push/pop from top. Queue: enqueue at back, dequeue from front. For parentheses: push open brackets, pop and match on close. For expression eval: two stacks (operators + operands) or convert to postfix first.
+Complexity: O(1) per push/pop/enqueue/dequeue operation
+Common mistakes: Popping from empty stack. Not handling all bracket types. Wrong operator precedence in expression evaluation. Confusing when to use stack vs queue (DFS vs BFS).
+Related problems: Valid Parentheses, Min Stack, Evaluate Reverse Polish Notation, Decode String, Implement Queue using Stacks, Daily Temperatures""",
+
+    "intervals": """Concept: Interval Problems
+When to use: Overlapping ranges, scheduling, merging time slots. Keywords: "merge intervals", "insert interval", "meeting rooms", "non-overlapping", "interval scheduling".
+Core template: Sort by start time. Merge: iterate and extend end if overlapping. Insert: find position, merge neighbors. Sweep line: convert intervals to events (+1 at start, -1 at end), sort events, scan. For max overlap: sweep line approach.
+Complexity: O(n log n) due to sorting, O(n) for the scan
+Common mistakes: Not sorting first. Wrong overlap condition (a.end >= b.start, not >). Forgetting to handle touching intervals (depends on problem). Not considering the case where one interval fully contains another.
+Related problems: Merge Intervals, Insert Interval, Non-overlapping Intervals, Meeting Rooms I and II, Minimum Number of Arrows to Burst Balloons""",
+
+    "string_matching": """Concept: String Matching / Pattern Search
+When to use: Substring search, pattern matching, repeated patterns. Keywords: "find pattern in text", "KMP", "repeated substring", "shortest palindrome".
+Core template: KMP: build failure/LPS array from pattern, then scan text using it to avoid backtracking. Rabin-Karp: rolling hash — hash(window) == hash(pattern) then verify. Z-algorithm: Z[i] = length of longest substring starting from i that matches prefix.
+Complexity: KMP O(n+m), Rabin-Karp O(n+m) average, Z-algorithm O(n+m)
+Common mistakes: Off-by-one in LPS array construction. Hash collisions in Rabin-Karp (always verify match). Choosing a bad hash function. Not handling the case where pattern is longer than text.
+Related problems: Implement strStr(), Repeated Substring Pattern, Shortest Palindrome, Longest Happy Prefix, Find All Anagrams in a String""",
+
+    "recursion": """Concept: Recursion
+When to use: Problems with self-similar substructure, tree traversals, generating combinations. Keywords: "generate all", "tree traversal", "power set", "fibonacci", "tower of hanoi".
+Core template: Define base case (smallest input). Define recursive case: solve smaller version, combine. Add memoization if overlapping subproblems exist (then it becomes DP). Trust the recursion — assume recursive call works correctly, focus on current step.
+Complexity: Depends on branching factor and depth. Binary recursion: O(2^n). Linear recursion: O(n). With memoization: depends on unique states.
+Common mistakes: Missing base case (infinite recursion leads to stack overflow). Modifying shared state without backtracking. Not trusting the recursive call. Redundant computation without memoization.
+Related problems: Fibonacci Number, Power of Two, Merge Two Sorted Lists, Maximum Depth of Binary Tree, Generate Parentheses, Tower of Hanoi""",
+
+    "simulation": """Concept: Simulation
+When to use: Problems where you follow exact rules step by step. No clever trick — just implement what the problem says. Keywords: "spiral matrix", "game of life", "robot simulation", "process", "step by step".
+Core template: Read the problem carefully. Implement exactly what it describes. Use direction arrays for grid movement: dx = [0,1,0,-1], dy = [1,0,-1,0]. Track state carefully. Often involves while loops with termination conditions.
+Complexity: Usually O(n) or O(n*m) depending on grid/array size
+Common mistakes: Off-by-one in boundaries. Not handling edge cases (empty input, single element). Forgetting to update state correctly. Infinite loops from wrong termination condition.
+Related problems: Spiral Matrix, Game of Life, Robot Bounded In Circle, Simulate Robot, Diagonal Traverse, Rotate Image""",
+
+    "design": """Concept: Data Structure Design
+When to use: "Design a data structure" problems. Combine multiple data structures for efficient operations. Keywords: "design", "implement", "LRU cache", "min stack", "insert delete getRandom".
+Core template: Identify required operations and their time complexity targets. Common combos: HashMap + Doubly Linked List (LRU Cache), HashMap + Array (RandomizedSet), Two heaps (Median Finder), Stack + tracking min/max. Think about what data structure gives O(1) for each operation.
+Complexity: Usually aim for O(1) per operation
+Common mistakes: Not handling edge cases (empty structure, duplicate inserts). Forgetting to update all internal data structures on each operation. Not maintaining invariants after delete operations. Over-engineering when simpler approach works.
+Related problems: LRU Cache, Min Stack, Insert Delete GetRandom O(1), Design HashMap, Design Twitter, Median Finder""",
 }
 
 

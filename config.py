@@ -51,6 +51,18 @@ TAXONOMY = [
     "graph_topological",
     "bit_manipulation",
     "math",
+    "divide_and_conquer",
+    "segment_tree",
+    "binary_indexed_tree",
+    "graph_shortest_path",
+    "hashing",
+    "linked_list",
+    "stack_queue",
+    "intervals",
+    "string_matching",
+    "recursion",
+    "simulation",
+    "design",
 ]
 
 # ─── Confidence Thresholds — kitne solve kiye toh kitna confidence ──
