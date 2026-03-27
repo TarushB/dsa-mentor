@@ -32,7 +32,7 @@ with st.sidebar:
         st.write("### Pattern Mastery")
         mastery_data = []
         for pattern, data in profile.pattern_mastery.items():
-            mastery_data.append({"Pattern": pattern, "Solved": data["solved"], "Confidence": data["confidence"]})
+            mastery_data.append({"Pattern": pattern, "Solved": data.solved, "Confidence": data.confidence})
         
         if mastery_data:
             import pandas as pd
