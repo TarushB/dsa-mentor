@@ -2,8 +2,8 @@
 Ingest LeetCode data — CLI entry point.
 
 Usage:
-  python scripts/ingest_leetcode.py --mode username --username <your_username>    # public, no auth
-  python scripts/ingest_leetcode.py --mode graphql  --username <your_username>    # needs cookies
+  python scripts/ingest_leetcode.py --mode username --username <tumhara_username>    # public, no auth
+  python scripts/ingest_leetcode.py --mode graphql  --username <tumhara_username>    # cookies chahiye
   python scripts/ingest_leetcode.py --mode csv      --csv-path data/problems.csv  # manual import
 """
 import argparse
@@ -11,7 +11,7 @@ import json
 import sys
 from pathlib import Path
 
-# Add project root to path
+# Project root ko path mein add karo
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -22,14 +22,14 @@ from ingestion.profile_builder import build_profile, save_profile
 
 
 def _process_and_save(raw_problems, username, use_llm_tagger):
-    """Shared logic: tag patterns, build profile, save everything."""
-    # Initialize pattern tagger
+    """Shared logic: patterns tag karo, profile banao, sab kuch save karo."""
+    # Pattern tagger initialize karo
     tagger = PatternTagger() if use_llm_tagger else None
     if tagger and not tagger._available:
         print("  (!) Ollama not available -- using rule-based pattern tagging.")
         tagger = None
 
-    # Convert and tag
+    # Convert aur tag karo
     problems = []
     for i, raw in enumerate(raw_problems, 1):
         title = raw.get("title", "?")
@@ -42,7 +42,7 @@ def _process_and_save(raw_problems, username, use_llm_tagger):
             record = raw_to_problem_record(raw, tagger)
             problems.append(record)
 
-    # Build and save profile
+    # Profile banao aur save karo
     profile = build_profile(problems, username=username)
     save_path = save_profile(profile)
     print(f"\n  Profile saved to {save_path}")
@@ -55,7 +55,7 @@ def _process_and_save(raw_problems, username, use_llm_tagger):
     if profile.weak_patterns:
         print(f"  Weak patterns: {profile.weak_patterns}")
 
-    # Save raw problem records
+    # Raw problem records bhi save karo
     records_path = DATA_DIR / "solved_problems.json"
     with open(records_path, "w", encoding="utf-8") as f:
         json.dump([p.model_dump(mode="json") for p in problems], f, indent=2, default=str)
@@ -65,11 +65,11 @@ def _process_and_save(raw_problems, username, use_llm_tagger):
 
 
 def ingest_by_username(username: str, use_llm_tagger: bool = True):
-    """Fetch problems using only the username (PUBLIC, no cookies needed)."""
+    """Sirf username se problems fetch karo (PUBLIC, cookies nahi chahiye)."""
     print(f"\n=== Fetching LeetCode data for '{username}' (public mode) ===\n")
     client = LeetCodeClient(use_auth=False)
 
-    # Show user stats first
+    # Pehle user stats dikhao
     stats = client.get_user_stats(username)
     if stats and stats.get("submitStatsGlobal"):
         ac_stats = stats["submitStatsGlobal"].get("acSubmissionNum", [])
@@ -78,7 +78,7 @@ def ingest_by_username(username: str, use_llm_tagger: bool = True):
                 print(f"  Profile found: {stats.get('username', username)} ({s['count']} problems solved)")
                 break
 
-    # Fetch all solved problems
+    # Saare solved problems fetch karo
     raw_problems = client.fetch_solved_problems_public(username)
     print(f"\n  Retrieved {len(raw_problems)} solved problems with metadata.\n")
 
@@ -90,7 +90,7 @@ def ingest_by_username(username: str, use_llm_tagger: bool = True):
 
 
 def ingest_graphql(username: str, use_llm_tagger: bool = True):
-    """Fetch problems using auth cookies (GraphQL with session)."""
+    """Auth cookies se problems fetch karo (GraphQL with session)."""
     print(f"\n=== Fetching LeetCode data for '{username}' (authenticated mode) ===\n")
     client = LeetCodeClient(use_auth=True)
 
@@ -110,7 +110,7 @@ def ingest_graphql(username: str, use_llm_tagger: bool = True):
 
 
 def ingest_csv(csv_path: str, username: str = "csv_user", use_llm_tagger: bool = True):
-    """Import problems from a CSV file."""
+    """CSV file se problems import karo."""
     print(f"\n=== Importing from CSV: {csv_path} ===\n")
 
     raw_problems = LeetCodeClient.import_from_csv(csv_path)

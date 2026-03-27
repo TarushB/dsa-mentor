@@ -1,5 +1,5 @@
 """
-Build Problem Index — converts solved_problems.json into a FAISS problem index.
+Build Problem Index — solved_problems.json ko FAISS problem index mein convert karta hai.
 
 Usage:
   python scripts/build_problem_index.py
@@ -19,10 +19,10 @@ from rag.embeddings import create_index
 
 def build_problem_index() -> int:
     """
-    Read solved_problems.json and build the FAISS problem index.
+    solved_problems.json padho aur FAISS problem index banao.
 
     Returns:
-        Number of documents indexed
+        Kitne documents index hue
     """
     records_path = DATA_DIR / "solved_problems.json"
     if not records_path.exists():
@@ -36,7 +36,7 @@ def build_problem_index() -> int:
 
     documents = []
     for p in problems:
-        # Build document text (same format as ProblemRecord.to_document_text)
+        # Document ka text banao (ProblemRecord.to_document_text wala format)
         lines = [
             f"Problem: {p['title']} [{p.get('difficulty', 'MEDIUM').upper()}]",
             f"Patterns: {', '.join(p.get('patterns', []))}",

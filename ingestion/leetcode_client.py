@@ -1,10 +1,10 @@
 """
-LeetCode GraphQL Client — fetches solved problems, submissions, and problem metadata.
+LeetCode GraphQL Client — solved problems, submissions, aur problem metadata fetch karta hai.
 
-Three modes:
-  1. PUBLIC  — uses only username, no auth needed (default)
-  2. AUTH    — uses LEETCODE_SESSION + csrftoken cookies for richer data
-  3. CSV     — manual CSV import fallback
+Teen modes hain:
+  1. PUBLIC  — sirf username chahiye, auth ki zaroorat nahi (default)
+  2. AUTH    — LEETCODE_SESSION + csrftoken cookies lagenge, zyada data milega
+  3. CSV     — manual CSV import fallback, agar kuch aur kaam na aaye
 """
 import csv
 import json
@@ -25,7 +25,7 @@ from config import LEETCODE_GRAPHQL_URL, LEETCODE_REQUEST_DELAY
 
 
 class LeetCodeClient:
-    """Fetches LeetCode data via GraphQL (public or authenticated) or CSV import."""
+    """LeetCode se data GraphQL (public ya authenticated) ya CSV import se fetch karta hai."""
 
     def __init__(self, use_auth: bool = False):
         self.session_cookie = os.getenv("LEETCODE_SESSION", "")
@@ -33,7 +33,7 @@ class LeetCodeClient:
         self.use_auth = use_auth and bool(self.session_cookie)
         self._last_request_time = 0.0
 
-    # ── HTTP helpers ─────────────────────────────────────────────
+    # ── HTTP helpers — request bhejne ke liye setup ─────────────────────
 
     def _headers(self) -> dict:
         headers = {
@@ -53,7 +53,7 @@ class LeetCodeClient:
         self._last_request_time = time.time()
 
     def _graphql_request(self, query: str, variables: dict = None) -> dict:
-        """Synchronous GraphQL request with rate limiting."""
+        """Rate limiting ke saath synchronous GraphQL request bhejo."""
         self._rate_limit()
         payload = {"query": query}
         if variables:
@@ -69,20 +69,20 @@ class LeetCodeClient:
             return resp.json()
 
     # ══════════════════════════════════════════════════════════════
-    #  PUBLIC QUERIES — work with just a username, no cookies needed
+    #  PUBLIC QUERIES — sirf username se kaam ho jaata hai, cookies nahi chahiye
     # ══════════════════════════════════════════════════════════════
 
     def fetch_solved_problems_public(self, username: str) -> List[Dict[str, Any]]:
         """
-        Fetch ALL solved problems for a user using public queries.
-        No authentication required — just the LeetCode username.
+        Public queries se user ke SAARE solved problems fetch karo.
+        Authentication ki zaroorat nahi — bas LeetCode username do.
 
         Strategy:
-          1. Get recent AC submissions (gives titleSlug + timestamp)
-          2. Deduplicate by slug
-          3. Fetch full problem metadata for each (title, difficulty, tags)
+          1. Recent AC submissions lo (titleSlug + timestamp milega)
+          2. Slug se deduplicate karo
+          3. Har ek ke liye full problem metadata fetch karo (title, difficulty, tags)
 
-        Returns list of problem dicts ready for parsing.
+        Parsing ke liye ready problem dicts ki list return karta hai.
         """
         print(f"  [1/3] Fetching recent accepted submissions for '{username}'...")
         submissions = self._get_recent_ac_submissions(username)
@@ -91,7 +91,7 @@ class LeetCodeClient:
             print(f"  ERROR: No submissions found. Is '{username}' a valid public profile?")
             return []
 
-        # Deduplicate by slug (user may have submitted same problem multiple times)
+        # Slug se deduplicate karo (same problem multiple baar submit ho sakta hai)
         seen = {}
         for sub in submissions:
             slug = sub.get("titleSlug", "")
@@ -101,7 +101,7 @@ class LeetCodeClient:
         unique_slugs = list(seen.keys())
         print(f"  [2/3] Found {len(unique_slugs)} unique solved problems.")
 
-        # Fetch full metadata for each problem
+        # Har problem ka full metadata fetch karo
         print(f"  [3/3] Fetching problem details (this may take a moment)...")
         problems = []
         for i, slug in enumerate(unique_slugs, 1):
@@ -110,12 +110,12 @@ class LeetCodeClient:
             try:
                 problem_data = self._get_problem_metadata(slug)
                 if problem_data:
-                    # Merge with submission data (timestamp)
+                    # Submission data se timestamp merge karo
                     problem_data["timestamp"] = seen[slug].get("timestamp")
                     problems.append(problem_data)
             except Exception as e:
                 print(f"    Warning: Failed to fetch '{slug}': {e}")
-                # Still add basic info from submission
+                # Phir bhi basic info toh add karo submission se
                 problems.append({
                     "title": seen[slug].get("title", slug),
                     "titleSlug": slug,
@@ -127,7 +127,7 @@ class LeetCodeClient:
         return problems
 
     def _get_recent_ac_submissions(self, username: str, limit: int = 3000) -> List[Dict]:
-        """Fetch recent accepted submissions (PUBLIC — no auth needed)."""
+        """Recent accepted submissions fetch karo (PUBLIC — auth nahi chahiye)."""
         query = """
         query recentAcSubmissions($username: String!, $limit: Int!) {
             recentAcSubmissionList(username: $username, limit: $limit) {
@@ -146,7 +146,7 @@ class LeetCodeClient:
             return []
 
     def _get_problem_metadata(self, slug: str) -> Optional[Dict[str, Any]]:
-        """Fetch problem details by slug (PUBLIC — no auth needed)."""
+        """Slug se problem details fetch karo (PUBLIC — auth nahi chahiye)."""
         query = """
         query questionData($titleSlug: String!) {
             question(titleSlug: $titleSlug) {
@@ -166,7 +166,7 @@ class LeetCodeClient:
         return result.get("data", {}).get("question")
 
     def get_user_stats(self, username: str) -> Dict[str, Any]:
-        """Fetch user profile stats (PUBLIC)."""
+        """User ki profile stats fetch karo (PUBLIC)."""
         query = """
         query userProblemsSolved($username: String!) {
             matchedUser(username: $username) {
@@ -187,11 +187,11 @@ class LeetCodeClient:
             return {}
 
     # ══════════════════════════════════════════════════════════════
-    #  AUTH QUERIES — require LEETCODE_SESSION cookie
+    #  AUTH QUERIES — LEETCODE_SESSION cookie lagegi
     # ══════════════════════════════════════════════════════════════
 
     def get_user_solved_list_auth(self, username: str) -> List[Dict[str, Any]]:
-        """Fetch solved problems using auth cookie (if available)."""
+        """Auth cookie use karke solved problems fetch karo (agar available hai)."""
         all_problems = []
         skip = 0
         limit = 50
@@ -244,13 +244,13 @@ class LeetCodeClient:
         return all_problems
 
     # ══════════════════════════════════════════════════════════════
-    #  CSV FALLBACK
+    #  CSV FALLBACK — jab kuch aur kaam na aaye
     # ══════════════════════════════════════════════════════════════
 
     @staticmethod
     def import_from_csv(csv_path: str) -> List[Dict[str, Any]]:
         """
-        Import solved problems from a LeetCode progress CSV export.
+        LeetCode progress CSV export se solved problems import karo.
         Expected columns: id, title, title_slug, difficulty, tags
         """
         problems = []
@@ -306,5 +306,5 @@ class LeetCodeClient:
 
 
 def _slugify(text: str) -> str:
-    """Convert a title to a URL slug."""
+    """Title ko URL slug mein convert karo."""
     return text.lower().strip().replace(" ", "-").replace("'", "").replace(",", "")

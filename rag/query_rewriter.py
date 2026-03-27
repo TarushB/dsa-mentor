@@ -1,8 +1,8 @@
 """
-Query Rewriter — rewrites vague follow-up queries into standalone queries
-using in-session chat history so RAG retrieval produces relevant results.
+Query Rewriter — vague follow-up queries ko standalone queries mein rewrite karta hai
+in-session chat history use karke taaki RAG retrieval se sahi results aayein.
 
-Flow:  User follow-up  →  LLM rewrites  →  standalone query  →  FAISS search
+Flow:  User follow-up  →  LLM rewrite kare  →  standalone query  →  FAISS search
 """
 import sys
 from pathlib import Path
@@ -12,15 +12,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import OLLAMA_BASE_URL, OLLAMA_MODEL
 
 
-# ── Chat History Buffer ──────────────────────────────────────────
+# ── Chat History Buffer — session ke dauran history yahan rakhte hain ────
 
 class ChatHistory:
     """
     In-session chat history buffer.
 
-    Keeps the last `max_turns` exchanges in memory during a conversation.
-    This is separate from save_session() which persists to FAISS *after*
-    a session ends — this is needed *during* the session for query rewriting.
+    Last `max_turns` exchanges memory mein rakhta hai conversation ke dauran.
+    Yeh save_session() se alag hai — woh session khatam hone pe FAISS mein dalta hai,
+    yeh *session ke beech mein* query rewriting ke liye chahiye.
     """
 
     def __init__(self, max_turns: int = 10):
@@ -36,17 +36,17 @@ class ChatHistory:
         self._trim()
 
     def get_history(self) -> List[Dict[str, str]]:
-        """Return the full chat history."""
+        """Poori chat history return karo."""
         return list(self.turns)
 
     def get_formatted_history(self) -> str:
-        """Format history as a readable string for the rewriter prompt."""
+        """History ko readable string mein format karo rewriter prompt ke liye."""
         if not self.turns:
             return ""
         lines = []
         for turn in self.turns:
             role = "User" if turn["role"] == "user" else "Assistant"
-            # Truncate long messages to keep prompt short
+            # Lambe messages ko chota karo taaki prompt zyada bada na ho
             content = turn["content"][:300]
             lines.append(f"{role}: {content}")
         return "\n".join(lines)
@@ -58,13 +58,13 @@ class ChatHistory:
         self.turns = []
 
     def _trim(self):
-        """Keep only the last max_turns * 2 messages (pairs of user+assistant)."""
+        """Sirf last max_turns * 2 messages rakho (user+assistant ke pairs)."""
         max_messages = self.max_turns * 2
         if len(self.turns) > max_messages:
             self.turns = self.turns[-max_messages:]
 
 
-# ── Query Rewriter ───────────────────────────────────────────────
+# ── Query Rewriter — vague queries ko samajhdar banao ─────────────────
 
 REWRITE_PROMPT = """Given the following conversation history and a follow-up question, rewrite the follow-up question to be a fully standalone question that captures the full context from the conversation.
 
@@ -87,21 +87,21 @@ def rewrite_query(
     chat_history: List[Dict[str, str]],
 ) -> str:
     """
-    Rewrite a vague follow-up query into a standalone query using chat history.
+    Vague follow-up query ko chat history use karke standalone query mein badlo.
 
     Args:
-        query: the user's current (possibly vague) query
-        chat_history: list of {"role": ..., "content": ...} dicts
+        query: user ki current (shayad vague) query
+        chat_history: {"role": ..., "content": ...} dicts ki list
 
     Returns:
-        A standalone, context-rich query suitable for FAISS similarity search.
-        Returns the original query if rewriting fails or history is empty.
+        Standalone, context-rich query jo FAISS similarity search ke liye sahi ho.
+        Agar rewriting fail ho ya history empty ho toh original query return hogi.
     """
-    # No history = nothing to resolve, return as-is
+    # History nahi hai toh kuch resolve karne ki zaroorat nahi, as-is return karo
     if not chat_history:
         return query
 
-    # Format the history
+    # History ko format karo LLM ke liye
     lines = []
     for turn in chat_history:
         role = "User" if turn["role"] == "user" else "Assistant"
@@ -109,14 +109,14 @@ def rewrite_query(
         lines.append(f"{role}: {content}")
     formatted_history = "\n".join(lines)
 
-    # Call LLM to rewrite
+    # LLM se rewrite karwao
     try:
         from langchain_ollama import ChatOllama
 
         llm = ChatOllama(
             base_url=OLLAMA_BASE_URL,
             model=OLLAMA_MODEL,
-            temperature=0.0,  # deterministic rewriting
+            temperature=0.0,  # deterministic rewriting chahiye, creative nahi
         )
         prompt = REWRITE_PROMPT.format(
             history=formatted_history,
@@ -125,7 +125,7 @@ def rewrite_query(
         response = llm.invoke(prompt)
         rewritten = response.content.strip()
 
-        # Sanity check: if LLM returns empty or something too long, fall back
+        # Sanity check: agar LLM empty ya bahut lamba kuch de toh original pe fall back
         if rewritten and len(rewritten) < 500:
             print(f"  🔄 Query rewritten: '{query}' → '{rewritten}'")
             return rewritten

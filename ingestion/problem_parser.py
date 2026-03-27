@@ -1,5 +1,5 @@
 """
-Problem Parser — ProblemRecord schema + LLM-powered pattern tagging via Ollama.
+Problem Parser — ProblemRecord schema + Ollama se LLM-powered pattern tagging.
 """
 import json
 import re
@@ -14,22 +14,22 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import TAXONOMY, OLLAMA_BASE_URL, OLLAMA_MODEL
 
 
-# ── Pydantic Models ──────────────────────────────────────────────
+# ── Pydantic Models — data ka structure yahan define hai ─────────
 
 class ProblemRecord(BaseModel):
-    """Schema for a single solved LeetCode problem."""
-    problem_id: str                          # slug, e.g. "two-sum"
+    """Ek solved LeetCode problem ka schema."""
+    problem_id: str                          # slug, jaise "two-sum"
     title: str
-    difficulty: str = "Medium"               # EASY | MEDIUM | HARD
+    difficulty: str = "Medium"               # EASY | MEDIUM | HARD hota hai
     topic_tags: List[str] = Field(default_factory=list)
     solved_at: Optional[datetime] = None
     num_attempts: int = 1
-    time_to_solve: Optional[float] = None    # minutes
+    time_to_solve: Optional[float] = None    # minutes mein
     patterns: List[str] = Field(default_factory=list)
     personal_notes: str = ""
 
     def to_document_text(self) -> str:
-        """Render as a text block for FAISS indexing."""
+        """FAISS indexing ke liye text block mein render karo."""
         lines = [
             f"Problem: {self.title} [{self.difficulty.upper()}]",
             f"Patterns: {', '.join(self.patterns) if self.patterns else 'unknown'}",
@@ -42,7 +42,7 @@ class ProblemRecord(BaseModel):
         return "\n".join(lines)
 
 
-# ── Pattern Tagger ───────────────────────────────────────────────
+# ── Pattern Tagger — LLM se pattern classify karo ────────────────
 
 PATTERN_TAG_PROMPT = """You are a DSA problem classifier. Given a LeetCode problem's title, difficulty, and topic tags, classify it into one or more algorithmic patterns from this fixed taxonomy:
 
@@ -64,7 +64,7 @@ Your answer (JSON array only):"""
 
 
 class PatternTagger:
-    """Tags problems with algorithmic patterns using Ollama (local LLM)."""
+    """Ollama (local LLM) se problems ko algorithmic patterns mein tag karta hai."""
 
     def __init__(self):
         try:
@@ -80,7 +80,7 @@ class PatternTagger:
             self._available = False
 
     def tag_problem(self, title: str, difficulty: str, tags: List[str]) -> List[str]:
-        """Classify a single problem into taxonomy patterns."""
+        """Ek problem ko taxonomy patterns mein classify karo."""
         if not self._available:
             return self._rule_based_fallback(tags)
 
@@ -101,21 +101,21 @@ class PatternTagger:
             return self._rule_based_fallback(tags)
 
     def _parse_patterns(self, text: str) -> List[str]:
-        """Extract valid taxonomy patterns from LLM output."""
-        # Try direct JSON parse
+        """LLM output se valid taxonomy patterns nikalo."""
+        # Seedha JSON parse try karo
         try:
             data = json.loads(text)
             if isinstance(data, list):
                 return [p for p in data if p in TAXONOMY]
             if isinstance(data, dict):
-                # Handle {"patterns": [...]} or similar
+                # Handle karo {"patterns": [...]} jaise format
                 for v in data.values():
                     if isinstance(v, list):
                         return [p for p in v if p in TAXONOMY]
         except json.JSONDecodeError:
             pass
 
-        # Fallback: regex extraction
+        # Fallback: regex se nikalo
         found = []
         for pattern in TAXONOMY:
             if pattern in text:
@@ -124,7 +124,7 @@ class PatternTagger:
 
     @staticmethod
     def _rule_based_fallback(tags: List[str]) -> List[str]:
-        """Map LeetCode topic tags to taxonomy patterns when LLM is unavailable."""
+        """Jab LLM available nahi hai toh LeetCode topic tags ko taxonomy patterns mein map karo."""
         tag_to_pattern = {
             "two pointers": "two_pointers",
             "sliding window": "sliding_window",
@@ -165,18 +165,18 @@ class PatternTagger:
         return list(patterns) if patterns else ["math"]
 
 
-# ── Problem Conversion ──────────────────────────────────────────
+# ── Problem Conversion — raw data ko ProblemRecord mein badlo ─────
 
 def raw_to_problem_record(raw: Dict[str, Any], tagger: PatternTagger = None) -> ProblemRecord:
-    """Convert a raw API/CSV dict into a ProblemRecord with pattern tags."""
-    # Extract fields
+    """Raw API/CSV dict ko pattern tags ke saath ProblemRecord mein convert karo."""
+    # Fields nikalo
     title = raw.get("title", "Unknown")
     slug = raw.get("titleSlug", raw.get("title_slug", _slugify(title)))
     difficulty = raw.get("difficulty", "Medium").upper()
     if difficulty not in ("EASY", "MEDIUM", "HARD"):
         difficulty = "MEDIUM"
 
-    # Extract topic tags
+    # Topic tags nikalo
     topic_tags_raw = raw.get("topicTags", [])
     if isinstance(topic_tags_raw, list) and topic_tags_raw and isinstance(topic_tags_raw[0], dict):
         topic_tags = [t["name"] for t in topic_tags_raw]
@@ -185,7 +185,7 @@ def raw_to_problem_record(raw: Dict[str, Any], tagger: PatternTagger = None) -> 
     else:
         topic_tags = []
 
-    # Parse timestamp if available
+    # Timestamp parse karo agar available hai
     solved_at = None
     ts = raw.get("timestamp")
     if ts:
@@ -194,7 +194,7 @@ def raw_to_problem_record(raw: Dict[str, Any], tagger: PatternTagger = None) -> 
         except (ValueError, TypeError, OSError):
             pass
 
-    # Tag patterns
+    # Patterns tag karo
     if tagger:
         patterns = tagger.tag_problem(title, difficulty, topic_tags)
     else:

@@ -1,5 +1,5 @@
 """
-Hybrid Retrievers — metadata-filtered FAISS + BM25 ensemble for concept docs.
+Hybrid Retrievers — metadata-filtered FAISS + BM25 ensemble, concept docs ke liye.
 """
 import sys
 from pathlib import Path
@@ -11,12 +11,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import RETRIEVAL_K_PROBLEMS, RETRIEVAL_K_SESSIONS, RETRIEVAL_K_CONCEPTS
 
 
-# ── Problem Retriever ────────────────────────────────────────────
+# ── Problem Retriever — purane problems dhundhne ke liye ────────────
 
 class ProblemRetriever:
     """
-    Retrieves similar past problems from the FAISS problem_index.
-    Supports metadata pre-filtering by topic tags / patterns.
+    FAISS problem_index se similar purane problems dhundhta hai.
+    Topic tags ya patterns se metadata filtering bhi support karta hai.
     """
 
     def __init__(self):
@@ -31,28 +31,28 @@ class ProblemRetriever:
         k: int = RETRIEVAL_K_PROBLEMS,
     ) -> List[Document]:
         """
-        Retrieve similar problems with optional metadata filtering.
+        Similar problems dhundho, metadata filtering ke saath.
 
         Args:
-            query: natural language query or problem description
-            filter_tags: only return docs whose tags overlap with these
-            filter_patterns: only return docs whose patterns overlap with these
-            k: number of results
+            query: natural language query ya problem description
+            filter_tags: sirf wahi docs laao jinke tags match karte hain
+            filter_patterns: sirf wahi docs jinke patterns match hote hain
+            k: kitne results chahiye
 
         Returns:
-            List of matching Document objects
+            Matching Document objects ki list
         """
         if self.store is None:
             return []
 
-        # Fetch more than k to allow post-filter trimming
+        # k se zyada fetch karo taaki filter ke baad bhi enough results hon
         fetch_k = k * 4
         try:
             results = self.store.similarity_search(query, k=fetch_k)
         except Exception:
             return []
 
-        # Post-filter by metadata
+        # Ab metadata ke basis pe filter karo
         if filter_tags or filter_patterns:
             results = self._filter_results(results, filter_tags, filter_patterns)
 
@@ -64,7 +64,7 @@ class ProblemRetriever:
         tags: Optional[List[str]] = None,
         patterns: Optional[List[str]] = None,
     ) -> List[Document]:
-        """Keep only docs that share at least one tag or pattern."""
+        """Sirf wahi docs rakho jinke kam se kam ek tag ya pattern match karta ho."""
         tag_set: Set[str] = set(t.lower() for t in (tags or []))
         pattern_set: Set[str] = set(patterns or [])
         filtered = []
@@ -84,12 +84,12 @@ class ProblemRetriever:
         return filtered
 
 
-# ── Concept Retriever (Hybrid: BM25 + FAISS) ────────────────────
+# ── Concept Retriever (Hybrid: BM25 + FAISS) — dono milke kaam karte hain ──
 
 class ConceptRetriever:
     """
-    Hybrid retriever combining BM25 (keyword) + FAISS (semantic) for concept docs.
-    BM25 catches exact pattern-name matches; FAISS catches semantic similarity.
+    Hybrid retriever — BM25 (keyword) + FAISS (semantic) dono use karta hai concepts ke liye.
+    BM25 exact pattern-name match pakadta hai; FAISS meaning samajhke match karta hai.
     """
 
     def __init__(self):
@@ -99,7 +99,7 @@ class ConceptRetriever:
         self._ensemble = None
 
     def _build_ensemble(self):
-        """Lazily build the BM25 + FAISS ensemble retriever."""
+        """Lazily BM25 + FAISS ensemble retriever banao — jab zaroorat ho tabhi."""
         if self._ensemble is not None or self.store is None:
             return
 
@@ -107,8 +107,8 @@ class ConceptRetriever:
             from langchain_community.retrievers import BM25Retriever
             from langchain.retrievers import EnsembleRetriever
 
-            # Extract all docs from FAISS for BM25 index
-            # FAISS doesn't have a direct "get all docs" — we access the docstore
+            # FAISS se saare docs nikalo BM25 index banane ke liye
+            # FAISS mein seedha "get all docs" nahi hota — docstore se nikalte hain
             all_docs = []
             if hasattr(self.store, "docstore") and hasattr(self.store, "index_to_docstore_id"):
                 for doc_id in self.store.index_to_docstore_id.values():
@@ -125,22 +125,22 @@ class ConceptRetriever:
                 )
                 self._ensemble = EnsembleRetriever(
                     retrievers=[self._bm25_retriever, faiss_retriever],
-                    weights=[0.4, 0.6],  # slightly favor semantic
+                    weights=[0.4, 0.6],  # semantic ko thoda zyada weight diya hai
                 )
         except ImportError:
-            # rank_bm25 not installed — fall back to pure FAISS
+            # rank_bm25 installed nahi hai — pure FAISS pe fall back karo
             pass
 
     def retrieve(self, query: str, k: int = RETRIEVAL_K_CONCEPTS) -> List[Document]:
         """
-        Retrieve relevant concept documents using hybrid search.
+        Hybrid search se relevant concept documents dhundho.
 
         Args:
-            query: concept name or description
-            k: number of results
+            query: concept name ya description
+            k: kitne results chahiye
 
         Returns:
-            List of concept Document objects
+            Concept Document objects ki list
         """
         if self.store is None:
             return []
@@ -157,10 +157,10 @@ class ConceptRetriever:
             return []
 
 
-# ── Session Retriever ────────────────────────────────────────────
+# ── Session Retriever — purane Q&A sessions dhundhne ke liye ────────
 
 class SessionRetriever:
-    """Retrieves past Q&A session entries from the FAISS session_index."""
+    """FAISS session_index se purani Q&A session entries dhundhta hai."""
 
     def __init__(self):
         from rag.embeddings import load_index
@@ -173,15 +173,15 @@ class SessionRetriever:
         k: int = RETRIEVAL_K_SESSIONS,
     ) -> List[Document]:
         """
-        Retrieve relevant past sessions.
+        Relevant purane sessions dhundho.
 
         Args:
-            query: description of current struggle or problem context
+            query: current struggle ya problem ka context
             filter_patterns: optional pattern filter
-            k: number of results
+            k: kitne results chahiye
 
         Returns:
-            List of session Document objects
+            Session Document objects ki list
         """
         if self.store is None:
             return []
@@ -192,7 +192,7 @@ class SessionRetriever:
         except Exception:
             return []
 
-        # Post-filter by pattern
+        # Pattern ke basis pe filter karo
         if filter_patterns:
             pattern_set = set(filter_patterns)
             filtered = [
@@ -204,7 +204,7 @@ class SessionRetriever:
         return results[:k]
 
 
-# ── Unified Multi-Index Retrieval ────────────────────────────────
+# ── Unified Multi-Index Retrieval — teeno indexes ek saath query karo ──
 
 def retrieve_all(
     query: str,
@@ -213,42 +213,43 @@ def retrieve_all(
     problem_patterns: List[str] = None,
 ) -> Dict[str, List[Document]]:
     """
-    Run retrieval across all three indexes and return organized results.
+    Teeno indexes pe retrieval chalao aur organized results do.
 
-    If chat_history is provided, rewrites vague follow-up queries into
-    standalone queries using the query rewriter LLM before FAISS search.
+    Agar chat_history diya hai, toh pehle vague follow-up queries ko
+    standalone queries mein rewrite karta hai using query rewriter LLM,
+    phir FAISS search karta hai.
 
     Args:
-        query: the user's question or problem description
-        chat_history: list of {"role": ..., "content": ...} from current session
-        problem_tags: topic tags from the current problem
-        problem_patterns: detected patterns of the current problem
+        query: user ka question ya problem description
+        chat_history: current session ke {"role": ..., "content": ...} messages
+        problem_tags: current problem ke topic tags
+        problem_patterns: current problem ke detected patterns
 
     Returns:
-        Dict with keys 'problems', 'concepts', 'sessions', and 'rewritten_query'
+        Dict with keys 'problems', 'concepts', 'sessions', aur 'rewritten_query'
     """
-    # Rewrite vague follow-ups into standalone queries
+    # Vague follow-ups ko standalone queries mein badlo
     if chat_history:
         from rag.query_rewriter import rewrite_query
         query = rewrite_query(query, chat_history)
 
     results = {"rewritten_query": query}
 
-    # Problem retrieval (with metadata filter)
+    # Problem retrieval (metadata filter ke saath)
     try:
         pr = ProblemRetriever()
         results["problems"] = pr.retrieve(query, filter_tags=problem_tags, filter_patterns=problem_patterns)
     except Exception:
         results["problems"] = []
 
-    # Concept retrieval (hybrid BM25 + FAISS)
+    # Concept retrieval (hybrid BM25 + FAISS dono milke)
     try:
         cr = ConceptRetriever()
         results["concepts"] = cr.retrieve(query)
     except Exception:
         results["concepts"] = []
 
-    # Session retrieval (semantic search with pattern filter)
+    # Session retrieval (semantic search + pattern filter)
     try:
         sr = SessionRetriever()
         results["sessions"] = sr.retrieve(query, filter_patterns=problem_patterns)

@@ -1,5 +1,5 @@
 """
-Profile Builder — constructs and persists a UserProfile from solved ProblemRecords.
+Profile Builder — solved ProblemRecords se UserProfile banao aur save karo.
 """
 import json
 import sys
@@ -13,27 +13,27 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import CONFIDENCE_LOW_MAX, CONFIDENCE_MED_MAX, PROFILE_PATH
 
 
-# ── Models ───────────────────────────────────────────────────────
+# ── Models — profile ka structure ──────────────────────────────────
 
 class PatternMastery(BaseModel):
-    """Tracks mastery of a single algorithmic pattern."""
+    """Ek single algorithmic pattern ki mastery track karta hai."""
     solved: int = 0
     confidence: str = "LOW"  # LOW | MEDIUM | HIGH
 
 
 class UserProfile(BaseModel):
-    """Aggregate user skill profile derived from solved problems."""
+    """Solved problems se bani aggregate user skill profile."""
     username: str = ""
     total_solved: int = 0
     by_difficulty: Dict[str, int] = Field(default_factory=lambda: {"EASY": 0, "MEDIUM": 0, "HARD": 0})
     pattern_mastery: Dict[str, PatternMastery] = Field(default_factory=dict)
     weak_patterns: List[str] = Field(default_factory=list)
     strong_patterns: List[str] = Field(default_factory=list)
-    recent_activity: List[dict] = Field(default_factory=list)  # last 30 days
+    recent_activity: List[dict] = Field(default_factory=list)  # last 30 din ki activity
     last_updated: Optional[str] = None
 
     def summary_text(self) -> str:
-        """Render a concise text summary for LLM system prompts."""
+        """LLM system prompts ke liye concise text summary render karo."""
         lines = [
             f"Student: {self.username} | Total solved: {self.total_solved}",
             f"Breakdown: Easy={self.by_difficulty.get('EASY', 0)}, "
@@ -47,7 +47,7 @@ class UserProfile(BaseModel):
         return "\n".join(lines)
 
 
-# ── Builder ──────────────────────────────────────────────────────
+# ── Builder — profile banana yahan hota hai ───────────────────────
 
 def _compute_confidence(count: int) -> str:
     if count < CONFIDENCE_LOW_MAX:
@@ -59,10 +59,10 @@ def _compute_confidence(count: int) -> str:
 
 def build_profile(problems: list, username: str = "") -> UserProfile:
     """
-    Build a UserProfile from a list of ProblemRecord objects.
+    ProblemRecord objects ki list se UserProfile banao.
 
     Args:
-        problems: list of ProblemRecord (from problem_parser)
+        problems: ProblemRecord ki list (problem_parser se aati hai)
         username: LeetCode username
 
     Returns:
@@ -71,7 +71,7 @@ def build_profile(problems: list, username: str = "") -> UserProfile:
     profile = UserProfile(username=username)
     profile.total_solved = len(problems)
 
-    # Count by difficulty
+    # Difficulty wise count karo
     diff_counts = {"EASY": 0, "MEDIUM": 0, "HARD": 0}
     for p in problems:
         key = p.difficulty.upper()
@@ -79,13 +79,13 @@ def build_profile(problems: list, username: str = "") -> UserProfile:
             diff_counts[key] += 1
     profile.by_difficulty = diff_counts
 
-    # Aggregate pattern counts
+    # Pattern counts aggregate karo
     pattern_counts: Dict[str, int] = {}
     for p in problems:
         for pat in p.patterns:
             pattern_counts[pat] = pattern_counts.get(pat, 0) + 1
 
-    # Build mastery map
+    # Mastery map banao
     mastery = {}
     weak = []
     strong = []
@@ -101,7 +101,7 @@ def build_profile(problems: list, username: str = "") -> UserProfile:
     profile.weak_patterns = weak
     profile.strong_patterns = strong
 
-    # Recent activity (last 30 days)
+    # Recent activity (last 30 din ki)
     cutoff = datetime.now() - timedelta(days=30)
     recent = []
     for p in problems:
@@ -120,7 +120,7 @@ def build_profile(problems: list, username: str = "") -> UserProfile:
 
 
 def save_profile(profile: UserProfile, path: Path = None) -> Path:
-    """Persist the UserProfile to JSON."""
+    """UserProfile ko JSON mein save karo."""
     save_path = path or PROFILE_PATH
     save_path.parent.mkdir(parents=True, exist_ok=True)
     with open(save_path, "w", encoding="utf-8") as f:
@@ -129,7 +129,7 @@ def save_profile(profile: UserProfile, path: Path = None) -> Path:
 
 
 def load_profile(path: Path = None) -> Optional[UserProfile]:
-    """Load a previously saved UserProfile."""
+    """Pehle se saved UserProfile load karo."""
     load_path = path or PROFILE_PATH
     if not load_path.exists():
         return None

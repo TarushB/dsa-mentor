@@ -1,5 +1,5 @@
 """
-Build Concept Index — indexes pre-written DSA concept notes in FAISS.
+Build Concept Index — pre-written DSA concept notes ko FAISS mein index karta hai.
 
 Usage:
   python scripts/build_concept_index.py
@@ -10,14 +10,14 @@ from typing import List
 
 from langchain_core.documents import Document
 
-# Add project root to path
+# Project root ko path mein add karo
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from config import TAXONOMY, CHUNK_SIZE, CHUNK_OVERLAP
 
 
-# ── Pre-written Concept Notes (always available, no LLM needed) ─
+# ── Pre-written Concept Notes (hamesha available, LLM ki zaroorat nahi) ──
 
 CONCEPT_NOTES = {
     "two_pointers": """Concept: Two Pointers
@@ -148,10 +148,10 @@ Related problems: Climbing Stairs, Pow(x,n), Count Primes, Happy Number, Excel S
 }
 
 
-# ── Chunking ─────────────────────────────────────────────────────
+# ── Chunking — bade text ko chote pieces mein todo ───────────────────
 
 def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> List[str]:
-    """Split text into overlapping chunks by approximate token count (word-based)."""
+    """Text ko overlapping chunks mein split karo approximate token count (word-based) se."""
     words = text.split()
     if len(words) <= chunk_size:
         return [text]
@@ -167,14 +167,14 @@ def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVE
     return chunks
 
 
-# ── Main Builder ─────────────────────────────────────────────────
+# ── Main Builder — yahan se index banta hai ───────────────────────
 
 def build_concept_index() -> int:
     """
-    Build the FAISS concept index from pre-written concept notes.
+    Pre-written concept notes se FAISS concept index banao.
 
     Returns:
-        Number of documents indexed
+        Kitne documents index hue
     """
     from rag.embeddings import create_index
 
@@ -186,7 +186,7 @@ def build_concept_index() -> int:
 
         concept_text = CONCEPT_NOTES.get(pattern, f"Concept: {display_name}\nNo detailed notes available.")
 
-        # Chunk and create documents
+        # Chunk karo aur documents banao
         chunks = chunk_text(concept_text)
         for i, chunk in enumerate(chunks):
             doc = Document(
@@ -203,7 +203,7 @@ def build_concept_index() -> int:
 
         print(f"→ {len(chunks)} chunk(s)")
 
-    # Build FAISS index
+    # FAISS index banao
     print(f"\n🔨 Building FAISS concept index with {len(documents)} documents...")
     create_index(documents, "concepts")
     print("Concept index saved.")

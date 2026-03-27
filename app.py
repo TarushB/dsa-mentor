@@ -7,13 +7,13 @@ from config import DATA_DIR
 from ingestion.profile_builder import load_profile
 from rag.retrievers import retrieve_all
 
-# Configure the Streamlit page
+# Streamlit page ka setup karte hain yahan
 st.set_page_config(page_title="DSA Mentor Testing", page_icon="🧠", layout="wide")
 
 st.title("🧠 DSA Mentor - Backend Test Interface")
 st.markdown("This is a quick testing interface to explore the Phase 1 & 2 components you've built.")
 
-# Sidebar - User Profile
+# Sidebar mein user ki profile dikhaenge
 with st.sidebar:
     st.header("👤 User Profile")
     try:
@@ -21,14 +21,14 @@ with st.sidebar:
         st.subheader(f"Username: {profile.username}")
         st.metric("Total Solved", profile.total_solved)
         
-        # Difficulty Breakdown
+        # Difficulty wise kitne solve kiye, woh dikhao
         st.write("### Difficulty Breakdown")
         cols = st.columns(3)
         cols[0].metric("Easy", profile.by_difficulty.get("EASY", 0))
         cols[1].metric("Medium", profile.by_difficulty.get("MEDIUM", 0))
         cols[2].metric("Hard", profile.by_difficulty.get("HARD", 0))
 
-        # Mastery Data
+        # Pattern mastery ka data yahan render hoga
         st.write("### Pattern Mastery")
         mastery_data = []
         for pattern, data in profile.pattern_mastery.items():
@@ -54,11 +54,11 @@ with st.sidebar:
     except Exception as e:
         st.error(f"Failed to load profile: {e}")
 
-# Main Body - RAG Retrieval Testing
+# Main body — yahan RAG retrieval test karenge
 st.header("🔍 Multi-Index RAG Retrieval")
 st.markdown("Test the hybrid FAISS + BM25 retrieval system across all three indexes simultaneously.")
 
-# Initialize chat history in session state
+# Chat history ko session state mein init karo agar pehle se nahi hai
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
@@ -77,17 +77,17 @@ with col_clear:
         st.session_state.chat_history = []
         st.rerun()
 
-# Show current chat history length
+# Dikhao kitne messages hain abhi chat history mein
 if st.session_state.chat_history:
     st.caption(f"💬 Chat history: {len(st.session_state.chat_history)} messages (query rewriter active)")
 
 if search_clicked:
     with st.spinner("Querying FAISS Problem, Concept, and Session indexes..."):
-        # Process filters
+        # Filters ko process karo — comma se split karke list banao
         tags_list = [t.strip() for t in filter_tags.split(",")] if filter_tags else None
         pats_list = [p.strip() for p in filter_patterns.split(",")] if filter_patterns else None
 
-        # Run retrieval with chat history for query rewriting
+        # Chat history ke saath retrieval chalao, query rewriting bhi hogi
         results = retrieve_all(
             query,
             chat_history=st.session_state.chat_history,
@@ -95,14 +95,14 @@ if search_clicked:
             problem_patterns=pats_list,
         )
 
-        # Show rewritten query if it differs from the original
+        # Agar query rewrite hui hai toh user ko dikhao kya badla
         rewritten = results.get("rewritten_query", query)
         if rewritten != query:
             st.info(f"🔄 **Query rewritten:** \"{query}\" → \"{rewritten}\"")
 
-        # Update chat history with this exchange
+        # Is exchange ko chat history mein add karo
         st.session_state.chat_history.append({"role": "user", "content": query})
-        # Summarize what was retrieved as the "assistant" context
+        # Jo retrieve hua uska summary banao assistant ke context ke liye
         concept_names = [doc.metadata.get("pattern", "") for doc in results.get("concepts", [])]
         problem_names = [doc.metadata.get("title", "") for doc in results.get("problems", [])]
         assistant_summary = f"Retrieved concepts: {', '.join(concept_names)}. Problems: {', '.join(problem_names)}."
