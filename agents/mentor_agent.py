@@ -45,7 +45,7 @@ class MentorAgent:
         """
         from rag.retrievers import retrieve_all
 
-        print(f"\n[Mentor]  New message ", flush=True)
+        print(f"\n[Mentor] ── New message ──────────────────────────────────────", flush=True)
         print(f"[Mentor] User: \"{user_message[:120]}{'...' if len(user_message) > 120 else ''}\"", flush=True)
 
         # Detect intent
@@ -126,7 +126,7 @@ class MentorAgent:
 
         return answer
 
-    #  Intent handlers 
+    # ── Intent handlers ──────────────────────────────────────────
 
     def _handle_code_fix(self, message: str) -> str:
         """Build prompt for code-fix intent."""
@@ -167,7 +167,7 @@ class MentorAgent:
             f"Student's message: {message}"
         )
 
-    #  Context helpers 
+    # ── Context helpers ──────────────────────────────────────────
 
     @staticmethod
     def _get_pattern_history(query: str) -> str:
@@ -224,7 +224,7 @@ class MentorAgent:
             return ""
         return "\n---\n".join(doc.page_content[:300] for doc in docs)
 
-    #  Public control methods 
+    # ── Public control methods ───────────────────────────────────
 
     def set_current_problem(self, problem: str):
         """Set the active problem context and reset the hint chain."""

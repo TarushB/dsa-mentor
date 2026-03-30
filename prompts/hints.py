@@ -2,7 +2,7 @@
 Hint Templates — progressive hint system (5 tiers) + code fix + question lookup prompts.
 """
 
-#  5-Tier Progressive Hint System 
+# ── 5-Tier Progressive Hint System ──────────────────────────────
 
 HINT_TIERS = {
     1: {
@@ -92,7 +92,7 @@ def get_hint_prompt(tier: int, problem: str, user_message: str) -> str:
     return template.format(problem=problem, user_message=user_message)
 
 
-#  Code Fix Prompt 
+# ── Code Fix Prompt ─────────────────────────────────────────────
 
 CODE_FIX_PROMPT = """You are an expert code debugger and DSA mentor. The student has C++ code with errors and needs help fixing it.
 
@@ -145,7 +145,7 @@ def get_code_fix_prompt(
     )
 
 
-#  LeetCode Question Lookup Prompt 
+# ── LeetCode Question Lookup Prompt ─────────────────────────────
 
 QUESTION_LOOKUP_PROMPT = """The student is asking about a LeetCode problem. Provide the full problem description and initial guidance.
 

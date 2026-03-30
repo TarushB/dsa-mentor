@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import RETRIEVAL_K_PROBLEMS, RETRIEVAL_K_SESSIONS
 
 
-#  Problem Retriever 
+# ── Problem Retriever ────────────────────────────────────────────
 
 class ProblemRetriever:
     """
@@ -118,7 +118,7 @@ class ProblemRetriever:
         return filtered
 
 
-#  Session Retriever 
+# ── Session Retriever ────────────────────────────────────────────
 
 class SessionRetriever:
     """Retrieves past Q&A session entries from the FAISS sessions index."""
@@ -153,7 +153,7 @@ class SessionRetriever:
         return results[:k]
 
 
-#  Unified Retrieval 
+# ── Unified Retrieval ────────────────────────────────────────────
 
 def retrieve_all(
     query: str,

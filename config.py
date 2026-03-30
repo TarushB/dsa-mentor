@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-#  Paths 
+# ─── Paths ───────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 FAISS_DIR = DATA_DIR / "faiss_indexes"
@@ -27,11 +27,11 @@ DATA_DIR.mkdir(exist_ok=True)
 FAISS_DIR.mkdir(exist_ok=True)
 
 
-#  LeetCode 
+# ─── LeetCode ────────────────────────────────────────────────────
 LEETCODE_GRAPHQL_URL    = "https://leetcode.com/graphql"
 LEETCODE_REQUEST_DELAY  = 1.5  # seconds between API calls
 
-#  Models 
+# ─── Models ──────────────────────────────────────────────────────
 # Ollama LLM — requires `ollama serve`
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "llama3.2")
@@ -40,7 +40,7 @@ OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "llama3.2")
 EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 EMBEDDING_DIMENSION  = 384
 
-#  Pattern Taxonomy 
+# ─── Pattern Taxonomy ────────────────────────────────────────────
 TAXONOMY = [
     "two_pointers",
     "sliding_window",
@@ -74,15 +74,15 @@ TAXONOMY = [
     "design",
 ]
 
-#  Confidence Thresholds 
+# ─── Confidence Thresholds ───────────────────────────────────────
 CONFIDENCE_LOW_MAX = 3      # < 3 solved -> LOW
 CONFIDENCE_MED_MAX = 7      # 3-7 solved -> MEDIUM
                              # > 7 solved -> HIGH
 
-#  RAG Settings 
+# ─── RAG Settings ────────────────────────────────────────────────
 RETRIEVAL_K_PROBLEMS = 3     # top-k similar problems to retrieve
 RETRIEVAL_K_SESSIONS = 2     # top-k past sessions to retrieve
 
-#  Hint System 
+# ─── Hint System ────────────────────────────────────────────────
 MIN_HINTS_BEFORE_SOLUTION = 3   # require 3 hints before showing solution
 MAX_HINT_TIERS = 5              # total hint tiers (1=abstract ... 5=solution walkthrough)

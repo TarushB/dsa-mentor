@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import TAXONOMY, OLLAMA_BASE_URL, OLLAMA_MODEL
 
 
-#  Pydantic Models — data ka structure yahan define hai 
+# ── Pydantic Models — data ka structure yahan define hai ─────────
 
 class ProblemRecord(BaseModel):
     """Ek solved LeetCode problem ka schema."""
@@ -42,7 +42,7 @@ class ProblemRecord(BaseModel):
         return "\n".join(lines)
 
 
-#  Pattern Tagger — LLM se pattern classify karo 
+# ── Pattern Tagger — LLM se pattern classify karo ────────────────
 
 PATTERN_TAG_PROMPT = """You are a DSA problem classifier. Given a LeetCode problem's title, difficulty, and topic tags, classify it into one or more algorithmic patterns from this fixed taxonomy:
 
@@ -103,7 +103,7 @@ class PatternTagger:
             print(f"[Tagger]   → {result}", flush=True)
             return result
         except Exception as e:
-            print(f"[Tagger]    LLM failed for '{title}': {e}  (using rule-based fallback)")
+            print(f"[Tagger]   ⚠ LLM failed for '{title}': {e}  (using rule-based fallback)")
             return self._rule_based_fallback(tags)
 
     def _parse_patterns(self, text: str) -> List[str]:
@@ -197,7 +197,7 @@ class PatternTagger:
         return list(patterns) if patterns else ["math"]
 
 
-#  Problem Conversion — raw data ko ProblemRecord mein badlo 
+# ── Problem Conversion — raw data ko ProblemRecord mein badlo ─────
 
 def raw_to_problem_record(
     raw: Dict[str, Any],

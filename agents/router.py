@@ -32,7 +32,7 @@ class Intent(Enum):
     SOLUTION_REQUEST = "solution_request"  # "Show me the solution" / "I give up"
 
 
-#  LLM Classification Prompt 
+# ── LLM Classification Prompt ────────────────────────────────────
 
 _ROUTER_PROMPT = """\
 You are classifying a message from a DSA (Data Structures & Algorithms) student.
@@ -74,15 +74,15 @@ def detect_intent(message: str, has_code_block: bool = False) -> Intent:
 
     Everything else → LLM classification with GENERAL_CHAT fallback.
     """
-    #  Fast-path 1: code block 
+    # ── Fast-path 1: code block ───────────────────────────────────
     if has_code_block or "```" in message:
         return Intent.CODE_FIX
 
-    #  Fast-path 2: pure number 
+    # ── Fast-path 2: pure number ──────────────────────────────────
     if re.match(r"^\d+$", message.strip()):
         return Intent.QUESTION_LOOKUP
 
-    #  LLM classification 
+    # ── LLM classification ────────────────────────────────────────
     try:
         from utils.llm import invoke_llm
         print(f"[Router] Classifying: \"{message[:80]}{'...' if len(message) > 80 else ''}\"", flush=True)
@@ -103,7 +103,7 @@ def detect_intent(message: str, has_code_block: bool = False) -> Intent:
     return Intent.GENERAL_CHAT
 
 
-#  Helper: extract problem identifier 
+# ── Helper: extract problem identifier ───────────────────────────
 
 def extract_problem_identifier(message: str) -> Optional[str]:
     """
@@ -142,7 +142,7 @@ def extract_problem_identifier(message: str) -> Optional[str]:
     return msg if len(msg.split()) <= 6 else None
 
 
-#  Helper: extract code block 
+# ── Helper: extract code block ────────────────────────────────────
 
 def extract_code_block(message: str) -> Optional[str]:
     """Extract code from a markdown code block in the message."""

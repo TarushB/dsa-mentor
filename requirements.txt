@@ -1,28 +1,28 @@
-#  LangChain Core 
+# ─── LangChain Core ──────────────────────────────────────────
 langchain>=0.3.0
 langchain-community>=0.3.0
 langchain-ollama>=0.2.0
 
-#  Embeddings & Vector Store 
+# ─── Embeddings & Vector Store ───────────────────────────────
 langchain-huggingface>=0.1.0
 sentence-transformers>=2.2.0
 faiss-cpu>=1.7.4
 
-#  Hybrid Retrieval 
+# ─── Hybrid Retrieval ───────────────────────────────────────
 rank-bm25>=0.2.2
 
-#  LLM Providers 
+# ─── LLM Providers ──────────────────────────────────────────
 langchain-google-genai>=2.0.0
 
-#  Data & HTTP 
+# ─── Data & HTTP ────────────────────────────────────────────
 httpx>=0.27.0
 pydantic>=2.0.0
 python-dotenv>=1.0.0
 
-#  Utilities 
+# ─── Utilities ──────────────────────────────────────────────
 tqdm>=4.66.0
 
-#  UI 
+# ─── UI ─────────────────────────────────────────────────────
 streamlit
 pandas
 plotly

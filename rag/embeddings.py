@@ -15,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import EMBEDDING_MODEL_NAME, FAISS_DIR
 
 
-#  Singleton Embeddings 
+# ── Singleton Embeddings ─────────────────────────────────────────
 
 _embeddings_instance = None
 
@@ -33,7 +33,7 @@ def get_embeddings():
     return _embeddings_instance
 
 
-#  FAISS Index Operations 
+# ── FAISS Index Operations ───────────────────────────────────────
 
 def get_index_path(name: str) -> Path:
     """Return the directory path for a named FAISS index (flat — no user subdir)."""

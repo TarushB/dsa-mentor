@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import OLLAMA_BASE_URL, OLLAMA_MODEL
 
 
-#  Chat History Buffer — session ke dauran history yahan rakhte hain 
+# ── Chat History Buffer — session ke dauran history yahan rakhte hain ────
 
 class ChatHistory:
     """
@@ -64,7 +64,7 @@ class ChatHistory:
             self.turns = self.turns[-max_messages:]
 
 
-#  Query Rewriter — vague queries ko samajhdar banao 
+# ── Query Rewriter — vague queries ko samajhdar banao ─────────────────
 
 REWRITE_PROMPT = """Given the following conversation history and a follow-up question, rewrite the follow-up question to be a fully standalone question that captures the full context from the conversation.
 

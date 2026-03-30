@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import OLLAMA_BASE_URL, OLLAMA_MODEL
 
 
-#  Ollama constructor 
+# ── Ollama constructor ────────────────────────────────────────────
 
 def _make_ollama(temperature: float = 0.3, model: str = None, streaming: bool = False):
     from langchain_ollama import ChatOllama
@@ -24,7 +24,7 @@ def _make_ollama(temperature: float = 0.3, model: str = None, streaming: bool = 
     )
 
 
-#  Public API 
+# ── Public API ────────────────────────────────────────────────────
 
 def get_llm(temperature: float = 0.3, streaming: bool = False,
             provider: str = None, model: str = None):
