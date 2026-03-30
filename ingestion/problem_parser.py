@@ -63,26 +63,31 @@ Example output: ["two_pointers", "binary_search"]
 Your answer (JSON array only):"""
 
 
+from utils.llm import invoke_llm
+
+
 class PatternTagger:
-    """Ollama (local LLM) se problems ko algorithmic patterns mein tag karta hai."""
+    """Tag problems with algorithmic patterns using the shared LLM util."""
 
     def __init__(self):
-        try:
-            from langchain_ollama import ChatOllama
-            self.llm = ChatOllama(
-                base_url=OLLAMA_BASE_URL,
-                model=OLLAMA_MODEL,
-                temperature=0.1,
-                format="json",
-            )
-            self._available = True
-        except Exception:
-            self._available = False
+        self._available = True
+        self._call_count = 0   # running total of tag_problem calls this session
 
-    def tag_problem(self, title: str, difficulty: str, tags: List[str]) -> List[str]:
-        """Ek problem ko taxonomy patterns mein classify karo."""
-        if not self._available:
-            return self._rule_based_fallback(tags)
+    def tag_problem(self, title: str, difficulty: str, tags: List[str],
+                    index: int = None, total: int = None) -> List[str]:
+        """
+        Classify a problem into taxonomy patterns.
+
+        Args:
+            title:      problem title
+            difficulty: EASY | MEDIUM | HARD
+            tags:       LeetCode topic tags
+            index:      1-based position in the current batch (for logging)
+            total:      total batch size (for logging)
+        """
+        self._call_count += 1
+        counter = f"{index}/{total}" if index and total else str(self._call_count)
+        print(f"[Tagger] {counter} | {title} [{difficulty}]", flush=True)
 
         prompt = PATTERN_TAG_PROMPT.format(
             taxonomy=json.dumps(TAXONOMY, indent=2),
@@ -92,12 +97,13 @@ class PatternTagger:
         )
 
         try:
-            response = self.llm.invoke(prompt)
-            content = response.content.strip()
+            content  = invoke_llm(prompt, temperature=0.1)
             patterns = self._parse_patterns(content)
-            return patterns if patterns else self._rule_based_fallback(tags)
+            result   = patterns if patterns else self._rule_based_fallback(tags)
+            print(f"[Tagger]   → {result}", flush=True)
+            return result
         except Exception as e:
-            print(f"  WARNING: LLM tagging failed for '{title}': {e}")
+            print(f"[Tagger]   ⚠ LLM failed for '{title}': {e}  (using rule-based fallback)")
             return self._rule_based_fallback(tags)
 
     def _parse_patterns(self, text: str) -> List[str]:
@@ -193,7 +199,12 @@ class PatternTagger:
 
 # ── Problem Conversion — raw data ko ProblemRecord mein badlo ─────
 
-def raw_to_problem_record(raw: Dict[str, Any], tagger: PatternTagger = None) -> ProblemRecord:
+def raw_to_problem_record(
+    raw: Dict[str, Any],
+    tagger: PatternTagger = None,
+    index: int = None,
+    total: int = None,
+) -> ProblemRecord:
     """Raw API/CSV dict ko pattern tags ke saath ProblemRecord mein convert karo."""
     # Fields nikalo
     title = raw.get("title", "Unknown")
@@ -222,7 +233,7 @@ def raw_to_problem_record(raw: Dict[str, Any], tagger: PatternTagger = None) -> 
 
     # Patterns tag karo
     if tagger:
-        patterns = tagger.tag_problem(title, difficulty, topic_tags)
+        patterns = tagger.tag_problem(title, difficulty, topic_tags, index=index, total=total)
     else:
         patterns = PatternTagger._rule_based_fallback(topic_tags)
 

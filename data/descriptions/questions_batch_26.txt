@@ -1,0 +1,4083 @@
+------------------------------
+1009. Complement of Base 10 Integer 
+------------------------------
+
+The complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.
+
+- For example, The integer 5 is "101" in binary and its complement is "010" which is the integer 2.
+
+Given an integer n, return its complement.
+
+ 
+
+Example 1:
+
+Input: n = 5
+Output: 2
+Explanation: 5 is "101" in binary, with complement "010" in binary, which is 2 in base-10.
+
+Example 2:
+
+Input: n = 7
+Output: 0
+Explanation: 7 is "111" in binary, with complement "000" in binary, which is 0 in base-10.
+
+Example 3:
+
+Input: n = 10
+Output: 5
+Explanation: 10 is "1010" in binary, with complement "0101" in binary, which is 5 in base-10.
+
+ 
+
+Constraints:
+
+- 0 <= n < 109
+
+ 
+
+Note: This question is the same as 476: https://leetcode.com/problems/number-complement/
+
+------------------------------
+1058. Minimize Rounding Error to Meet Target 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1057. Campus Bikes 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1055. Shortest Way to Form String 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1008. Construct Binary Search Tree from Preorder Traversal 
+------------------------------
+
+Given an array of integers preorder, which represents the preorder traversal of a BST (i.e., binary search tree), construct the tree and return its root.
+
+It is guaranteed that there is always possible to find a binary search tree with the given requirements for the given test cases.
+
+A binary search tree is a binary tree where for every node, any descendant of Node.left has a value strictly less than Node.val, and any descendant of Node.right has a value strictly greater than Node.val.
+
+A preorder traversal of a binary tree displays the value of the node first, then traverses Node.left, then traverses Node.right.
+
+ 
+
+Example 1:
+
+Input: preorder = [8,5,1,7,10,12]
+Output: [8,5,10,1,7,null,12]
+
+Example 2:
+
+Input: preorder = [1,3]
+Output: [1,null,3]
+
+ 
+
+Constraints:
+
+- 1 <= preorder.length <= 100
+
+- 1 <= preorder[i] <= 1000
+
+- All the values of preorder are unique.
+
+------------------------------
+1007. Minimum Domino Rotations For Equal Row 
+------------------------------
+
+In a row of dominoes, tops[i] and bottoms[i] represent the top and bottom halves of the ith domino. (A domino is a tile with two numbers from 1 to 6 - one on each half of the tile.)
+
+We may rotate the ith domino, so that tops[i] and bottoms[i] swap values.
+
+Return the minimum number of rotations so that all the values in tops are the same, or all the values in bottoms are the same.
+
+If it cannot be done, return -1.
+
+ 
+
+Example 1:
+
+Input: tops = [2,1,2,4,2,2], bottoms = [5,2,6,2,3,2]
+Output: 2
+Explanation: 
+The first figure represents the dominoes as given by tops and bottoms: before we do any rotations.
+If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.
+
+Example 2:
+
+Input: tops = [3,5,1,2,3], bottoms = [3,6,3,3,4]
+Output: -1
+Explanation: 
+In this case, it is not possible to rotate the dominoes to make one row of values equal.
+
+ 
+
+Constraints:
+
+- 2 <= tops.length <= 2 * 104
+
+- bottoms.length == tops.length
+
+- 1 <= tops[i], bottoms[i] <= 6
+
+------------------------------
+1006. Clumsy Factorial 
+------------------------------
+
+The factorial of a positive integer n is the product of all positive integers less than or equal to n.
+
+- For example, factorial(10) = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1.
+
+We make a clumsy factorial using the integers in decreasing order by swapping out the multiply operations for a fixed rotation of operations with multiply '*', divide '/', add '+', and subtract '-' in this order.
+
+- For example, clumsy(10) = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1.
+
+However, these operations are still applied using the usual order of operations of arithmetic. We do all multiplication and division steps before any addition or subtraction steps, and multiplication and division steps are processed left to right.
+
+Additionally, the division that we use is floor division such that 10 * 9 / 8 = 90 / 8 = 11.
+
+Given an integer n, return the clumsy factorial of n.
+
+ 
+
+Example 1:
+
+Input: n = 4
+Output: 7
+Explanation: 7 = 4 * 3 / 2 + 1
+
+Example 2:
+
+Input: n = 10
+Output: 12
+Explanation: 12 = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1
+
+ 
+
+Constraints:
+
+- 1 <= n <= 104
+
+------------------------------
+1005. Maximize Sum Of Array After K Negations 
+------------------------------
+
+Given an integer array nums and an integer k, modify the array in the following way:
+
+- choose an index i and replace nums[i] with -nums[i].
+
+You should apply this process exactly k times. You may choose the same index i multiple times.
+
+Return the largest possible sum of the array after modifying it in this way.
+
+ 
+
+Example 1:
+
+Input: nums = [4,2,3], k = 1
+Output: 5
+Explanation: Choose index 1 and nums becomes [4,-2,3].
+
+Example 2:
+
+Input: nums = [3,-1,0,2], k = 3
+Output: 6
+Explanation: Choose indices (1, 2, 2) and nums becomes [3,1,0,2].
+
+Example 3:
+
+Input: nums = [2,-3,-1,5,-4], k = 2
+Output: 13
+Explanation: Choose indices (1, 4) and nums becomes [2,3,-1,5,4].
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 104
+
+- -100 <= nums[i] <= 100
+
+- 1 <= k <= 104
+
+------------------------------
+1004. Max Consecutive Ones III 
+------------------------------
+
+Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2
+Output: 6
+Explanation: [1,1,1,0,0,1,1,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+
+Example 2:
+
+Input: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3
+Output: 10
+Explanation: [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- nums[i] is either 0 or 1.
+
+- 0 <= k <= nums.length
+
+------------------------------
+1003. Check If Word Is Valid After Substitutions 
+------------------------------
+
+Given a string s, determine if it is valid.
+
+A string s is valid if, starting with an empty string t = "", you can transform t into s after performing the following operation any number of times:
+
+- Insert string "abc" into any position in t. More formally, t becomes tleft + "abc" + tright, where t == tleft + tright. Note that tleft and tright may be empty.
+
+Return true if s is a valid string, otherwise, return false.
+
+ 
+
+Example 1:
+
+Input: s = "aabcbc"
+Output: true
+Explanation:
+"" -> "abc" -> "aabcbc"
+Thus, "aabcbc" is valid.
+
+Example 2:
+
+Input: s = "abcabcababcc"
+Output: true
+Explanation:
+"" -> "abc" -> "abcabc" -> "abcabcabc" -> "abcabcababcc"
+Thus, "abcabcababcc" is valid.
+
+Example 3:
+
+Input: s = "abccba"
+Output: false
+Explanation: It is impossible to get "abccba" using the operation.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 2 * 104
+
+- s consists of letters 'a', 'b', and 'c'
+
+------------------------------
+1002. Find Common Characters 
+------------------------------
+
+Given a string array words, return an array of all characters that show up in all strings within the words (including duplicates). You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: words = ["bella","label","roller"]
+Output: ["e","l","l"]
+
+Example 2:
+
+Input: words = ["cool","lock","cook"]
+Output: ["c","o"]
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 100
+
+- 1 <= words[i].length <= 100
+
+- words[i] consists of lowercase English letters.
+
+------------------------------
+1001. Grid Illumination 
+------------------------------
+
+There is a 2D grid of size n x n where each cell of this grid has a lamp that is initially turned off.
+
+You are given a 2D array of lamp positions lamps, where lamps[i] = [rowi, coli] indicates that the lamp at grid[rowi][coli] is turned on. Even if the same lamp is listed more than once, it is turned on.
+
+When a lamp is turned on, it illuminates its cell and all other cells in the same row, column, or diagonal.
+
+You are also given another 2D array queries, where queries[j] = [rowj, colj]. For the jth query, determine whether grid[rowj][colj] is illuminated or not. After answering the jth query, turn off the lamp at grid[rowj][colj] and its 8 adjacent lamps if they exist. A lamp is adjacent if its cell shares either a side or corner with grid[rowj][colj].
+
+Return an array of integers ans, where ans[j] should be 1 if the cell in the jth query was illuminated, or 0 if the lamp was not.
+
+ 
+
+Example 1:
+
+Input: n = 5, lamps = [[0,0],[4,4]], queries = [[1,1],[1,0]]
+Output: [1,0]
+Explanation: We have the initial grid with all lamps turned off. In the above picture we see the grid after turning on the lamp at grid[0][0] then turning on the lamp at grid[4][4].
+The 0th query asks if the lamp at grid[1][1] is illuminated or not (the blue square). It is illuminated, so set ans[0] = 1. Then, we turn off all lamps in the red square.
+
+The 1st query asks if the lamp at grid[1][0] is illuminated or not (the blue square). It is not illuminated, so set ans[1] = 0. Then, we turn off all lamps in the red rectangle.
+
+Example 2:
+
+Input: n = 5, lamps = [[0,0],[4,4]], queries = [[1,1],[1,1]]
+Output: [1,1]
+
+Example 3:
+
+Input: n = 5, lamps = [[0,0],[0,4]], queries = [[0,4],[0,1],[1,4]]
+Output: [1,1,0]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 109
+
+- 0 <= lamps.length <= 20000
+
+- 0 <= queries.length <= 20000
+
+- lamps[i].length == 2
+
+- 0 <= rowi, coli < n
+
+- queries[j].length == 2
+
+- 0 <= rowj, colj < n
+
+------------------------------
+1000. Minimum Cost to Merge Stones 
+------------------------------
+
+There are n piles of stones arranged in a row. The ith pile has stones[i] stones.
+
+A move consists of merging exactly k consecutive piles into one pile, and the cost of this move is equal to the total number of stones in these k piles.
+
+Return the minimum cost to merge all piles of stones into one pile. If it is impossible, return -1.
+
+ 
+
+Example 1:
+
+Input: stones = [3,2,4,1], k = 2
+Output: 20
+Explanation: We start with [3, 2, 4, 1].
+We merge [3, 2] for a cost of 5, and we are left with [5, 4, 1].
+We merge [4, 1] for a cost of 5, and we are left with [5, 5].
+We merge [5, 5] for a cost of 10, and we are left with [10].
+The total cost was 20, and this is the minimum possible.
+
+Example 2:
+
+Input: stones = [3,2,4,1], k = 3
+Output: -1
+Explanation: After any merge operation, there are 2 piles left, and we can't merge anymore.  So the task is impossible.
+
+Example 3:
+
+Input: stones = [3,5,1,2,6], k = 3
+Output: 25
+Explanation: We start with [3, 5, 1, 2, 6].
+We merge [5, 1, 2] for a cost of 8, and we are left with [3, 8, 6].
+We merge [3, 8, 6] for a cost of 17, and we are left with [17].
+The total cost was 25, and this is the minimum possible.
+
+ 
+
+Constraints:
+
+- n == stones.length
+
+- 1 <= n <= 30
+
+- 1 <= stones[i] <= 100
+
+- 2 <= k <= 30
+
+------------------------------
+999. Available Captures for Rook 
+------------------------------
+
+You are given an 8 x 8 matrix representing a chessboard. There is exactly one white rook represented by 'R', some number of white bishops 'B', and some number of black pawns 'p'. Empty squares are represented by '.'.
+
+A rook can move any number of squares horizontally or vertically (up, down, left, right) until it reaches another piece or the edge of the board. A rook is attacking a pawn if it can move to the pawn's square in one move.
+
+Note: A rook cannot move through other pieces, such as bishops or pawns. This means a rook cannot attack a pawn if there is another piece blocking the path.
+
+Return the number of pawns the white rook is attacking.
+
+ 
+
+Example 1:
+
+Input: board = [[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]]
+
+Output: 3
+
+Explanation:
+
+In this example, the rook is attacking all the pawns.
+
+Example 2:
+
+Input: board = [[".",".",".",".",".",".","."],[".","p","p","p","p","p",".","."],[".","p","p","B","p","p",".","."],[".","p","B","R","B","p",".","."],[".","p","p","B","p","p",".","."],[".","p","p","p","p","p",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]]
+
+Output: 0
+
+Explanation:
+
+The bishops are blocking the rook from attacking any of the pawns.
+
+Example 3:
+
+Input: board = [[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","p",".",".",".","."],["p","p",".","R",".","p","B","."],[".",".",".",".",".",".",".","."],[".",".",".","B",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."]]
+
+Output: 3
+
+Explanation:
+
+The rook is attacking the pawns at positions b5, d6, and f5.
+
+ 
+
+Constraints:
+
+- board.length == 8
+
+- board[i].length == 8
+
+- board[i][j] is either 'R', '.', 'B', or 'p'
+
+- There is exactly one cell with board[i][j] == 'R'
+
+------------------------------
+998. Maximum Binary Tree II 
+------------------------------
+
+A maximum tree is a tree where every node has a value greater than any other value in its subtree.
+
+You are given the root of a maximum binary tree and an integer val.
+
+Just as in the previous problem, the given tree was constructed from a list a (root = Construct(a)) recursively with the following Construct(a) routine:
+
+- If a is empty, return null.
+
+- Otherwise, let a[i] be the largest element of a. Create a root node with the value a[i].
+
+- The left child of root will be Construct([a[0], a[1], ..., a[i - 1]]).
+
+- The right child of root will be Construct([a[i + 1], a[i + 2], ..., a[a.length - 1]]).
+
+- Return root.
+
+Note that we were not given a directly, only a root node root = Construct(a).
+
+Suppose b is a copy of a with the value val appended to it. It is guaranteed that b has unique values.
+
+Return Construct(b).
+
+ 
+
+Example 1:
+
+Input: root = [4,1,3,null,null,2], val = 5
+Output: [5,4,null,1,3,null,null,2]
+Explanation: a = [1,4,2,3], b = [1,4,2,3,5]
+
+Example 2:
+
+Input: root = [5,2,4,null,1], val = 3
+Output: [5,2,4,null,1,null,3]
+Explanation: a = [2,1,5,4], b = [2,1,5,4,3]
+
+Example 3:
+
+Input: root = [5,2,3,null,1], val = 4
+Output: [5,2,4,null,1,3]
+Explanation: a = [2,1,5,3], b = [2,1,5,3,4]
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 100].
+
+- 1 <= Node.val <= 100
+
+- All the values of the tree are unique.
+
+- 1 <= val <= 100
+
+------------------------------
+997. Find the Town Judge 
+------------------------------
+
+In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
+
+If the town judge exists, then:
+
+- The town judge trusts nobody.
+
+- Everybody (except for the town judge) trusts the town judge.
+
+- There is exactly one person that satisfies properties 1 and 2.
+
+You are given an array trust where trust[i] = [ai, bi] representing that the person labeled ai trusts the person labeled bi. If a trust relationship does not exist in trust array, then such a trust relationship does not exist.
+
+Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
+
+ 
+
+Example 1:
+
+Input: n = 2, trust = [[1,2]]
+Output: 2
+
+Example 2:
+
+Input: n = 3, trust = [[1,3],[2,3]]
+Output: 3
+
+Example 3:
+
+Input: n = 3, trust = [[1,3],[2,3],[3,1]]
+Output: -1
+
+ 
+
+Constraints:
+
+- 1 <= n <= 1000
+
+- 0 <= trust.length <= 104
+
+- trust[i].length == 2
+
+- All the pairs of trust are unique.
+
+- ai != bi
+
+- 1 <= ai, bi <= n
+
+------------------------------
+996. Number of Squareful Arrays 
+------------------------------
+
+An array is squareful if the sum of every pair of adjacent elements is a perfect square.
+
+Given an integer array nums, return the number of permutations of nums that are squareful.
+
+Two permutations perm1 and perm2 are different if there is some index i such that perm1[i] != perm2[i].
+
+ 
+
+Example 1:
+
+Input: nums = [1,17,8]
+Output: 2
+Explanation: [1,8,17] and [17,8,1] are the valid permutations.
+
+Example 2:
+
+Input: nums = [2,2,2]
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 12
+
+- 0 <= nums[i] <= 109
+
+------------------------------
+995. Minimum Number of K Consecutive Bit Flips 
+------------------------------
+
+You are given a binary array nums and an integer k.
+
+A k-bit flip is choosing a subarray of length k from nums and simultaneously changing every 0 in the subarray to 1, and every 1 in the subarray to 0.
+
+Return the minimum number of k-bit flips required so that there is no 0 in the array. If it is not possible, return -1.
+
+A subarray is a contiguous part of an array.
+
+ 
+
+Example 1:
+
+Input: nums = [0,1,0], k = 1
+Output: 2
+Explanation: Flip nums[0], then flip nums[2].
+
+Example 2:
+
+Input: nums = [1,1,0], k = 2
+Output: -1
+Explanation: No matter how we flip subarrays of size 2, we cannot make the array become [1,1,1].
+
+Example 3:
+
+Input: nums = [0,0,0,1,0,1,1,0], k = 3
+Output: 3
+Explanation: 
+Flip nums[0],nums[1],nums[2]: nums becomes [1,1,1,1,0,1,1,0]
+Flip nums[4],nums[5],nums[6]: nums becomes [1,1,1,1,1,0,0,0]
+Flip nums[5],nums[6],nums[7]: nums becomes [1,1,1,1,1,1,1,1]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= k <= nums.length
+
+------------------------------
+994. Rotting Oranges 
+------------------------------
+
+You are given an m x n grid where each cell can have one of three values:
+
+- 0 representing an empty cell,
+
+- 1 representing a fresh orange, or
+
+- 2 representing a rotten orange.
+
+Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
+
+Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
+
+ 
+
+Example 1:
+
+Input: grid = [[2,1,1],[1,1,0],[0,1,1]]
+Output: 4
+
+Example 2:
+
+Input: grid = [[2,1,1],[0,1,1],[1,0,1]]
+Output: -1
+Explanation: The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.
+
+Example 3:
+
+Input: grid = [[0,2]]
+Output: 0
+Explanation: Since there are already no fresh oranges at minute 0, the answer is just 0.
+
+ 
+
+Constraints:
+
+- m == grid.length
+
+- n == grid[i].length
+
+- 1 <= m, n <= 10
+
+- grid[i][j] is 0, 1, or 2.
+
+------------------------------
+993. Cousins in Binary Tree 
+------------------------------
+
+Given the root of a binary tree with unique values and the values of two different nodes of the tree x and y, return true if the nodes corresponding to the values x and y in the tree are cousins, or false otherwise.
+
+Two nodes of a binary tree are cousins if they have the same depth with different parents.
+
+Note that in a binary tree, the root node is at the depth 0, and children of each depth k node are at the depth k + 1.
+
+ 
+
+Example 1:
+
+Input: root = [1,2,3,4], x = 4, y = 3
+Output: false
+
+Example 2:
+
+Input: root = [1,2,3,null,4,null,5], x = 5, y = 4
+Output: true
+
+Example 3:
+
+Input: root = [1,2,3,null,4], x = 2, y = 3
+Output: false
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [2, 100].
+
+- 1 <= Node.val <= 100
+
+- Each node has a unique value.
+
+- x != y
+
+- x and y are exist in the tree.
+
+------------------------------
+992. Subarrays with K Different Integers 
+------------------------------
+
+Given an integer array nums and an integer k, return the number of good subarrays of nums.
+
+A good array is an array where the number of different integers in that array is exactly k.
+
+- For example, [1,2,3,1,2] has 3 different integers: 1, 2, and 3.
+
+A subarray is a contiguous part of an array.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,1,2,3], k = 2
+Output: 7
+Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2]
+
+Example 2:
+
+Input: nums = [1,2,1,3,4], k = 3
+Output: 3
+Explanation: Subarrays formed with exactly 3 different integers: [1,2,1,3], [2,1,3], [1,3,4].
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 2 * 104
+
+- 1 <= nums[i], k <= nums.length
+
+------------------------------
+991. Broken Calculator 
+------------------------------
+
+There is a broken calculator that has the integer startValue on its display initially. In one operation, you can:
+
+- multiply the number on display by 2, or
+
+- subtract 1 from the number on display.
+
+Given two integers startValue and target, return the minimum number of operations needed to display target on the calculator.
+
+ 
+
+Example 1:
+
+Input: startValue = 2, target = 3
+Output: 2
+Explanation: Use double operation and then decrement operation {2 -> 4 -> 3}.
+
+Example 2:
+
+Input: startValue = 5, target = 8
+Output: 2
+Explanation: Use decrement and then double {5 -> 4 -> 8}.
+
+Example 3:
+
+Input: startValue = 3, target = 10
+Output: 3
+Explanation: Use double, decrement and double {3 -> 6 -> 5 -> 10}.
+
+ 
+
+Constraints:
+
+- 1 <= startValue, target <= 109
+
+------------------------------
+990. Satisfiability of Equality Equations 
+------------------------------
+
+You are given an array of strings equations that represent relationships between variables where each string equations[i] is of length 4 and takes one of two different forms: "xi==yi" or "xi!=yi".Here, xi and yi are lowercase letters (not necessarily different) that represent one-letter variable names.
+
+Return true if it is possible to assign integers to variable names so as to satisfy all the given equations, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: equations = ["a==b","b!=a"]
+Output: false
+Explanation: If we assign say, a = 1 and b = 1, then the first equation is satisfied, but not the second.
+There is no way to assign the variables to satisfy both equations.
+
+Example 2:
+
+Input: equations = ["b==a","a==b"]
+Output: true
+Explanation: We could assign a = 1 and b = 1 to satisfy both equations.
+
+ 
+
+Constraints:
+
+- 1 <= equations.length <= 500
+
+- equations[i].length == 4
+
+- equations[i][0] is a lowercase letter.
+
+- equations[i][1] is either '=' or '!'.
+
+- equations[i][2] is '='.
+
+- equations[i][3] is a lowercase letter.
+
+------------------------------
+989. Add to Array-Form of Integer 
+------------------------------
+
+The array-form of an integer num is an array representing its digits in left to right order.
+
+- For example, for num = 1321, the array form is [1,3,2,1].
+
+Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
+
+ 
+
+Example 1:
+
+Input: num = [1,2,0,0], k = 34
+Output: [1,2,3,4]
+Explanation: 1200 + 34 = 1234
+
+Example 2:
+
+Input: num = [2,7,4], k = 181
+Output: [4,5,5]
+Explanation: 274 + 181 = 455
+
+Example 3:
+
+Input: num = [2,1,5], k = 806
+Output: [1,0,2,1]
+Explanation: 215 + 806 = 1021
+
+ 
+
+Constraints:
+
+- 1 <= num.length <= 104
+
+- 0 <= num[i] <= 9
+
+- num does not contain any leading zeros except for the zero itself.
+
+- 1 <= k <= 104
+
+------------------------------
+988. Smallest String Starting From Leaf 
+------------------------------
+
+You are given the root of a binary tree where each node has a value in the range [0, 25] representing the letters 'a' to 'z'.
+
+Return the lexicographically smallest string that starts at a leaf of this tree and ends at the root.
+
+As a reminder, any shorter prefix of a string is lexicographically smaller.
+
+- For example, "ab" is lexicographically smaller than "aba".
+
+A leaf of a node is a node that has no children.
+
+ 
+
+Example 1:
+
+Input: root = [0,1,2,3,4,3,4]
+Output: "dba"
+
+Example 2:
+
+Input: root = [25,1,3,1,3,0,2]
+Output: "adz"
+
+Example 3:
+
+Input: root = [2,2,1,null,1,0,null,0]
+Output: "abc"
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 8500].
+
+- 0 <= Node.val <= 25
+
+------------------------------
+987. Vertical Order Traversal of a Binary Tree 
+------------------------------
+
+Given the root of a binary tree, calculate the vertical order traversal of the binary tree.
+
+For each node at position (row, col), its left and right children will be at positions (row + 1, col - 1) and (row + 1, col + 1) respectively. The root of the tree is at (0, 0).
+
+The vertical order traversal of a binary tree is a list of top-to-bottom orderings for each column index starting from the leftmost column and ending on the rightmost column. There may be multiple nodes in the same row and same column. In such a case, sort these nodes by their values.
+
+Return the vertical order traversal of the binary tree.
+
+ 
+
+Example 1:
+
+Input: root = [3,9,20,null,null,15,7]
+Output: [[9],[3,15],[20],[7]]
+Explanation:
+Column -1: Only node 9 is in this column.
+Column 0: Nodes 3 and 15 are in this column in that order from top to bottom.
+Column 1: Only node 20 is in this column.
+Column 2: Only node 7 is in this column.
+
+Example 2:
+
+Input: root = [1,2,3,4,5,6,7]
+Output: [[4],[2],[1,5,6],[3],[7]]
+Explanation:
+Column -2: Only node 4 is in this column.
+Column -1: Only node 2 is in this column.
+Column 0: Nodes 1, 5, and 6 are in this column.
+          1 is at the top, so it comes first.
+          5 and 6 are at the same position (2, 0), so we order them by their value, 5 before 6.
+Column 1: Only node 3 is in this column.
+Column 2: Only node 7 is in this column.
+
+Example 3:
+
+Input: root = [1,2,3,4,6,5,7]
+Output: [[4],[2],[1,5,6],[3],[7]]
+Explanation:
+This case is the exact same as example 2, but with nodes 5 and 6 swapped.
+Note that the solution remains the same since 5 and 6 are in the same location and should be ordered by their values.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 1000].
+
+- 0 <= Node.val <= 1000
+
+------------------------------
+986. Interval List Intersections 
+------------------------------
+
+You are given two lists of closed intervals, firstList and secondList, where firstList[i] = [starti, endi] and secondList[j] = [startj, endj]. Each list of intervals is pairwise disjoint and in sorted order.
+
+Return the intersection of these two interval lists.
+
+A closed interval [a, b] (with a <= b) denotes the set of real numbers x with a <= x <= b.
+
+The intersection of two closed intervals is a set of real numbers that are either empty or represented as a closed interval. For example, the intersection of [1, 3] and [2, 4] is [2, 3].
+
+ 
+
+Example 1:
+
+Input: firstList = [[0,2],[5,10],[13,23],[24,25]], secondList = [[1,5],[8,12],[15,24],[25,26]]
+Output: [[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
+
+Example 2:
+
+Input: firstList = [[1,3],[5,9]], secondList = []
+Output: []
+
+ 
+
+Constraints:
+
+- 0 <= firstList.length, secondList.length <= 1000
+
+- firstList.length + secondList.length >= 1
+
+- 0 <= starti < endi <= 109
+
+- endi < starti+1
+
+- 0 <= startj < endj <= 109 
+
+- endj < startj+1
+
+------------------------------
+985. Sum of Even Numbers After Queries 
+------------------------------
+
+You are given an integer array nums and an array queries where queries[i] = [vali, indexi].
+
+For each query i, first, apply nums[indexi] = nums[indexi] + vali, then print the sum of the even values of nums.
+
+Return an integer array answer where answer[i] is the answer to the ith query.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4], queries = [[1,0],[-3,1],[-4,0],[2,3]]
+Output: [8,6,2,4]
+Explanation: At the beginning, the array is [1,2,3,4].
+After adding 1 to nums[0], the array is [2,2,3,4], and the sum of even values is 2 + 2 + 4 = 8.
+After adding -3 to nums[1], the array is [2,-1,3,4], and the sum of even values is 2 + 4 = 6.
+After adding -4 to nums[0], the array is [-2,-1,3,4], and the sum of even values is -2 + 4 = 2.
+After adding 2 to nums[3], the array is [-2,-1,3,6], and the sum of even values is -2 + 6 = 4.
+
+Example 2:
+
+Input: nums = [1], queries = [[4,0]]
+Output: [0]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 104
+
+- -104 <= nums[i] <= 104
+
+- 1 <= queries.length <= 104
+
+- -104 <= vali <= 104
+
+- 0 <= indexi < nums.length
+
+------------------------------
+984. String Without AAA or BBB 
+------------------------------
+
+Given two integers a and b, return any string s such that:
+
+- s has length a + b and contains exactly a 'a' letters, and exactly b 'b' letters,
+
+- The substring 'aaa' does not occur in s, and
+
+- The substring 'bbb' does not occur in s.
+
+ 
+
+Example 1:
+
+Input: a = 1, b = 2
+Output: "abb"
+Explanation: "abb", "bab" and "bba" are all correct answers.
+
+Example 2:
+
+Input: a = 4, b = 1
+Output: "aabaa"
+
+ 
+
+Constraints:
+
+- 0 <= a, b <= 100
+
+- It is guaranteed such an s exists for the given a and b.
+
+------------------------------
+983. Minimum Cost For Tickets 
+------------------------------
+
+You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.
+
+Train tickets are sold in three different ways:
+
+- a 1-day pass is sold for costs[0] dollars,
+
+- a 7-day pass is sold for costs[1] dollars, and
+
+- a 30-day pass is sold for costs[2] dollars.
+
+The passes allow that many days of consecutive travel.
+
+- For example, if we get a 7-day pass on day 2, then we can travel for 7 days: 2, 3, 4, 5, 6, 7, and 8.
+
+Return the minimum number of dollars you need to travel every day in the given list of days.
+
+ 
+
+Example 1:
+
+Input: days = [1,4,6,7,8,20], costs = [2,7,15]
+Output: 11
+Explanation: For example, here is one way to buy passes that lets you travel your travel plan:
+On day 1, you bought a 1-day pass for costs[0] = $2, which covered day 1.
+On day 3, you bought a 7-day pass for costs[1] = $7, which covered days 3, 4, ..., 9.
+On day 20, you bought a 1-day pass for costs[0] = $2, which covered day 20.
+In total, you spent $11 and covered all the days of your travel.
+
+Example 2:
+
+Input: days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]
+Output: 17
+Explanation: For example, here is one way to buy passes that lets you travel your travel plan:
+On day 1, you bought a 30-day pass for costs[2] = $15 which covered days 1, 2, ..., 30.
+On day 31, you bought a 1-day pass for costs[0] = $2 which covered day 31.
+In total, you spent $17 and covered all the days of your travel.
+
+ 
+
+Constraints:
+
+- 1 <= days.length <= 365
+
+- 1 <= days[i] <= 365
+
+- days is in strictly increasing order.
+
+- costs.length == 3
+
+- 1 <= costs[i] <= 1000
+
+------------------------------
+982. Triples with Bitwise AND Equal To Zero 
+------------------------------
+
+Given an integer array nums, return the number of AND triples.
+
+An AND triple is a triple of indices (i, j, k) such that:
+
+- 0 <= i < nums.length
+
+- 0 <= j < nums.length
+
+- 0 <= k < nums.length
+
+- nums[i] & nums[j] & nums[k] == 0, where & represents the bitwise-AND operator.
+
+ 
+
+Example 1:
+
+Input: nums = [2,1,3]
+Output: 12
+Explanation: We could choose the following i, j, k triples:
+(i=0, j=0, k=1) : 2 & 2 & 1
+(i=0, j=1, k=0) : 2 & 1 & 2
+(i=0, j=1, k=1) : 2 & 1 & 1
+(i=0, j=1, k=2) : 2 & 1 & 3
+(i=0, j=2, k=1) : 2 & 3 & 1
+(i=1, j=0, k=0) : 1 & 2 & 2
+(i=1, j=0, k=1) : 1 & 2 & 1
+(i=1, j=0, k=2) : 1 & 2 & 3
+(i=1, j=1, k=0) : 1 & 1 & 2
+(i=1, j=2, k=0) : 1 & 3 & 2
+(i=2, j=0, k=1) : 3 & 2 & 1
+(i=2, j=1, k=0) : 3 & 1 & 2
+
+Example 2:
+
+Input: nums = [0,0,0]
+Output: 27
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 0 <= nums[i] < 216
+
+------------------------------
+981. Time Based Key-Value Store 
+------------------------------
+
+Design a time-based key-value data structure that can store multiple values for the same key at different time stamps and retrieve the key's value at a certain timestamp.
+
+Implement the TimeMap class:
+
+- TimeMap() Initializes the object of the data structure.
+
+- void set(String key, String value, int timestamp) Stores the key key with the value value at the given time timestamp.
+
+- String get(String key, int timestamp) Returns a value such that set was called previously, with timestamp_prev <= timestamp. If there are multiple such values, it returns the value associated with the largest timestamp_prev. If there are no values, it returns "".
+
+ 
+
+Example 1:
+
+Input
+["TimeMap", "set", "get", "get", "set", "get", "get"]
+[[], ["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", "bar2", 4], ["foo", 4], ["foo", 5]]
+Output
+[null, null, "bar", "bar", null, "bar2", "bar2"]
+
+Explanation
+TimeMap timeMap = new TimeMap();
+timeMap.set("foo", "bar", 1);  // store the key "foo" and value "bar" along with timestamp = 1.
+timeMap.get("foo", 1);         // return "bar"
+timeMap.get("foo", 3);         // return "bar", since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 is "bar".
+timeMap.set("foo", "bar2", 4); // store the key "foo" and value "bar2" along with timestamp = 4.
+timeMap.get("foo", 4);         // return "bar2"
+timeMap.get("foo", 5);         // return "bar2"
+
+ 
+
+Constraints:
+
+- 1 <= key.length, value.length <= 100
+
+- key and value consist of lowercase English letters and digits.
+
+- 1 <= timestamp <= 107
+
+- All the timestamps timestamp of set are strictly increasing.
+
+- At most 2 * 105 calls will be made to set and get.
+
+------------------------------
+980. Unique Paths III 
+------------------------------
+
+You are given an m x n integer array grid where grid[i][j] could be:
+
+- 1 representing the starting square. There is exactly one starting square.
+
+- 2 representing the ending square. There is exactly one ending square.
+
+- 0 representing empty squares we can walk over.
+
+- -1 representing obstacles that we cannot walk over.
+
+Return the number of 4-directional walks from the starting square to the ending square, that walk over every non-obstacle square exactly once.
+
+ 
+
+Example 1:
+
+Input: grid = [[1,0,0,0],[0,0,0,0],[0,0,2,-1]]
+Output: 2
+Explanation: We have the following two paths: 
+1. (0,0),(0,1),(0,2),(0,3),(1,3),(1,2),(1,1),(1,0),(2,0),(2,1),(2,2)
+2. (0,0),(1,0),(2,0),(2,1),(1,1),(0,1),(0,2),(0,3),(1,3),(1,2),(2,2)
+
+Example 2:
+
+Input: grid = [[1,0,0,0],[0,0,0,0],[0,0,0,2]]
+Output: 4
+Explanation: We have the following four paths: 
+1. (0,0),(0,1),(0,2),(0,3),(1,3),(1,2),(1,1),(1,0),(2,0),(2,1),(2,2),(2,3)
+2. (0,0),(0,1),(1,1),(1,0),(2,0),(2,1),(2,2),(1,2),(0,2),(0,3),(1,3),(2,3)
+3. (0,0),(1,0),(2,0),(2,1),(2,2),(1,2),(1,1),(0,1),(0,2),(0,3),(1,3),(2,3)
+4. (0,0),(1,0),(2,0),(2,1),(1,1),(0,1),(0,2),(0,3),(1,3),(1,2),(2,2),(2,3)
+
+Example 3:
+
+Input: grid = [[0,1],[2,0]]
+Output: 0
+Explanation: There is no path that walks over every empty square exactly once.
+Note that the starting and ending square can be anywhere in the grid.
+
+ 
+
+Constraints:
+
+- m == grid.length
+
+- n == grid[i].length
+
+- 1 <= m, n <= 20
+
+- 1 <= m * n <= 20
+
+- -1 <= grid[i][j] <= 2
+
+- There is exactly one starting cell and one ending cell.
+
+------------------------------
+979. Distribute Coins in Binary Tree 
+------------------------------
+
+You are given the root of a binary tree with n nodes where each node in the tree has node.val coins. There are n coins in total throughout the whole tree.
+
+In one move, we may choose two adjacent nodes and move one coin from one node to another. A move may be from parent to child, or from child to parent.
+
+Return the minimum number of moves required to make every node have exactly one coin.
+
+ 
+
+Example 1:
+
+Input: root = [3,0,0]
+Output: 2
+Explanation: From the root of the tree, we move one coin to its left child, and one coin to its right child.
+
+Example 2:
+
+Input: root = [0,3,0]
+Output: 3
+Explanation: From the left child of the root, we move two coins to the root [taking two moves]. Then, we move one coin from the root of the tree to the right child.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is n.
+
+- 1 <= n <= 100
+
+- 0 <= Node.val <= n
+
+- The sum of all Node.val is n.
+
+------------------------------
+978. Longest Turbulent Subarray 
+------------------------------
+
+Given an integer array arr, return the length of a maximum size turbulent subarray of arr.
+
+A subarray is turbulent if the comparison sign flips between each adjacent pair of elements in the subarray.
+
+More formally, a subarray [arr[i], arr[i + 1], ..., arr[j]] of arr is said to be turbulent if and only if:
+
+- For i <= k < j:
+
+	
+
+- arr[k] > arr[k + 1] when k is odd, and
+
+- arr[k] < arr[k + 1] when k is even.
+
+- Or, for i <= k < j:
+	
+
+- arr[k] > arr[k + 1] when k is even, and
+
+- arr[k] < arr[k + 1] when k is odd.
+
+ 
+
+Example 1:
+
+Input: arr = [9,4,2,10,7,8,8,1,9]
+Output: 5
+Explanation: arr[1] > arr[2] < arr[3] > arr[4] < arr[5]
+
+Example 2:
+
+Input: arr = [4,8,12,16]
+Output: 2
+
+Example 3:
+
+Input: arr = [100]
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 4 * 104
+
+- 0 <= arr[i] <= 109
+
+------------------------------
+977. Squares of a Sorted Array 
+------------------------------
+
+Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+
+ 
+
+Example 1:
+
+Input: nums = [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+
+Example 2:
+
+Input: nums = [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 104
+
+- -104 <= nums[i] <= 104
+
+- nums is sorted in non-decreasing order.
+
+ 
+
+Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
+
+------------------------------
+976. Largest Perimeter Triangle 
+------------------------------
+
+Given an integer array nums, return the largest perimeter of a triangle with a non-zero area, formed from three of these lengths. If it is impossible to form any triangle of a non-zero area, return 0.
+
+ 
+
+Example 1:
+
+Input: nums = [2,1,2]
+Output: 5
+Explanation: You can form a triangle with three side lengths: 1, 2, and 2.
+
+Example 2:
+
+Input: nums = [1,2,1,10]
+Output: 0
+Explanation: 
+You cannot use the side lengths 1, 1, and 2 to form a triangle.
+You cannot use the side lengths 1, 1, and 10 to form a triangle.
+You cannot use the side lengths 1, 2, and 10 to form a triangle.
+As we cannot use any three side lengths to form a triangle of non-zero area, we return 0.
+
+ 
+
+Constraints:
+
+- 3 <= nums.length <= 104
+
+- 1 <= nums[i] <= 106
+
+------------------------------
+975. Odd Even Jump 
+------------------------------
+
+You are given an integer array arr. From some starting index, you can make a series of jumps. The (1st, 3rd, 5th, ...) jumps in the series are called odd-numbered jumps, and the (2nd, 4th, 6th, ...) jumps in the series are called even-numbered jumps. Note that the jumps are numbered, not the indices.
+
+You may jump forward from index i to index j (with i < j) in the following way:
+
+- During odd-numbered jumps (i.e., jumps 1, 3, 5, ...), you jump to the index j such that arr[i] <= arr[j] and arr[j] is the smallest possible value. If there are multiple such indices j, you can only jump to the smallest such index j.
+
+- During even-numbered jumps (i.e., jumps 2, 4, 6, ...), you jump to the index j such that arr[i] >= arr[j] and arr[j] is the largest possible value. If there are multiple such indices j, you can only jump to the smallest such index j.
+
+- It may be the case that for some index i, there are no legal jumps.
+
+A starting index is good if, starting from that index, you can reach the end of the array (index arr.length - 1) by jumping some number of times (possibly 0 or more than once).
+
+Return the number of good starting indices.
+
+ 
+
+Example 1:
+
+Input: arr = [10,13,12,14,15]
+Output: 2
+Explanation: 
+From starting index i = 0, we can make our 1st jump to i = 2 (since arr[2] is the smallest among arr[1], arr[2], arr[3], arr[4] that is greater or equal to arr[0]), then we cannot jump any more.
+From starting index i = 1 and i = 2, we can make our 1st jump to i = 3, then we cannot jump any more.
+From starting index i = 3, we can make our 1st jump to i = 4, so we have reached the end.
+From starting index i = 4, we have reached the end already.
+In total, there are 2 different starting indices i = 3 and i = 4, where we can reach the end with some number of
+jumps.
+
+Example 2:
+
+Input: arr = [2,3,1,1,4]
+Output: 3
+Explanation: 
+From starting index i = 0, we make jumps to i = 1, i = 2, i = 3:
+During our 1st jump (odd-numbered), we first jump to i = 1 because arr[1] is the smallest value in [arr[1], arr[2], arr[3], arr[4]] that is greater than or equal to arr[0].
+During our 2nd jump (even-numbered), we jump from i = 1 to i = 2 because arr[2] is the largest value in [arr[2], arr[3], arr[4]] that is less than or equal to arr[1]. arr[3] is also the largest value, but 2 is a smaller index, so we can only jump to i = 2 and not i = 3
+During our 3rd jump (odd-numbered), we jump from i = 2 to i = 3 because arr[3] is the smallest value in [arr[3], arr[4]] that is greater than or equal to arr[2].
+We can't jump from i = 3 to i = 4, so the starting index i = 0 is not good.
+In a similar manner, we can deduce that:
+From starting index i = 1, we jump to i = 4, so we reach the end.
+From starting index i = 2, we jump to i = 3, and then we can't jump anymore.
+From starting index i = 3, we jump to i = 4, so we reach the end.
+From starting index i = 4, we are already at the end.
+In total, there are 3 different starting indices i = 1, i = 3, and i = 4, where we can reach the end with some
+number of jumps.
+
+Example 3:
+
+Input: arr = [5,1,3,4,2]
+Output: 3
+Explanation: We can reach the end from starting indices 1, 2, and 4.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 2 * 104
+
+- 0 <= arr[i] < 105
+
+------------------------------
+974. Subarray Sums Divisible by K 
+------------------------------
+
+Given an integer array nums and an integer k, return the number of non-empty subarrays that have a sum divisible by k.
+
+A subarray is a contiguous part of an array.
+
+ 
+
+Example 1:
+
+Input: nums = [4,5,0,-2,-3,1], k = 5
+Output: 7
+Explanation: There are 7 subarrays with a sum divisible by k = 5:
+[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]
+
+Example 2:
+
+Input: nums = [5], k = 9
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 3 * 104
+
+- -104 <= nums[i] <= 104
+
+- 2 <= k <= 104
+
+------------------------------
+973. K Closest Points to Origin 
+------------------------------
+
+Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).
+
+The distance between two points on the X-Y plane is the Euclidean distance (i.e., √(x1 - x2)2 + (y1 - y2)2).
+
+You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).
+
+ 
+
+Example 1:
+
+Input: points = [[1,3],[-2,2]], k = 1
+Output: [[-2,2]]
+Explanation:
+The distance between (1, 3) and the origin is sqrt(10).
+The distance between (-2, 2) and the origin is sqrt(8).
+Since sqrt(8) < sqrt(10), (-2, 2) is closer to the origin.
+We only want the closest k = 1 points from the origin, so the answer is just [[-2,2]].
+
+Example 2:
+
+Input: points = [[3,3],[5,-1],[-2,4]], k = 2
+Output: [[3,3],[-2,4]]
+Explanation: The answer [[-2,4],[3,3]] would also be accepted.
+
+ 
+
+Constraints:
+
+- 1 <= k <= points.length <= 104
+
+- -104 <= xi, yi <= 104
+
+------------------------------
+509. Fibonacci Number 
+------------------------------
+
+The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
+
+F(0) = 0, F(1) = 1
+F(n) = F(n - 1) + F(n - 2), for n > 1.
+
+Given n, calculate F(n).
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: 1
+Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+
+Example 2:
+
+Input: n = 3
+Output: 2
+Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+
+Example 3:
+
+Input: n = 4
+Output: 3
+Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+
+ 
+
+Constraints:
+
+- 0 <= n <= 30
+
+------------------------------
+972. Equal Rational Numbers 
+------------------------------
+
+Given two strings s and t, each of which represents a non-negative rational number, return true if and only if they represent the same number. The strings may use parentheses to denote the repeating part of the rational number.
+
+A rational number can be represented using up to three parts: <IntegerPart>, <NonRepeatingPart>, and a <RepeatingPart>. The number will be represented in one of the following three ways:
+
+- <IntegerPart>
+
+- For example, 12, 0, and 123.
+
+- <IntegerPart><.><NonRepeatingPart>
+
+- For example, 0.5, 1., 2.12, and 123.0001.
+
+- <IntegerPart><.><NonRepeatingPart><(><RepeatingPart><)>
+
+- For example, 0.1(6), 1.(9), 123.00(1212).
+
+The repeating portion of a decimal expansion is conventionally denoted within a pair of round brackets. For example:
+
+- 1/6 = 0.16666666... = 0.1(6) = 0.1666(6) = 0.166(66).
+
+ 
+
+Example 1:
+
+Input: s = "0.(52)", t = "0.5(25)"
+Output: true
+Explanation: Because "0.(52)" represents 0.52525252..., and "0.5(25)" represents 0.52525252525..... , the strings represent the same number.
+
+Example 2:
+
+Input: s = "0.1666(6)", t = "0.166(66)"
+Output: true
+
+Example 3:
+
+Input: s = "0.9(9)", t = "1."
+Output: true
+Explanation: "0.9(9)" represents 0.999999999... repeated forever, which equals 1.  [See this link for an explanation.]
+"1." represents the number 1, which is formed correctly: (IntegerPart) = "1" and (NonRepeatingPart) = "".
+
+ 
+
+Constraints:
+
+- Each part consists only of digits.
+
+- The <IntegerPart> does not have leading zeros (except for the zero itself).
+
+- 1 <= <IntegerPart>.length <= 4
+
+- 0 <= <NonRepeatingPart>.length <= 4
+
+- 1 <= <RepeatingPart>.length <= 4
+
+------------------------------
+971. Flip Binary Tree To Match Preorder Traversal 
+------------------------------
+
+You are given the root of a binary tree with n nodes, where each node is uniquely assigned a value from 1 to n. You are also given a sequence of n values voyage, which is the desired pre-order traversal of the binary tree.
+
+Any node in the binary tree can be flipped by swapping its left and right subtrees. For example, flipping node 1 will have the following effect:
+
+Flip the smallest number of nodes so that the pre-order traversal of the tree matches voyage.
+
+Return a list of the values of all flipped nodes. You may return the answer in any order. If it is impossible to flip the nodes in the tree to make the pre-order traversal match voyage, return the list [-1].
+
+ 
+
+Example 1:
+
+Input: root = [1,2], voyage = [2,1]
+Output: [-1]
+Explanation: It is impossible to flip the nodes such that the pre-order traversal matches voyage.
+
+Example 2:
+
+Input: root = [1,2,3], voyage = [1,3,2]
+Output: [1]
+Explanation: Flipping node 1 swaps nodes 2 and 3, so the pre-order traversal matches voyage.
+
+Example 3:
+
+Input: root = [1,2,3], voyage = [1,2,3]
+Output: []
+Explanation: The tree's pre-order traversal already matches voyage, so no nodes need to be flipped.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is n.
+
+- n == voyage.length
+
+- 1 <= n <= 100
+
+- 1 <= Node.val, voyage[i] <= n
+
+- All the values in the tree are unique.
+
+- All the values in voyage are unique.
+
+------------------------------
+970. Powerful Integers 
+------------------------------
+
+Given three integers x, y, and bound, return a list of all the powerful integers that have a value less than or equal to bound.
+
+An integer is powerful if it can be represented as xi + yj for some integers i >= 0 and j >= 0.
+
+You may return the answer in any order. In your answer, each value should occur at most once.
+
+ 
+
+Example 1:
+
+Input: x = 2, y = 3, bound = 10
+Output: [2,3,4,5,7,9,10]
+Explanation:
+2 = 20 + 30
+3 = 21 + 30
+4 = 20 + 31
+5 = 21 + 31
+7 = 22 + 31
+9 = 23 + 30
+10 = 20 + 32
+
+Example 2:
+
+Input: x = 3, y = 5, bound = 15
+Output: [2,4,6,8,10,14]
+
+ 
+
+Constraints:
+
+- 1 <= x, y <= 100
+
+- 0 <= bound <= 106
+
+------------------------------
+969. Pancake Sorting 
+------------------------------
+
+Given an array of integers arr, sort the array by performing a series of pancake flips.
+
+In one pancake flip we do the following steps:
+
+- Choose an integer k where 1 <= k <= arr.length.
+
+- Reverse the sub-array arr[0...k-1] (0-indexed).
+
+For example, if arr = [3,2,1,4] and we performed a pancake flip choosing k = 3, we reverse the sub-array [3,2,1], so arr = [1,2,3,4] after the pancake flip at k = 3.
+
+Return an array of the k-values corresponding to a sequence of pancake flips that sort arr. Any valid answer that sorts the array within 10 * arr.length flips will be judged as correct.
+
+ 
+
+Example 1:
+
+Input: arr = [3,2,4,1]
+Output: [4,2,4,3]
+Explanation: 
+We perform 4 pancake flips, with k values 4, 2, 4, and 3.
+Starting state: arr = [3, 2, 4, 1]
+After 1st flip (k = 4): arr = [1, 4, 2, 3]
+After 2nd flip (k = 2): arr = [4, 1, 2, 3]
+After 3rd flip (k = 4): arr = [3, 2, 1, 4]
+After 4th flip (k = 3): arr = [1, 2, 3, 4], which is sorted.
+
+Example 2:
+
+Input: arr = [1,2,3]
+Output: []
+Explanation: The input is already sorted, so there is no need to flip anything.
+Note that other answers, such as [3, 3], would also be accepted.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 100
+
+- 1 <= arr[i] <= arr.length
+
+- All integers in arr are unique (i.e. arr is a permutation of the integers from 1 to arr.length).
+
+------------------------------
+968. Binary Tree Cameras 
+------------------------------
+
+You are given the root of a binary tree. We install cameras on the tree nodes where each camera at a node can monitor its parent, itself, and its immediate children.
+
+Return the minimum number of cameras needed to monitor all nodes of the tree.
+
+ 
+
+Example 1:
+
+Input: root = [0,0,null,0,0]
+Output: 1
+Explanation: One camera is enough to monitor all nodes if placed as shown.
+
+Example 2:
+
+Input: root = [0,0,null,0,null,0,null,null,0]
+Output: 2
+Explanation: At least two cameras are needed to monitor all nodes of the tree. The above image shows one of the valid configurations of camera placement.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 1000].
+
+- Node.val == 0
+
+------------------------------
+967. Numbers With Same Consecutive Differences 
+------------------------------
+
+Given two integers n and k, return an array of all the integers of length n where the difference between every two consecutive digits is k. You may return the answer in any order.
+
+Note that the integers should not have leading zeros. Integers as 02 and 043 are not allowed.
+
+ 
+
+Example 1:
+
+Input: n = 3, k = 7
+Output: [181,292,707,818,929]
+Explanation: Note that 070 is not a valid number, because it has leading zeroes.
+
+Example 2:
+
+Input: n = 2, k = 1
+Output: [10,12,21,23,32,34,43,45,54,56,65,67,76,78,87,89,98]
+
+ 
+
+Constraints:
+
+- 2 <= n <= 9
+
+- 0 <= k <= 9
+
+------------------------------
+966. Vowel Spellchecker 
+------------------------------
+
+Given a wordlist, we want to implement a spellchecker that converts a query word into a correct word.
+
+For a given query word, the spell checker handles two categories of spelling mistakes:
+
+- Capitalization: If the query matches a word in the wordlist (case-insensitive), then the query word is returned with the same case as the case in the wordlist.
+
+	
+
+- Example: wordlist = ["yellow"], query = "YellOw": correct = "yellow"
+
+- Example: wordlist = ["Yellow"], query = "yellow": correct = "Yellow"
+
+- Example: wordlist = ["yellow"], query = "yellow": correct = "yellow"
+
+- Vowel Errors: If after replacing the vowels ('a', 'e', 'i', 'o', 'u') of the query word with any vowel individually, it matches a word in the wordlist (case-insensitive), then the query word is returned with the same case as the match in the wordlist.
+	
+
+- Example: wordlist = ["YellOw"], query = "yollow": correct = "YellOw"
+
+- Example: wordlist = ["YellOw"], query = "yeellow": correct = "" (no match)
+
+- Example: wordlist = ["YellOw"], query = "yllw": correct = "" (no match)
+
+In addition, the spell checker operates under the following precedence rules:
+
+- When the query exactly matches a word in the wordlist (case-sensitive), you should return the same word back.
+
+- When the query matches a word up to capitalization, you should return the first such match in the wordlist.
+
+- When the query matches a word up to vowel errors, you should return the first such match in the wordlist.
+
+- If the query has no matches in the wordlist, you should return the empty string.
+
+Given some queries, return a list of words answer, where answer[i] is the correct word for query = queries[i].
+
+ 
+
+Example 1:
+
+Input: wordlist = ["KiTe","kite","hare","Hare"], queries = ["kite","Kite","KiTe","Hare","HARE","Hear","hear","keti","keet","keto"]
+Output: ["kite","KiTe","KiTe","Hare","hare","","","KiTe","","KiTe"]
+
+Example 2:
+
+Input: wordlist = ["yellow"], queries = ["YellOw"]
+Output: ["yellow"]
+
+ 
+
+Constraints:
+
+- 1 <= wordlist.length, queries.length <= 5000
+
+- 1 <= wordlist[i].length, queries[i].length <= 7
+
+- wordlist[i] and queries[i] consist only of only English letters.
+
+------------------------------
+965. Univalued Binary Tree 
+------------------------------
+
+A binary tree is uni-valued if every node in the tree has the same value.
+
+Given the root of a binary tree, return true if the given tree is uni-valued, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: root = [1,1,1,1,1,null,1]
+Output: true
+
+Example 2:
+
+Input: root = [2,2,2,5,2]
+Output: false
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 100].
+
+- 0 <= Node.val < 100
+
+------------------------------
+964. Least Operators to Express Number 
+------------------------------
+
+Given a single positive integer x, we will write an expression of the form x (op1) x (op2) x (op3) x ... where each operator op1, op2, etc. is either addition, subtraction, multiplication, or division (+, -, *, or /). For example, with x = 3, we might write 3 * 3 / 3 + 3 - 3 which is a value of 3.
+
+When writing such an expression, we adhere to the following conventions:
+
+- The division operator (/) returns rational numbers.
+
+- There are no parentheses placed anywhere.
+
+- We use the usual order of operations: multiplication and division happen before addition and subtraction.
+
+- It is not allowed to use the unary negation operator (-). For example, "x - x" is a valid expression as it only uses subtraction, but "-x + x" is not because it uses negation.
+
+We would like to write an expression with the least number of operators such that the expression equals the given target. Return the least number of operators used.
+
+ 
+
+Example 1:
+
+Input: x = 3, target = 19
+Output: 5
+Explanation: 3 * 3 + 3 * 3 + 3 / 3.
+The expression contains 5 operations.
+
+Example 2:
+
+Input: x = 5, target = 501
+Output: 8
+Explanation: 5 * 5 * 5 * 5 - 5 * 5 * 5 + 5 / 5.
+The expression contains 8 operations.
+
+Example 3:
+
+Input: x = 100, target = 100000000
+Output: 3
+Explanation: 100 * 100 * 100 * 100.
+The expression contains 3 operations.
+
+ 
+
+Constraints:
+
+- 2 <= x <= 100
+
+- 1 <= target <= 2 * 108
+
+------------------------------
+963. Minimum Area Rectangle II 
+------------------------------
+
+You are given an array of points in the X-Y plane points where points[i] = [xi, yi].
+
+Return the minimum area of any rectangle formed from these points, with sides not necessarily parallel to the X and Y axes. If there is not any such rectangle, return 0.
+
+Answers within 10-5 of the actual answer will be accepted.
+
+ 
+
+Example 1:
+
+Input: points = [[1,2],[2,1],[1,0],[0,1]]
+Output: 2.00000
+Explanation: The minimum area rectangle occurs at [1,2],[2,1],[1,0],[0,1], with an area of 2.
+
+Example 2:
+
+Input: points = [[0,1],[2,1],[1,1],[1,0],[2,0]]
+Output: 1.00000
+Explanation: The minimum area rectangle occurs at [1,0],[1,1],[2,1],[2,0], with an area of 1.
+
+Example 3:
+
+Input: points = [[0,3],[1,2],[3,1],[1,3],[2,1]]
+Output: 0
+Explanation: There is no possible rectangle to form from these points.
+
+ 
+
+Constraints:
+
+- 1 <= points.length <= 50
+
+- points[i].length == 2
+
+- 0 <= xi, yi <= 4 * 104
+
+- All the given points are unique.
+
+------------------------------
+962. Maximum Width Ramp 
+------------------------------
+
+A ramp in an integer array nums is a pair (i, j) for which i < j and nums[i] <= nums[j]. The width of such a ramp is j - i.
+
+Given an integer array nums, return the maximum width of a ramp in nums. If there is no ramp in nums, return 0.
+
+ 
+
+Example 1:
+
+Input: nums = [6,0,8,2,1,5]
+Output: 4
+Explanation: The maximum width ramp is achieved at (i, j) = (1, 5): nums[1] = 0 and nums[5] = 5.
+
+Example 2:
+
+Input: nums = [9,8,1,0,1,9,4,0,4,1]
+Output: 7
+Explanation: The maximum width ramp is achieved at (i, j) = (2, 9): nums[2] = 1 and nums[9] = 1.
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 5 * 104
+
+- 0 <= nums[i] <= 5 * 104
+
+------------------------------
+961. N-Repeated Element in Size 2N Array 
+------------------------------
+
+You are given an integer array nums with the following properties:
+
+- nums.length == 2 * n.
+
+- nums contains n + 1 unique values, n of which occur exactly once in the array.
+
+- Exactly one element of nums is repeated n times.
+
+Return the element that is repeated n times.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,3]
+Output: 3
+
+Example 2:
+
+Input: nums = [2,1,2,5,3,2]
+Output: 2
+
+Example 3:
+
+Input: nums = [5,1,5,2,5,3,5,4]
+Output: 5
+
+ 
+
+Constraints:
+
+- 2 <= n <= 5000
+
+- nums.length == 2 * n
+
+- 0 <= nums[i] <= 104
+
+- nums contains n + 1 unique elements and one of them is repeated exactly n times.
+
+------------------------------
+960. Delete Columns to Make Sorted III 
+------------------------------
+
+You are given an array of n strings strs, all of the same length.
+
+We may choose any deletion indices, and we delete all the characters in those indices for each string.
+
+For example, if we have strs = ["abcdef","uvwxyz"] and deletion indices {0, 2, 3}, then the final array after deletions is ["bef", "vyz"].
+
+Suppose we chose a set of deletion indices answer such that after deletions, the final array has every string (row) in lexicographic order. (i.e., (strs[0][0] <= strs[0][1] <= ... <= strs[0][strs[0].length - 1]), and (strs[1][0] <= strs[1][1] <= ... <= strs[1][strs[1].length - 1]), and so on). Return the minimum possible value of answer.length.
+
+ 
+
+Example 1:
+
+Input: strs = ["babca","bbazb"]
+Output: 3
+Explanation: After deleting columns 0, 1, and 4, the final array is strs = ["bc", "az"].
+Both these rows are individually in lexicographic order (ie. strs[0][0] <= strs[0][1] and strs[1][0] <= strs[1][1]).
+Note that strs[0] > strs[1] - the array strs is not necessarily in lexicographic order.
+
+Example 2:
+
+Input: strs = ["edcba"]
+Output: 4
+Explanation: If we delete less than 4 columns, the only row will not be lexicographically sorted.
+
+Example 3:
+
+Input: strs = ["ghi","def","abc"]
+Output: 0
+Explanation: All rows are already lexicographically sorted.
+
+ 
+
+Constraints:
+
+- n == strs.length
+
+- 1 <= n <= 100
+
+- 1 <= strs[i].length <= 100
+
+- strs[i] consists of lowercase English letters.
+
+-
+
+------------------------------
+959. Regions Cut By Slashes 
+------------------------------
+
+An n x n grid is composed of 1 x 1 squares where each 1 x 1 square consists of a '/', '\', or blank space ' '. These characters divide the square into contiguous regions.
+
+Given the grid grid represented as a string array, return the number of regions.
+
+Note that backslash characters are escaped, so a '\' is represented as '\\'.
+
+ 
+
+Example 1:
+
+Input: grid = [" /","/ "]
+Output: 2
+
+Example 2:
+
+Input: grid = [" /","  "]
+Output: 1
+
+Example 3:
+
+Input: grid = ["/\\","\\/"]
+Output: 5
+Explanation: Recall that because \ characters are escaped, "\\/" refers to \/, and "/\\" refers to /\.
+
+ 
+
+Constraints:
+
+- n == grid.length == grid[i].length
+
+- 1 <= n <= 30
+
+- grid[i][j] is either '/', '\', or ' '.
+
+------------------------------
+958. Check Completeness of a Binary Tree 
+------------------------------
+
+Given the root of a binary tree, determine if it is a complete binary tree.
+
+In a complete binary tree, every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. It can have between 1 and 2h nodes inclusive at the last level h.
+
+ 
+
+Example 1:
+
+Input: root = [1,2,3,4,5,6]
+Output: true
+Explanation: Every level before the last is full (ie. levels with node-values {1} and {2, 3}), and all nodes in the last level ({4, 5, 6}) are as far left as possible.
+
+Example 2:
+
+Input: root = [1,2,3,4,5,null,7]
+Output: false
+Explanation: The node with value 7 isn't as far left as possible.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 100].
+
+- 1 <= Node.val <= 1000
+
+------------------------------
+957. Prison Cells After N Days 
+------------------------------
+
+There are 8 prison cells in a row and each cell is either occupied or vacant.
+
+Each day, whether the cell is occupied or vacant changes according to the following rules:
+
+- If a cell has two adjacent neighbors that are both occupied or both vacant, then the cell becomes occupied.
+
+- Otherwise, it becomes vacant.
+
+Note that because the prison is a row, the first and the last cells in the row can't have two adjacent neighbors.
+
+You are given an integer array cells where cells[i] == 1 if the ith cell is occupied and cells[i] == 0 if the ith cell is vacant, and you are given an integer n.
+
+Return the state of the prison after n days (i.e., n such changes described above).
+
+ 
+
+Example 1:
+
+Input: cells = [0,1,0,1,1,0,0,1], n = 7
+Output: [0,0,1,1,0,0,0,0]
+Explanation: The following table summarizes the state of the prison on each day:
+Day 0: [0, 1, 0, 1, 1, 0, 0, 1]
+Day 1: [0, 1, 1, 0, 0, 0, 0, 0]
+Day 2: [0, 0, 0, 0, 1, 1, 1, 0]
+Day 3: [0, 1, 1, 0, 0, 1, 0, 0]
+Day 4: [0, 0, 0, 0, 0, 1, 0, 0]
+Day 5: [0, 1, 1, 1, 0, 1, 0, 0]
+Day 6: [0, 0, 1, 0, 1, 1, 0, 0]
+Day 7: [0, 0, 1, 1, 0, 0, 0, 0]
+
+Example 2:
+
+Input: cells = [1,0,0,1,0,0,1,0], n = 1000000000
+Output: [0,0,1,1,1,1,1,0]
+
+ 
+
+Constraints:
+
+- cells.length == 8
+
+- cells[i] is either 0 or 1.
+
+- 1 <= n <= 109
+
+------------------------------
+956. Tallest Billboard 
+------------------------------
+
+You are installing a billboard and want it to have the largest height. The billboard will have two steel supports, one on each side. Each steel support must be an equal height.
+
+You are given a collection of rods that can be welded together. For example, if you have rods of lengths 1, 2, and 3, you can weld them together to make a support of length 6.
+
+Return the largest possible height of your billboard installation. If you cannot support the billboard, return 0.
+
+ 
+
+Example 1:
+
+Input: rods = [1,2,3,6]
+Output: 6
+Explanation: We have two disjoint subsets {1,2,3} and {6}, which have the same sum = 6.
+
+Example 2:
+
+Input: rods = [1,2,3,4,5,6]
+Output: 10
+Explanation: We have two disjoint subsets {2,3,5} and {4,6}, which have the same sum = 10.
+
+Example 3:
+
+Input: rods = [1,2]
+Output: 0
+Explanation: The billboard cannot be supported, so we return 0.
+
+ 
+
+Constraints:
+
+- 1 <= rods.length <= 20
+
+- 1 <= rods[i] <= 1000
+
+- sum(rods[i]) <= 5000
+
+------------------------------
+955. Delete Columns to Make Sorted II 
+------------------------------
+
+You are given an array of n strings strs, all of the same length.
+
+We may choose any deletion indices, and we delete all the characters in those indices for each string.
+
+For example, if we have strs = ["abcdef","uvwxyz"] and deletion indices {0, 2, 3}, then the final array after deletions is ["bef", "vyz"].
+
+Suppose we chose a set of deletion indices answer such that after deletions, the final array has its elements in lexicographic order (i.e., strs[0] <= strs[1] <= strs[2] <= ... <= strs[n - 1]). Return the minimum possible value of answer.length.
+
+ 
+
+Example 1:
+
+Input: strs = ["ca","bb","ac"]
+Output: 1
+Explanation: 
+After deleting the first column, strs = ["a", "b", "c"].
+Now strs is in lexicographic order (ie. strs[0] <= strs[1] <= strs[2]).
+We require at least 1 deletion since initially strs was not in lexicographic order, so the answer is 1.
+
+Example 2:
+
+Input: strs = ["xc","yb","za"]
+Output: 0
+Explanation: 
+strs is already in lexicographic order, so we do not need to delete anything.
+Note that the rows of strs are not necessarily in lexicographic order:
+i.e., it is NOT necessarily true that (strs[0][0] <= strs[0][1] <= ...)
+
+Example 3:
+
+Input: strs = ["zyx","wvu","tsr"]
+Output: 3
+Explanation: We have to delete every column.
+
+ 
+
+Constraints:
+
+- n == strs.length
+
+- 1 <= n <= 100
+
+- 1 <= strs[i].length <= 100
+
+- strs[i] consists of lowercase English letters.
+
+------------------------------
+954. Array of Doubled Pairs 
+------------------------------
+
+Given an integer array of even length arr, return true if it is possible to reorder arr such that arr[2 * i + 1] = 2 * arr[2 * i] for every 0 <= i < len(arr) / 2, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: arr = [3,1,3,6]
+Output: false
+
+Example 2:
+
+Input: arr = [2,1,2,6]
+Output: false
+
+Example 3:
+
+Input: arr = [4,-2,2,-4]
+Output: true
+Explanation: We can take two groups, [-2,-4] and [2,4] to form [-2,-4,2,4] or [2,4,-2,-4].
+
+ 
+
+Constraints:
+
+- 2 <= arr.length <= 3 * 104
+
+- arr.length is even.
+
+- -105 <= arr[i] <= 105
+
+------------------------------
+953. Verifying an Alien Dictionary 
+------------------------------
+
+In an alien language, surprisingly, they also use English lowercase letters, but possibly in a different order. The order of the alphabet is some permutation of lowercase letters.
+
+Given a sequence of words written in the alien language, and the order of the alphabet, return true if and only if the given words are sorted lexicographically in this alien language.
+
+ 
+
+Example 1:
+
+Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
+Output: true
+Explanation: As 'h' comes before 'l' in this language, then the sequence is sorted.
+
+Example 2:
+
+Input: words = ["word","world","row"], order = "worldabcefghijkmnpqstuvxyz"
+Output: false
+Explanation: As 'd' comes after 'l' in this language, then words[0] > words[1], hence the sequence is unsorted.
+
+Example 3:
+
+Input: words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
+Output: false
+Explanation: The first three characters "app" match, and the second string is shorter (in size.) According to lexicographical rules "apple" > "app", because 'l' > '∅', where '∅' is defined as the blank character which is less than any other character (More info).
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 100
+
+- 1 <= words[i].length <= 20
+
+- order.length == 26
+
+- All characters in words[i] and order are English lowercase letters.
+
+------------------------------
+952. Largest Component Size by Common Factor 
+------------------------------
+
+You are given an integer array of unique positive integers nums. Consider the following graph:
+
+- There are nums.length nodes, labeled nums[0] to nums[nums.length - 1],
+
+- There is an undirected edge between nums[i] and nums[j] if nums[i] and nums[j] share a common factor greater than 1.
+
+Return the size of the largest connected component in the graph.
+
+ 
+
+Example 1:
+
+Input: nums = [4,6,15,35]
+Output: 4
+
+Example 2:
+
+Input: nums = [20,50,9,63]
+Output: 2
+
+Example 3:
+
+Input: nums = [2,3,6,7,4,12,21,39]
+Output: 8
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 2 * 104
+
+- 1 <= nums[i] <= 105
+
+- All the values of nums are unique.
+
+------------------------------
+951. Flip Equivalent Binary Trees 
+------------------------------
+
+For a binary tree T, we can define a flip operation as follows: choose any node, and swap the left and right child subtrees.
+
+A binary tree X is flip equivalent to a binary tree Y if and only if we can make X equal to Y after some number of flip operations.
+
+Given the roots of two binary trees root1 and root2, return true if the two trees are flip equivalent or false otherwise.
+
+ 
+
+Example 1:
+
+Input: root1 = [1,2,3,4,5,6,null,null,null,7,8], root2 = [1,3,2,null,6,4,5,null,null,null,null,8,7]
+Output: true
+Explanation: We flipped at nodes with values 1, 3, and 5.
+
+Example 2:
+
+Input: root1 = [], root2 = []
+Output: true
+
+Example 3:
+
+Input: root1 = [], root2 = [1]
+Output: false
+
+ 
+
+Constraints:
+
+- The number of nodes in each tree is in the range [0, 100].
+
+- Each tree will have unique node values in the range [0, 99].
+
+------------------------------
+950. Reveal Cards In Increasing Order 
+------------------------------
+
+You are given an integer array deck. There is a deck of cards where every card has a unique integer. The integer on the ith card is deck[i].
+
+You can order the deck in any order you want. Initially, all the cards start face down (unrevealed) in one deck.
+
+You will do the following steps repeatedly until all cards are revealed:
+
+- Take the top card of the deck, reveal it, and take it out of the deck.
+
+- If there are still cards in the deck then put the next top card of the deck at the bottom of the deck.
+
+- If there are still unrevealed cards, go back to step 1. Otherwise, stop.
+
+Return an ordering of the deck that would reveal the cards in increasing order.
+
+Note that the first entry in the answer is considered to be the top of the deck.
+
+ 
+
+Example 1:
+
+Input: deck = [17,13,11,2,3,5,7]
+Output: [2,13,3,11,5,17,7]
+Explanation: 
+We get the deck in the order [17,13,11,2,3,5,7] (this order does not matter), and reorder it.
+After reordering, the deck starts as [2,13,3,11,5,17,7], where 2 is the top of the deck.
+We reveal 2, and move 13 to the bottom.  The deck is now [3,11,5,17,7,13].
+We reveal 3, and move 11 to the bottom.  The deck is now [5,17,7,13,11].
+We reveal 5, and move 17 to the bottom.  The deck is now [7,13,11,17].
+We reveal 7, and move 13 to the bottom.  The deck is now [11,17,13].
+We reveal 11, and move 17 to the bottom.  The deck is now [13,17].
+We reveal 13, and move 17 to the bottom.  The deck is now [17].
+We reveal 17.
+Since all the cards revealed are in increasing order, the answer is correct.
+
+Example 2:
+
+Input: deck = [1,1000]
+Output: [1,1000]
+
+ 
+
+Constraints:
+
+- 1 <= deck.length <= 1000
+
+- 1 <= deck[i] <= 106
+
+- All the values of deck are unique.
+
+------------------------------
+949. Largest Time for Given Digits 
+------------------------------
+
+Given an array arr of 4 digits, find the latest 24-hour time that can be made using each digit exactly once.
+
+24-hour times are formatted as "HH:MM", where HH is between 00 and 23, and MM is between 00 and 59. The earliest 24-hour time is 00:00, and the latest is 23:59.
+
+Return the latest 24-hour time in "HH:MM" format. If no valid time can be made, return an empty string.
+
+ 
+
+Example 1:
+
+Input: arr = [1,2,3,4]
+Output: "23:41"
+Explanation: The valid 24-hour times are "12:34", "12:43", "13:24", "13:42", "14:23", "14:32", "21:34", "21:43", "23:14", and "23:41". Of these times, "23:41" is the latest.
+
+Example 2:
+
+Input: arr = [5,5,5,5]
+Output: ""
+Explanation: There are no valid 24-hour times as "55:55" is not valid.
+
+ 
+
+Constraints:
+
+- arr.length == 4
+
+- 0 <= arr[i] <= 9
+
+------------------------------
+948. Bag of Tokens 
+------------------------------
+
+You start with an initial power of power, an initial score of 0, and a bag of tokens given as an integer array tokens, where each tokens[i] denotes the value of tokeni.
+
+Your goal is to maximize the total score by strategically playing these tokens. In one move, you can play an unplayed token in one of the two ways (but not both for the same token):
+
+- Face-up: If your current power is at least tokens[i], you may play tokeni, losing tokens[i] power and gaining 1 score.
+
+- Face-down: If your current score is at least 1, you may play tokeni, gaining tokens[i] power and losing 1 score.
+
+Return the maximum possible score you can achieve after playing any number of tokens.
+
+ 
+
+Example 1:
+
+Input: tokens = [100], power = 50
+
+Output: 0
+
+Explanation: Since your score is 0 initially, you cannot play the token face-down. You also cannot play it face-up since your power (50) is less than tokens[0] (100).
+
+Example 2:
+
+Input: tokens = [200,100], power = 150
+
+Output: 1
+
+Explanation: Play token1 (100) face-up, reducing your power to 50 and increasing your score to 1.
+
+There is no need to play token0, since you cannot play it face-up to add to your score. The maximum score achievable is 1.
+
+Example 3:
+
+Input: tokens = [100,200,300,400], power = 200
+
+Output: 2
+
+Explanation: Play the tokens in this order to get a score of 2:
+
+- Play token0 (100) face-up, reducing power to 100 and increasing score to 1.
+
+- Play token3 (400) face-down, increasing power to 500 and reducing score to 0.
+
+- Play token1 (200) face-up, reducing power to 300 and increasing score to 1.
+
+- Play token2 (300) face-up, reducing power to 0 and increasing score to 2.
+
+The maximum score achievable is 2.
+
+ 
+
+Constraints:
+
+- 0 <= tokens.length <= 1000
+
+- 0 <= tokens[i], power < 104
+
+------------------------------
+947. Most Stones Removed with Same Row or Column 
+------------------------------
+
+On a 2D plane, we place n stones at some integer coordinate points. Each coordinate point may have at most one stone.
+
+A stone can be removed if it shares either the same row or the same column as another stone that has not been removed.
+
+Given an array stones of length n where stones[i] = [xi, yi] represents the location of the ith stone, return the largest possible number of stones that can be removed.
+
+ 
+
+Example 1:
+
+Input: stones = [[0,0],[0,1],[1,0],[1,2],[2,1],[2,2]]
+Output: 5
+Explanation: One way to remove 5 stones is as follows:
+1. Remove stone [2,2] because it shares the same row as [2,1].
+2. Remove stone [2,1] because it shares the same column as [0,1].
+3. Remove stone [1,2] because it shares the same row as [1,0].
+4. Remove stone [1,0] because it shares the same column as [0,0].
+5. Remove stone [0,1] because it shares the same row as [0,0].
+Stone [0,0] cannot be removed since it does not share a row/column with another stone still on the plane.
+
+Example 2:
+
+Input: stones = [[0,0],[0,2],[1,1],[2,0],[2,2]]
+Output: 3
+Explanation: One way to make 3 moves is as follows:
+1. Remove stone [2,2] because it shares the same row as [2,0].
+2. Remove stone [2,0] because it shares the same column as [0,0].
+3. Remove stone [0,2] because it shares the same row as [0,0].
+Stones [0,0] and [1,1] cannot be removed since they do not share a row/column with another stone still on the plane.
+
+Example 3:
+
+Input: stones = [[0,0]]
+Output: 0
+Explanation: [0,0] is the only stone on the plane, so you cannot remove it.
+
+ 
+
+Constraints:
+
+- 1 <= stones.length <= 1000
+
+- 0 <= xi, yi <= 104
+
+- No two stones are at the same coordinate point.
+
+------------------------------
+946. Validate Stack Sequences 
+------------------------------
+
+Given two integer arrays pushed and popped each with distinct values, return true if this could have been the result of a sequence of push and pop operations on an initially empty stack, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+Output: true
+Explanation: We might do the following sequence:
+push(1), push(2), push(3), push(4),
+pop() -> 4,
+push(5),
+pop() -> 5, pop() -> 3, pop() -> 2, pop() -> 1
+
+Example 2:
+
+Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+Output: false
+Explanation: 1 cannot be popped before 2.
+
+ 
+
+Constraints:
+
+- 1 <= pushed.length <= 1000
+
+- 0 <= pushed[i] <= 1000
+
+- All the elements of pushed are unique.
+
+- popped.length == pushed.length
+
+- popped is a permutation of pushed.
+
+------------------------------
+945. Minimum Increment to Make Array Unique 
+------------------------------
+
+You are given an integer array nums. In one move, you can pick an index i where 0 <= i < nums.length and increment nums[i] by 1.
+
+Return the minimum number of moves to make every value in nums unique.
+
+The test cases are generated so that the answer fits in a 32-bit integer.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,2]
+Output: 1
+Explanation: After 1 move, the array could be [1, 2, 3].
+
+Example 2:
+
+Input: nums = [3,2,1,2,1,7]
+Output: 6
+Explanation: After 6 moves, the array could be [3, 4, 1, 2, 5, 7].
+It can be shown that it is impossible for the array to have all unique values with 5 or less moves.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 0 <= nums[i] <= 105
+
+------------------------------
+944. Delete Columns to Make Sorted 
+------------------------------
+
+You are given an array of n strings strs, all of the same length.
+
+The strings can be arranged such that there is one on each line, making a grid.
+
+- For example, strs = ["abc", "bce", "cae"] can be arranged as follows:
+
+abc
+bce
+cae
+
+You want to delete the columns that are not sorted lexicographically. In the above example (0-indexed), columns 0 ('a', 'b', 'c') and 2 ('c', 'e', 'e') are sorted, while column 1 ('b', 'c', 'a') is not, so you would delete column 1.
+
+Return the number of columns that you will delete.
+
+ 
+
+Example 1:
+
+Input: strs = ["cba","daf","ghi"]
+Output: 1
+Explanation: The grid looks as follows:
+  cba
+  daf
+  ghi
+Columns 0 and 2 are sorted, but column 1 is not, so you only need to delete 1 column.
+
+Example 2:
+
+Input: strs = ["a","b"]
+Output: 0
+Explanation: The grid looks as follows:
+  a
+  b
+Column 0 is the only column and is sorted, so you will not delete any columns.
+
+Example 3:
+
+Input: strs = ["zyx","wvu","tsr"]
+Output: 3
+Explanation: The grid looks as follows:
+  zyx
+  wvu
+  tsr
+All 3 columns are not sorted, so you will delete all 3.
+
+ 
+
+Constraints:
+
+- n == strs.length
+
+- 1 <= n <= 100
+
+- 1 <= strs[i].length <= 1000
+
+- strs[i] consists of lowercase English letters.
+
+------------------------------
+943. Find the Shortest Superstring 
+------------------------------
+
+Given an array of strings words, return the smallest string that contains each string in words as a substring. If there are multiple valid strings of the smallest length, return any of them.
+
+You may assume that no string in words is a substring of another string in words.
+
+ 
+
+Example 1:
+
+Input: words = ["alex","loves","leetcode"]
+Output: "alexlovesleetcode"
+Explanation: All permutations of "alex","loves","leetcode" would also be accepted.
+
+Example 2:
+
+Input: words = ["catg","ctaagt","gcta","ttca","atgcatc"]
+Output: "gctaagttcatgcatc"
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 12
+
+- 1 <= words[i].length <= 20
+
+- words[i] consists of lowercase English letters.
+
+- All the strings of words are unique.
+
+------------------------------
+942. DI String Match 
+------------------------------
+
+A permutation perm of n + 1 integers of all the integers in the range [0, n] can be represented as a string s of length n where:
+
+- s[i] == 'I' if perm[i] < perm[i + 1], and
+
+- s[i] == 'D' if perm[i] > perm[i + 1].
+
+Given a string s, reconstruct the permutation perm and return it. If there are multiple valid permutations perm, return any of them.
+
+ 
+
+Example 1:
+
+Input: s = "IDID"
+Output: [0,4,1,3,2]
+
+Example 2:
+
+Input: s = "III"
+Output: [0,1,2,3]
+
+Example 3:
+
+Input: s = "DDI"
+Output: [3,2,0,1]
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s[i] is either 'I' or 'D'.
+
+------------------------------
+941. Valid Mountain Array 
+------------------------------
+
+Given an array of integers arr, return true if and only if it is a valid mountain array.
+
+Recall that arr is a mountain array if and only if:
+
+- arr.length >= 3
+
+- There exists some i with 0 < i < arr.length - 1 such that:
+	
+
+- arr[0] < arr[1] < ... < arr[i - 1] < arr[i] 
+
+- arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+
+ 
+
+Example 1:
+
+Input: arr = [2,1]
+Output: false
+
+Example 2:
+
+Input: arr = [3,5,5]
+Output: false
+
+Example 3:
+
+Input: arr = [0,3,2,1]
+Output: true
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 104
+
+- 0 <= arr[i] <= 104
+
+------------------------------
+940. Distinct Subsequences II 
+------------------------------
+
+Given a string s, return the number of distinct non-empty subsequences of s. Since the answer may be very large, return it modulo 109 + 7.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not.
+
+ 
+
+Example 1:
+
+Input: s = "abc"
+Output: 7
+Explanation: The 7 distinct subsequences are "a", "b", "c", "ab", "ac", "bc", and "abc".
+
+Example 2:
+
+Input: s = "aba"
+Output: 6
+Explanation: The 6 distinct subsequences are "a", "b", "ab", "aa", "ba", and "aba".
+
+Example 3:
+
+Input: s = "aaa"
+Output: 3
+Explanation: The 3 distinct subsequences are "a", "aa" and "aaa".
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 2000
+
+- s consists of lowercase English letters.
+
+------------------------------
+939. Minimum Area Rectangle 
+------------------------------
+
+You are given an array of points in the X-Y plane points where points[i] = [xi, yi].
+
+Return the minimum area of a rectangle formed from these points, with sides parallel to the X and Y axes. If there is not any such rectangle, return 0.
+
+ 
+
+Example 1:
+
+Input: points = [[1,1],[1,3],[3,1],[3,3],[2,2]]
+Output: 4
+
+Example 2:
+
+Input: points = [[1,1],[1,3],[3,1],[3,3],[4,1],[4,3]]
+Output: 2
+
+ 
+
+Constraints:
+
+- 1 <= points.length <= 500
+
+- points[i].length == 2
+
+- 0 <= xi, yi <= 4 * 104
+
+- All the given points are unique.
+
+------------------------------
+938. Range Sum of BST 
+------------------------------
+
+Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a value in the inclusive range [low, high].
+
+ 
+
+Example 1:
+
+Input: root = [10,5,15,3,7,null,18], low = 7, high = 15
+Output: 32
+Explanation: Nodes 7, 10, and 15 are in the range [7, 15]. 7 + 10 + 15 = 32.
+
+Example 2:
+
+Input: root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+Output: 23
+Explanation: Nodes 6, 7, and 10 are in the range [6, 10]. 6 + 7 + 10 = 23.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 2 * 104].
+
+- 1 <= Node.val <= 105
+
+- 1 <= low <= high <= 105
+
+- All Node.val are unique.
+
+------------------------------
+937. Reorder Data in Log Files 
+------------------------------
+
+You are given an array of logs. Each log is a space-delimited string of words, where the first word is the identifier.
+
+There are two types of logs:
+
+- Letter-logs: All words (except the identifier) consist of lowercase English letters.
+
+- Digit-logs: All words (except the identifier) consist of digits.
+
+Reorder these logs so that:
+
+- The letter-logs come before all digit-logs.
+
+- The letter-logs are sorted lexicographically by their contents. If their contents are the same, then sort them lexicographically by their identifiers.
+
+- The digit-logs maintain their relative ordering.
+
+Return the final order of the logs.
+
+ 
+
+Example 1:
+
+Input: logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
+Output: ["let1 art can","let3 art zero","let2 own kit dig","dig1 8 1 5 1","dig2 3 6"]
+Explanation:
+The letter-log contents are all different, so their ordering is "art can", "art zero", "own kit dig".
+The digit-logs have a relative order of "dig1 8 1 5 1", "dig2 3 6".
+
+Example 2:
+
+Input: logs = ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"]
+Output: ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
+
+ 
+
+Constraints:
+
+- 1 <= logs.length <= 100
+
+- 3 <= logs[i].length <= 100
+
+- All the tokens of logs[i] are separated by a single space.
+
+- logs[i] is guaranteed to have an identifier and at least one word after the identifier.
+
+------------------------------
+936. Stamping The Sequence 
+------------------------------
+
+You are given two strings stamp and target. Initially, there is a string s of length target.length with all s[i] == '?'.
+
+In one turn, you can place stamp over s and replace every letter in the s with the corresponding letter from stamp.
+
+- For example, if stamp = "abc" and target = "abcba", then s is "?????" initially. In one turn you can:
+
+	
+
+- place stamp at index 0 of s to obtain "abc??",
+
+- place stamp at index 1 of s to obtain "?abc?", or
+
+- place stamp at index 2 of s to obtain "??abc".
+
+	Note that stamp must be fully contained in the boundaries of s in order to stamp (i.e., you cannot place stamp at index 3 of s).
+
+We want to convert s to target using at most 10 * target.length turns.
+
+Return an array of the index of the left-most letter being stamped at each turn. If we cannot obtain target from s within 10 * target.length turns, return an empty array.
+
+ 
+
+Example 1:
+
+Input: stamp = "abc", target = "ababc"
+Output: [0,2]
+Explanation: Initially s = "?????".
+- Place stamp at index 0 to get "abc??".
+- Place stamp at index 2 to get "ababc".
+[1,0,2] would also be accepted as an answer, as well as some other answers.
+
+Example 2:
+
+Input: stamp = "abca", target = "aabcaca"
+Output: [3,0,1]
+Explanation: Initially s = "???????".
+- Place stamp at index 3 to get "???abca".
+- Place stamp at index 0 to get "abcabca".
+- Place stamp at index 1 to get "aabcaca".
+
+ 
+
+Constraints:
+
+- 1 <= stamp.length <= target.length <= 1000
+
+- stamp and target consist of lowercase English letters.
+
+------------------------------
+935. Knight Dialer 
+------------------------------
+
+The chess knight has a unique movement, it may move two squares vertically and one square horizontally, or two squares horizontally and one square vertically (with both forming the shape of an L). The possible movements of chess knight are shown in this diagram:
+
+A chess knight can move as indicated in the chess diagram below:
+
+We have a chess knight and a phone pad as shown below, the knight can only stand on a numeric cell (i.e. blue cell).
+
+Given an integer n, return how many distinct phone numbers of length n we can dial.
+
+You are allowed to place the knight on any numeric cell initially and then you should perform n - 1 jumps to dial a number of length n. All jumps should be valid knight jumps.
+
+As the answer may be very large, return the answer modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: n = 1
+Output: 10
+Explanation: We need to dial a number of length 1, so placing the knight over any numeric cell of the 10 cells is sufficient.
+
+Example 2:
+
+Input: n = 2
+Output: 20
+Explanation: All the valid number we can dial are [04, 06, 16, 18, 27, 29, 34, 38, 40, 43, 49, 60, 61, 67, 72, 76, 81, 83, 92, 94]
+
+Example 3:
+
+Input: n = 3131
+Output: 136006598
+Explanation: Please take care of the mod.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 5000
+
+------------------------------
+934. Shortest Bridge 
+------------------------------
+
+You are given an n x n binary matrix grid where 1 represents land and 0 represents water.
+
+An island is a 4-directionally connected group of 1's not connected to any other 1's. There are exactly two islands in grid.
+
+You may change 0's to 1's to connect the two islands to form one island.
+
+Return the smallest number of 0's you must flip to connect the two islands.
+
+ 
+
+Example 1:
+
+Input: grid = [[0,1],[1,0]]
+Output: 1
+
+Example 2:
+
+Input: grid = [[0,1,0],[0,0,0],[0,0,1]]
+Output: 2
+
+Example 3:
+
+Input: grid = [[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
+Output: 1
+
+ 
+
+Constraints:
+
+- n == grid.length == grid[i].length
+
+- 2 <= n <= 100
+
+- grid[i][j] is either 0 or 1.
+
+- There are exactly two islands in grid.
+
+------------------------------
+933. Number of Recent Calls 
+------------------------------
+
+You have a RecentCounter class which counts the number of recent requests within a certain time frame.
+
+Implement the RecentCounter class:
+
+- RecentCounter() Initializes the counter with zero recent requests.
+
+- int ping(int t) Adds a new request at time t, where t represents some time in milliseconds, and returns the number of requests that has happened in the past 3000 milliseconds (including the new request). Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
+
+It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
+
+ 
+
+Example 1:
+
+Input
+["RecentCounter", "ping", "ping", "ping", "ping"]
+[[], [1], [100], [3001], [3002]]
+Output
+[null, 1, 2, 3, 3]
+
+Explanation
+RecentCounter recentCounter = new RecentCounter();
+recentCounter.ping(1);     // requests = [1], range is [-2999,1], return 1
+recentCounter.ping(100);   // requests = [1, 100], range is [-2900,100], return 2
+recentCounter.ping(3001);  // requests = [1, 100, 3001], range is [1,3001], return 3
+recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002], range is [2,3002], return 3
+
+ 
+
+Constraints:
+
+- 1 <= t <= 109
+
+- Each test case will call ping with strictly increasing values of t.
+
+- At most 104 calls will be made to ping.
+
+------------------------------
+932. Beautiful Array 
+------------------------------
+
+An array nums of length n is beautiful if:
+
+- nums is a permutation of the integers in the range [1, n].
+
+- For every 0 <= i < j < n, there is no index k with i < k < j where 2 * nums[k] == nums[i] + nums[j].
+
+Given the integer n, return any beautiful array nums of length n. There will be at least one valid answer for the given n.
+
+ 
+
+Example 1:
+
+Input: n = 4
+Output: [2,1,4,3]
+
+Example 2:
+
+Input: n = 5
+Output: [3,1,2,5,4]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 1000
+
+------------------------------
+931. Minimum Falling Path Sum 
+------------------------------
+
+Given an n x n array of integers matrix, return the minimum sum of any falling path through matrix.
+
+A falling path starts at any element in the first row and chooses the element in the next row that is either directly below or diagonally left/right. Specifically, the next element from position (row, col) will be (row + 1, col - 1), (row + 1, col), or (row + 1, col + 1).
+
+ 
+
+Example 1:
+
+Input: matrix = [[2,1,3],[6,5,4],[7,8,9]]
+Output: 13
+Explanation: There are two falling paths with a minimum sum as shown.
+
+Example 2:
+
+Input: matrix = [[-19,57],[-40,-5]]
+Output: -59
+Explanation: The falling path with a minimum sum is shown.
+
+ 
+
+Constraints:
+
+- n == matrix.length == matrix[i].length
+
+- 1 <= n <= 100
+
+- -100 <= matrix[i][j] <= 100
+
+------------------------------
+930. Binary Subarrays With Sum 
+------------------------------
+
+Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum goal.
+
+A subarray is a contiguous part of the array.
+
+ 
+
+Example 1:
+
+Input: nums = [1,0,1,0,1], goal = 2
+Output: 4
+Explanation: The 4 subarrays are bolded and underlined below:
+[1,0,1,0,1]
+[1,0,1,0,1]
+[1,0,1,0,1]
+[1,0,1,0,1]
+
+Example 2:
+
+Input: nums = [0,0,0,0,0], goal = 0
+Output: 15
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 3 * 104
+
+- nums[i] is either 0 or 1.
+
+- 0 <= goal <= nums.length
+
+------------------------------
+929. Unique Email Addresses 
+------------------------------
+
+Every valid email consists of a local name and a domain name, separated by the '@' sign. Besides lowercase letters, the email may contain one or more '.' or '+'.
+
+- For example, in "alice@leetcode.com", "alice" is the local name, and "leetcode.com" is the domain name.
+
+If you add periods '.' between some characters in the local name part of an email address, mail sent there will be forwarded to the same address without dots in the local name. Note that this rule does not apply to domain names.
+
+- For example, "alice.z@leetcode.com" and "alicez@leetcode.com" forward to the same email address.
+
+If you add a plus '+' in the local name, everything after the first plus sign will be ignored. This allows certain emails to be filtered. Note that this rule does not apply to domain names.
+
+- For example, "m.y+name@email.com" will be forwarded to "my@email.com".
+
+It is possible to use both of these rules at the same time.
+
+Given an array of strings emails where we send one email to each emails[i], return the number of different addresses that actually receive mails.
+
+ 
+
+Example 1:
+
+Input: emails = ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
+Output: 2
+Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails.
+
+Example 2:
+
+Input: emails = ["a@leetcode.com","b@leetcode.com","c@leetcode.com"]
+Output: 3
+
+ 
+
+Constraints:
+
+- 1 <= emails.length <= 100
+
+- 1 <= emails[i].length <= 100
+
+- emails[i] consist of lowercase English letters, '+', '.' and '@'.
+
+- Each emails[i] contains exactly one '@' character.
+
+- All local and domain names are non-empty.
+
+- Local names do not start with a '+' character.
+
+- Domain names end with the ".com" suffix.
+
+- Domain names must contain at least one character before ".com" suffix.
+
+------------------------------
+928. Minimize Malware Spread II 
+------------------------------
+
+You are given a network of n nodes represented as an n x n adjacency matrix graph, where the ith node is directly connected to the jth node if graph[i][j] == 1.
+
+Some nodes initial are initially infected by malware. Whenever two nodes are directly connected, and at least one of those two nodes is infected by malware, both nodes will be infected by malware. This spread of malware will continue until no more nodes can be infected in this manner.
+
+Suppose M(initial) is the final number of nodes infected with malware in the entire network after the spread of malware stops.
+
+We will remove exactly one node from initial, completely removing it and any connections from this node to any other node.
+
+Return the node that, if removed, would minimize M(initial). If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
+
+ 
+
+Example 1:
+
+Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
+Output: 0
+
+Example 2:
+
+Input: graph = [[1,1,0],[1,1,1],[0,1,1]], initial = [0,1]
+Output: 1
+
+Example 3:
+
+Input: graph = [[1,1,0,0],[1,1,1,0],[0,1,1,1],[0,0,1,1]], initial = [0,1]
+Output: 1
+
+ 
+
+Constraints:
+
+- n == graph.length
+
+- n == graph[i].length
+
+- 2 <= n <= 300
+
+- graph[i][j] is 0 or 1.
+
+- graph[i][j] == graph[j][i]
+
+- graph[i][i] == 1
+
+- 1 <= initial.length < n
+
+- 0 <= initial[i] <= n - 1
+
+- All the integers in initial are unique.
+
+------------------------------
+927. Three Equal Parts 
+------------------------------
+
+You are given an array arr which consists of only zeros and ones, divide the array into three non-empty parts such that all of these parts represent the same binary value.
+
+If it is possible, return any [i, j] with i + 1 < j, such that:
+
+- arr[0], arr[1], ..., arr[i] is the first part,
+
+- arr[i + 1], arr[i + 2], ..., arr[j - 1] is the second part, and
+
+- arr[j], arr[j + 1], ..., arr[arr.length - 1] is the third part.
+
+- All three parts have equal binary values.
+
+If it is not possible, return [-1, -1].
+
+Note that the entire part is used when considering what binary value it represents. For example, [1,1,0] represents 6 in decimal, not 3. Also, leading zeros are allowed, so [0,1,1] and [1,1] represent the same value.
+
+ 
+
+Example 1:
+
+Input: arr = [1,0,1,0,1]
+Output: [0,3]
+
+Example 2:
+
+Input: arr = [1,1,0,1,1]
+Output: [-1,-1]
+
+Example 3:
+
+Input: arr = [1,1,0,0,1]
+Output: [0,2]
+
+ 
+
+Constraints:
+
+- 3 <= arr.length <= 3 * 104
+
+- arr[i] is 0 or 1
+
+------------------------------
+926. Flip String to Monotone Increasing 
+------------------------------
+
+A binary string is monotone increasing if it consists of some number of 0's (possibly none), followed by some number of 1's (also possibly none).
+
+You are given a binary string s. You can flip s[i] changing it from 0 to 1 or from 1 to 0.
+
+Return the minimum number of flips to make s monotone increasing.
+
+ 
+
+Example 1:
+
+Input: s = "00110"
+Output: 1
+Explanation: We flip the last digit to get 00111.
+
+Example 2:
+
+Input: s = "010110"
+Output: 2
+Explanation: We flip to get 011111, or alternatively 000111.
+
+Example 3:
+
+Input: s = "00011000"
+Output: 2
+Explanation: We flip to get 00000000.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s[i] is either '0' or '1'.
+
+------------------------------
+925. Long Pressed Name 
+------------------------------
+
+Your friend is typing his name into a keyboard. Sometimes, when typing a character c, the key might get long pressed, and the character will be typed 1 or more times.
+
+You examine the typed characters of the keyboard. Return True if it is possible that it was your friends name, with some characters (possibly none) being long pressed.
+
+ 
+
+Example 1:
+
+Input: name = "alex", typed = "aaleex"
+Output: true
+Explanation: 'a' and 'e' in 'alex' were long pressed.
+
+Example 2:
+
+Input: name = "saeed", typed = "ssaaedd"
+Output: false
+Explanation: 'e' must have been pressed twice, but it was not in the typed output.
+
+ 
+
+Constraints:
+
+- 1 <= name.length, typed.length <= 1000
+
+- name and typed consist of only lowercase English letters.
+
+------------------------------
+924. Minimize Malware Spread 
+------------------------------
+
+You are given a network of n nodes represented as an n x n adjacency matrix graph, where the ith node is directly connected to the jth node if graph[i][j] == 1.
+
+Some nodes initial are initially infected by malware. Whenever two nodes are directly connected, and at least one of those two nodes is infected by malware, both nodes will be infected by malware. This spread of malware will continue until no more nodes can be infected in this manner.
+
+Suppose M(initial) is the final number of nodes infected with malware in the entire network after the spread of malware stops. We will remove exactly one node from initial.
+
+Return the node that, if removed, would minimize M(initial). If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
+
+Note that if a node was removed from the initial list of infected nodes, it might still be infected later due to the malware spread.
+
+ 
+
+Example 1:
+
+Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
+Output: 0
+
+Example 2:
+
+Input: graph = [[1,0,0],[0,1,0],[0,0,1]], initial = [0,2]
+Output: 0
+
+Example 3:
+
+Input: graph = [[1,1,1],[1,1,1],[1,1,1]], initial = [1,2]
+Output: 1
+
+ 
+
+Constraints:
+
+- n == graph.length
+
+- n == graph[i].length
+
+- 2 <= n <= 300
+
+- graph[i][j] is 0 or 1.
+
+- graph[i][j] == graph[j][i]
+
+- graph[i][i] == 1
+
+- 1 <= initial.length <= n
+
+- 0 <= initial[i] <= n - 1
+
+- All the integers in initial are unique.
+
+------------------------------
+923. 3Sum With Multiplicity 
+------------------------------
+
+Given an integer array arr, and an integer target, return the number of tuples i, j, k such that i < j < k and arr[i] + arr[j] + arr[k] == target.
+
+As the answer can be very large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: arr = [1,1,2,2,3,3,4,4,5,5], target = 8
+Output: 20
+Explanation: 
+Enumerating by the values (arr[i], arr[j], arr[k]):
+(1, 2, 5) occurs 8 times;
+(1, 3, 4) occurs 8 times;
+(2, 2, 4) occurs 2 times;
+(2, 3, 3) occurs 2 times.
+
+Example 2:
+
+Input: arr = [1,1,2,2,2,2], target = 5
+Output: 12
+Explanation: 
+arr[i] = 1, arr[j] = arr[k] = 2 occurs 12 times:
+We choose one 1 from [1,1] in 2 ways,
+and two 2s from [2,2,2,2] in 6 ways.
+
+Example 3:
+
+Input: arr = [2,1,3], target = 6
+Output: 1
+Explanation: (1, 2, 3) occured one time in the array so we return 1.
+
+ 
+
+Constraints:
+
+- 3 <= arr.length <= 3000
+
+- 0 <= arr[i] <= 100
+
+- 0 <= target <= 300
+
+------------------------------
+922. Sort Array By Parity II 
+------------------------------
+
+Given an array of integers nums, half of the integers in nums are odd, and the other half are even.
+
+Sort the array so that whenever nums[i] is odd, i is odd, and whenever nums[i] is even, i is even.
+
+Return any answer array that satisfies this condition.
+
+ 
+
+Example 1:
+
+Input: nums = [4,2,5,7]
+Output: [4,5,2,7]
+Explanation: [4,7,2,5], [2,5,4,7], [2,7,4,5] would also have been accepted.
+
+Example 2:
+
+Input: nums = [2,3]
+Output: [2,3]
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 2 * 104
+
+- nums.length is even.
+
+- Half of the integers in nums are even.
+
+- 0 <= nums[i] <= 1000
+
+ 
+
+Follow Up: Could you solve it in-place?
+
+------------------------------
+921. Minimum Add to Make Parentheses Valid 
+------------------------------
+
+A parentheses string is valid if and only if:
+
+- It is the empty string,
+
+- It can be written as AB (A concatenated with B), where A and B are valid strings, or
+
+- It can be written as (A), where A is a valid string.
+
+You are given a parentheses string s. In one move, you can insert a parenthesis at any position of the string.
+
+- For example, if s = "()))", you can insert an opening parenthesis to be "(()))" or a closing parenthesis to be "())))".
+
+Return the minimum number of moves required to make s valid.
+
+ 
+
+Example 1:
+
+Input: s = "())"
+Output: 1
+
+Example 2:
+
+Input: s = "((("
+Output: 3
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 1000
+
+- s[i] is either '(' or ')'.
+
+------------------------------
+920. Number of Music Playlists 
+------------------------------
+
+Your music player contains n different songs. You want to listen to goal songs (not necessarily different) during your trip. To avoid boredom, you will create a playlist so that:
+
+- Every song is played at least once.
+
+- A song can only be played again only if k other songs have been played.
+
+Given n, goal, and k, return the number of possible playlists that you can create. Since the answer can be very large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: n = 3, goal = 3, k = 1
+Output: 6
+Explanation: There are 6 possible playlists: [1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], and [3, 2, 1].
+
+Example 2:
+
+Input: n = 2, goal = 3, k = 0
+Output: 6
+Explanation: There are 6 possible playlists: [1, 1, 2], [1, 2, 1], [2, 1, 1], [2, 2, 1], [2, 1, 2], and [1, 2, 2].
+
+Example 3:
+
+Input: n = 2, goal = 3, k = 1
+Output: 2
+Explanation: There are 2 possible playlists: [1, 2, 1] and [2, 1, 2].
+
+ 
+
+Constraints:
+
+- 0 <= k < n <= goal <= 100
+
+------------------------------
+919. Complete Binary Tree Inserter 
+------------------------------
+
+A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.
+
+Design an algorithm to insert a new node to a complete binary tree keeping it complete after the insertion.
+
+Implement the CBTInserter class:
+
+- CBTInserter(TreeNode root) Initializes the data structure with the root of the complete binary tree.
+
+- int insert(int v) Inserts a TreeNode into the tree with value Node.val == val so that the tree remains complete, and returns the value of the parent of the inserted TreeNode.
+
+- TreeNode get_root() Returns the root node of the tree.
+
+ 
+
+Example 1:
+
+Input
+["CBTInserter", "insert", "insert", "get_root"]
+[[[1, 2]], [3], [4], []]
+Output
+[null, 1, 2, [1, 2, 3, 4]]
+
+Explanation
+CBTInserter cBTInserter = new CBTInserter([1, 2]);
+cBTInserter.insert(3);  // return 1
+cBTInserter.insert(4);  // return 2
+cBTInserter.get_root(); // return [1, 2, 3, 4]
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree will be in the range [1, 1000].
+
+- 0 <= Node.val <= 5000
+
+- root is a complete binary tree.
+
+- 0 <= val <= 5000
+
+- At most 104 calls will be made to insert and get_root.
+
+------------------------------
+918. Maximum Sum Circular Subarray 
+------------------------------
+
+Given a circular integer array nums of length n, return the maximum possible sum of a non-empty subarray of nums.
+
+A circular array means the end of the array connects to the beginning of the array. Formally, the next element of nums[i] is nums[(i + 1) % n] and the previous element of nums[i] is nums[(i - 1 + n) % n].
+
+A subarray may only include each element of the fixed buffer nums at most once. Formally, for a subarray nums[i], nums[i + 1], ..., nums[j], there does not exist i <= k1, k2 <= j with k1 % n == k2 % n.
+
+ 
+
+Example 1:
+
+Input: nums = [1,-2,3,-2]
+Output: 3
+Explanation: Subarray [3] has maximum sum 3.
+
+Example 2:
+
+Input: nums = [5,-3,5]
+Output: 10
+Explanation: Subarray [5,5] has maximum sum 5 + 5 = 10.
+
+Example 3:
+
+Input: nums = [-3,-2,-3]
+Output: -2
+Explanation: Subarray [-2] has maximum sum -2.
+
+ 
+
+Constraints:
+
+- n == nums.length
+
+- 1 <= n <= 3 * 104
+
+- -3 * 104 <= nums[i] <= 3 * 104
+
+------------------------------
+917. Reverse Only Letters 
+------------------------------
+
+Given a string s, reverse the string according to the following rules:
+
+- All the characters that are not English letters remain in the same position.
+
+- All the English letters (lowercase or uppercase) should be reversed.
+
+Return s after reversing it.
+
+ 
+
+Example 1:
+
+Input: s = "ab-cd"
+Output: "dc-ba"
+
+Example 2:
+
+Input: s = "a-bC-dEf-ghIj"
+Output: "j-Ih-gfE-dCba"
+
+Example 3:
+
+Input: s = "Test1ng-Leet=code-Q!"
+Output: "Qedo1ct-eeLg=ntse-T!"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 100
+
+- s consists of characters with ASCII values in the range [33, 122].
+
+- s does not contain '\"' or '\\'.
+
+------------------------------
+916. Word Subsets 
+------------------------------
+
+You are given two string arrays words1 and words2.
+
+A string b is a subset of string a if every letter in b occurs in a including multiplicity.
+
+- For example, "wrr" is a subset of "warrior" but is not a subset of "world".
+
+A string a from words1 is universal if for every string b in words2, b is a subset of a.
+
+Return an array of all the universal strings in words1. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: words1 = ["amazon","apple","facebook","google","leetcode"], words2 = ["e","o"]
+
+Output: ["facebook","google","leetcode"]
+
+Example 2:
+
+Input: words1 = ["amazon","apple","facebook","google","leetcode"], words2 = ["lc","eo"]
+
+Output: ["leetcode"]
+
+Example 3:
+
+Input: words1 = ["acaac","cccbb","aacbb","caacc","bcbbb"], words2 = ["c","cc","b"]
+
+Output: ["cccbb"]
+
+ 
+
+Constraints:
+
+- 1 <= words1.length, words2.length <= 104
+
+- 1 <= words1[i].length, words2[i].length <= 10
+
+- words1[i] and words2[i] consist only of lowercase English letters.
+
+- All the strings of words1 are unique.
+
+------------------------------
+915. Partition Array into Disjoint Intervals 
+------------------------------
+
+Given an integer array nums, partition it into two (contiguous) subarrays left and right so that:
+
+- Every element in left is less than or equal to every element in right.
+
+- left and right are non-empty.
+
+- left has the smallest possible size.
+
+Return the length of left after such a partitioning.
+
+Test cases are generated such that partitioning exists.
+
+ 
+
+Example 1:
+
+Input: nums = [5,0,3,8,6]
+Output: 3
+Explanation: left = [5,0,3], right = [8,6]
+
+Example 2:
+
+Input: nums = [1,1,1,0,6,12]
+Output: 4
+Explanation: left = [1,1,1,0], right = [6,12]
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 105
+
+- 0 <= nums[i] <= 106
+
+- There is at least one valid answer for the given input.
+
+------------------------------
+914. X of a Kind in a Deck of Cards 
+------------------------------
+
+You are given an integer array deck where deck[i] represents the number written on the ith card.
+
+Partition the cards into one or more groups such that:
+
+- Each group has exactly x cards where x > 1, and
+
+- All the cards in one group have the same integer written on them.
+
+Return true if such partition is possible, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: deck = [1,2,3,4,4,3,2,1]
+Output: true
+Explanation: Possible partition [1,1],[2,2],[3,3],[4,4].
+
+Example 2:
+
+Input: deck = [1,1,1,2,2,2,3,3]
+Output: false
+Explanation: No possible partition.
+
+ 
+
+Constraints:
+
+- 1 <= deck.length <= 104
+
+- 0 <= deck[i] < 104
+

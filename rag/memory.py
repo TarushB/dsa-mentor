@@ -1,16 +1,17 @@
 """
-Memory Module — har interaction ke baad session save karo + user profile update karo.
+Memory Module — session write-back and user profile updates after each interaction.
+Single-user: reads/writes USER_DATA_PATH directly, no username keying.
 """
 import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from langchain_core.documents import Document
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from config import PROFILE_PATH, CONFIDENCE_LOW_MAX, CONFIDENCE_MED_MAX
+from config import CONFIDENCE_LOW_MAX, CONFIDENCE_MED_MAX, USER_DATA_PATH
 
 
 def format_session(
@@ -21,20 +22,7 @@ def format_session(
     outcome: str,
     key_learning: str = "",
 ) -> str:
-    """
-    Session ko text block mein format karo FAISS indexing ke liye.
-
-    Args:
-        problem_id: problem ka slug
-        problem_title: readable title
-        patterns: konse algorithmic patterns use hue
-        conversation_turns: {"role": ..., "content": ...} ki list
-        outcome: "SOLVED" | "GAVE_UP" | "IN_PROGRESS"
-        key_learning: user ne kya seekha uska summary
-
-    Returns:
-        Session document ke liye formatted text string
-    """
+    """Format a session into a text block for FAISS indexing."""
     lines = [
         f"Date: {datetime.now().strftime('%Y-%m-%d')}",
         f"Problem: {problem_title}",
@@ -42,12 +30,10 @@ def format_session(
         f"Outcome: {outcome}",
     ]
 
-    # Conversation ka summary banao (user kahan phasa aur kya hints diye)
-    struggles = []
-    hints = []
+    struggles, hints = [], []
     for turn in conversation_turns:
-        role = turn.get("role", "")
-        content = turn.get("content", "")[:200]  # zyada lamba nahi rakhna, index ke liye chota karo
+        role    = turn.get("role", "")
+        content = turn.get("content", "")[:200]
         if role == "user":
             struggles.append(content)
         elif role == "assistant":
@@ -70,12 +56,15 @@ def save_session(
     conversation_turns: List[Dict[str, str]],
     outcome: str,
     key_learning: str = "",
+    hints_used: int = 0,
+    hint_tier_reached: int = 0,
+    difficulty: str = "MEDIUM",
 ) -> Document:
     """
-    Session ko FAISS session_index mein save karo.
+    Save a session to the FAISS sessions index and append a structured log to user_data.json.
 
     Returns:
-        Jo Document add hua woh return hoga
+        The Document added to the sessions index.
     """
     from rag.embeddings import add_documents_to_index
 
@@ -88,14 +77,61 @@ def save_session(
         page_content=content,
         metadata={
             "problem_id": problem_id,
-            "date": datetime.now().isoformat(),
-            "patterns": patterns,
-            "outcome": outcome,
+            "date":       datetime.now().isoformat(),
+            "patterns":   patterns,
+            "outcome":    outcome,
         },
     )
 
     add_documents_to_index("sessions", [doc])
+    _append_session_log(
+        problem_id=problem_id,
+        problem_title=problem_title,
+        difficulty=difficulty,
+        patterns=patterns,
+        outcome=outcome,
+        hints_used=hints_used,
+        hint_tier_reached=hint_tier_reached,
+    )
+
     return doc
+
+
+def _append_session_log(
+    problem_id: str,
+    problem_title: str,
+    difficulty: str,
+    patterns: List[str],
+    outcome: str,
+    hints_used: int,
+    hint_tier_reached: int,
+):
+    """Append a structured session log entry to user_data.json."""
+    if not USER_DATA_PATH.exists():
+        return
+
+    with open(USER_DATA_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    log_entry = {
+        "date":               datetime.now().strftime("%Y-%m-%d"),
+        "problem_id":         problem_id,
+        "problem_title":      problem_title,
+        "difficulty":         difficulty.upper(),
+        "patterns":           patterns,
+        "outcome":            outcome,
+        "hints_used":         hints_used,
+        "hint_tier_reached":  hint_tier_reached,
+    }
+
+    session_logs = data.get("session_logs", [])
+    session_logs.append(log_entry)
+    data["session_logs"] = session_logs
+
+    tmp = USER_DATA_PATH.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, default=str)
+    tmp.replace(USER_DATA_PATH)
 
 
 def update_user_profile(
@@ -103,35 +139,30 @@ def update_user_profile(
     patterns: List[str],
     outcome: str,
     difficulty: str = "MEDIUM",
+    title: str = "",
 ):
     """
-    Session ke baad user profile incrementally update karo.
-
-    Updates:
-      - total_solved (agar outcome SOLVED hai aur pehle count nahi hua)
-      - pattern_mastery counts
-      - weak/strong pattern lists
-      - recent_activity
+    Incrementally update the user profile after a session outcome.
+    Reads and writes USER_DATA_PATH directly.
     """
-    if not PROFILE_PATH.exists():
+    if not USER_DATA_PATH.exists():
         return
 
-    with open(PROFILE_PATH, "r", encoding="utf-8") as f:
-        profile = json.load(f)
+    with open(USER_DATA_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-    # Sirf solve hone pe stats update karo
+    profile = data.get("profile", {})
+
     if outcome == "SOLVED":
-        # Check karo ki pehle se count toh nahi hua (double-counting se bachne ke liye)
         existing_ids = {a["problem_id"] for a in profile.get("recent_activity", [])}
         if problem_id not in existing_ids:
             profile["total_solved"] = profile.get("total_solved", 0) + 1
-
-            # Difficulty ka count badhao
             diff_key = difficulty.upper()
-            if diff_key in profile.get("by_difficulty", {}):
-                profile["by_difficulty"][diff_key] += 1
+            by_diff  = profile.get("by_difficulty", {"EASY": 0, "MEDIUM": 0, "HARD": 0})
+            if diff_key in by_diff:
+                by_diff[diff_key] += 1
+            profile["by_difficulty"] = by_diff
 
-        # Pattern mastery update karo
         mastery = profile.get("pattern_mastery", {})
         for pat in patterns:
             if pat not in mastery:
@@ -144,31 +175,28 @@ def update_user_profile(
                 mastery[pat]["confidence"] = "MEDIUM"
             else:
                 mastery[pat]["confidence"] = "HIGH"
-
         profile["pattern_mastery"] = mastery
 
-        # Weak aur strong lists dubara compute karo
-        weak = [p for p, m in mastery.items() if m["confidence"] == "LOW"]
+        weak   = [p for p, m in mastery.items() if m["confidence"] == "LOW"]
         strong = [p for p, m in mastery.items() if m["confidence"] == "HIGH"]
-        profile["weak_patterns"] = weak
+        profile["weak_patterns"]   = weak
         profile["strong_patterns"] = strong
 
-    # Recent activity mein add karo
     activity = profile.get("recent_activity", [])
     activity.insert(0, {
         "problem_id": problem_id,
+        "title":      title or problem_id,
         "difficulty": difficulty,
-        "patterns": patterns,
-        "outcome": outcome,
-        "solved_at": datetime.now().isoformat(),
+        "patterns":   patterns,
+        "outcome":    outcome,
+        "solved_at":  datetime.now().isoformat(),
     })
-    # Sirf last 30 din ki activity rakho
-    profile["recent_activity"] = activity[:100]  # max 100 entries tak
+    profile["recent_activity"] = activity[:100]
+    profile["last_updated"]    = datetime.now().isoformat()
 
-    profile["last_updated"] = datetime.now().isoformat()
+    data["profile"] = profile
 
-    # Profile atomically save karo — pehle tmp mein likho phir replace
-    tmp_path = PROFILE_PATH.with_suffix(".tmp")
-    with open(tmp_path, "w", encoding="utf-8") as f:
-        json.dump(profile, f, indent=2, default=str)
-    tmp_path.replace(PROFILE_PATH)
+    tmp = USER_DATA_PATH.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, default=str)
+    tmp.replace(USER_DATA_PATH)

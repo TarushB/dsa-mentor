@@ -1,30 +1,27 @@
 """
-Embeddings & FAISS Index Management — load, create, save with atomic writes aur backups.
+Embeddings & FAISS Index Management — load, create, save with atomic writes.
+Single-user installation: flat index paths (FAISS_DIR/problems/, FAISS_DIR/sessions/).
+No backups, no per-user subdirectories, no concept index.
 """
-import os
 import shutil
+import sys
 import tempfile
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 
 from langchain_core.documents import Document
 
-import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from config import (
-    EMBEDDING_MODEL_NAME,
-    FAISS_DIR,
-    MAX_INDEX_BACKUPS,
-)
+from config import EMBEDDING_MODEL_NAME, FAISS_DIR
 
 
-# ── Singleton Embeddings — ek baar load karo, baar baar use karo ──
+# ── Singleton Embeddings ─────────────────────────────────────────
 
 _embeddings_instance = None
 
 
 def get_embeddings():
-    """Cached HuggingFace BGE embedding model instance return karo. Baar baar load nahi karna padega."""
+    """Return a cached HuggingFace BGE embedding model instance."""
     global _embeddings_instance
     if _embeddings_instance is None:
         from langchain_huggingface import HuggingFaceEmbeddings
@@ -36,50 +33,47 @@ def get_embeddings():
     return _embeddings_instance
 
 
-# ── FAISS Index Operations — index banao, load karo, save karo ──
+# ── FAISS Index Operations ───────────────────────────────────────
 
 def get_index_path(name: str) -> Path:
-    """Named FAISS index ke liye directory path return karo."""
+    """Return the directory path for a named FAISS index (flat — no user subdir)."""
     return FAISS_DIR / name
 
 
 def load_index(name: str):
     """
-    Disk se FAISS index load karo. Agar index exist nahi karta toh None dega.
+    Load a FAISS index from disk. Returns None if index doesn't exist.
 
     Args:
-        name: 'problems', 'concepts', ya 'sessions' mein se ek
+        name: 'problems' or 'sessions'
 
     Returns:
-        FAISS vectorstore ya None
+        FAISS vectorstore or None
     """
     from langchain_community.vectorstores import FAISS
 
     index_path = get_index_path(name)
-    index_file = index_path / "index.faiss"
-
-    if not index_file.exists():
+    if not (index_path / "index.faiss").exists():
         return None
 
     try:
-        store = FAISS.load_local(
+        return FAISS.load_local(
             str(index_path),
             get_embeddings(),
             allow_dangerous_deserialization=True,
         )
-        return store
     except Exception as e:
-        print(f"WARNING: Failed to load index '{name}': {e}")
+        print(f"Warning: Failed to load index '{name}': {e}")
         return None
 
 
 def create_index(documents: List[Document], name: str):
     """
-    Documents se naya FAISS index banao aur disk pe save karo.
+    Create a new FAISS index from documents and save to disk.
 
     Args:
-        documents: LangChain Document objects ki list
-        name: index ka naam (problems, concepts, sessions)
+        documents: list of LangChain Document objects
+        name:      index name ('problems' or 'sessions')
 
     Returns:
         FAISS vectorstore
@@ -87,29 +81,20 @@ def create_index(documents: List[Document], name: str):
     from langchain_community.vectorstores import FAISS
 
     if not documents:
-        # Dummy doc se empty index banao, warna FAISS crash karega
+        print(f"[FAISS] Creating empty '{name}' index (no documents).")
         dummy = Document(page_content="__init__", metadata={"_dummy": True})
         store = FAISS.from_documents([dummy], get_embeddings())
-        # Rehne do ise — pehli real doc add karne pe overwrite ho jaayega
-        save_index(store, name)
-        return store
+    else:
+        print(f"[FAISS] Building '{name}' index — embedding {len(documents)} documents...", flush=True)
+        store = FAISS.from_documents(documents, get_embeddings())
+        print(f"[FAISS] Embedding complete.")
 
-    store = FAISS.from_documents(documents, get_embeddings())
     save_index(store, name)
     return store
 
 
 def load_or_create_index(name: str, documents: List[Document] = None):
-    """
-    Existing index load karo ya naya bana do.
-
-    Args:
-        name: index ka naam
-        documents: naya banate waqt initial documents
-
-    Returns:
-        FAISS vectorstore
-    """
+    """Load an existing index or create a new one from documents."""
     store = load_index(name)
     if store is not None:
         return store
@@ -118,76 +103,40 @@ def load_or_create_index(name: str, documents: List[Document] = None):
 
 def save_index(store, name: str):
     """
-    FAISS index ko safely save karo rolling backups ke saath.
-
-    Strategy:
-      1. Pehle temp directory mein likho
-      2. Purane backups ko rotate karo (last N rakho)
-      3. Current index ko backup mein move karo
-      4. Temp se final location pe le aao
+    Atomically save a FAISS index (write to temp → copy to final location).
+    No backups are kept.
     """
     index_path = get_index_path(name)
     index_path.mkdir(parents=True, exist_ok=True)
 
-    # Step 1: Temporary location mein save karo pehle
+    print(f"[FAISS] Saving '{name}' index to {index_path} ...", flush=True)
     tmp_dir = Path(tempfile.mkdtemp(prefix=f"faiss_{name}_"))
     try:
         store.save_local(str(tmp_dir))
-
-        # Step 2: Backups ko rotate karo
-        _rotate_backups(name)
-
-        # Step 3: Agar current index hai toh backup mein daal do
-        if (index_path / "index.faiss").exists():
-            backup_path = FAISS_DIR / f"{name}_backup_0"
-            if backup_path.exists():
-                shutil.rmtree(backup_path)
-            shutil.copytree(str(index_path), str(backup_path))
-
-        # Step 4: Naye index files ko final jagah pe copy karo
         for item in tmp_dir.iterdir():
             dest = index_path / item.name
             if dest.exists():
                 dest.unlink()
             shutil.copy2(str(item), str(dest))
-
+        print(f"[FAISS] '{name}' index saved OK.")
     finally:
-        # Temp directory clean karo, chahe kuch bhi ho jaaye
-        if tmp_dir.exists():
-            shutil.rmtree(tmp_dir)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
 def add_documents_to_index(name: str, documents: List[Document]):
     """
-    Existing index mein documents add karo (ya naya banao agar nahi hai).
+    Append documents to an existing index (or create if it doesn't exist yet).
 
     Args:
-        name: index ka naam
-        documents: add karne wale documents
+        name:      index name
+        documents: documents to add
 
     Returns:
         Updated FAISS vectorstore
     """
     store = load_or_create_index(name)
-
     if documents:
+        print(f"[FAISS] Appending {len(documents)} document(s) to '{name}' index...", flush=True)
         store.add_documents(documents)
         save_index(store, name)
-
     return store
-
-
-def _rotate_backups(name: str):
-    """Backup directories ko rotate karo, sirf MAX_INDEX_BACKUPS rakho."""
-    for i in range(MAX_INDEX_BACKUPS - 1, 0, -1):
-        old = FAISS_DIR / f"{name}_backup_{i - 1}"
-        new = FAISS_DIR / f"{name}_backup_{i}"
-        if old.exists():
-            if new.exists():
-                shutil.rmtree(new)
-            old.rename(new)
-
-    # Sabse purana backup delete karo agar limit se bahar hai
-    oldest = FAISS_DIR / f"{name}_backup_{MAX_INDEX_BACKUPS}"
-    if oldest.exists():
-        shutil.rmtree(oldest)

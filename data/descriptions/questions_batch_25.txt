@@ -1,0 +1,2484 @@
+------------------------------
+1229. Meeting Scheduler 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1228. Missing Number In Arithmetic Progression 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1079. Letter Tile Possibilities 
+------------------------------
+
+You have n  tiles, where each tile has one letter tiles[i] printed on it.
+
+Return the number of possible non-empty sequences of letters you can make using the letters printed on those tiles.
+
+ 
+
+Example 1:
+
+Input: tiles = "AAB"
+Output: 8
+Explanation: The possible sequences are "A", "B", "AA", "AB", "BA", "AAB", "ABA", "BAA".
+
+Example 2:
+
+Input: tiles = "AAABBC"
+Output: 188
+
+Example 3:
+
+Input: tiles = "V"
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= tiles.length <= 7
+
+- tiles consists of uppercase English letters.
+
+------------------------------
+1081. Smallest Subsequence of Distinct Characters 
+------------------------------
+
+Given a string s, return the lexicographically smallest subsequence of s that contains all the distinct characters of s exactly once.
+
+ 
+
+Example 1:
+
+Input: s = "bcabc"
+Output: "abc"
+
+Example 2:
+
+Input: s = "cbacdcbc"
+Output: "acdb"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 1000
+
+- s consists of lowercase English letters.
+
+ 
+
+Note: This question is the same as 316: https://leetcode.com/problems/remove-duplicate-letters/
+
+------------------------------
+1080. Insufficient Nodes in Root to Leaf Paths 
+------------------------------
+
+Given the root of a binary tree and an integer limit, delete all insufficient nodes in the tree simultaneously, and return the root of the resulting binary tree.
+
+A node is insufficient if every root to leaf path intersecting this node has a sum strictly less than limit.
+
+A leaf is a node with no children.
+
+ 
+
+Example 1:
+
+Input: root = [1,2,3,4,-99,-99,7,8,9,-99,-99,12,13,-99,14], limit = 1
+Output: [1,2,3,4,null,null,7,8,9,null,14]
+
+Example 2:
+
+Input: root = [5,4,8,11,null,17,4,7,1,null,null,5,3], limit = 22
+Output: [5,4,8,11,null,17,4,7,null,null,null,5]
+
+Example 3:
+
+Input: root = [1,2,-3,-5,null,4,null], limit = -1
+Output: [1,null,-3,4]
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 5000].
+
+- -105 <= Node.val <= 105
+
+- -109 <= limit <= 109
+
+------------------------------
+1078. Occurrences After Bigram 
+------------------------------
+
+Given two strings first and second, consider occurrences in some text of the form "first second third", where second comes immediately after first, and third comes immediately after second.
+
+Return an array of all the words third for each occurrence of "first second third".
+
+ 
+
+Example 1:
+
+Input: text = "alice is a good girl she is a good student", first = "a", second = "good"
+Output: ["girl","student"]
+
+Example 2:
+
+Input: text = "we will we will rock you", first = "we", second = "will"
+Output: ["we","rock"]
+
+ 
+
+Constraints:
+
+- 1 <= text.length <= 1000
+
+- text consists of lowercase English letters and spaces.
+
+- All the words in text are separated by a single space.
+
+- 1 <= first.length, second.length <= 10
+
+- first and second consist of lowercase English letters.
+
+- text will not have any leading or trailing spaces.
+
+------------------------------
+1183. Maximum Number of Ones 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1215. Stepping Numbers 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1214. Two Sum BSTs 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1213. Intersection of Three Sorted Arrays 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1073. Adding Two Negabinary Numbers 
+------------------------------
+
+Given two numbers arr1 and arr2 in base -2, return the result of adding them together.
+
+Each number is given in array format:  as an array of 0s and 1s, from most significant bit to least significant bit.  For example, arr = [1,1,0,1] represents the number (-2)^3 + (-2)^2 + (-2)^0 = -3.  A number arr in array, format is also guaranteed to have no leading zeros: either arr == [0] or arr[0] == 1.
+
+Return the result of adding arr1 and arr2 in the same format: as an array of 0s and 1s with no leading zeros.
+
+ 
+
+Example 1:
+
+Input: arr1 = [1,1,1,1,1], arr2 = [1,0,1]
+Output: [1,0,0,0,0]
+Explanation: arr1 represents 11, arr2 represents 5, the output represents 16.
+
+Example 2:
+
+Input: arr1 = [0], arr2 = [0]
+Output: [0]
+
+Example 3:
+
+Input: arr1 = [0], arr2 = [1]
+Output: [1]
+
+ 
+
+Constraints:
+
+- 1 <= arr1.length, arr2.length <= 1000
+
+- arr1[i] and arr2[i] are 0 or 1
+
+- arr1 and arr2 have no leading zeros
+
+------------------------------
+1072. Flip Columns For Maximum Number of Equal Rows 
+------------------------------
+
+You are given an m x n binary matrix matrix.
+
+You can choose any number of columns in the matrix and flip every cell in that column (i.e., Change the value of the cell from 0 to 1 or vice versa).
+
+Return the maximum number of rows that have all values equal after some number of flips.
+
+ 
+
+Example 1:
+
+Input: matrix = [[0,1],[1,1]]
+Output: 1
+Explanation: After flipping no values, 1 row has all values equal.
+
+Example 2:
+
+Input: matrix = [[0,1],[1,0]]
+Output: 2
+Explanation: After flipping values in the first column, both rows have equal values.
+
+Example 3:
+
+Input: matrix = [[0,0,0],[0,0,1],[1,1,0]]
+Output: 2
+Explanation: After flipping values in the first two columns, the last two rows have equal values.
+
+ 
+
+Constraints:
+
+- m == matrix.length
+
+- n == matrix[i].length
+
+- 1 <= m, n <= 300
+
+- matrix[i][j] is either 0 or 1.
+
+------------------------------
+1071. Greatest Common Divisor of Strings 
+------------------------------
+
+For two strings s and t, we say "t divides s" if and only if s = t + t + t + ... + t + t (i.e., t is concatenated with itself one or more times).
+
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+ 
+
+Example 1:
+
+Input: str1 = "ABCABC", str2 = "ABC"
+
+Output: "ABC"
+
+Example 2:
+
+Input: str1 = "ABABAB", str2 = "ABAB"
+
+Output: "AB"
+
+Example 3:
+
+Input: str1 = "LEET", str2 = "CODE"
+
+Output: ""
+
+Example 4:
+
+Input: str1 = "AAAAAB", str2 = "AAA"
+
+Output: ""​​​​​​​
+
+ 
+
+Constraints:
+
+- 1 <= str1.length, str2.length <= 1000
+
+- str1 and str2 consist of English uppercase letters.
+
+------------------------------
+1074. Number of Submatrices That Sum to Target 
+------------------------------
+
+Given a matrix and a target, return the number of non-empty submatrices that sum to target.
+
+A submatrix x1, y1, x2, y2 is the set of all cells matrix[x][y] with x1 <= x <= x2 and y1 <= y <= y2.
+
+Two submatrices (x1, y1, x2, y2) and (x1', y1', x2', y2') are different if they have some coordinate that is different: for example, if x1 != x1'.
+
+ 
+
+Example 1:
+
+Input: matrix = [[0,1,0],[1,1,1],[0,1,0]], target = 0
+Output: 4
+Explanation: The four 1x1 submatrices that only contain 0.
+
+Example 2:
+
+Input: matrix = [[1,-1],[-1,1]], target = 0
+Output: 5
+Explanation: The two 1x2 submatrices, plus the two 2x1 submatrices, plus the 2x2 submatrix.
+
+Example 3:
+
+Input: matrix = [[904]], target = 0
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= matrix.length <= 100
+
+- 1 <= matrix[0].length <= 100
+
+- -1000 <= matrix[i][j] <= 1000
+
+- -10^8 <= target <= 10^8
+
+------------------------------
+1168. Optimize Water Distribution in a Village 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1198. Find Smallest Common Element in All Rows 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1197. Minimum Knight Moves 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1196. How Many Apples Can You Put into the Basket 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1054. Distant Barcodes 
+------------------------------
+
+In a warehouse, there is a row of barcodes, where the ith barcode is barcodes[i].
+
+Rearrange the barcodes so that no two adjacent barcodes are equal. You may return any answer, and it is guaranteed an answer exists.
+
+ 
+
+Example 1:
+
+Input: barcodes = [1,1,1,2,2,2]
+Output: [2,1,2,1,2,1]
+
+Example 2:
+
+Input: barcodes = [1,1,1,1,2,2,3,3]
+Output: [1,3,1,3,1,2,1,2]
+
+ 
+
+Constraints:
+
+- 1 <= barcodes.length <= 10000
+
+- 1 <= barcodes[i] <= 10000
+
+------------------------------
+1053. Previous Permutation With One Swap 
+------------------------------
+
+Given an array of positive integers arr (not necessarily distinct), return the lexicographically largest permutation that is smaller than arr, that can be made with exactly one swap. If it cannot be done, then return the same array.
+
+Note that a swap exchanges the positions of two numbers arr[i] and arr[j]
+
+ 
+
+Example 1:
+
+Input: arr = [3,2,1]
+Output: [3,1,2]
+Explanation: Swapping 2 and 1.
+
+Example 2:
+
+Input: arr = [1,1,5]
+Output: [1,1,5]
+Explanation: This is already the smallest permutation.
+
+Example 3:
+
+Input: arr = [1,9,4,6,7]
+Output: [1,7,4,6,9]
+Explanation: Swapping 9 and 7.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 104
+
+- 1 <= arr[i] <= 104
+
+------------------------------
+1052. Grumpy Bookstore Owner 
+------------------------------
+
+There is a bookstore owner that has a store open for n minutes. You are given an integer array customers of length n where customers[i] is the number of the customers that enter the store at the start of the ith minute and all those customers leave after the end of that minute.
+
+During certain minutes, the bookstore owner is grumpy. You are given a binary array grumpy where grumpy[i] is 1 if the bookstore owner is grumpy during the ith minute, and is 0 otherwise.
+
+When the bookstore owner is grumpy, the customers entering during that minute are not satisfied. Otherwise, they are satisfied.
+
+The bookstore owner knows a secret technique to remain not grumpy for minutes consecutive minutes, but this technique can only be used once.
+
+Return the maximum number of customers that can be satisfied throughout the day.
+
+ 
+
+Example 1:
+
+Input: customers = [1,0,1,2,1,1,7,5], grumpy = [0,1,0,1,0,1,0,1], minutes = 3
+
+Output: 16
+
+Explanation:
+
+The bookstore owner keeps themselves not grumpy for the last 3 minutes.
+
+The maximum number of customers that can be satisfied = 1 + 1 + 1 + 1 + 7 + 5 = 16.
+
+Example 2:
+
+Input: customers = [1], grumpy = [0], minutes = 1
+
+Output: 1
+
+ 
+
+Constraints:
+
+- n == customers.length == grumpy.length
+
+- 1 <= minutes <= n <= 2 * 104
+
+- 0 <= customers[i] <= 1000
+
+- grumpy[i] is either 0 or 1.
+
+------------------------------
+1051. Height Checker 
+------------------------------
+
+A school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.
+
+You are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).
+
+Return the number of indices where heights[i] != expected[i].
+
+ 
+
+Example 1:
+
+Input: heights = [1,1,4,2,1,3]
+Output: 3
+Explanation: 
+heights:  [1,1,4,2,1,3]
+expected: [1,1,1,2,3,4]
+Indices 2, 4, and 5 do not match.
+
+Example 2:
+
+Input: heights = [5,1,2,3,4]
+Output: 5
+Explanation:
+heights:  [5,1,2,3,4]
+expected: [1,2,3,4,5]
+All indices do not match.
+
+Example 3:
+
+Input: heights = [1,2,3,4,5]
+Output: 0
+Explanation:
+heights:  [1,2,3,4,5]
+expected: [1,2,3,4,5]
+All indices match.
+
+ 
+
+Constraints:
+
+- 1 <= heights.length <= 100
+
+- 1 <= heights[i] <= 100
+
+------------------------------
+1182. Shortest Distance to Target Color 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1163. Last Substring in Lexicographical Order 
+------------------------------
+
+Given a string s, return the last substring of s in lexicographical order.
+
+ 
+
+Example 1:
+
+Input: s = "abab"
+Output: "bab"
+Explanation: The substrings are ["a", "ab", "aba", "abab", "b", "ba", "bab"]. The lexicographically maximum substring is "bab".
+
+Example 2:
+
+Input: s = "leetcode"
+Output: "tcode"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 4 * 105
+
+- s contains only lowercase English letters.
+
+------------------------------
+1181. Before and After Puzzle 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1180. Count Substrings with Only One Distinct Letter 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1049. Last Stone Weight II 
+------------------------------
+
+You are given an array of integers stones where stones[i] is the weight of the ith stone.
+
+We are playing a game with the stones. On each turn, we choose any two stones and smash them together. Suppose the stones have weights x and y with x <= y. The result of this smash is:
+
+- If x == y, both stones are destroyed, and
+
+- If x != y, the stone of weight x is destroyed, and the stone of weight y has new weight y - x.
+
+At the end of the game, there is at most one stone left.
+
+Return the smallest possible weight of the left stone. If there are no stones left, return 0.
+
+ 
+
+Example 1:
+
+Input: stones = [2,7,4,1,8,1]
+Output: 1
+Explanation:
+We can combine 2 and 4 to get 2, so the array converts to [2,7,1,8,1] then,
+we can combine 7 and 8 to get 1, so the array converts to [2,1,1,1] then,
+we can combine 2 and 1 to get 1, so the array converts to [1,1,1] then,
+we can combine 1 and 1 to get 0, so the array converts to [1], then that's the optimal value.
+
+Example 2:
+
+Input: stones = [31,26,33,21,40]
+Output: 5
+
+ 
+
+Constraints:
+
+- 1 <= stones.length <= 30
+
+- 1 <= stones[i] <= 100
+
+------------------------------
+1048. Longest String Chain 
+------------------------------
+
+You are given an array of words where each word consists of lowercase English letters.
+
+wordA is a predecessor of wordB if and only if we can insert exactly one letter anywhere in wordA without changing the order of the other characters to make it equal to wordB.
+
+- For example, "abc" is a predecessor of "abac", while "cba" is not a predecessor of "bcad".
+
+A word chain is a sequence of words [word1, word2, ..., wordk] with k >= 1, where word1 is a predecessor of word2, word2 is a predecessor of word3, and so on. A single word is trivially a word chain with k == 1.
+
+Return the length of the longest possible word chain with words chosen from the given list of words.
+
+ 
+
+Example 1:
+
+Input: words = ["a","b","ba","bca","bda","bdca"]
+Output: 4
+Explanation: One of the longest word chains is ["a","ba","bda","bdca"].
+
+Example 2:
+
+Input: words = ["xbc","pcxbcf","xb","cxbc","pcxbc"]
+Output: 5
+Explanation: All the words can be put in a word chain ["xb", "xbc", "cxbc", "pcxbc", "pcxbcf"].
+
+Example 3:
+
+Input: words = ["abcd","dbqca"]
+Output: 1
+Explanation: The trivial word chain ["abcd"] is one of the longest word chains.
+["abcd","dbqca"] is not a valid word chain because the ordering of the letters is changed.
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 1000
+
+- 1 <= words[i].length <= 16
+
+- words[i] only consists of lowercase English letters.
+
+------------------------------
+1047. Remove All Adjacent Duplicates In String 
+------------------------------
+
+You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.
+
+We repeatedly make duplicate removals on s until we no longer can.
+
+Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.
+
+ 
+
+Example 1:
+
+Input: s = "abbaca"
+Output: "ca"
+Explanation: 
+For example, in "abbaca" we could remove "bb" since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is "aaca", of which only "aa" is possible, so the final string is "ca".
+
+Example 2:
+
+Input: s = "azxxzy"
+Output: "ay"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists of lowercase English letters.
+
+------------------------------
+1046. Last Stone Weight 
+------------------------------
+
+You are given an array of integers stones where stones[i] is the weight of the ith stone.
+
+We are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together. Suppose the heaviest two stones have weights x and y with x <= y. The result of this smash is:
+
+- If x == y, both stones are destroyed, and
+
+- If x != y, the stone of weight x is destroyed, and the stone of weight y has new weight y - x.
+
+At the end of the game, there is at most one stone left.
+
+Return the weight of the last remaining stone. If there are no stones left, return 0.
+
+ 
+
+Example 1:
+
+Input: stones = [2,7,4,1,8,1]
+Output: 1
+Explanation: 
+We combine 7 and 8 to get 1 so the array converts to [2,4,1,1,1] then,
+we combine 2 and 4 to get 2 so the array converts to [2,1,1,1] then,
+we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
+we combine 1 and 1 to get 0 so the array converts to [1] then that's the value of the last stone.
+
+Example 2:
+
+Input: stones = [1]
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= stones.length <= 30
+
+- 1 <= stones[i] <= 1000
+
+------------------------------
+1167. Minimum Cost to Connect Sticks 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1166. Design File System 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1153. String Transforms Into Another String 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1165. Single-Row Keyboard 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1044. Longest Duplicate Substring 
+------------------------------
+
+Given a string s, consider all duplicated substrings: (contiguous) substrings of s that occur 2 or more times. The occurrences may overlap.
+
+Return any duplicated substring that has the longest possible length. If s does not have a duplicated substring, the answer is "".
+
+ 
+
+Example 1:
+
+Input: s = "banana"
+Output: "ana"
+
+Example 2:
+
+Input: s = "abcd"
+Output: ""
+
+ 
+
+Constraints:
+
+- 2 <= s.length <= 3 * 104
+
+- s consists of lowercase English letters.
+
+------------------------------
+1043. Partition Array for Maximum Sum 
+------------------------------
+
+Given an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.
+
+Return the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.
+
+ 
+
+Example 1:
+
+Input: arr = [1,15,7,9,2,5,10], k = 3
+Output: 84
+Explanation: arr becomes [15,15,15,9,10,10,10]
+
+Example 2:
+
+Input: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4
+Output: 83
+
+Example 3:
+
+Input: arr = [1], k = 1
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 500
+
+- 0 <= arr[i] <= 109
+
+- 1 <= k <= arr.length
+
+------------------------------
+1042. Flower Planting With No Adjacent 
+------------------------------
+
+You have n gardens, labeled from 1 to n, and an array paths where paths[i] = [xi, yi] describes a bidirectional path between garden xi to garden yi. In each garden, you want to plant one of 4 types of flowers.
+
+All gardens have at most 3 paths coming into or leaving it.
+
+Your task is to choose a flower type for each garden such that, for any two gardens connected by a path, they have different types of flowers.
+
+Return any such a choice as an array answer, where answer[i] is the type of flower planted in the (i+1)th garden. The flower types are denoted 1, 2, 3, or 4. It is guaranteed an answer exists.
+
+ 
+
+Example 1:
+
+Input: n = 3, paths = [[1,2],[2,3],[3,1]]
+Output: [1,2,3]
+Explanation:
+Gardens 1 and 2 have different types.
+Gardens 2 and 3 have different types.
+Gardens 3 and 1 have different types.
+Hence, [1,2,3] is a valid answer. Other valid answers include [1,2,4], [1,4,2], and [3,2,1].
+
+Example 2:
+
+Input: n = 4, paths = [[1,2],[3,4]]
+Output: [1,2,1,2]
+
+Example 3:
+
+Input: n = 4, paths = [[1,2],[2,3],[3,4],[4,1],[1,3],[2,4]]
+Output: [1,2,3,4]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 104
+
+- 0 <= paths.length <= 2 * 104
+
+- paths[i].length == 2
+
+- 1 <= xi, yi <= n
+
+- xi != yi
+
+- Every garden has at most 3 paths coming into or leaving it.
+
+------------------------------
+1041. Robot Bounded In Circle 
+------------------------------
+
+On an infinite plane, a robot initially stands at (0, 0) and faces north. Note that:
+
+- The north direction is the positive direction of the y-axis.
+
+- The south direction is the negative direction of the y-axis.
+
+- The east direction is the positive direction of the x-axis.
+
+- The west direction is the negative direction of the x-axis.
+
+The robot can receive one of three instructions:
+
+- "G": go straight 1 unit.
+
+- "L": turn 90 degrees to the left (i.e., anti-clockwise direction).
+
+- "R": turn 90 degrees to the right (i.e., clockwise direction).
+
+The robot performs the instructions given in order, and repeats them forever.
+
+Return true if and only if there exists a circle in the plane such that the robot never leaves the circle.
+
+ 
+
+Example 1:
+
+Input: instructions = "GGLLGG"
+Output: true
+Explanation: The robot is initially at (0, 0) facing the north direction.
+"G": move one step. Position: (0, 1). Direction: North.
+"G": move one step. Position: (0, 2). Direction: North.
+"L": turn 90 degrees anti-clockwise. Position: (0, 2). Direction: West.
+"L": turn 90 degrees anti-clockwise. Position: (0, 2). Direction: South.
+"G": move one step. Position: (0, 1). Direction: South.
+"G": move one step. Position: (0, 0). Direction: South.
+Repeating the instructions, the robot goes into the cycle: (0, 0) --> (0, 1) --> (0, 2) --> (0, 1) --> (0, 0).
+Based on that, we return true.
+
+Example 2:
+
+Input: instructions = "GG"
+Output: false
+Explanation: The robot is initially at (0, 0) facing the north direction.
+"G": move one step. Position: (0, 1). Direction: North.
+"G": move one step. Position: (0, 2). Direction: North.
+Repeating the instructions, keeps advancing in the north direction and does not go into cycles.
+Based on that, we return false.
+
+Example 3:
+
+Input: instructions = "GL"
+Output: true
+Explanation: The robot is initially at (0, 0) facing the north direction.
+"G": move one step. Position: (0, 1). Direction: North.
+"L": turn 90 degrees anti-clockwise. Position: (0, 1). Direction: West.
+"G": move one step. Position: (-1, 1). Direction: West.
+"L": turn 90 degrees anti-clockwise. Position: (-1, 1). Direction: South.
+"G": move one step. Position: (-1, 0). Direction: South.
+"L": turn 90 degrees anti-clockwise. Position: (-1, 0). Direction: East.
+"G": move one step. Position: (0, 0). Direction: East.
+"L": turn 90 degrees anti-clockwise. Position: (0, 0). Direction: North.
+Repeating the instructions, the robot goes into the cycle: (0, 0) --> (0, 1) --> (-1, 1) --> (-1, 0) --> (0, 0).
+Based on that, we return true.
+
+ 
+
+Constraints:
+
+- 1 <= instructions.length <= 100
+
+- instructions[i] is 'G', 'L' or, 'R'.
+
+------------------------------
+1121. Divide Array Into Increasing Sequences 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1162. As Far from Land as Possible 
+------------------------------
+
+Given an n x n grid containing only values 0 and 1, where 0 represents water and 1 represents land, find a water cell such that its distance to the nearest land cell is maximized, and return the distance. If no land or water exists in the grid, return -1.
+
+The distance used in this problem is the Manhattan distance: the distance between two cells (x0, y0) and (x1, y1) is |x0 - x1| + |y0 - y1|.
+
+ 
+
+Example 1:
+
+Input: grid = [[1,0,1],[0,0,0],[1,0,1]]
+Output: 2
+Explanation: The cell (1, 1) is as far as possible from all the land with distance 2.
+
+Example 2:
+
+Input: grid = [[1,0,0],[0,0,0],[0,0,0]]
+Output: 4
+Explanation: The cell (2, 2) is as far as possible from all the land with distance 4.
+
+ 
+
+Constraints:
+
+- n == grid.length
+
+- n == grid[i].length
+
+- 1 <= n <= 100
+
+- grid[i][j] is 0 or 1
+
+------------------------------
+1161. Maximum Level Sum of a Binary Tree 
+------------------------------
+
+Given the root of a binary tree, the level of its root is 1, the level of its children is 2, and so on.
+
+Return the smallest level x such that the sum of all the values of nodes at level x is maximal.
+
+ 
+
+Example 1:
+
+Input: root = [1,7,0,7,-8,null,null]
+Output: 2
+Explanation: 
+Level 1 sum = 1.
+Level 2 sum = 7 + 0 = 7.
+Level 3 sum = 7 + -8 = -1.
+So we return the level with the maximum sum which is level 2.
+
+Example 2:
+
+Input: root = [989,null,10250,98693,-89388,null,null,null,-32127]
+Output: 2
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 104].
+
+- -105 <= Node.val <= 105
+
+------------------------------
+1037. Valid Boomerang 
+------------------------------
+
+Given an array points where points[i] = [xi, yi] represents a point on the X-Y plane, return true if these points are a boomerang.
+
+A boomerang is a set of three points that are all distinct and not in a straight line.
+
+ 
+
+Example 1:
+
+Input: points = [[1,1],[2,3],[3,2]]
+Output: true
+
+Example 2:
+
+Input: points = [[1,1],[2,2],[3,3]]
+Output: false
+
+ 
+
+Constraints:
+
+- points.length == 3
+
+- points[i].length == 2
+
+- 0 <= xi, yi <= 100
+
+------------------------------
+1038. Binary Search Tree to Greater Sum Tree 
+------------------------------
+
+Given the root of a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus the sum of all keys greater than the original key in BST.
+
+As a reminder, a binary search tree is a tree that satisfies these constraints:
+
+- The left subtree of a node contains only nodes with keys less than the node's key.
+
+- The right subtree of a node contains only nodes with keys greater than the node's key.
+
+- Both the left and right subtrees must also be binary search trees.
+
+ 
+
+Example 1:
+
+Input: root = [4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
+Output: [30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]
+
+Example 2:
+
+Input: root = [0,null,1]
+Output: [1,null,1]
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 100].
+
+- 0 <= Node.val <= 100
+
+- All the values in the tree are unique.
+
+ 
+
+Note: This question is the same as 538: https://leetcode.com/problems/convert-bst-to-greater-tree/
+
+------------------------------
+1040. Moving Stones Until Consecutive II 
+------------------------------
+
+There are some stones in different positions on the X-axis. You are given an integer array stones, the positions of the stones.
+
+Call a stone an endpoint stone if it has the smallest or largest position. In one move, you pick up an endpoint stone and move it to an unoccupied position so that it is no longer an endpoint stone.
+
+- In particular, if the stones are at say, stones = [1,2,5], you cannot move the endpoint stone at position 5, since moving it to any position (such as 0, or 3) will still keep that stone as an endpoint stone.
+
+The game ends when you cannot make any more moves (i.e., the stones are in three consecutive positions).
+
+Return an integer array answer of length 2 where:
+
+- answer[0] is the minimum number of moves you can play, and
+
+- answer[1] is the maximum number of moves you can play.
+
+ 
+
+Example 1:
+
+Input: stones = [7,4,9]
+Output: [1,2]
+Explanation: We can move 4 -> 8 for one move to finish the game.
+Or, we can move 9 -> 5, 4 -> 6 for two moves to finish the game.
+
+Example 2:
+
+Input: stones = [6,5,4,3,10]
+Output: [2,3]
+Explanation: We can move 3 -> 8 then 10 -> 7 to finish the game.
+Or, we can move 3 -> 7, 4 -> 8, 5 -> 9 to finish the game.
+Notice we cannot move 10 -> 2 to finish the game, because that would be an illegal move.
+
+ 
+
+Constraints:
+
+- 3 <= stones.length <= 104
+
+- 1 <= stones[i] <= 109
+
+- All the values of stones are unique.
+
+------------------------------
+1160. Find Words That Can Be Formed by Characters 
+------------------------------
+
+You are given an array of strings words and a string chars.
+
+A string is good if it can be formed by characters from chars (each character can only be used once for each word in words).
+
+Return the sum of lengths of all good strings in words.
+
+ 
+
+Example 1:
+
+Input: words = ["cat","bt","hat","tree"], chars = "atach"
+Output: 6
+Explanation: The strings that can be formed are "cat" and "hat" so the answer is 3 + 3 = 6.
+
+Example 2:
+
+Input: words = ["hello","world","leetcode"], chars = "welldonehoneyr"
+Output: 10
+Explanation: The strings that can be formed are "hello" and "world" so the answer is 5 + 5 = 10.
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 1000
+
+- 1 <= words[i].length, chars.length <= 100
+
+- words[i] and chars consist of lowercase English letters.
+
+------------------------------
+1039. Minimum Score Triangulation of Polygon 
+------------------------------
+
+You have a convex n-sided polygon where each vertex has an integer value. You are given an integer array values where values[i] is the value of the ith vertex in clockwise order.
+
+Polygon triangulation is a process where you divide a polygon into a set of triangles and the vertices of each triangle must also be vertices of the original polygon. Note that no other shapes other than triangles are allowed in the division. This process will result in n - 2 triangles.
+
+You will triangulate the polygon. For each triangle, the weight of that triangle is the product of the values at its vertices. The total score of the triangulation is the sum of these weights over all n - 2 triangles.
+
+Return the minimum possible score that you can achieve with some triangulation of the polygon.
+
+ 
+
+Example 1:
+
+Input: values = [1,2,3]
+
+Output: 6
+
+Explanation: The polygon is already triangulated, and the score of the only triangle is 6.
+
+Example 2:
+
+Input: values = [3,7,4,5]
+
+Output: 144
+
+Explanation: There are two triangulations, with possible scores: 3*7*5 + 4*5*7 = 245, or 3*4*5 + 3*4*7 = 144.
+The minimum score is 144.
+
+Example 3:
+
+​​​​​​​
+
+Input: values = [1,3,1,4,1,5]
+
+Output: 13
+
+Explanation: The minimum score triangulation is 1*1*3 + 1*1*4 + 1*1*5 + 1*1*1 = 13.
+
+ 
+
+Constraints:
+
+- n == values.length
+
+- 3 <= n <= 50
+
+- 1 <= values[i] <= 100
+
+------------------------------
+1152. Analyze User Website Visit Pattern 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1151. Minimum Swaps to Group All 1's Together 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1036. Escape a Large Maze 
+------------------------------
+
+There is a 1 million by 1 million grid on an XY-plane, and the coordinates of each grid square are (x, y).
+
+We start at the source = [sx, sy] square and want to reach the target = [tx, ty] square. There is also an array of blocked squares, where each blocked[i] = [xi, yi] represents a blocked square with coordinates (xi, yi).
+
+Each move, we can walk one square north, east, south, or west if the square is not in the array of blocked squares. We are also not allowed to walk outside of the grid.
+
+Return true if and only if it is possible to reach the target square from the source square through a sequence of valid moves.
+
+ 
+
+Example 1:
+
+Input: blocked = [[0,1],[1,0]], source = [0,0], target = [0,2]
+Output: false
+Explanation: The target square is inaccessible starting from the source square because we cannot move.
+We cannot move north or east because those squares are blocked.
+We cannot move south or west because we cannot go outside of the grid.
+
+Example 2:
+
+Input: blocked = [], source = [0,0], target = [999999,999999]
+Output: true
+Explanation: Because there are no blocked cells, it is possible to reach the target square.
+
+ 
+
+Constraints:
+
+- 0 <= blocked.length <= 200
+
+- blocked[i].length == 2
+
+- 0 <= xi, yi < 106
+
+- source.length == target.length == 2
+
+- 0 <= sx, sy, tx, ty < 106
+
+- source != target
+
+- It is guaranteed that source and target are not blocked.
+
+------------------------------
+1035. Uncrossed Lines 
+------------------------------
+
+You are given two integer arrays nums1 and nums2. We write the integers of nums1 and nums2 (in the order they are given) on two separate horizontal lines.
+
+We may draw connecting lines: a straight line connecting two numbers nums1[i] and nums2[j] such that:
+
+- nums1[i] == nums2[j], and
+
+- the line we draw does not intersect any other connecting (non-horizontal) line.
+
+Note that a connecting line cannot intersect even at the endpoints (i.e., each number can only belong to one connecting line).
+
+Return the maximum number of connecting lines we can draw in this way.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,4,2], nums2 = [1,2,4]
+Output: 2
+Explanation: We can draw 2 uncrossed lines as in the diagram.
+We cannot draw 3 uncrossed lines, because the line from nums1[1] = 4 to nums2[2] = 4 will intersect the line from nums1[2]=2 to nums2[1]=2.
+
+Example 2:
+
+Input: nums1 = [2,5,1,2,5], nums2 = [10,5,2,1,5,2]
+Output: 3
+
+Example 3:
+
+Input: nums1 = [1,3,7,1,7,5], nums2 = [1,9,2,5,1]
+Output: 2
+
+ 
+
+Constraints:
+
+- 1 <= nums1.length, nums2.length <= 500
+
+- 1 <= nums1[i], nums2[j] <= 2000
+
+------------------------------
+1034. Coloring A Border 
+------------------------------
+
+You are given an m x n integer matrix grid, and three integers row, col, and color. Each value in the grid represents the color of the grid square at that location.
+
+Two squares are called adjacent if they are next to each other in any of the 4 directions.
+
+Two squares belong to the same connected component if they have the same color and they are adjacent.
+
+The border of a connected component is all the squares in the connected component that are either adjacent to (at least) a square not in the component, or on the boundary of the grid (the first or last row or column).
+
+You should color the border of the connected component that contains the square grid[row][col] with color.
+
+Return the final grid.
+
+ 
+
+Example 1:
+
+Input: grid = [[1,1],[1,2]], row = 0, col = 0, color = 3
+Output: [[3,3],[3,2]]
+
+Example 2:
+
+Input: grid = [[1,2,2],[2,3,2]], row = 0, col = 1, color = 3
+Output: [[1,3,3],[2,3,3]]
+
+Example 3:
+
+Input: grid = [[1,1,1],[1,1,1],[1,1,1]], row = 1, col = 1, color = 2
+Output: [[2,2,2],[2,1,2],[2,2,2]]
+
+ 
+
+Constraints:
+
+- m == grid.length
+
+- n == grid[i].length
+
+- 1 <= m, n <= 50
+
+- 1 <= grid[i][j], color <= 1000
+
+- 0 <= row < m
+
+- 0 <= col < n
+
+------------------------------
+1033. Moving Stones Until Consecutive 
+------------------------------
+
+There are three stones in different positions on the X-axis. You are given three integers a, b, and c, the positions of the stones.
+
+In one move, you pick up a stone at an endpoint (i.e., either the lowest or highest position stone), and move it to an unoccupied position between those endpoints. Formally, let's say the stones are currently at positions x, y, and z with x < y < z. You pick up the stone at either position x or position z, and move that stone to an integer position k, with x < k < z and k != y.
+
+The game ends when you cannot make any more moves (i.e., the stones are in three consecutive positions).
+
+Return an integer array answer of length 2 where:
+
+- answer[0] is the minimum number of moves you can play, and
+
+- answer[1] is the maximum number of moves you can play.
+
+ 
+
+Example 1:
+
+Input: a = 1, b = 2, c = 5
+Output: [1,2]
+Explanation: Move the stone from 5 to 3, or move the stone from 5 to 4 to 3.
+
+Example 2:
+
+Input: a = 4, b = 3, c = 2
+Output: [0,0]
+Explanation: We cannot make any moves.
+
+Example 3:
+
+Input: a = 3, b = 5, c = 1
+Output: [1,2]
+Explanation: Move the stone from 1 to 4; or move the stone from 1 to 2 to 4.
+
+ 
+
+Constraints:
+
+- 1 <= a, b, c <= 100
+
+- a, b, and c have different values.
+
+------------------------------
+1150. Check If a Number Is Majority Element in a Sorted Array 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1136. Parallel Courses 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1135. Connecting Cities With Minimum Cost 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1102. Path With Maximum Minimum Value 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1133. Largest Unique Number 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1032. Stream of Characters 
+------------------------------
+
+Design an algorithm that accepts a stream of characters and checks if a suffix of these characters is a string of a given array of strings words.
+
+For example, if words = ["abc", "xyz"] and the stream added the four characters (one by one) 'a', 'x', 'y', and 'z', your algorithm should detect that the suffix "xyz" of the characters "axyz" matches "xyz" from words.
+
+Implement the StreamChecker class:
+
+- StreamChecker(String[] words) Initializes the object with the strings array words.
+
+- boolean query(char letter) Accepts a new character from the stream and returns true if any non-empty suffix from the stream forms a word that is in words.
+
+ 
+
+Example 1:
+
+Input
+["StreamChecker", "query", "query", "query", "query", "query", "query", "query", "query", "query", "query", "query", "query"]
+[[["cd", "f", "kl"]], ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["g"], ["h"], ["i"], ["j"], ["k"], ["l"]]
+Output
+[null, false, false, false, true, false, true, false, false, false, false, false, true]
+
+Explanation
+StreamChecker streamChecker = new StreamChecker(["cd", "f", "kl"]);
+streamChecker.query("a"); // return False
+streamChecker.query("b"); // return False
+streamChecker.query("c"); // return False
+streamChecker.query("d"); // return True, because 'cd' is in the wordlist
+streamChecker.query("e"); // return False
+streamChecker.query("f"); // return True, because 'f' is in the wordlist
+streamChecker.query("g"); // return False
+streamChecker.query("h"); // return False
+streamChecker.query("i"); // return False
+streamChecker.query("j"); // return False
+streamChecker.query("k"); // return False
+streamChecker.query("l"); // return True, because 'kl' is in the wordlist
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 2000
+
+- 1 <= words[i].length <= 200
+
+- words[i] consists of lowercase English letters.
+
+- letter is a lowercase English letter.
+
+- At most 4 * 104 calls will be made to query.
+
+------------------------------
+1031. Maximum Sum of Two Non-Overlapping Subarrays 
+------------------------------
+
+Given an integer array nums and two integers firstLen and secondLen, return the maximum sum of elements in two non-overlapping subarrays with lengths firstLen and secondLen.
+
+The array with length firstLen could occur before or after the array with length secondLen, but they have to be non-overlapping.
+
+A subarray is a contiguous part of an array.
+
+ 
+
+Example 1:
+
+Input: nums = [0,6,5,2,2,5,1,9,4], firstLen = 1, secondLen = 2
+Output: 20
+Explanation: One choice of subarrays is [9] with length 1, and [6,5] with length 2.
+
+Example 2:
+
+Input: nums = [3,8,1,3,2,1,8,9,0], firstLen = 3, secondLen = 2
+Output: 29
+Explanation: One choice of subarrays is [3,8,1] with length 3, and [8,9] with length 2.
+
+Example 3:
+
+Input: nums = [2,1,5,6,0,9,5,0,3,8], firstLen = 4, secondLen = 3
+Output: 31
+Explanation: One choice of subarrays is [5,6,0,9] with length 4, and [0,3,8] with length 3.
+
+ 
+
+Constraints:
+
+- 1 <= firstLen, secondLen <= 1000
+
+- 2 <= firstLen + secondLen <= 1000
+
+- firstLen + secondLen <= nums.length <= 1000
+
+- 0 <= nums[i] <= 1000
+
+------------------------------
+1029. Two City Scheduling 
+------------------------------
+
+A company is planning to interview 2n people. Given the array costs where costs[i] = [aCosti, bCosti], the cost of flying the ith person to city a is aCosti, and the cost of flying the ith person to city b is bCosti.
+
+Return the minimum cost to fly every person to a city such that exactly n people arrive in each city.
+
+ 
+
+Example 1:
+
+Input: costs = [[10,20],[30,200],[400,50],[30,20]]
+Output: 110
+Explanation: 
+The first person goes to city A for a cost of 10.
+The second person goes to city A for a cost of 30.
+The third person goes to city B for a cost of 50.
+The fourth person goes to city B for a cost of 20.
+
+The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
+
+Example 2:
+
+Input: costs = [[259,770],[448,54],[926,667],[184,139],[840,118],[577,469]]
+Output: 1859
+
+Example 3:
+
+Input: costs = [[515,563],[451,713],[537,709],[343,819],[855,779],[457,60],[650,359],[631,42]]
+Output: 3086
+
+ 
+
+Constraints:
+
+- 2 * n == costs.length
+
+- 2 <= costs.length <= 100
+
+- costs.length is even.
+
+- 1 <= aCosti, bCosti <= 1000
+
+------------------------------
+1030. Matrix Cells in Distance Order 
+------------------------------
+
+You are given four integers row, cols, rCenter, and cCenter. There is a rows x cols matrix and you are on the cell with the coordinates (rCenter, cCenter).
+
+Return the coordinates of all cells in the matrix, sorted by their distance from (rCenter, cCenter) from the smallest distance to the largest distance. You may return the answer in any order that satisfies this condition.
+
+The distance between two cells (r1, c1) and (r2, c2) is |r1 - r2| + |c1 - c2|.
+
+ 
+
+Example 1:
+
+Input: rows = 1, cols = 2, rCenter = 0, cCenter = 0
+Output: [[0,0],[0,1]]
+Explanation: The distances from (0, 0) to other cells are: [0,1]
+
+Example 2:
+
+Input: rows = 2, cols = 2, rCenter = 0, cCenter = 1
+Output: [[0,1],[0,0],[1,1],[1,0]]
+Explanation: The distances from (0, 1) to other cells are: [0,1,1,2]
+The answer [[0,1],[1,1],[0,0],[1,0]] would also be accepted as correct.
+
+Example 3:
+
+Input: rows = 2, cols = 3, rCenter = 1, cCenter = 2
+Output: [[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]
+Explanation: The distances from (1, 2) to other cells are: [0,1,1,2,2,3]
+There are other answers that would also be accepted as correct, such as [[1,2],[1,1],[0,2],[1,0],[0,1],[0,0]].
+
+ 
+
+Constraints:
+
+- 1 <= rows, cols <= 100
+
+- 0 <= rCenter < rows
+
+- 0 <= cCenter < cols
+
+------------------------------
+1028. Recover a Tree From Preorder Traversal 
+------------------------------
+
+We run a preorder depth-first search (DFS) on the root of a binary tree.
+
+At each node in this traversal, we output D dashes (where D is the depth of this node), then we output the value of this node.  If the depth of a node is D, the depth of its immediate child is D + 1.  The depth of the root node is 0.
+
+If a node has only one child, that child is guaranteed to be the left child.
+
+Given the output traversal of this traversal, recover the tree and return its root.
+
+ 
+
+Example 1:
+
+Input: traversal = "1-2--3--4-5--6--7"
+Output: [1,2,5,3,4,6,7]
+
+Example 2:
+
+Input: traversal = "1-2--3---4-5--6---7"
+Output: [1,2,5,3,null,6,null,4,null,7]
+
+Example 3:
+
+Input: traversal = "1-401--349---90--88"
+Output: [1,401,null,349,88,90]
+
+ 
+
+Constraints:
+
+- The number of nodes in the original tree is in the range [1, 1000].
+
+- 1 <= Node.val <= 109
+
+------------------------------
+1026. Maximum Difference Between Node and Ancestor 
+------------------------------
+
+Given the root of a binary tree, find the maximum value v for which there exist different nodes a and b where v = |a.val - b.val| and a is an ancestor of b.
+
+A node a is an ancestor of b if either: any child of a is equal to b or any child of a is an ancestor of b.
+
+ 
+
+Example 1:
+
+Input: root = [8,3,10,1,6,null,14,null,null,4,7,13]
+Output: 7
+Explanation: We have various ancestor-node differences, some of which are given below :
+|8 - 3| = 5
+|3 - 7| = 4
+|8 - 1| = 7
+|10 - 13| = 3
+Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.
+
+Example 2:
+
+Input: root = [1,null,2,null,0,3]
+Output: 3
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [2, 5000].
+
+- 0 <= Node.val <= 105
+
+------------------------------
+1120. Maximum Average Subtree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1134. Armstrong Number 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1119. Remove Vowels from a String 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1118. Number of Days in a Month 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1027. Longest Arithmetic Subsequence 
+------------------------------
+
+Given an array nums of integers, return the length of the longest arithmetic subsequence in nums.
+
+Note that:
+
+- A subsequence is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.
+
+- A sequence seq is arithmetic if seq[i + 1] - seq[i] are all the same value (for 0 <= i < seq.length - 1).
+
+ 
+
+Example 1:
+
+Input: nums = [3,6,9,12]
+Output: 4
+Explanation:  The whole array is an arithmetic sequence with steps of length = 3.
+
+Example 2:
+
+Input: nums = [9,4,7,2,10]
+Output: 3
+Explanation:  The longest arithmetic subsequence is [4,7,10].
+
+Example 3:
+
+Input: nums = [20,1,15,3,10,5,8]
+Output: 4
+Explanation:  The longest arithmetic subsequence is [20,15,10,5].
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 1000
+
+- 0 <= nums[i] <= 500
+
+------------------------------
+1025. Divisor Game 
+------------------------------
+
+Alice and Bob take turns playing a game, with Alice starting first.
+
+Initially, there is a number n on the chalkboard. On each player's turn, that player makes a move consisting of:
+
+- Choosing any integer x with 0 < x < n and n % x == 0.
+
+- Replacing the number n on the chalkboard with n - x.
+
+Also, if a player cannot make a move, they lose the game.
+
+Return true if and only if Alice wins the game, assuming both players play optimally.
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: true
+Explanation: Alice chooses 1, and Bob has no more moves.
+
+Example 2:
+
+Input: n = 3
+Output: false
+Explanation: Alice chooses 1, Bob chooses 1, and Alice has no more moves.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 1000
+
+------------------------------
+1101. The Earliest Moment When Everyone Become Friends 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1100. Find K-Length Substrings With No Repeated Characters 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1099. Two Sum Less Than K 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1085. Sum of Digits in the Minimum Number 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1024. Video Stitching 
+------------------------------
+
+You are given a series of video clips from a sporting event that lasted time seconds. These video clips can be overlapping with each other and have varying lengths.
+
+Each video clip is described by an array clips where clips[i] = [starti, endi] indicates that the ith clip started at starti and ended at endi.
+
+We can cut these clips into segments freely.
+
+- For example, a clip [0, 7] can be cut into segments [0, 1] + [1, 3] + [3, 7].
+
+Return the minimum number of clips needed so that we can cut the clips into segments that cover the entire sporting event [0, time]. If the task is impossible, return -1.
+
+ 
+
+Example 1:
+
+Input: clips = [[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], time = 10
+Output: 3
+Explanation: We take the clips [0,2], [8,10], [1,9]; a total of 3 clips.
+Then, we can reconstruct the sporting event as follows:
+We cut [1,9] into segments [1,2] + [2,8] + [8,9].
+Now we have segments [0,2] + [2,8] + [8,10] which cover the sporting event [0, 10].
+
+Example 2:
+
+Input: clips = [[0,1],[1,2]], time = 5
+Output: -1
+Explanation: We cannot cover [0,5] with only [0,1] and [1,2].
+
+Example 3:
+
+Input: clips = [[0,1],[6,8],[0,2],[5,6],[0,4],[0,3],[6,7],[1,3],[4,7],[1,4],[2,5],[2,6],[3,4],[4,5],[5,7],[6,9]], time = 9
+Output: 3
+Explanation: We can take clips [0,4], [4,7], and [6,9].
+
+ 
+
+Constraints:
+
+- 1 <= clips.length <= 100
+
+- 0 <= starti <= endi <= 100
+
+- 1 <= time <= 100
+
+------------------------------
+1023. Camelcase Matching 
+------------------------------
+
+Given an array of strings queries and a string pattern, return a boolean array answer where answer[i] is true if queries[i] matches pattern, and false otherwise.
+
+A query word queries[i] matches pattern if you can insert lowercase English letters into the pattern so that it equals the query. You may insert a character at any position in pattern or you may choose not to insert any characters at all.
+
+ 
+
+Example 1:
+
+Input: queries = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], pattern = "FB"
+Output: [true,false,true,true,false]
+Explanation: "FooBar" can be generated like this "F" + "oo" + "B" + "ar".
+"FootBall" can be generated like this "F" + "oot" + "B" + "all".
+"FrameBuffer" can be generated like this "F" + "rame" + "B" + "uffer".
+
+Example 2:
+
+Input: queries = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], pattern = "FoBa"
+Output: [true,false,true,false,false]
+Explanation: "FooBar" can be generated like this "Fo" + "o" + "Ba" + "r".
+"FootBall" can be generated like this "Fo" + "ot" + "Ba" + "ll".
+
+Example 3:
+
+Input: queries = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], pattern = "FoBaT"
+Output: [false,true,false,false,false]
+Explanation: "FooBarTest" can be generated like this "Fo" + "o" + "Ba" + "r" + "T" + "est".
+
+ 
+
+Constraints:
+
+- 1 <= pattern.length, queries.length <= 100
+
+- 1 <= queries[i].length <= 100
+
+- queries[i] and pattern consist of English letters.
+
+------------------------------
+1022. Sum of Root To Leaf Binary Numbers 
+------------------------------
+
+You are given the root of a binary tree where each node has a value 0 or 1. Each root-to-leaf path represents a binary number starting with the most significant bit.
+
+- For example, if the path is 0 -> 1 -> 1 -> 0 -> 1, then this could represent 01101 in binary, which is 13.
+
+For all leaves in the tree, consider the numbers represented by the path from the root to that leaf. Return the sum of these numbers.
+
+The test cases are generated so that the answer fits in a 32-bits integer.
+
+ 
+
+Example 1:
+
+Input: root = [1,0,1,0,1,0,1]
+Output: 22
+Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
+
+Example 2:
+
+Input: root = [0]
+Output: 0
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 1000].
+
+- Node.val is 0 or 1.
+
+------------------------------
+1021. Remove Outermost Parentheses 
+------------------------------
+
+A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.
+
+- For example, "", "()", "(())()", and "(()(()))" are all valid parentheses strings.
+
+A valid parentheses string s is primitive if it is nonempty, and there does not exist a way to split it into s = A + B, with A and B nonempty valid parentheses strings.
+
+Given a valid parentheses string s, consider its primitive decomposition: s = P1 + P2 + ... + Pk, where Pi are primitive valid parentheses strings.
+
+Return s after removing the outermost parentheses of every primitive string in the primitive decomposition of s.
+
+ 
+
+Example 1:
+
+Input: s = "(()())(())"
+Output: "()()()"
+Explanation: 
+The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
+After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
+
+Example 2:
+
+Input: s = "(()())(())(()(()))"
+Output: "()()()()(())"
+Explanation: 
+The input string is "(()())(())(()(()))", with primitive decomposition "(()())" + "(())" + "(()(()))".
+After removing outer parentheses of each part, this is "()()" + "()" + "()(())" = "()()()()(())".
+
+Example 3:
+
+Input: s = "()()"
+Output: ""
+Explanation: 
+The input string is "()()", with primitive decomposition "()" + "()".
+After removing outer parentheses of each part, this is "" + "" = "".
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s[i] is either '(' or ')'.
+
+- s is a valid parentheses string.
+
+------------------------------
+1088. Confusing Number II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1087. Brace Expansion 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1065. Index Pairs of a String 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1086. High Five 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1020. Number of Enclaves 
+------------------------------
+
+You are given an m x n binary matrix grid, where 0 represents a sea cell and 1 represents a land cell.
+
+A move consists of walking from one land cell to another adjacent (4-directionally) land cell or walking off the boundary of the grid.
+
+Return the number of land cells in grid for which we cannot walk off the boundary of the grid in any number of moves.
+
+ 
+
+Example 1:
+
+Input: grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
+Output: 3
+Explanation: There are three 1s that are enclosed by 0s, and one 1 that is not enclosed because its on the boundary.
+
+Example 2:
+
+Input: grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
+Output: 0
+Explanation: All 1s are either on the boundary or can reach the boundary.
+
+ 
+
+Constraints:
+
+- m == grid.length
+
+- n == grid[i].length
+
+- 1 <= m, n <= 500
+
+- grid[i][j] is either 0 or 1.
+
+------------------------------
+1019. Next Greater Node In Linked List 
+------------------------------
+
+You are given the head of a linked list with n nodes.
+
+For each node in the list, find the value of the next greater node. That is, for each node, find the value of the first node that is next to it and has a strictly larger value than it.
+
+Return an integer array answer where answer[i] is the value of the next greater node of the ith node (1-indexed). If the ith node does not have a next greater node, set answer[i] = 0.
+
+ 
+
+Example 1:
+
+Input: head = [2,1,5]
+Output: [5,5,0]
+
+Example 2:
+
+Input: head = [2,7,4,3,5]
+Output: [7,0,5,5,0]
+
+ 
+
+Constraints:
+
+- The number of nodes in the list is n.
+
+- 1 <= n <= 104
+
+- 1 <= Node.val <= 109
+
+------------------------------
+1018. Binary Prefix Divisible By 5 
+------------------------------
+
+You are given a binary array nums (0-indexed).
+
+We define xi as the number whose binary representation is the subarray nums[0..i] (from most-significant-bit to least-significant-bit).
+
+- For example, if nums = [1,0,1], then x0 = 1, x1 = 2, and x2 = 5.
+
+Return an array of booleans answer where answer[i] is true if xi is divisible by 5.
+
+ 
+
+Example 1:
+
+Input: nums = [0,1,1]
+Output: [true,false,false]
+Explanation: The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10.
+Only the first number is divisible by 5, so answer[0] is true.
+
+Example 2:
+
+Input: nums = [1,1,1]
+Output: [false,false,false]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- nums[i] is either 0 or 1.
+
+------------------------------
+1017. Convert to Base -2 
+------------------------------
+
+Given an integer n, return a binary string representing its representation in base -2.
+
+Note that the returned string should not have leading zeros unless the string is "0".
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: "110"
+Explantion: (-2)2 + (-2)1 = 2
+
+Example 2:
+
+Input: n = 3
+Output: "111"
+Explantion: (-2)2 + (-2)1 + (-2)0 = 3
+
+Example 3:
+
+Input: n = 4
+Output: "100"
+Explantion: (-2)2 = 4
+
+ 
+
+Constraints:
+
+- 0 <= n <= 109
+
+------------------------------
+1056. Confusing Number 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1067. Digit Count in Range 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1066. Campus Bikes II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1064. Fixed Point 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1016. Binary String With Substrings Representing 1 To N 
+------------------------------
+
+Given a binary string s and a positive integer n, return true if the binary representation of all the integers in the range [1, n] are substrings of s, or false otherwise.
+
+A substring is a contiguous sequence of characters within a string.
+
+ 
+
+Example 1:
+
+Input: s = "0110", n = 3
+Output: true
+
+Example 2:
+
+Input: s = "0110", n = 4
+Output: false
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 1000
+
+- s[i] is either '0' or '1'.
+
+- 1 <= n <= 109
+
+------------------------------
+1015. Smallest Integer Divisible by K 
+------------------------------
+
+Given a positive integer k, you need to find the length of the smallest positive integer n such that n is divisible by k, and n only contains the digit 1.
+
+Return the length of n. If there is no such n, return -1.
+
+Note: n may not fit in a 64-bit signed integer.
+
+ 
+
+Example 1:
+
+Input: k = 1
+Output: 1
+Explanation: The smallest answer is n = 1, which has length 1.
+
+Example 2:
+
+Input: k = 2
+Output: -1
+Explanation: There is no such positive integer n divisible by 2.
+
+Example 3:
+
+Input: k = 3
+Output: 3
+Explanation: The smallest answer is n = 111, which has length 3.
+
+ 
+
+Constraints:
+
+- 1 <= k <= 105
+
+------------------------------
+1014. Best Sightseeing Pair 
+------------------------------
+
+You are given an integer array values where values[i] represents the value of the ith sightseeing spot. Two sightseeing spots i and j have a distance j - i between them.
+
+The score of a pair (i < j) of sightseeing spots is values[i] + values[j] + i - j: the sum of the values of the sightseeing spots, minus the distance between them.
+
+Return the maximum score of a pair of sightseeing spots.
+
+ 
+
+Example 1:
+
+Input: values = [8,1,5,2,6]
+Output: 11
+Explanation: i = 0, j = 2, values[i] + values[j] + i - j = 8 + 5 + 0 - 2 = 11
+
+Example 2:
+
+Input: values = [1,2]
+Output: 2
+
+ 
+
+Constraints:
+
+- 2 <= values.length <= 5 * 104
+
+- 1 <= values[i] <= 1000
+
+------------------------------
+1013. Partition Array Into Three Parts With Equal Sum 
+------------------------------
+
+Given an array of integers arr, return true if we can partition the array into three non-empty parts with equal sums.
+
+Formally, we can partition the array if we can find indexes i + 1 < j with (arr[0] + arr[1] + ... + arr[i] == arr[i + 1] + arr[i + 2] + ... + arr[j - 1] == arr[j] + arr[j + 1] + ... + arr[arr.length - 1])
+
+ 
+
+Example 1:
+
+Input: arr = [0,2,1,-6,6,-7,9,1,2,0,1]
+Output: true
+Explanation: 0 + 2 + 1 = -6 + 6 - 7 + 9 + 1 = 2 + 0 + 1
+
+Example 2:
+
+Input: arr = [0,2,1,-6,6,7,9,-1,2,0,1]
+Output: false
+
+Example 3:
+
+Input: arr = [3,3,6,5,-2,2,5,1,-9,4]
+Output: true
+Explanation: 3 + 3 = 6 = 5 - 2 + 2 + 5 + 1 - 9 + 4
+
+ 
+
+Constraints:
+
+- 3 <= arr.length <= 5 * 104
+
+- -104 <= arr[i] <= 104
+
+------------------------------
+1063. Number of Valid Subarrays 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1062. Longest Repeating Substring 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1060. Missing Element in Sorted Array 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1061. Lexicographically Smallest Equivalent String 
+------------------------------
+
+You are given two strings of the same length s1 and s2 and a string baseStr.
+
+We say s1[i] and s2[i] are equivalent characters.
+
+- For example, if s1 = "abc" and s2 = "cde", then we have 'a' == 'c', 'b' == 'd', and 'c' == 'e'.
+
+Equivalent characters follow the usual rules of any equivalence relation:
+
+- Reflexivity: 'a' == 'a'.
+
+- Symmetry: 'a' == 'b' implies 'b' == 'a'.
+
+- Transitivity: 'a' == 'b' and 'b' == 'c' implies 'a' == 'c'.
+
+For example, given the equivalency information from s1 = "abc" and s2 = "cde", "acd" and "aab" are equivalent strings of baseStr = "eed", and "aab" is the lexicographically smallest equivalent string of baseStr.
+
+Return the lexicographically smallest equivalent string of baseStr by using the equivalency information from s1 and s2.
+
+ 
+
+Example 1:
+
+Input: s1 = "parker", s2 = "morris", baseStr = "parser"
+Output: "makkek"
+Explanation: Based on the equivalency information in s1 and s2, we can group their characters as [m,p], [a,o], [k,r,s], [e,i].
+The characters in each group are equivalent and sorted in lexicographical order.
+So the answer is "makkek".
+
+Example 2:
+
+Input: s1 = "hello", s2 = "world", baseStr = "hold"
+Output: "hdld"
+Explanation: Based on the equivalency information in s1 and s2, we can group their characters as [h,w], [d,e,o], [l,r].
+So only the second letter 'o' in baseStr is changed to 'd', the answer is "hdld".
+
+Example 3:
+
+Input: s1 = "leetcode", s2 = "programs", baseStr = "sourcecode"
+Output: "aauaaaaada"
+Explanation: We group the equivalent characters in s1 and s2 as [a,o,e,r,s,c], [l,p], [g,t] and [d,m], thus all letters in baseStr except 'u' and 'd' are transformed to 'a', the answer is "aauaaaaada".
+
+ 
+
+Constraints:
+
+- 1 <= s1.length, s2.length, baseStr <= 1000
+
+- s1.length == s2.length
+
+- s1, s2, and baseStr consist of lowercase English letters.
+
+------------------------------
+1012. Numbers With Repeated Digits 
+------------------------------
+
+Given an integer n, return the number of positive integers in the range [1, n] that have at least one repeated digit.
+
+ 
+
+Example 1:
+
+Input: n = 20
+Output: 1
+Explanation: The only positive number (<= 20) with at least 1 repeated digit is 11.
+
+Example 2:
+
+Input: n = 100
+Output: 10
+Explanation: The positive numbers (<= 100) with atleast 1 repeated digit are 11, 22, 33, 44, 55, 66, 77, 88, 99, and 100.
+
+Example 3:
+
+Input: n = 1000
+Output: 262
+
+ 
+
+Constraints:
+
+- 1 <= n <= 109
+
+------------------------------
+1011. Capacity To Ship Packages Within D Days 
+------------------------------
+
+A conveyor belt has packages that must be shipped from one port to another within days days.
+
+The ith package on the conveyor belt has a weight of weights[i]. Each day, we load the ship with packages on the conveyor belt (in the order given by weights). We may not load more weight than the maximum weight capacity of the ship.
+
+Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within days days.
+
+ 
+
+Example 1:
+
+Input: weights = [1,2,3,4,5,6,7,8,9,10], days = 5
+Output: 15
+Explanation: A ship capacity of 15 is the minimum to ship all the packages in 5 days like this:
+1st day: 1, 2, 3, 4, 5
+2nd day: 6, 7
+3rd day: 8
+4th day: 9
+5th day: 10
+
+Note that the cargo must be shipped in the order given, so using a ship of capacity 14 and splitting the packages into parts like (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) is not allowed.
+
+Example 2:
+
+Input: weights = [3,2,2,4,1,4], days = 3
+Output: 6
+Explanation: A ship capacity of 6 is the minimum to ship all the packages in 3 days like this:
+1st day: 3, 2
+2nd day: 2, 4
+3rd day: 1, 4
+
+Example 3:
+
+Input: weights = [1,2,3,1,1], days = 4
+Output: 3
+Explanation:
+1st day: 1
+2nd day: 2
+3rd day: 3
+4th day: 1, 1
+
+ 
+
+Constraints:
+
+- 1 <= days <= weights.length <= 5 * 104
+
+- 1 <= weights[i] <= 500
+
+------------------------------
+1010. Pairs of Songs With Total Durations Divisible by 60 
+------------------------------
+
+You are given a list of songs where the ith song has a duration of time[i] seconds.
+
+Return the number of pairs of songs for which their total duration in seconds is divisible by 60. Formally, we want the number of indices i, j such that i < j with (time[i] + time[j]) % 60 == 0.
+
+ 
+
+Example 1:
+
+Input: time = [30,20,150,100,40]
+Output: 3
+Explanation: Three pairs have a total duration divisible by 60:
+(time[0] = 30, time[2] = 150): total duration 180
+(time[1] = 20, time[3] = 100): total duration 120
+(time[1] = 20, time[4] = 40): total duration 60
+
+Example 2:
+
+Input: time = [60,60,60]
+Output: 3
+Explanation: All three pairs have a total duration of 120, which is divisible by 60.
+
+ 
+
+Constraints:
+
+- 1 <= time.length <= 6 * 104
+
+- 1 <= time[i] <= 500
+

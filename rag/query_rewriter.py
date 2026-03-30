@@ -111,19 +111,13 @@ def rewrite_query(
 
     # LLM se rewrite karwao
     try:
-        from langchain_ollama import ChatOllama
+        from utils.llm import invoke_llm
 
-        llm = ChatOllama(
-            base_url=OLLAMA_BASE_URL,
-            model=OLLAMA_MODEL,
-            temperature=0.0,  # deterministic rewriting chahiye, creative nahi
-        )
         prompt = REWRITE_PROMPT.format(
             history=formatted_history,
             question=query,
         )
-        response = llm.invoke(prompt)
-        rewritten = response.content.strip()
+        rewritten = invoke_llm(prompt, temperature=0.0)
 
         # Sanity check: agar LLM empty ya bahut lamba kuch de toh original pe fall back
         if rewritten and len(rewritten) < 500:

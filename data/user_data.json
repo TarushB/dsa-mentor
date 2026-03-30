@@ -1,0 +1,7563 @@
+{
+  "profile": {
+    "total_solved": 428,
+    "by_difficulty": {
+      "EASY": 178,
+      "MEDIUM": 223,
+      "HARD": 27
+    },
+    "pattern_mastery": {
+      "backtracking": {
+        "solved": 24,
+        "confidence": "HIGH"
+      },
+      "bfs": {
+        "solved": 16,
+        "confidence": "HIGH"
+      },
+      "binary_search": {
+        "solved": 34,
+        "confidence": "HIGH"
+      },
+      "bit_manipulation": {
+        "solved": 34,
+        "confidence": "HIGH"
+      },
+      "design": {
+        "solved": 4,
+        "confidence": "MEDIUM"
+      },
+      "dfs": {
+        "solved": 25,
+        "confidence": "HIGH"
+      },
+      "divide_and_conquer": {
+        "solved": 10,
+        "confidence": "HIGH"
+      },
+      "dp_1d": {
+        "solved": 95,
+        "confidence": "HIGH"
+      },
+      "dp_2d": {
+        "solved": 13,
+        "confidence": "HIGH"
+      },
+      "graph_shortest_path": {
+        "solved": 4,
+        "confidence": "MEDIUM"
+      },
+      "graph_topological": {
+        "solved": 3,
+        "confidence": "MEDIUM"
+      },
+      "greedy": {
+        "solved": 46,
+        "confidence": "HIGH"
+      },
+      "hashing": {
+        "solved": 54,
+        "confidence": "HIGH"
+      },
+      "heap_kth_element": {
+        "solved": 3,
+        "confidence": "MEDIUM"
+      },
+      "intervals": {
+        "solved": 3,
+        "confidence": "MEDIUM"
+      },
+      "linked_list": {
+        "solved": 16,
+        "confidence": "HIGH"
+      },
+      "math": {
+        "solved": 61,
+        "confidence": "HIGH"
+      },
+      "monotonic_stack": {
+        "solved": 2,
+        "confidence": "LOW"
+      },
+      "prefix_sum": {
+        "solved": 17,
+        "confidence": "HIGH"
+      },
+      "recursion": {
+        "solved": 9,
+        "confidence": "HIGH"
+      },
+      "segment_tree": {
+        "solved": 2,
+        "confidence": "LOW"
+      },
+      "simulation": {
+        "solved": 27,
+        "confidence": "HIGH"
+      },
+      "sliding_window": {
+        "solved": 21,
+        "confidence": "HIGH"
+      },
+      "stack_queue": {
+        "solved": 12,
+        "confidence": "HIGH"
+      },
+      "string_matching": {
+        "solved": 46,
+        "confidence": "HIGH"
+      },
+      "trie": {
+        "solved": 1,
+        "confidence": "LOW"
+      },
+      "two_pointers": {
+        "solved": 61,
+        "confidence": "HIGH"
+      },
+      "union_find": {
+        "solved": 4,
+        "confidence": "MEDIUM"
+      }
+    },
+    "weak_patterns": [
+      "monotonic_stack",
+      "segment_tree",
+      "trie"
+    ],
+    "strong_patterns": [
+      "backtracking",
+      "bfs",
+      "binary_search",
+      "bit_manipulation",
+      "dfs",
+      "divide_and_conquer",
+      "dp_1d",
+      "dp_2d",
+      "greedy",
+      "hashing",
+      "linked_list",
+      "math",
+      "prefix_sum",
+      "recursion",
+      "simulation",
+      "sliding_window",
+      "stack_queue",
+      "string_matching",
+      "two_pointers"
+    ],
+    "recent_activity": [
+      {
+        "problem_id": "reverse-pairs",
+        "title": "Reverse Pairs",
+        "difficulty": "EASY",
+        "patterns": [
+          "two_pointers",
+          "math"
+        ],
+        "outcome": "GAVE_UP",
+        "solved_at": "2026-03-29T17:11:10.009636"
+      },
+      {
+        "problem_id": "count-partitions-with-even-sum-difference",
+        "title": "Count Partitions with Even Sum Difference",
+        "difficulty": "EASY",
+        "patterns": [
+          "two_pointers",
+          "math"
+        ],
+        "outcome": "SOLVED",
+        "solved_at": "2026-03-29T16:31:51.123694"
+      },
+      {
+        "problem_id": "3432",
+        "title": "3432",
+        "difficulty": "MEDIUM",
+        "patterns": [],
+        "outcome": "GAVE_UP",
+        "solved_at": "2026-03-29T16:19:01.906398"
+      }
+    ],
+    "last_updated": "2026-03-29T17:11:10.009651"
+  },
+  "problems": [
+    {
+      "problem_id": "number-of-prefix-connected-groups",
+      "title": "Number of Prefix Connected Groups",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "house-robber-v",
+      "title": "House Robber V",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "toggle-light-bulbs",
+      "title": "Toggle Light Bulbs",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "first-element-with-unique-frequency",
+      "title": "First Element with Unique Frequency",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-score-difference-in-a-game",
+      "title": "Find the Score Difference in a Game",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "smallest-pair-with-different-frequencies",
+      "title": "Smallest Pair With Different Frequencies",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-close-characters",
+      "title": "Merge Close Characters",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "trim-trailing-vowels",
+      "title": "Trim Trailing Vowels",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-cost-to-split-into-ones",
+      "title": "Minimum Cost to Split into Ones",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-capacity-box",
+      "title": "Minimum Capacity Box",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-smallest-balanced-index",
+      "title": "Find the Smallest Balanced Index",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-sort-a-string",
+      "title": "Minimum Operations to Sort a String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "first-unique-even-element",
+      "title": "First Unique Even Element",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sum-of-gcd-of-formed-pairs",
+      "title": "Sum of GCD of Formed Pairs",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Two Pointers",
+        "Simulation",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-cost-to-equalize-arrays-using-swaps",
+      "title": "Minimum Cost to Equalize Arrays Using Swaps",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Greedy",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-commas-in-range",
+      "title": "Count Commas in Range",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-commas-in-range-ii",
+      "title": "Count Commas in Range II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-arithmetic-sequence-after-changing-at-most-one-element",
+      "title": "Longest Arithmetic Sequence After Changing At Most One Element",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "construct-uniform-parity-array-i",
+      "title": "Construct Uniform Parity Array I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "construct-uniform-parity-array-ii",
+      "title": "Construct Uniform Parity Array II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "two-sum",
+      "title": "Two Sum",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "add-two-numbers",
+      "title": "Add Two Numbers",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Math",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "median-of-two-sorted-arrays",
+      "title": "Median of Two Sorted Arrays",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Binary Search",
+        "Divide and Conquer"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "divide_and_conquer",
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-integer",
+      "title": "Reverse Integer",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "string-to-integer-atoi",
+      "title": "String to Integer (atoi)",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "palindrome-number",
+      "title": "Palindrome Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "container-with-most-water",
+      "title": "Container With Most Water",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-common-prefix",
+      "title": "Longest Common Prefix",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "String",
+        "Trie"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "trie",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "3sum",
+      "title": "3Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "3sum-closest",
+      "title": "3Sum Closest",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "letter-combinations-of-a-phone-number",
+      "title": "Letter Combinations of a Phone Number",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "4sum",
+      "title": "4Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-nth-node-from-end-of-list",
+      "title": "Remove Nth Node From End of List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "valid-parentheses",
+      "title": "Valid Parentheses",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-two-sorted-lists",
+      "title": "Merge Two Sorted Lists",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Linked List",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "generate-parentheses",
+      "title": "Generate Parentheses",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-k-sorted-lists",
+      "title": "Merge k Sorted Lists",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Linked List",
+        "Divide and Conquer",
+        "Heap (Priority Queue)",
+        "Merge Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "swap-nodes-in-pairs",
+      "title": "Swap Nodes in Pairs",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-duplicates-from-sorted-array",
+      "title": "Remove Duplicates from Sorted Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-element",
+      "title": "Remove Element",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-index-of-the-first-occurrence-in-a-string",
+      "title": "Find the Index of the First Occurrence in a String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String",
+        "String Matching"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "search-in-rotated-sorted-array",
+      "title": "Search in Rotated Sorted Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-first-and-last-position-of-element-in-sorted-array",
+      "title": "Find First and Last Position of Element in Sorted Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "search-insert-position",
+      "title": "Search Insert Position",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "valid-sudoku",
+      "title": "Valid Sudoku",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sudoku-solver",
+      "title": "Sudoku Solver",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Backtracking",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-and-say",
+      "title": "Count and Say",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "combination-sum",
+      "title": "Combination Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "combination-sum-ii",
+      "title": "Combination Sum II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "first-missing-positive",
+      "title": "First Missing Positive",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "jump-game-ii",
+      "title": "Jump Game II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "permutations",
+      "title": "Permutations",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "permutations-ii",
+      "title": "Permutations II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "rotate-image",
+      "title": "Rotate Image",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "powx-n",
+      "title": "Pow(x, n)",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "n-queens",
+      "title": "N-Queens",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "design"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "n-queens-ii",
+      "title": "N-Queens II",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-subarray",
+      "title": "Maximum Subarray",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Divide and Conquer",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "spiral-matrix",
+      "title": "Spiral Matrix",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "jump-game",
+      "title": "Jump Game",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-intervals",
+      "title": "Merge Intervals",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "insert-interval",
+      "title": "Insert Interval",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "length-of-last-word",
+      "title": "Length of Last Word",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "spiral-matrix-ii",
+      "title": "Spiral Matrix II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "rotate-list",
+      "title": "Rotate List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "unique-paths",
+      "title": "Unique Paths",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Dynamic Programming",
+        "Combinatorics"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "unique-paths-ii",
+      "title": "Unique Paths II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-path-sum",
+      "title": "Minimum Path Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "plus-one",
+      "title": "Plus One",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "add-binary",
+      "title": "Add Binary",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "String",
+        "Bit Manipulation",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "climbing-stairs",
+      "title": "Climbing Stairs",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Dynamic Programming",
+        "Memoization"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "set-matrix-zeroes",
+      "title": "Set Matrix Zeroes",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "search-a-2d-matrix",
+      "title": "Search a 2D Matrix",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sort-colors",
+      "title": "Sort Colors",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "combinations",
+      "title": "Combinations",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "subsets",
+      "title": "Subsets",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "word-search",
+      "title": "Word Search",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "String",
+        "Backtracking",
+        "Depth-First Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-duplicates-from-sorted-array-ii",
+      "title": "Remove Duplicates from Sorted Array II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "search-in-rotated-sorted-array-ii",
+      "title": "Search in Rotated Sorted Array II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-duplicates-from-sorted-list-ii",
+      "title": "Remove Duplicates from Sorted List II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-duplicates-from-sorted-list",
+      "title": "Remove Duplicates from Sorted List",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Linked List"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-sorted-array",
+      "title": "Merge Sorted Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "subsets-ii",
+      "title": "Subsets II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "decode-ways",
+      "title": "Decode Ways",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-linked-list-ii",
+      "title": "Reverse Linked List II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "restore-ip-addresses",
+      "title": "Restore IP Addresses",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-tree-inorder-traversal",
+      "title": "Binary Tree Inorder Traversal",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Stack",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "interleaving-string",
+      "title": "Interleaving String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "validate-binary-search-tree",
+      "title": "Validate Binary Search Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "same-tree",
+      "title": "Same Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "symmetric-tree",
+      "title": "Symmetric Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-tree-level-order-traversal",
+      "title": "Binary Tree Level Order Traversal",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-tree-zigzag-level-order-traversal",
+      "title": "Binary Tree Zigzag Level Order Traversal",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-depth-of-binary-tree",
+      "title": "Maximum Depth of Binary Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "balanced-binary-tree",
+      "title": "Balanced Binary Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "path-sum",
+      "title": "Path Sum",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "path-sum-ii",
+      "title": "Path Sum II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Backtracking",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "distinct-subsequences",
+      "title": "Distinct Subsequences",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "pascals-triangle",
+      "title": "Pascal's Triangle",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "triangle",
+      "title": "Triangle",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-time-to-buy-and-sell-stock",
+      "title": "Best Time to Buy and Sell Stock",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-time-to-buy-and-sell-stock-ii",
+      "title": "Best Time to Buy and Sell Stock II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-time-to-buy-and-sell-stock-iii",
+      "title": "Best Time to Buy and Sell Stock III",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "valid-palindrome",
+      "title": "Valid Palindrome",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "word-ladder",
+      "title": "Word Ladder",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Breadth-First Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-consecutive-sequence",
+      "title": "Longest Consecutive Sequence",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Union-Find"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "union_find",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sum-root-to-leaf-numbers",
+      "title": "Sum Root to Leaf Numbers",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "surrounded-regions",
+      "title": "Surrounded Regions",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "dfs",
+        "dp_2d",
+        "bfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "palindrome-partitioning",
+      "title": "Palindrome Partitioning",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "gas-station",
+      "title": "Gas Station",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "candy",
+      "title": "Candy",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "single-number",
+      "title": "Single Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "linked-list-cycle",
+      "title": "Linked List Cycle",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "linked-list-cycle-ii",
+      "title": "Linked List Cycle II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-tree-preorder-traversal",
+      "title": "Binary Tree Preorder Traversal",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Stack",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-tree-postorder-traversal",
+      "title": "Binary Tree Postorder Traversal",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Stack",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "lru-cache",
+      "title": "LRU Cache",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "Linked List",
+        "Design",
+        "Doubly-Linked List"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "design",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "evaluate-reverse-polish-notation",
+      "title": "Evaluate Reverse Polish Notation",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-words-in-a-string",
+      "title": "Reverse Words in a String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-product-subarray",
+      "title": "Maximum Product Subarray",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-minimum-in-rotated-sorted-array",
+      "title": "Find Minimum in Rotated Sorted Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "min-stack",
+      "title": "Min Stack",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Stack",
+        "Design"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "design"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "intersection-of-two-linked-lists",
+      "title": "Intersection of Two Linked Lists",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-peak-element",
+      "title": "Find Peak Element",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-gap",
+      "title": "Maximum Gap",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Sorting",
+        "Bucket Sort",
+        "Radix Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "two-sum-ii-input-array-is-sorted",
+      "title": "Two Sum II - Input Array Is Sorted",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "majority-element",
+      "title": "Majority Element",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Divide and Conquer",
+        "Sorting",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "factorial-trailing-zeroes",
+      "title": "Factorial Trailing Zeroes",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "dungeon-game",
+      "title": "Dungeon Game",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-time-to-buy-and-sell-stock-iv",
+      "title": "Best Time to Buy and Sell Stock IV",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "rotate-array",
+      "title": "Rotate Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-bits",
+      "title": "Reverse Bits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Divide and Conquer",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "divide_and_conquer",
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "house-robber",
+      "title": "House Robber",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-tree-right-side-view",
+      "title": "Binary Tree Right Side View",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-islands",
+      "title": "Number of Islands",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "union_find"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "happy-number",
+      "title": "Happy Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "Math",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-linked-list-elements",
+      "title": "Remove Linked List Elements",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Linked List",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-linked-list",
+      "title": "Reverse Linked List",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Linked List",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "course-schedule",
+      "title": "Course Schedule",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Topological Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "course-schedule-ii",
+      "title": "Course Schedule II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Topological Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs",
+        "graph_topological"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "combination-sum-iii",
+      "title": "Combination Sum III",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "contains-duplicate",
+      "title": "Contains Duplicate",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-complete-tree-nodes",
+      "title": "Count Complete Tree Nodes",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Binary Search",
+        "Bit Manipulation",
+        "Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "implement-stack-using-queues",
+      "title": "Implement Stack using Queues",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Stack",
+        "Design",
+        "Queue"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "design",
+        "stack_queue"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "invert-binary-tree",
+      "title": "Invert Binary Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "majority-element-ii",
+      "title": "Majority Element II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "kth-smallest-element-in-a-bst",
+      "title": "Kth Smallest Element in a BST",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "power-of-two",
+      "title": "Power of Two",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "implement-queue-using-stacks",
+      "title": "Implement Queue using Stacks",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Stack",
+        "Design",
+        "Queue"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "lowest-common-ancestor-of-a-binary-search-tree",
+      "title": "Lowest Common Ancestor of a Binary Search Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "lowest-common-ancestor-of-a-binary-tree",
+      "title": "Lowest Common Ancestor of a Binary Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "delete-node-in-a-linked-list",
+      "title": "Delete Node in a Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "product-of-array-except-self",
+      "title": "Product of Array Except Self",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "valid-anagram",
+      "title": "Valid Anagram",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "add-digits",
+      "title": "Add Digits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Simulation",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "missing-number",
+      "title": "Missing Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Binary Search",
+        "Bit Manipulation",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "first-bad-version",
+      "title": "First Bad Version",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Binary Search",
+        "Interactive"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "move-zeroes",
+      "title": "Move Zeroes",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "bulls-and-cows",
+      "title": "Bulls and Cows",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "title": "Best Time to Buy and Sell Stock with Cooldown",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "bulb-switcher",
+      "title": "Bulb Switcher",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Brainteaser"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "coin-change",
+      "title": "Coin Change",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Breadth-First Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "power-of-three",
+      "title": "Power of Three",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "odd-even-linked-list",
+      "title": "Odd Even Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "increasing-triplet-subsequence",
+      "title": "Increasing Triplet Subsequence",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "power-of-four",
+      "title": "Power of Four",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-vowels-of-a-string",
+      "title": "Reverse Vowels of a String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "valid-perfect-square",
+      "title": "Valid Perfect Square",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "ransom-note",
+      "title": "Ransom Note",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-difference",
+      "title": "Find the Difference",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Bit Manipulation",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-watch",
+      "title": "Binary Watch",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Backtracking",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "frog-jump",
+      "title": "Frog Jump",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "split-array-largest-sum",
+      "title": "Split Array Largest Sum",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Binary Search",
+        "Dynamic Programming",
+        "Greedy",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "fizz-buzz",
+      "title": "Fizz Buzz",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "String",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "add-strings",
+      "title": "Add Strings",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "String",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "partition-equal-subset-sum",
+      "title": "Partition Equal Subset Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "non-overlapping-intervals",
+      "title": "Non-overlapping Intervals",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "add-two-numbers-ii",
+      "title": "Add Two Numbers II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Math",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-all-numbers-disappeared-in-an-array",
+      "title": "Find All Numbers Disappeared in an Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "delete-node-in-a-bst",
+      "title": "Delete Node in a BST",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sort-characters-by-frequency",
+      "title": "Sort Characters By Frequency",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Bucket Sort",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "assign-cookies",
+      "title": "Assign Cookies",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "max-consecutive-ones",
+      "title": "Max Consecutive Ones",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "target-sum",
+      "title": "Target Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "fibonacci-number",
+      "title": "Fibonacci Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Dynamic Programming",
+        "Recursion",
+        "Memoization"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-palindromic-subsequence",
+      "title": "Longest Palindromic Subsequence",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "coin-change-ii",
+      "title": "Coin Change II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "single-element-in-a-sorted-array",
+      "title": "Single Element in a Sorted Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "01-matrix",
+      "title": "01 Matrix",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Breadth-First Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "graph_shortest_path"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "diameter-of-binary-tree",
+      "title": "Diameter of Binary Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-provinces",
+      "title": "Number of Provinces",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Graph Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "union_find"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "subarray-sum-equals-k",
+      "title": "Subarray Sum Equals K",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "delete-operation-for-two-strings",
+      "title": "Delete Operation for Two Strings",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "can-place-flowers",
+      "title": "Can Place Flowers",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-average-subarray-i",
+      "title": "Maximum Average Subarray I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "set-mismatch",
+      "title": "Set Mismatch",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Bit Manipulation",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-number-with-alternating-bits",
+      "title": "Binary Number with Alternating Bits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-binary-substrings",
+      "title": "Count Binary Substrings",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "search-in-a-binary-search-tree",
+      "title": "Search in a Binary Search Tree",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "insert-into-a-binary-search-tree",
+      "title": "Insert into a Binary Search Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-search",
+      "title": "Binary Search",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+      "title": "Best Time to Buy and Sell Stock with Transaction Fee",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "1-bit-and-2-bit-characters",
+      "title": "1-bit and 2-bit Characters",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "flood-fill",
+      "title": "Flood Fill",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "daily-temperatures",
+      "title": "Daily Temperatures",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Stack",
+        "Monotonic Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "monotonic_stack"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "special-binary-string",
+      "title": "Special Binary String",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "String",
+        "Divide and Conquer",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "prime-number-of-set-bits-in-binary-representation",
+      "title": "Prime Number of Set Bits in Binary Representation",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "jewels-and-stones",
+      "title": "Jewels and Stones",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "is-graph-bipartite",
+      "title": "Is Graph Bipartite?",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Graph Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs",
+        "bfs",
+        "union_find"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "rotate-string",
+      "title": "Rotate String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "String Matching"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "champagne-tower",
+      "title": "Champagne Tower",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-eventual-safe-states",
+      "title": "Find Eventual Safe States",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Topological Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs",
+        "graph_topological"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "largest-triangle-area",
+      "title": "Largest Triangle Area",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Geometry"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "shifting-letters",
+      "title": "Shifting Letters",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "String",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "peak-index-in-a-mountain-array",
+      "title": "Peak Index in a Mountain Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "lemonade-change",
+      "title": "Lemonade Change",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "binary-gap",
+      "title": "Binary Gap",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reordered-power-of-2",
+      "title": "Reordered Power of 2",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "Math",
+        "Sorting",
+        "Counting",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "leaf-similar-trees",
+      "title": "Leaf-Similar Trees",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "koko-eating-bananas",
+      "title": "Koko Eating Bananas",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "middle-of-the-linked-list",
+      "title": "Middle of the Linked List",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "boats-to-save-people",
+      "title": "Boats to Save People",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-add-to-make-parentheses-valid",
+      "title": "Minimum Add to Make Parentheses Valid",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Stack",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-falling-path-sum",
+      "title": "Minimum Falling Path Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "vowel-spellchecker",
+      "title": "Vowel Spellchecker",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "largest-perimeter-triangle",
+      "title": "Largest Perimeter Triangle",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "smallest-string-starting-from-leaf",
+      "title": "Smallest String Starting From Leaf",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Backtracking",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "rotting-oranges",
+      "title": "Rotting Oranges",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Breadth-First Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "complement-of-base-10-integer",
+      "title": "Complement of Base 10 Integer",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "capacity-to-ship-packages-within-d-days",
+      "title": "Capacity To Ship Packages Within D Days",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-enclaves",
+      "title": "Number of Enclaves",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-outermost-parentheses",
+      "title": "Remove Outermost Parentheses",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sum-of-root-to-leaf-binary-numbers",
+      "title": "Sum of Root To Leaf Binary Numbers",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "partition-array-for-maximum-sum",
+      "title": "Partition Array for Maximum Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "shortest-path-in-binary-matrix",
+      "title": "Shortest Path in Binary Matrix",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Breadth-First Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "linked_list"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "defanging-an-ip-address",
+      "title": "Defanging an IP Address",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-common-subsequence",
+      "title": "Longest Common Subsequence",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-level-sum-of-a-binary-tree",
+      "title": "Maximum Level Sum of a Binary Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-absolute-difference",
+      "title": "Minimum Absolute Difference",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-number-of-nice-subarrays",
+      "title": "Count Number of Nice Subarrays",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Sliding Window",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "subtract-the-product-and-sum-of-digits-of-an-integer",
+      "title": "Subtract the Product and Sum of Digits of an Integer",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-smallest-divisor-given-a-threshold",
+      "title": "Find the Smallest Divisor Given a Threshold",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-n-unique-integers-sum-up-to-zero",
+      "title": "Find N Unique Integers Sum up to Zero",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "jump-game-iii",
+      "title": "Jump Game III",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Depth-First Search",
+        "Breadth-First Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "dfs",
+        "bfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-insertion-steps-to-make-a-string-palindrome",
+      "title": "Minimum Insertion Steps to Make a String Palindrome",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "decompress-run-length-encoded-list",
+      "title": "Decompress Run-Length Encoded List",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "convert-integer-to-the-sum-of-two-no-zero-integers",
+      "title": "Convert Integer to the Sum of Two No-Zero Integers",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-flips-to-make-a-or-b-equal-to-c",
+      "title": "Minimum Flips to Make a OR b Equal to c",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-69-number",
+      "title": "Maximum 69 Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance",
+      "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Dynamic Programming",
+        "Graph Theory",
+        "Shortest Path"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "graph_shortest_path"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sort-integers-by-the-number-of-1-bits",
+      "title": "Sort Integers by The Number of 1 Bits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation",
+        "Sorting",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-substrings-containing-all-three-characters",
+      "title": "Number of Substrings Containing All Three Characters",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "how-many-numbers-are-smaller-than-the-current-number",
+      "title": "How Many Numbers Are Smaller Than the Current Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Counting Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "balance-a-binary-search-tree",
+      "title": "Balance a Binary Search Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Divide and Conquer",
+        "Greedy",
+        "Tree",
+        "Depth-First Search",
+        "Binary Search Tree",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "cinema-seat-allocation",
+      "title": "Cinema Seat Allocation",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Greedy",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "create-target-array-in-the-given-order",
+      "title": "Create Target Array in the Given Order",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-steps-to-reduce-a-number-in-binary-representation-to-one",
+      "title": "Number of Steps to Reduce a Number in Binary Representation to One",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Bit Manipulation",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "the-k-th-lexicographical-string-of-all-happy-strings-of-length-n",
+      "title": "The k-th Lexicographical String of All Happy Strings of Length n",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-score-after-splitting-a-string",
+      "title": "Maximum Score After Splitting a String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-points-you-can-obtain-from-cards",
+      "title": "Maximum Points You Can Obtain from Cards",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Sliding Window",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "kids-with-the-greatest-number-of-candies",
+      "title": "Kids With the Greatest Number of Candies",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "build-an-array-with-stack-operations",
+      "title": "Build an Array With Stack Operations",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Stack",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-good-nodes-in-binary-tree",
+      "title": "Count Good Nodes in Binary Tree",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-a-string-contains-all-binary-codes-of-size-k",
+      "title": "Check If a String Contains All Binary Codes of Size K",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Bit Manipulation",
+        "Rolling Hash",
+        "Hash Function"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "cherry-pickup-ii",
+      "title": "Cherry Pickup II",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "shuffle-the-array",
+      "title": "Shuffle the Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "running-sum-of-1d-array",
+      "title": "Running Sum of 1d Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-days-to-make-m-bouquets",
+      "title": "Minimum Number of Days to Make m Bouquets",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "xor-operation-in-an-array",
+      "title": "XOR Operation in an Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "the-kth-factor-of-n",
+      "title": "The kth Factor of n",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-subarray-of-1s-after-deleting-one-element",
+      "title": "Longest Subarray of 1's After Deleting One Element",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-good-pairs",
+      "title": "Number of Good Pairs",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "water-bottles",
+      "title": "Water Bottles",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "shuffle-string",
+      "title": "Shuffle String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-swaps-to-arrange-a-binary-grid",
+      "title": "Minimum Swaps to Arrange a Binary Grid",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Greedy",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "kth-missing-positive-number",
+      "title": "Kth Missing Positive Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-kth-bit-in-nth-binary-string",
+      "title": "Find Kth Bit in Nth Binary String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Recursion",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "special-positions-in-a-binary-matrix",
+      "title": "Special Positions in a Binary Matrix",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "intervals"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-non-negative-product-in-a-matrix",
+      "title": "Maximum Non Negative Product in a Matrix",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-nesting-depth-of-the-parentheses",
+      "title": "Maximum Nesting Depth of the Parentheses",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "path-with-minimum-effort",
+      "title": "Path With Minimum Effort",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Heap (Priority Queue)",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-deletions-to-make-string-balanced",
+      "title": "Minimum Deletions to Make String Balanced",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "richest-customer-wealth",
+      "title": "Richest Customer Wealth",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "concatenation-of-consecutive-binary-numbers",
+      "title": "Concatenation of Consecutive Binary Numbers",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Bit Manipulation",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "partitioning-into-minimum-number-of-deci-binary-numbers",
+      "title": "Partitioning Into Minimum Number Of Deci-Binary Numbers",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "swapping-nodes-in-a-linked-list",
+      "title": "Swapping Nodes in a Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "tuple-with-same-product",
+      "title": "Tuple with Same Product",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-people-to-teach",
+      "title": "Minimum Number of People to Teach",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sum-of-unique-elements",
+      "title": "Sum of Unique Elements",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-array-is-sorted-and-rotated",
+      "title": "Check if Array Is Sorted and Rotated",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-changes-to-make-alternating-binary-string",
+      "title": "Minimum Changes To Make Alternating Binary String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "map-of-highest-peak",
+      "title": "Map of Highest Peak",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Breadth-First Search",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bfs",
+        "graph_shortest_path"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-strings-alternately",
+      "title": "Merge Strings Alternately",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-operations-to-move-all-balls-to-each-box",
+      "title": "Minimum Number of Operations to Move All Balls to Each Box",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "String",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-binary-string-has-at-most-one-segment-of-ones",
+      "title": "Check if Binary String Has at Most One Segment of Ones",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-one-string-swap-can-make-strings-equal",
+      "title": "Check if One String Swap Can Make Strings Equal",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-center-of-star-graph",
+      "title": "Find Center of Star Graph",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Graph Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "graph_shortest_path",
+        "graph_topological"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-average-pass-ratio",
+      "title": "Maximum Average Pass Ratio",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Greedy",
+        "Heap (Priority Queue)"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "heap_kth_element"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-ascending-subarray-sum",
+      "title": "Maximum Ascending Subarray Sum",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-sideway-jumps",
+      "title": "Minimum Sideway Jumps",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "queries-on-number-of-points-inside-a-circle",
+      "title": "Queries on Number of Points Inside a Circle",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Geometry"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sorting-the-sentence",
+      "title": "Sorting the Sentence",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimize-maximum-pair-sum-in-array",
+      "title": "Minimize Maximum Pair Sum in Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-flips-to-make-the-binary-string-alternating",
+      "title": "Minimum Number of Flips to Make the Binary String Alternating",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Dynamic Programming",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "largest-odd-number-in-string",
+      "title": "Largest Odd Number in String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "String",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-all-occurrences-of-a-substring",
+      "title": "Remove All Occurrences of a Substring",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Stack",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "build-array-from-permutation",
+      "title": "Build Array from Permutation",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-good-numbers",
+      "title": "Count Good Numbers",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Recursion"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "concatenation-of-array",
+      "title": "Concatenation of Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "unique-length-3-palindromic-subsequences",
+      "title": "Unique Length-3 Palindromic Subsequences",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Bit Manipulation",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-number-of-words-you-can-type",
+      "title": "Maximum Number of Words You Can Type",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-visible-people-in-a-queue",
+      "title": "Number of Visible People in a Queue",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Stack",
+        "Monotonic Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "monotonic_stack",
+        "stack_queue"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "delete-characters-to-make-fancy-string",
+      "title": "Delete Characters to Make Fancy String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "array-with-elements-not-equal-to-average-of-neighbors",
+      "title": "Array With Elements Not Equal to Average of Neighbors",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-matrix-sum",
+      "title": "Maximum Matrix Sum",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Greedy",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-unique-binary-string",
+      "title": "Find Unique Binary String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Backtracking"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "backtracking",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-difference-between-highest-and-lowest-of-k-scores",
+      "title": "Minimum Difference Between Highest and Lowest of K Scores",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Sliding Window",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "reverse-prefix-of-word",
+      "title": "Reverse Prefix of Word",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "final-value-of-variable-after-performing-operations",
+      "title": "Final Value of Variable After Performing Operations",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "String",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-moves-to-seat-everyone",
+      "title": "Minimum Number of Moves to Seat Everyone",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Greedy",
+        "Sorting",
+        "Counting Sort"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "watering-plants",
+      "title": "Watering Plants",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "delete-the-middle-node-of-a-linked-list",
+      "title": "Delete the Middle Node of a Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-smooth-descent-periods-of-a-stock",
+      "title": "Number of Smooth Descent Periods of a Stock",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Two Pointers",
+        "Dynamic Programming",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-number-of-words-found-in-sentences",
+      "title": "Maximum Number of Words Found in Sentences",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-twin-sum-of-a-linked-list",
+      "title": "Maximum Twin Sum of a Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Two Pointers",
+        "Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "solving-questions-with-brainpower",
+      "title": "Solving Questions With Brainpower",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "rearrange-array-elements-by-sign",
+      "title": "Rearrange Array Elements by Sign",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "keep-multiplying-found-values-by-two",
+      "title": "Keep Multiplying Found Values by Two",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-sum-of-four-digit-number-after-splitting-digits",
+      "title": "Minimum Sum of Four Digit Number After Splitting Digits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "partition-array-according-to-given-pivot",
+      "title": "Partition Array According to Given Pivot",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-nodes-in-between-zeros",
+      "title": "Merge Nodes in Between Zeros",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "replace-non-coprime-numbers-in-array",
+      "title": "Replace Non-Coprime Numbers in Array",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Stack",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "divide-array-into-equal-pairs",
+      "title": "Divide Array Into Equal Pairs",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Bit Manipulation",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-bit-flips-to-convert-number",
+      "title": "Minimum Bit Flips to Convert Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "add-two-integers",
+      "title": "Add Two Integers",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-ways-to-buy-pens-and-pencils",
+      "title": "Number of Ways to Buy Pens and Pencils",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "largest-3-same-digit-number-in-string",
+      "title": "Largest 3-Same-Digit Number in String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-people-aware-of-a-secret",
+      "title": "Number of People Aware of a Secret",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Dynamic Programming",
+        "Queue",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "stack_queue",
+        "simulation",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "max-sum-of-a-pair-with-equal-sum-of-digits",
+      "title": "Max Sum of a Pair With Equal Sum of Digits",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Heap (Priority Queue)"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-zero-filled-subarrays",
+      "title": "Number of Zero-Filled Subarrays",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "equal-row-and-column-pairs",
+      "title": "Equal Row and Column Pairs",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Matrix",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-number-of-bad-pairs",
+      "title": "Count Number of Bad Pairs",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-recolors-to-get-k-consecutive-black-blocks",
+      "title": "Minimum Recolors to Get K Consecutive Black Blocks",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-nice-subarray",
+      "title": "Longest Nice Subarray",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation",
+        "Sliding Window"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "smallest-even-multiple",
+      "title": "Smallest Even Multiple",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "length-of-the-longest-alphabetical-continuous-substring",
+      "title": "Length of the Longest Alphabetical Continuous Substring",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "paths-in-matrix-whose-sum-is-divisible-by-k",
+      "title": "Paths in Matrix Whose Sum Is Divisible by K",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "range-product-queries-of-powers",
+      "title": "Range Product Queries of Powers",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "apply-operations-to-an-array",
+      "title": "Apply Operations to an Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "convert-the-temperature",
+      "title": "Convert the Temperature",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "difference-between-ones-and-zeros-in-row-and-column",
+      "title": "Difference Between Ones and Zeros in Row and Column",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-nodes-from-linked-list",
+      "title": "Remove Nodes From Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Stack",
+        "Recursion",
+        "Monotonic Stack"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "recursion"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "closest-prime-numbers-in-range",
+      "title": "Closest Prime Numbers in Range",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-two-2d-arrays-by-summing-values",
+      "title": "Merge Two 2D Arrays by Summing Values",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Two Pointers"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-total-number-of-colored-cells",
+      "title": "Count Total Number of Colored Cells",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "buy-two-chocolates",
+      "title": "Buy Two Chocolates",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Greedy",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "remove-trailing-zeros-from-a-string",
+      "title": "Remove Trailing Zeros From a String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-make-the-integer-zero",
+      "title": "Minimum Operations to Make the Integer Zero",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Bit Manipulation",
+        "Brainteaser",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-maximum-achievable-number",
+      "title": "Find the Maximum Achievable Number",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sort-vowels-in-a-string",
+      "title": "Sort Vowels in a String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "number-of-employees-who-met-the-target",
+      "title": "Number of Employees Who Met the Target",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "insert-greatest-common-divisors-in-linked-list",
+      "title": "Insert Greatest Common Divisors in Linked List",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Linked List",
+        "Math",
+        "Number Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "linked_list",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-pairs-whose-sum-is-less-than-target",
+      "title": "Count Pairs Whose Sum is Less than Target",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sum-of-values-at-indices-with-k-set-bits",
+      "title": "Sum of Values at Indices With K Set Bits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "divisible-and-non-divisible-sums-difference",
+      "title": "Divisible and Non-divisible Sums Difference",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "divide_and_conquer"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "construct-product-matrix",
+      "title": "Construct Product Matrix",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-words-containing-character",
+      "title": "Find Words Containing Character",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximize-area-of-square-hole-in-grid",
+      "title": "Maximize Area of Square Hole in Grid",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "matrix-similarity-after-cyclic-shifts",
+      "title": "Matrix Similarity After Cyclic Shifts",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Matrix",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-peaks",
+      "title": "Find the Peaks",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-game",
+      "title": "Minimum Number Game",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "heap_kth_element",
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-bitwise-or-has-trailing-zeros",
+      "title": "Check if Bitwise OR Has Trailing Zeros",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-area-of-longest-diagonal-rectangle",
+      "title": "Maximum Area of Longest Diagonal Rectangle",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "intervals"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-elements-with-maximum-frequency",
+      "title": "Count Elements With Maximum Frequency",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "divide-an-array-into-subarrays-with-minimum-cost-i",
+      "title": "Divide an Array Into Subarrays With Minimum Cost I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Sorting",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "divide-an-array-into-subarrays-with-minimum-cost-ii",
+      "title": "Divide an Array Into Subarrays With Minimum Cost II",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Sliding Window",
+        "Heap (Priority Queue)"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "heap_kth_element"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "alice-and-bob-playing-flower-game",
+      "title": "Alice and Bob Playing Flower Game",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-number-of-ways-to-place-people-i",
+      "title": "Find the Number of Ways to Place People I",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Geometry",
+        "Sorting",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-number-of-ways-to-place-people-ii",
+      "title": "Find the Number of Ways to Place People II",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Geometry",
+        "Sorting",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-exceed-threshold-value-i",
+      "title": "Minimum Operations to Exceed Threshold Value I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-submatrices-with-top-left-element-and-sum-less-than-k",
+      "title": "Count Submatrices with Top-Left Element and Sum Less Than k",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-strictly-increasing-or-strictly-decreasing-subarray",
+      "title": "Longest Strictly Increasing or Strictly Decreasing Subarray",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "score-of-a-string",
+      "title": "Score of a String",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-all-possible-stable-binary-arrays-i",
+      "title": "Find All Possible Stable Binary Arrays I",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Dynamic Programming",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "taking-maximum-energy-from-the-mystic-dungeon",
+      "title": "Taking Maximum Energy From the Mystic Dungeon",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "special-array-i",
+      "title": "Special Array I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-number-of-good-pairs-i",
+      "title": "Find the Number of Good Pairs I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "clear-digits",
+      "title": "Clear Digits",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String",
+        "Stack",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-minimum-operations-to-make-all-elements-divisible-by-three",
+      "title": "Find Minimum Operations to Make All Elements Divisible by Three",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-average-of-smallest-and-largest-elements",
+      "title": "Minimum Average of Smallest and Largest Elements",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-minimum-area-to-cover-all-ones-i",
+      "title": "Find the Minimum Area to Cover All Ones I",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "intervals"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "delete-nodes-from-linked-list-present-in-array",
+      "title": "Delete Nodes From Linked List Present in Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Linked List"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "vowels-game-in-a-string",
+      "title": "Vowels Game in a String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Math",
+        "String",
+        "Brainteaser",
+        "Game Theory"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "maximum-energy-boost-from-two-drinks",
+      "title": "Maximum Energy Boost From Two Drinks",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-indices-of-stable-mountains",
+      "title": "Find Indices of Stable Mountains",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "the-two-sneaky-numbers-of-digitville",
+      "title": "The Two Sneaky Numbers of Digitville",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-seconds-to-make-mountain-height-zero",
+      "title": "Minimum Number of Seconds to Make Mountain Height Zero",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Binary Search",
+        "Greedy",
+        "Heap (Priority Queue)"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "transformed-array",
+      "title": "Transformed Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-number-of-operations-to-make-elements-in-array-distinct",
+      "title": "Minimum Number of Operations to Make Elements in Array Distinct",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "sort-matrix-by-diagonals",
+      "title": "Sort Matrix by Diagonals",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Sorting",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-make-array-elements-zero",
+      "title": "Minimum Operations to Make Array Elements Zero",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-pair-removal-to-sort-array-i",
+      "title": "Minimum Pair Removal to Sort Array I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Linked List",
+        "Heap (Priority Queue)",
+        "Simulation",
+        "Doubly-Linked List",
+        "Ordered Set"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-make-array-sum-divisible-by-k",
+      "title": "Minimum Operations to Make Array Sum Divisible by K",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-closest-person",
+      "title": "Find Closest Person",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Math"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-most-frequent-vowel-and-consonant",
+      "title": "Find Most Frequent Vowel and Consonant",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "equal-sum-grid-partition-i",
+      "title": "Equal Sum Grid Partition I",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Matrix",
+        "Enumeration",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "prefix_sum",
+        "dp_2d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-the-number-of-computer-unlocking-permutations",
+      "title": "Count the Number of Computer Unlocking Permutations",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Math",
+        "Brainteaser",
+        "Combinatorics"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-removals-to-balance-array",
+      "title": "Minimum Removals to Balance Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Binary Search",
+        "Sliding Window",
+        "Sorting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "sliding_window",
+        "binary_search"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "trionic-array-i",
+      "title": "Trionic Array I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "trionic-array-ii",
+      "title": "Trionic Array II",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "flip-square-submatrix-vertically",
+      "title": "Flip Square Submatrix Vertically",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Two Pointers",
+        "Matrix"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "find-the-least-frequent-digit",
+      "title": "Find The Least Frequent Digit",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Counting"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-equalize-binary-string",
+      "title": "Minimum Operations to Equalize Binary String",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Math",
+        "String",
+        "Breadth-First Search",
+        "Union-Find",
+        "Ordered Set"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "math",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "restore-finishing-order",
+      "title": "Restore Finishing Order",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-equalize-array",
+      "title": "Minimum Operations to Equalize Array",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Bit Manipulation",
+        "Brainteaser"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-transform-string",
+      "title": "Minimum Operations to Transform String",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "String",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-binary-palindromic-numbers",
+      "title": "Count Binary Palindromic Numbers",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Math",
+        "Bit Manipulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "bit_manipulation",
+        "math"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-balanced-substring-i",
+      "title": "Longest Balanced Substring I",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Counting",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-balanced-substring-ii",
+      "title": "Longest Balanced Substring II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "prefix_sum"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-balanced-subarray-i",
+      "title": "Longest Balanced Subarray I",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Divide and Conquer",
+        "Segment Tree",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "divide_and_conquer",
+        "segment_tree"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "longest-balanced-subarray-ii",
+      "title": "Longest Balanced Subarray II",
+      "difficulty": "HARD",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Divide and Conquer",
+        "Segment Tree",
+        "Prefix Sum"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d",
+        "segment_tree"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "best-reachable-tower",
+      "title": "Best Reachable Tower",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-operations-to-reach-target-array",
+      "title": "Minimum Operations to Reach Target Array",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Hash Table",
+        "Greedy"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "greedy",
+        "hashing"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "count-dominant-indices",
+      "title": "Count Dominant Indices",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "Enumeration"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_1d"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "merge-adjacent-equal-elements",
+      "title": "Merge Adjacent Equal Elements",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Array",
+        "Stack",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "weighted-word-mapping",
+      "title": "Weighted Word Mapping",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Array",
+        "String",
+        "Simulation"
+      ],
+      "solved_at": null,
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "simulation",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    }
+  ],
+  "session_logs": [
+    {
+      "date": "2026-03-29",
+      "problem_id": "3432",
+      "problem_title": "3432",
+      "difficulty": "MEDIUM",
+      "patterns": [],
+      "outcome": "GAVE_UP",
+      "hints_used": 0,
+      "hint_tier_reached": 0
+    },
+    {
+      "date": "2026-03-29",
+      "problem_id": "count-partitions-with-even-sum-difference",
+      "problem_title": "Count Partitions with Even Sum Difference",
+      "difficulty": "EASY",
+      "patterns": [
+        "two_pointers",
+        "math"
+      ],
+      "outcome": "SOLVED",
+      "hints_used": 3,
+      "hint_tier_reached": 3
+    },
+    {
+      "date": "2026-03-29",
+      "problem_id": "reverse-pairs",
+      "problem_title": "Reverse Pairs",
+      "difficulty": "EASY",
+      "patterns": [
+        "two_pointers",
+        "math"
+      ],
+      "outcome": "GAVE_UP",
+      "hints_used": 1,
+      "hint_tier_reached": 1
+    }
+  ]
+}

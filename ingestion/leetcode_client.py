@@ -1,50 +1,86 @@
 """
-LeetCode GraphQL Client — solved problems, submissions, aur problem metadata fetch karta hai.
+LeetCode Client — problem description lookup + sync + CSV import.
 
-Teen modes hain:
-  1. PUBLIC  — sirf username chahiye, auth ki zaroorat nahi (default)
-  2. AUTH    — LEETCODE_SESSION + csrftoken cookies lagenge, zyada data milega
-  3. CSV     — manual CSV import fallback, agar kuch aur kaam na aaye
+Three responsibilities:
+  1. Problem *lookup* (mentor UI) — offline cache + GraphQL, read-only.
+  2. Recent-solved sync — public GraphQL API (no auth), last N accepted
+     submissions for a username, used by the incremental sync feature.
+  3. CSV bulk import — parse a CSV export for initial / full ingestion.
 """
 import csv
 import json
-import os
 import time
-from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import httpx
-from dotenv import load_dotenv
-
-load_dotenv()
-
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from config import LEETCODE_GRAPHQL_URL, LEETCODE_REQUEST_DELAY
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import LEETCODE_GRAPHQL_URL, LEETCODE_REQUEST_DELAY, OFFLINE_PROBLEMS_PATH
+
+
+# ── Offline problem cache ─────────────────────────────────────────
+
+_offline_cache: Optional[dict] = None
+
+
+def _load_offline_cache() -> dict:
+    """Load offline problems JSON (keyed by slug). Cached in memory."""
+    global _offline_cache
+    if _offline_cache is None:
+        if OFFLINE_PROBLEMS_PATH.exists():
+            try:
+                with open(OFFLINE_PROBLEMS_PATH, "r", encoding="utf-8") as f:
+                    _offline_cache = json.load(f)
+            except Exception:
+                _offline_cache = {}
+        else:
+            _offline_cache = {}
+    return _offline_cache
+
+
+def _lookup_offline(slug: str) -> Optional[Dict[str, Any]]:
+    """Find a problem by slug in the offline cache."""
+    cache = _load_offline_cache()
+    entry = cache.get(slug)
+    if not entry:
+        return None
+    return {
+        "number":      entry.get("number", "?"),
+        "title":       entry.get("title", slug),
+        "slug":        slug,
+        "difficulty":  entry.get("difficulty", "Medium"),
+        "tags":        entry.get("tags", []),
+        "description": entry.get("description", ""),
+        "examples":    entry.get("examples", ""),
+        "hints":       entry.get("hints", []),
+        "source":      "offline",
+    }
+
+
+def _slugify(text: str) -> str:
+    """Convert a problem title to a URL slug."""
+    return text.lower().strip().replace(" ", "-").replace("'", "").replace(",", "")
+
+
+# ── LeetCode GraphQL client (read-only problem lookup) ───────────
 
 class LeetCodeClient:
-    """LeetCode se data GraphQL (public ya authenticated) ya CSV import se fetch karta hai."""
+    """
+    Handles read-only problem lookups (offline cache + GraphQL) and CSV import.
+    No authentication, no user-account queries.
+    """
 
-    def __init__(self, use_auth: bool = False):
-        self.session_cookie = os.getenv("LEETCODE_SESSION", "")
-        self.csrf_token = os.getenv("CSRF_TOKEN", "")
-        self.use_auth = use_auth and bool(self.session_cookie)
+    def __init__(self):
         self._last_request_time = 0.0
 
-    # ── HTTP helpers — request bhejne ke liye setup ─────────────────────
-
     def _headers(self) -> dict:
-        headers = {
+        return {
             "Content-Type": "application/json",
-            "Referer": "https://leetcode.com",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Referer":      "https://leetcode.com",
+            "User-Agent":   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         }
-        if self.use_auth:
-            headers["Cookie"] = f"LEETCODE_SESSION={self.session_cookie}; csrftoken={self.csrf_token}"
-            headers["x-csrftoken"] = self.csrf_token
-        return headers
 
     def _rate_limit(self):
         elapsed = time.time() - self._last_request_time
@@ -53,12 +89,11 @@ class LeetCodeClient:
         self._last_request_time = time.time()
 
     def _graphql_request(self, query: str, variables: dict = None) -> dict:
-        """Rate limiting ke saath synchronous GraphQL request bhejo."""
+        """Send a rate-limited synchronous GraphQL request."""
         self._rate_limit()
         payload = {"query": query}
         if variables:
             payload["variables"] = variables
-
         with httpx.Client(timeout=30) as client:
             resp = client.post(
                 LEETCODE_GRAPHQL_URL,
@@ -68,66 +103,195 @@ class LeetCodeClient:
             resp.raise_for_status()
             return resp.json()
 
-    # ══════════════════════════════════════════════════════════════
-    #  PUBLIC QUERIES — sirf username se kaam ho jaata hai, cookies nahi chahiye
-    # ══════════════════════════════════════════════════════════════
+    # ── Problem description lookup ────────────────────────────────
 
-    def fetch_solved_problems_public(self, username: str) -> List[Dict[str, Any]]:
+    def get_problem_description(self, slug: str) -> Optional[Dict[str, Any]]:
         """
-        Public queries se user ke SAARE solved problems fetch karo.
-        Authentication ki zaroorat nahi — bas LeetCode username do.
+        Fetch a full problem description.
+        Checks offline cache first, then falls back to LeetCode GraphQL.
 
+        Returns dict with: number, title, slug, difficulty, tags, description,
+                           examples, hints, source
+        """
+        # 1. Offline cache (instant, no API call)
+        offline = _lookup_offline(slug)
+        if offline:
+            return offline
+
+        # 2. LeetCode GraphQL
+        query = """
+        query questionDetail($titleSlug: String!) {
+            question(titleSlug: $titleSlug) {
+                questionFrontendId
+                title
+                titleSlug
+                difficulty
+                content
+                exampleTestcases
+                hints
+                topicTags { name }
+                stats
+            }
+        }
+        """
+        try:
+            import re
+            result = self._graphql_request(query, {"titleSlug": slug})
+            q = result.get("data", {}).get("question")
+            if not q:
+                return None
+
+            # Strip HTML from content
+            content_html = q.get("content", "") or ""
+            text = re.sub(r"<br\s*/?>", "\n", content_html)
+            text = re.sub(r"<p>",       "\n", text)
+            text = re.sub(r"</p>",      "\n", text)
+            text = re.sub(r"<li>",      "  • ", text)
+            text = re.sub(r"</li>",     "\n", text)
+            text = re.sub(r"<ul>|</ul>|<ol>|</ol>", "\n", text)
+            text = re.sub(r"<pre>|</pre>",           "\n", text)
+            text = re.sub(r"<strong>|</strong>|<b>|</b>", "**", text)
+            text = re.sub(r"<em>|</em>",             "_", text)
+            text = re.sub(r"<code>(.*?)</code>",     r"`\1`", text, flags=re.DOTALL)
+            text = re.sub(r"<sup>(.*?)</sup>",       r"^\1", text)
+            text = re.sub(r"<sub>(.*?)</sub>",       r"_\1", text)
+            text = re.sub(r"<[^>]+>", "", text)
+            text = (text
+                    .replace("&lt;",  "<").replace("&gt;",  ">")
+                    .replace("&amp;", "&").replace("&nbsp;", " ")
+                    .replace("&quot;", '"').replace("&#39;", "'"))
+            text = re.sub(r"\n{3,}", "\n\n", text).strip()
+
+            return {
+                "number":      q.get("questionFrontendId", "?"),
+                "title":       q.get("title", "Unknown"),
+                "slug":        q.get("titleSlug", slug),
+                "difficulty":  q.get("difficulty", "Medium"),
+                "tags":        [t["name"] for t in q.get("topicTags", [])],
+                "description": text,
+                "examples":    q.get("exampleTestcases", ""),
+                "hints":       q.get("hints", []),
+            }
+        except Exception as e:
+            print(f"  Warning: Could not fetch description for '{slug}': {e}")
+            return None
+
+    def get_problem_by_number(self, number: int) -> Optional[Dict[str, Any]]:
+        """Look up a problem by its frontend question number (e.g. 1 → two-sum)."""
+        query = """
+        query problemsetQuestionList($skip: Int, $limit: Int, $filters: QuestionListFilterInput) {
+            problemsetQuestionList: questionList(
+                categorySlug: ""
+                limit: $limit
+                skip: $skip
+                filters: $filters
+            ) {
+                questions: data {
+                    frontendQuestionId: questionFrontendId
+                    titleSlug
+                    title
+                    difficulty
+                }
+            }
+        }
+        """
+        skip = max(0, number - 3)
+        try:
+            result    = self._graphql_request(query, {"skip": skip, "limit": 10, "filters": {}})
+            questions = result.get("data", {}).get("problemsetQuestionList", {}).get("questions", [])
+            for q in questions:
+                if str(q.get("frontendQuestionId", "")) == str(number):
+                    desc = self.get_problem_description(q["titleSlug"])
+                    if desc and desc.get("number") in ("?", None, ""):
+                        desc = dict(desc)
+                        desc["number"] = str(number)
+                    return desc
+        except Exception:
+            pass
+        return None
+
+    def search_problem_by_name(self, name: str) -> Optional[Dict[str, Any]]:
+        """
+        Search for a problem by name/title.
         Strategy:
-          1. Recent AC submissions lo (titleSlug + timestamp milega)
-          2. Slug se deduplicate karo
-          3. Har ek ke liye full problem metadata fetch karo (title, difficulty, tags)
-
-        Parsing ke liye ready problem dicts ki list return karta hai.
+          1. Exact offline slug lookup
+          2. Fuzzy offline title match
+          3. LeetCode API via direct slug conversion
         """
-        print(f"  [1/3] Fetching recent accepted submissions for '{username}'...")
-        submissions = self._get_recent_ac_submissions(username)
+        slug = _slugify(name)
 
+        offline = _lookup_offline(slug)
+        if offline:
+            return offline
+
+        cache      = _load_offline_cache()
+        name_lower = name.lower().strip()
+        for entry_slug, entry in cache.items():
+            entry_title = entry.get("title", "").lower()
+            if name_lower in entry_title or entry_title in name_lower:
+                return _lookup_offline(entry_slug)
+
+        return self.get_problem_description(slug)
+
+    # ── All-solved sync (public GraphQL, no auth) ────────────────
+
+    def get_all_solved(self, username: str, limit: int = 3000) -> List[Dict[str, Any]]:
+        """
+        Fetch ALL accepted submissions for a public LeetCode username via the
+        public GraphQL API (no cookies / auth required).
+
+        `limit` caps the submission list fetched (LeetCode's API returns up to
+        ~3000 recent AC submissions; raise it only if needed).
+
+        Returns a list of deduplicated, normalised problem dicts compatible with
+        raw_to_problem_record(), each having:
+            title, titleSlug, difficulty, topicTags, timestamp
+        """
+        print(f"[LeetCode] Fetching accepted submissions for '{username}' (limit={limit})...")
+        submissions = self._get_recent_ac_submissions(username, limit=limit)
         if not submissions:
-            print(f"  ERROR: No submissions found. Is '{username}' a valid public profile?")
+            print(f"[LeetCode] No submissions returned for '{username}'.")
             return []
 
-        # Slug se deduplicate karo (same problem multiple baar submit ho sakta hai)
-        seen = {}
+        print(f"[LeetCode] Got {len(submissions)} raw submissions. Deduplicating...")
+
+        # Deduplicate by slug (a problem may be submitted multiple times)
+        seen: Dict[str, dict] = {}
         for sub in submissions:
             slug = sub.get("titleSlug", "")
             if slug and slug not in seen:
                 seen[slug] = sub
 
-        unique_slugs = list(seen.keys())
-        print(f"  [2/3] Found {len(unique_slugs)} unique solved problems.")
+        total = len(seen)
+        print(f"[LeetCode] {total} unique problems found. Fetching metadata...")
 
-        # Har problem ka full metadata fetch karo
-        print(f"  [3/3] Fetching problem details (this may take a moment)...")
-        problems = []
-        for i, slug in enumerate(unique_slugs, 1):
-            if i % 10 == 0 or i == len(unique_slugs):
-                print(f"         ...{i}/{len(unique_slugs)}")
+        problems: List[Dict[str, Any]] = []
+        for i, (slug, sub) in enumerate(seen.items(), 1):
+            print(f"[LeetCode] Metadata {i}/{total}: {slug}", flush=True)
             try:
-                problem_data = self._get_problem_metadata(slug)
-                if problem_data:
-                    # Submission data se timestamp merge karo
-                    problem_data["timestamp"] = seen[slug].get("timestamp")
-                    problems.append(problem_data)
+                meta = self._get_problem_metadata(slug)
             except Exception as e:
-                print(f"    Warning: Failed to fetch '{slug}': {e}")
-                # Phir bhi basic info toh add karo submission se
+                print(f"[LeetCode]   ⚠  metadata failed for '{slug}': {e}")
+                meta = None
+
+            if meta:
+                meta["timestamp"] = sub.get("timestamp")
+                problems.append(meta)
+            else:
+                # Fallback: use whatever the submission gave us
                 problems.append({
-                    "title": seen[slug].get("title", slug),
-                    "titleSlug": slug,
+                    "title":      sub.get("title", slug),
+                    "titleSlug":  slug,
                     "difficulty": "Medium",
-                    "topicTags": [],
-                    "timestamp": seen[slug].get("timestamp"),
+                    "topicTags":  [],
+                    "timestamp":  sub.get("timestamp"),
                 })
 
+        print(f"[LeetCode] Done. {len(problems)}/{total} problems fetched successfully.")
         return problems
 
-    def _get_recent_ac_submissions(self, username: str, limit: int = 3000) -> List[Dict]:
-        """Recent accepted submissions fetch karo (PUBLIC — auth nahi chahiye)."""
+    def _get_recent_ac_submissions(self, username: str, limit: int = 20) -> List[Dict]:
+        """Fetch recent accepted submissions for a public LeetCode username."""
         query = """
         query recentAcSubmissions($username: String!, $limit: Int!) {
             recentAcSubmissionList(username: $username, limit: $limit) {
@@ -142,11 +306,11 @@ class LeetCodeClient:
             result = self._graphql_request(query, {"username": username, "limit": limit})
             return result.get("data", {}).get("recentAcSubmissionList", [])
         except Exception as e:
-            print(f"    Error fetching submissions: {e}")
+            print(f"  [Sync] Error fetching submissions for '{username}': {e}")
             return []
 
     def _get_problem_metadata(self, slug: str) -> Optional[Dict[str, Any]]:
-        """Slug se problem details fetch karo (PUBLIC — auth nahi chahiye)."""
+        """Fetch lightweight problem metadata (title, difficulty, tags) by slug."""
         query = """
         query questionData($titleSlug: String!) {
             question(titleSlug: $titleSlug) {
@@ -155,113 +319,41 @@ class LeetCodeClient:
                 title
                 titleSlug
                 difficulty
-                topicTags {
-                    name
-                    slug
-                }
+                topicTags { name slug }
             }
         }
         """
         result = self._graphql_request(query, {"titleSlug": slug})
         return result.get("data", {}).get("question")
 
-    def get_user_stats(self, username: str) -> Dict[str, Any]:
-        """User ki profile stats fetch karo (PUBLIC)."""
-        query = """
-        query userProblemsSolved($username: String!) {
-            matchedUser(username: $username) {
-                username
-                submitStatsGlobal {
-                    acSubmissionNum {
-                        difficulty
-                        count
-                    }
-                }
-            }
-        }
-        """
-        try:
-            result = self._graphql_request(query, {"username": username})
-            return result.get("data", {}).get("matchedUser", {})
-        except Exception:
-            return {}
-
-    # ══════════════════════════════════════════════════════════════
-    #  AUTH QUERIES — LEETCODE_SESSION cookie lagegi
-    # ══════════════════════════════════════════════════════════════
-
-    def get_user_solved_list_auth(self, username: str) -> List[Dict[str, Any]]:
-        """Auth cookie use karke solved problems fetch karo (agar available hai)."""
-        all_problems = []
-        skip = 0
-        limit = 50
-
-        while True:
-            query = """
-            query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
-                problemsetQuestionList: questionList(
-                    categorySlug: $categorySlug
-                    limit: $limit
-                    skip: $skip
-                    filters: $filters
-                ) {
-                    total: totalNum
-                    questions: data {
-                        frontendQuestionId: questionFrontendId
-                        title
-                        titleSlug
-                        difficulty
-                        topicTags {
-                            name
-                            slug
-                        }
-                        status
-                    }
-                }
-            }
-            """
-            variables = {
-                "categorySlug": "",
-                "skip": skip,
-                "limit": limit,
-                "filters": {"status": "AC"},
-            }
-            result = self._graphql_request(query, variables)
-            data = result.get("data", {}).get("problemsetQuestionList", {})
-            questions = data.get("questions", [])
-
-            if not questions:
-                break
-
-            all_problems.extend(questions)
-            total = data.get("total", 0)
-            skip += limit
-            print(f"    ...fetched {len(all_problems)}/{total}")
-
-            if skip >= total:
-                break
-
-        return all_problems
-
-    # ══════════════════════════════════════════════════════════════
-    #  CSV FALLBACK — jab kuch aur kaam na aaye
-    # ══════════════════════════════════════════════════════════════
+    # ── CSV import (bulk ingestion) ───────────────────────────────
 
     @staticmethod
     def import_from_csv(csv_path: str) -> List[Dict[str, Any]]:
         """
-        LeetCode progress CSV export se solved problems import karo.
-        Expected columns: id, title, title_slug, difficulty, tags
+        Import solved problems from a CSV export.
+
+        Expected columns (flexible naming):
+            id / question_id / frontend_question_id
+            title / question_title
+            title_slug / titleslug / slug
+            difficulty / level
+            tags / topic_tags / related_topics   (comma or semicolon separated)
+
+        Returns a list of normalised problem dicts ready for raw_to_problem_record().
         """
         problems = []
-        path = Path(csv_path)
+        path     = Path(csv_path)
         if not path.exists():
             raise FileNotFoundError(f"CSV file not found: {csv_path}")
 
         with open(path, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                normalized = {k.strip().lower().replace(" ", "_"): v.strip() for k, v in row.items()}
+                normalized = {
+                    k.strip().lower().replace(" ", "_"): v.strip()
+                    for k, v in row.items()
+                }
 
                 problem = {
                     "frontendQuestionId": (
@@ -287,7 +379,7 @@ class LeetCodeClient:
                         or "Medium"
                     ),
                     "topicTags": [],
-                    "status": "ac",
+                    "status":    "ac",
                 }
 
                 tags_str = (
@@ -298,13 +390,10 @@ class LeetCodeClient:
                 )
                 if tags_str:
                     tags = [t.strip() for t in tags_str.replace(";", ",").split(",") if t.strip()]
-                    problem["topicTags"] = [{"name": t, "slug": t.lower().replace(" ", "-")} for t in tags]
+                    problem["topicTags"] = [
+                        {"name": t, "slug": t.lower().replace(" ", "-")} for t in tags
+                    ]
 
                 problems.append(problem)
 
         return problems
-
-
-def _slugify(text: str) -> str:
-    """Title ko URL slug mein convert karo."""
-    return text.lower().strip().replace(" ", "-").replace("'", "").replace(",", "")

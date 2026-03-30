@@ -1,0 +1,5637 @@
+------------------------------
+3804. Number of Centered Subarrays 
+------------------------------
+
+You are given an integer array nums.
+
+A subarray of nums is called centered if the sum of its elements is equal to at least one element within that same subarray.
+
+Return the number of centered subarrays of nums.
+
+ 
+
+Example 1:
+
+Input: nums = [-1,1,0]
+
+Output: 5
+
+Explanation:
+
+- All single-element subarrays ([-1], [1], [0]) are centered.
+
+- The subarray [1, 0] has a sum of 1, which is present in the subarray.
+
+- The subarray [-1, 1, 0] has a sum of 0, which is present in the subarray.
+
+- Thus, the answer is 5.
+
+Example 2:
+
+Input: nums = [2,-3]
+
+Output: 2
+
+Explanation:
+
+Only single-element subarrays ([2], [-3]) are centered.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 500
+
+- -105 <= nums[i] <= 105
+
+------------------------------
+3753. Total Waviness of Numbers in Range II 
+------------------------------
+
+You are given two integers num1 and num2 representing an inclusive range [num1, num2].
+
+The waviness of a number is defined as the total count of its peaks and valleys:
+
+- A digit is a peak if it is strictly greater than both of its immediate neighbors.
+
+- A digit is a valley if it is strictly less than both of its immediate neighbors.
+
+- The first and last digits of a number cannot be peaks or valleys.
+
+- Any number with fewer than 3 digits has a waviness of 0.
+
+Return the total sum of waviness for all numbers in the range [num1, num2].
+
+ 
+
+Example 1:
+
+Input: num1 = 120, num2 = 130
+
+Output: 3
+
+Explanation:
+
+In the range [120, 130]:
+
+- 120: middle digit 2 is a peak, waviness = 1.
+
+- 121: middle digit 2 is a peak, waviness = 1.
+
+- 130: middle digit 3 is a peak, waviness = 1.
+
+- All other numbers in the range have a waviness of 0.
+
+Thus, total waviness is 1 + 1 + 1 = 3.
+
+Example 2:
+
+Input: num1 = 198, num2 = 202
+
+Output: 3
+
+Explanation:
+
+In the range [198, 202]:
+
+- 198: middle digit 9 is a peak, waviness = 1.
+
+- 201: middle digit 0 is a valley, waviness = 1.
+
+- 202: middle digit 0 is a valley, waviness = 1.
+
+- All other numbers in the range have a waviness of 0.
+
+Thus, total waviness is 1 + 1 + 1 = 3.
+
+Example 3:
+
+Input: num1 = 4848, num2 = 4848
+
+Output: 2
+
+Explanation:
+
+Number 4848: the second digit 8 is a peak, and the third digit 4 is a valley, giving a waviness of 2.
+
+ 
+
+Constraints:
+
+- 1 <= num1 <= num2 <= 1015​​​​​​​
+
+------------------------------
+3778. Minimum Distance Excluding One Maximum Weighted Edge 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3750. Minimum Number of Flips to Reverse Binary String 
+------------------------------
+
+You are given a positive integer n.
+
+Let s be the binary representation of n without leading zeros.
+
+The reverse of a binary string s is obtained by writing the characters of s in the opposite order.
+
+You may flip any bit in s (change 0 → 1 or 1 → 0). Each flip affects exactly one bit.
+
+Return the minimum number of flips required to make s equal to the reverse of its original form.
+
+ 
+
+Example 1:
+
+Input: n = 7
+
+Output: 0
+
+Explanation:
+
+The binary representation of 7 is "111". Its reverse is also "111", which is the same. Hence, no flips are needed.
+
+Example 2:
+
+Input: n = 10
+
+Output: 4
+
+Explanation:
+
+The binary representation of 10 is "1010". Its reverse is "0101". All four bits must be flipped to make them equal. Thus, the minimum number of flips required is 4.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 109
+
+------------------------------
+3828. Final Element After Subarray Deletions 
+------------------------------
+
+You are given an integer array nums.
+
+Two players, Alice and Bob, play a game in turns, with Alice playing first.
+
+- In each turn, the current player chooses any subarray nums[l..r] such that r - l + 1 < m, where m is the current length of the array.
+
+- The selected subarray is removed, and the remaining elements are concatenated to form the new array.
+
+- The game continues until only one element remains.
+
+Alice aims to maximize the final element, while Bob aims to minimize it. Assuming both play optimally, return the value of the final remaining element.
+
+ 
+
+Example 1:
+
+Input: nums = [1,5,2]
+
+Output: 2
+
+Explanation:
+
+One valid optimal strategy:
+
+- Alice removes [1], array becomes [5, 2].
+
+- Bob removes [5], array becomes [2]​​​​​​​. Thus, the answer is 2.
+
+Example 2:
+
+Input: nums = [3,7]
+
+Output: 7
+
+Explanation:
+
+Alice removes [3], leaving the array [7]. Since Bob cannot play a turn now, the answer is 7.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 105
+
+------------------------------
+3826. Minimum Partition Score 
+------------------------------
+
+You are given an integer array nums and an integer k.
+
+Your task is to partition nums into exactly k subarrays and return an integer denoting the minimum possible score among all valid partitions.
+
+The score of a partition is the sum of the values of all its subarrays.
+
+The value of a subarray is defined as sumArr * (sumArr + 1) / 2, where sumArr is the sum of its elements.
+
+ 
+
+Example 1:
+
+Input: nums = [5,1,2,1], k = 2
+
+Output: 25
+
+Explanation:
+
+- We must partition the array into k = 2 subarrays. One optimal partition is [5] and [1, 2, 1].
+
+- The first subarray has sumArr = 5 and value = 5 × 6 / 2 = 15.
+
+- The second subarray has sumArr = 1 + 2 + 1 = 4 and value = 4 × 5 / 2 = 10.
+
+- The score of this partition is 15 + 10 = 25, which is the minimum possible score.
+
+Example 2:
+
+Input: nums = [1,2,3,4], k = 1
+
+Output: 55
+
+Explanation:
+
+- Since we must partition the array into k = 1 subarray, all elements belong to the same subarray: [1, 2, 3, 4].
+
+- This subarray has sumArr = 1 + 2 + 3 + 4 = 10 and value = 10 × 11 / 2 = 55.​​​​​​​
+
+- The score of this partition is 55, which is the minimum possible score.
+
+Example 3:
+
+Input: nums = [1,1,1], k = 3
+
+Output: 3
+
+Explanation:
+
+- We must partition the array into k = 3 subarrays. The only valid partition is [1], [1], [1].
+
+- Each subarray has sumArr = 1 and value = 1 × 2 / 2 = 1.
+
+- The score of this partition is 1 + 1 + 1 = 3, which is the minimum possible score.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 1 <= nums[i] <= 104
+
+- 1 <= k <= nums.length
+
+------------------------------
+3741. Minimum Distance Between Three Equal Elements II 
+------------------------------
+
+You are given an integer array nums.
+
+A tuple (i, j, k) of 3 distinct indices is good if nums[i] == nums[j] == nums[k].
+
+The distance of a good tuple is abs(i - j) + abs(j - k) + abs(k - i), where abs(x) denotes the absolute value of x.
+
+Return an integer denoting the minimum possible distance of a good tuple. If no good tuples exist, return -1.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,1,1,3]
+
+Output: 6
+
+Explanation:
+
+The minimum distance is achieved by the good tuple (0, 2, 3).
+
+(0, 2, 3) is a good tuple because nums[0] == nums[2] == nums[3] == 1. Its distance is abs(0 - 2) + abs(2 - 3) + abs(3 - 0) = 2 + 1 + 3 = 6.
+
+Example 2:
+
+Input: nums = [1,1,2,3,2,1,2]
+
+Output: 8
+
+Explanation:
+
+The minimum distance is achieved by the good tuple (2, 4, 6).
+
+(2, 4, 6) is a good tuple because nums[2] == nums[4] == nums[6] == 2. Its distance is abs(2 - 4) + abs(4 - 6) + abs(6 - 2) = 2 + 2 + 4 = 8.
+
+Example 3:
+
+Input: nums = [1]
+
+Output: -1
+
+Explanation:
+
+There are no good tuples. Therefore, the answer is -1.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length <= 105
+
+- 1 <= nums[i] <= n
+
+------------------------------
+3829. Design Ride Sharing System 
+------------------------------
+
+A ride sharing system manages ride requests from riders and availability from drivers. Riders request rides, and drivers become available over time. The system should match riders and drivers in the order they arrive.
+
+Implement the RideSharingSystem class:
+
+- RideSharingSystem() Initializes the system.
+
+- void addRider(int riderId) Adds a new rider with the given riderId.
+
+- void addDriver(int driverId) Adds a new driver with the given driverId.
+
+- int[] matchDriverWithRider() Matches the earliest available driver with the earliest waiting rider and removes both of them from the system. Returns an integer array of size 2 where result = [driverId, riderId] if a match is made. If no match is available, returns [-1, -1].
+
+- void cancelRider(int riderId) Cancels the ride request of the rider with the given riderId if the rider exists and has not yet been matched.
+
+ 
+
+Example 1:
+
+Input:
+["RideSharingSystem", "addRider", "addDriver", "addRider", "matchDriverWithRider", "addDriver", "cancelRider", "matchDriverWithRider", "matchDriverWithRider"]
+[[], [3], [2], [1], [], [5], [3], [], []]
+
+Output:
+[null, null, null, null, [2, 3], null, null, [5, 1], [-1, -1]] 
+
+Explanation
+
+RideSharingSystem rideSharingSystem = new RideSharingSystem(); // Initializes the system
+rideSharingSystem.addRider(3); // rider 3 joins the queue
+rideSharingSystem.addDriver(2); // driver 2 joins the queue
+rideSharingSystem.addRider(1); // rider 1 joins the queue
+rideSharingSystem.matchDriverWithRider(); // returns [2, 3]
+rideSharingSystem.addDriver(5); // driver 5 becomes available
+rideSharingSystem.cancelRider(3); // rider 3 is already matched, cancel has no effect
+rideSharingSystem.matchDriverWithRider(); // returns [5, 1]
+rideSharingSystem.matchDriverWithRider(); // returns [-1, -1]
+
+Example 2:
+
+Input:
+["RideSharingSystem", "addRider", "addDriver", "addDriver", "matchDriverWithRider", "addRider", "cancelRider", "matchDriverWithRider"]
+[[], [8], [8], [6], [], [2], [2], []]
+
+Output:
+[null, null, null, null, [8, 8], null, null, [-1, -1]] 
+
+Explanation
+
+RideSharingSystem rideSharingSystem = new RideSharingSystem(); // Initializes the system
+rideSharingSystem.addRider(8); // rider 8 joins the queue
+rideSharingSystem.addDriver(8); // driver 8 joins the queue
+rideSharingSystem.addDriver(6); // driver 6 joins the queue
+rideSharingSystem.matchDriverWithRider(); // returns [8, 8]
+rideSharingSystem.addRider(2); // rider 2 joins the queue
+rideSharingSystem.cancelRider(2); // rider 2 cancels
+rideSharingSystem.matchDriverWithRider(); // returns [-1, -1]
+
+ 
+
+Constraints:
+
+- 1 <= riderId, driverId <= 1000
+
+- Each riderId is unique among riders and is added at most once.
+
+- Each driverId is unique among drivers and is added at most once.
+
+- At most 1000 calls will be made in total to addRider​​​​​​​, addDriver, matchDriverWithRider, and cancelRider.
+
+------------------------------
+3736. Minimum Moves to Equal Array Elements III 
+------------------------------
+
+You are given an integer array nums.
+
+In one move, you may increase the value of any single element nums[i] by 1.
+
+Return the minimum total number of moves required so that all elements in nums become equal.
+
+ 
+
+Example 1:
+
+Input: nums = [2,1,3]
+
+Output: 3
+
+Explanation:
+
+To make all elements equal:
+
+- Increase nums[0] = 2 by 1 to make it 3.
+
+- Increase nums[1] = 1 by 1 to make it 2.
+
+- Increase nums[1] = 2 by 1 to make it 3.
+
+Now, all elements of nums are equal to 3. The minimum total moves is 3.
+
+Example 2:
+
+Input: nums = [4,4,5]
+
+Output: 2
+
+Explanation:
+
+To make all elements equal:
+
+- Increase nums[0] = 4 by 1 to make it 5.
+
+- Increase nums[1] = 4 by 1 to make it 5.
+
+Now, all elements of nums are equal to 5. The minimum total moves is 2.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+------------------------------
+3740. Minimum Distance Between Three Equal Elements I 
+------------------------------
+
+You are given an integer array nums.
+
+A tuple (i, j, k) of 3 distinct indices is good if nums[i] == nums[j] == nums[k].
+
+The distance of a good tuple is abs(i - j) + abs(j - k) + abs(k - i), where abs(x) denotes the absolute value of x.
+
+Return an integer denoting the minimum possible distance of a good tuple. If no good tuples exist, return -1.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,1,1,3]
+
+Output: 6
+
+Explanation:
+
+The minimum distance is achieved by the good tuple (0, 2, 3).
+
+(0, 2, 3) is a good tuple because nums[0] == nums[2] == nums[3] == 1. Its distance is abs(0 - 2) + abs(2 - 3) + abs(3 - 0) = 2 + 1 + 3 = 6.
+
+Example 2:
+
+Input: nums = [1,1,2,3,2,1,2]
+
+Output: 8
+
+Explanation:
+
+The minimum distance is achieved by the good tuple (2, 4, 6).
+
+(2, 4, 6) is a good tuple because nums[2] == nums[4] == nums[6] == 2. Its distance is abs(2 - 4) + abs(4 - 6) + abs(6 - 2) = 2 + 2 + 4 = 8.
+
+Example 3:
+
+Input: nums = [1]
+
+Output: -1
+
+Explanation:
+
+There are no good tuples. Therefore, the answer is -1.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length <= 100
+
+- 1 <= nums[i] <= n
+
+------------------------------
+3887. Incremental Even-Weighted Cycle Queries 
+------------------------------
+
+You are given a positive integer n.
+
+There is an undirected graph with n nodes labeled from 0 to n - 1. Initially, the graph has no edges.
+
+You are also given a 2D integer array edges, where edges[i] = [ui, vi, wi] represents an edge between nodes ui and vi with weight wi. The weight wi is either 0 or 1.
+
+Process the edges in edges in the given order. For each edge, add it to the graph only if, after adding it, the sum of the weights of the edges in every cycle in the resulting graph is even.
+
+Return an integer denoting the number of edges that are successfully added to the graph.
+
+ 
+
+Example 1:
+
+Input: n = 3, edges = [[0,1,1],[1,2,1],[0,2,1]]
+
+Output: 2
+
+Explanation:
+
+- [0, 1, 1]: We add the edge between vertex 0 and vertex 1 with weight 1.
+
+- [1, 2, 1]: We add the edge between vertex 1 and vertex 2 with weight 1.
+
+- [0, 2, 1]: The edge between vertex 0 and vertex 2 (the dashed edge in the diagram) is not added because the cycle 0 - 1 - 2 - 0 has total edge weight 1 + 1 + 1 = 3, which is an odd number.
+
+Example 2:
+
+Input: n = 3, edges = [[0,1,1],[1,2,1],[0,2,0]]
+
+Output: 3
+
+Explanation:
+
+- [0, 1, 1]: We add the edge between vertex 0 and vertex 1 with weight 1.
+
+- [1, 2, 1]: We add the edge between vertex 1 and vertex 2 with weight 1.
+
+- [0, 2, 0]: We add the edge between vertex 0 and vertex 2 with weight 0.
+
+- Note that the cycle 0 - 1 - 2 - 0 has total edge weight 1 + 1 + 0 = 2, which is an even number.
+
+ 
+
+Constraints:
+
+- 3 <= n <= 5 * 104
+
+- 1 <= edges.length <= 5 * 104
+
+- edges[i] = [ui, vi, wi]
+
+- 0 <= ui < vi < n
+
+- All edges are distinct.
+
+- wi = 0 or wi = 1
+
+------------------------------
+3744. Find Kth Character in Expanded String 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3745. Maximize Expression of Three Elements 
+------------------------------
+
+You are given an integer array nums.
+
+Choose three elements a, b, and c from nums at distinct indices such that the value of the expression a + b - c is maximized.
+
+Return an integer denoting the maximum possible value of this expression.
+
+ 
+
+Example 1:
+
+Input: nums = [1,4,2,5]
+
+Output: 8
+
+Explanation:
+
+We can choose a = 4, b = 5, and c = 1. The expression value is 4 + 5 - 1 = 8, which is the maximum possible.
+
+Example 2:
+
+Input: nums = [-2,0,5,-2,4]
+
+Output: 11
+
+Explanation:
+
+We can choose a = 5, b = 4, and c = -2. The expression value is 5 + 4 - (-2) = 11, which is the maximum possible.
+
+ 
+
+Constraints:
+
+- 3 <= nums.length <= 100
+
+- -100 <= nums[i] <= 100
+
+------------------------------
+3748. Count Stable Subarrays 
+------------------------------
+
+You are given an integer array nums.
+
+A subarray of nums is called stable if it contains no inversions, i.e., there is no pair of indices i < j such that nums[i] > nums[j].
+
+You are also given a 2D integer array queries of length q, where each queries[i] = [li, ri] represents a query. For each query [li, ri], compute the number of stable subarrays that lie entirely within the segment nums[li..ri].
+
+Return an integer array ans of length q, where ans[i] is the answer to the ith query.​​​​​​​​​​​​​​
+
+Note:
+
+- A single element subarray is considered stable.
+
+ 
+
+Example 1:
+
+Input: nums = [3,1,2], queries = [[0,1],[1,2],[0,2]]
+
+Output: [2,3,4]
+
+Explanation:​​​​​
+
+- For queries[0] = [0, 1], the subarray is [nums[0], nums[1]] = [3, 1].
+
+	
+
+- The stable subarrays are [3] and [1]. The total number of stable subarrays is 2.
+
+- For queries[1] = [1, 2], the subarray is [nums[1], nums[2]] = [1, 2].
+	
+
+- The stable subarrays are [1], [2], and [1, 2]. The total number of stable subarrays is 3.
+
+- For queries[2] = [0, 2], the subarray is [nums[0], nums[1], nums[2]] = [3, 1, 2].
+	
+
+- The stable subarrays are [3], [1], [2], and [1, 2]. The total number of stable subarrays is 4.
+
+Thus, ans = [2, 3, 4].
+
+Example 2:
+
+Input: nums = [2,2], queries = [[0,1],[0,0]]
+
+Output: [3,1]
+
+Explanation:
+
+- For queries[0] = [0, 1], the subarray is [nums[0], nums[1]] = [2, 2].
+
+	
+
+- The stable subarrays are [2], [2], and [2, 2]. The total number of stable subarrays is 3.
+
+- For queries[1] = [0, 0], the subarray is [nums[0]] = [2].
+	
+
+- The stable subarray is [2]. The total number of stable subarrays is 1.
+
+Thus, ans = [3, 1].
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 105
+
+- 1 <= queries.length <= 105
+
+- queries[i] = [li, ri]
+
+- 0 <= li <= ri <= nums.length - 1
+
+------------------------------
+3730. Maximum Calories Burnt from Jumps 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3717. Minimum Operations to Make the Array Beautiful 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3731. Find Missing Elements 
+------------------------------
+
+You are given an integer array nums consisting of unique integers.
+
+Originally, nums contained every integer within a certain range. However, some integers might have gone missing from the array.
+
+The smallest and largest integers of the original range are still present in nums.
+
+Return a sorted list of all the missing integers in this range. If no integers are missing, return an empty list.
+
+ 
+
+Example 1:
+
+Input: nums = [1,4,2,5]
+
+Output: [3]
+
+Explanation:
+
+The smallest integer is 1 and the largest is 5, so the full range should be [1,2,3,4,5]. Among these, only 3 is missing.
+
+Example 2:
+
+Input: nums = [7,8,6,9]
+
+Output: []
+
+Explanation:
+
+The smallest integer is 6 and the largest is 9, so the full range is [6,7,8,9]. All integers are already present, so no integer is missing.
+
+Example 3:
+
+Input: nums = [5,1]
+
+Output: [2,3,4]
+
+Explanation:
+
+The smallest integer is 1 and the largest is 5, so the full range should be [1,2,3,4,5]. The missing integers are 2, 3, and 4.
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+------------------------------
+3735. Lexicographically Smallest String After Reverse II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3732. Maximum Product of Three Elements After One Replacement 
+------------------------------
+
+You are given an integer array nums.
+
+You must replace exactly one element in the array with any integer value in the range [-105, 105] (inclusive).
+
+After performing this single replacement, determine the maximum possible product of any three elements at distinct indices from the modified array.
+
+Return an integer denoting the maximum product achievable.
+
+ 
+
+Example 1:
+
+Input: nums = [-5,7,0]
+
+Output: 3500000
+
+Explanation:
+
+Replacing 0 with -105 gives the array [-5, 7, -105], which has a product (-5) * 7 * (-105) = 3500000. The maximum product is 3500000.
+
+Example 2:
+
+Input: nums = [-4,-2,-1,-3]
+
+Output: 1200000
+
+Explanation:
+
+Two ways to achieve the maximum product include:
+
+- [-4, -2, -3] → replace -2 with 105 → product = (-4) * 105 * (-3) = 1200000.
+
+- [-4, -1, -3] → replace -1 with 105 → product = (-4) * 105 * (-3) = 1200000.
+
+The maximum product is 1200000.
+
+Example 3:
+
+Input: nums = [0,10,0]
+
+Output: 0
+
+Explanation:
+
+There is no way to replace an element with another integer and not have a 0 in the array. Hence, the product of all three elements will always be 0, and the maximum product is 0.
+
+ 
+
+Constraints:
+
+- 3 <= nums.length <= 105
+
+- -105 <= nums[i] <= 105
+
+------------------------------
+3765. Complete Prime Number 
+------------------------------
+
+You are given an integer num.
+
+A number num is called a Complete Prime Number if every prefix and every suffix of num is prime.
+
+Return true if num is a Complete Prime Number, otherwise return false.
+
+Note:
+
+- A prefix of a number is formed by the first k digits of the number.
+
+- A suffix of a number is formed by the last k digits of the number.
+
+- Single-digit numbers are considered Complete Prime Numbers only if they are prime.
+
+ 
+
+Example 1:
+
+Input: num = 23
+
+Output: true
+
+Explanation:
+
+- ​​​​​​​Prefixes of num = 23 are 2 and 23, both are prime.
+
+- Suffixes of num = 23 are 3 and 23, both are prime.
+
+- All prefixes and suffixes are prime, so 23 is a Complete Prime Number and the answer is true.
+
+Example 2:
+
+Input: num = 39
+
+Output: false
+
+Explanation:
+
+- Prefixes of num = 39 are 3 and 39. 3 is prime, but 39 is not prime.
+
+- Suffixes of num = 39 are 9 and 39. Both 9 and 39 are not prime.
+
+- At least one prefix or suffix is not prime, so 39 is not a Complete Prime Number and the answer is false.
+
+Example 3:
+
+Input: num = 7
+
+Output: true
+
+Explanation:
+
+- 7 is prime, so all its prefixes and suffixes are prime and the answer is true.
+
+ 
+
+Constraints:
+
+- 1 <= num <= 109
+
+------------------------------
+3766. Minimum Operations to Make Binary Palindrome 
+------------------------------
+
+You are given an integer array nums.
+
+For each element nums[i], you may perform the following operations any number of times (including zero):
+
+- Increase nums[i] by 1, or
+
+- Decrease nums[i] by 1.
+
+A number is called a binary palindrome if its binary representation without leading zeros reads the same forward and backward.
+
+Your task is to return an integer array ans, where ans[i] represents the minimum number of operations required to convert nums[i] into a binary palindrome.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,4]
+
+Output: [0,1,1]
+
+Explanation:
+
+One optimal set of operations:
+
+nums[i]
+Binary(nums[i])
+Nearest
+			Palindrome
+Binary
+			(Palindrome)
+Operations Required
+ans[i]
+
+1
+1
+1
+1
+Already palindrome
+0
+
+2
+10
+3
+11
+Increase by 1
+1
+
+4
+100
+3
+11
+Decrease by 1
+1
+
+Thus, ans = [0, 1, 1].
+
+Example 2:
+
+Input: nums = [6,7,12]
+
+Output: [1,0,3]
+
+Explanation:
+
+One optimal set of operations:
+
+nums[i]
+Binary(nums[i])
+Nearest
+			Palindrome
+Binary
+			(Palindrome)
+Operations Required
+ans[i]
+
+6
+110
+5
+101
+Decrease by 1
+1
+
+7
+111
+7
+111
+Already palindrome
+0
+
+12
+1100
+15
+1111
+Increase by 3
+3
+
+Thus, ans = [1, 0, 3].
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 5000
+
+- ​​​​​​​1 <= nums[i] <= 5000
+
+------------------------------
+3738. Longest Non-Decreasing Subarray After Replacing at Most One Element 
+------------------------------
+
+You are given an integer array nums.
+
+You are allowed to replace at most one element in the array with any other integer value of your choice.
+
+Return the length of the longest non-decreasing subarray that can be obtained after performing at most one replacement.
+
+An array is said to be non-decreasing if each element is greater than or equal to its previous one (if it exists).
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,1,2]
+
+Output: 4
+
+Explanation:
+
+Replacing nums[3] = 1 with 3 gives the array [1, 2, 3, 3, 2].
+
+The longest non-decreasing subarray is [1, 2, 3, 3], which has a length of 4.
+
+Example 2:
+
+Input: nums = [2,2,2,2,2]
+
+Output: 5
+
+Explanation:
+
+All elements in nums are equal, so it is already non-decreasing and the entire nums forms a subarray of length 5.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -109 <= nums[i] <= 109​​​​​​​
+
+------------------------------
+3877. Minimum Removals to Achieve Target XOR 
+------------------------------
+
+You are given an integer array nums and an integer target.
+
+You may remove any number of elements from nums (possibly zero).
+
+Return the minimum number of removals required so that the bitwise XOR of the remaining elements equals target. If it is impossible to achieve target, return -1.
+
+The bitwise XOR of an empty array is 0.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3], target = 2
+
+Output: 1
+
+Explanation:
+
+- Removing nums[1] = 2 leaves [nums[0], nums[2]] = [1, 3].
+
+- The XOR of [1, 3] is 2, which equals target.
+
+- It is not possible to achieve XOR = 2 in less than one removal, therefore the answer is 1.
+
+Example 2:
+
+Input: nums = [2,4], target = 1
+
+Output: -1
+
+Explanation:
+
+It is impossible to remove elements to achieve target. Thus, the answer is -1.
+
+Example 3:
+
+Input: nums = [7], target = 7
+
+Output: 0
+
+Explanation:
+
+The XOR of all elements is nums[0] = 7, which equals target. Thus, no removal is needed.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 40
+
+- 0 <= nums[i] <= 104
+
+- 0 <= target <= 104
+
+------------------------------
+3791. Number of Balanced Integers in a Range 
+------------------------------
+
+You are given two integers low and high.
+
+An integer is called balanced if it satisfies both of the following conditions:
+
+- It contains at least two digits.
+
+- The sum of digits at even positions is equal to the sum of digits at odd positions (the leftmost digit has position 1).
+
+Return an integer representing the number of balanced integers in the range [low, high] (both inclusive).
+
+ 
+
+Example 1:
+
+Input: low = 1, high = 100
+
+Output: 9
+
+Explanation:
+
+The 9 balanced numbers between 1 and 100 are 11, 22, 33, 44, 55, 66, 77, 88, and 99.
+
+Example 2:
+
+Input: low = 120, high = 129
+
+Output: 1
+
+Explanation:
+
+Only 121 is balanced because the sum of digits at even and odd positions are both 2.
+
+Example 3:
+
+Input: low = 1234, high = 1234
+
+Output: 0
+
+Explanation:
+
+1234 is not balanced because the sum of digits at odd positions (1 + 3 = 4) does not equal the sum at even positions (2 + 4 = 6).
+
+ 
+
+Constraints:
+
+- 1 <= low <= high <= 1015
+
+------------------------------
+3746. Minimum String Length After Balanced Removals 
+------------------------------
+
+You are given a string s consisting only of the characters 'a' and 'b'.
+
+You are allowed to repeatedly remove any substring where the number of 'a' characters is equal to the number of 'b' characters. After each removal, the remaining parts of the string are concatenated together without gaps.
+
+Return an integer denoting the minimum possible length of the string after performing any number of such operations.
+
+ 
+
+Example 1:
+
+Input: s = "aabbab"
+
+Output: 0
+
+Explanation:
+
+The substring "aabbab" has three 'a' and three 'b'. Since their counts are equal, we can remove the entire string directly. The minimum length is 0.
+
+Example 2:
+
+Input: s = "aaaa"
+
+Output: 4
+
+Explanation:
+
+Every substring of "aaaa" contains only 'a' characters. No substring can be removed as a result, so the minimum length remains 4.
+
+Example 3:
+
+Input: s = "aaabb"
+
+Output: 1
+
+Explanation:
+
+First, remove the substring "ab", leaving "aab". Next, remove the new substring "ab", leaving "a". No further removals are possible, so the minimum length is 1.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s[i] is either 'a' or 'b'.
+
+------------------------------
+3767. Maximize Points After Choosing K Tasks 
+------------------------------
+
+You are given two integer arrays, technique1 and technique2, each of length n, where n represents the number of tasks to complete.
+
+- If the ith task is completed using technique 1, you earn technique1[i] points.
+
+- If it is completed using technique 2, you earn technique2[i] points.
+
+You are also given an integer k, representing the minimum number of tasks that must be completed using technique 1.
+
+You must complete at least k tasks using technique 1 (they do not need to be the first k tasks).
+
+The remaining tasks may be completed using either technique.
+
+Return an integer denoting the maximum total points you can earn.
+
+ 
+
+Example 1:
+
+Input: technique1 = [5,2,10], technique2 = [10,3,8], k = 2
+
+Output: 22
+
+Explanation:
+
+We must complete at least k = 2 tasks using technique1.
+
+Choosing technique1[1] and technique1[2] (completed using technique 1), and technique2[0] (completed using technique 2), yields the maximum points: 2 + 10 + 10 = 22.
+
+Example 2:
+
+Input: technique1 = [10,20,30], technique2 = [5,15,25], k = 2
+
+Output: 60
+
+Explanation:
+
+We must complete at least k = 2 tasks using technique1.
+
+Choosing all tasks using technique 1 yields the maximum points: 10 + 20 + 30 = 60.
+
+Example 3:
+
+Input: technique1 = [1,2,3], technique2 = [4,5,6], k = 0
+
+Output: 15
+
+Explanation:
+
+Since k = 0, we are not required to choose any task using technique1.
+
+Choosing all tasks using technique 2 yields the maximum points: 4 + 5 + 6 = 15.
+
+ 
+
+Constraints:
+
+- 1 <= n == technique1.length == technique2.length <= 105
+
+- 1 <= technique1[i], technique2​​​​​​​[i] <= 10​​​​​​​5
+
+- 0 <= k <= n
+
+------------------------------
+3760. Maximum Substrings With Distinct Start 
+------------------------------
+
+You are given a string s consisting of lowercase English letters.
+
+Return an integer denoting the maximum number of substrings you can split s into such that each substring starts with a distinct character (i.e., no two substrings start with the same character).
+
+ 
+
+Example 1:
+
+Input: s = "abab"
+
+Output: 2
+
+Explanation:
+
+- Split "abab" into "a" and "bab".
+
+- Each substring starts with a distinct character i.e 'a' and 'b'. Thus, the answer is 2.
+
+Example 2:
+
+Input: s = "abcd"
+
+Output: 4
+
+Explanation:
+
+- Split "abcd" into "a", "b", "c", and "d".
+
+- Each substring starts with a distinct character. Thus, the answer is 4.
+
+Example 3:
+
+Input: s = "aaaa"
+
+Output: 1
+
+Explanation:
+
+- All characters in "aaaa" are 'a'.
+
+- Only one substring can start with 'a'. Thus, the answer is 1.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists of lowercase English letters.
+
+------------------------------
+3816. Lexicographically Smallest String After Deleting Duplicate Characters 
+------------------------------
+
+You are given a string s that consists of lowercase English letters.
+
+You can perform the following operation any number of times (possibly zero times):
+
+- Choose any letter that appears at least twice in the current string s and delete any one occurrence.
+
+Return the lexicographically smallest resulting string that can be formed this way.
+
+ 
+
+Example 1:
+
+Input: s = "aaccb"
+
+Output: "aacb"
+
+Explanation:
+
+We can form the strings "acb", "aacb", "accb", and "aaccb". "aacb" is the lexicographically smallest one.
+
+For example, we can obtain "aacb" by choosing 'c' and deleting its first occurrence.
+
+Example 2:
+
+Input: s = "z"
+
+Output: "z"
+
+Explanation:
+
+We cannot perform any operations. The only string we can form is "z".
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s contains lowercase English letters only.
+
+------------------------------
+3770. Largest Prime from Consecutive Prime Sum 
+------------------------------
+
+You are given an integer n.
+
+Return the largest prime number less than or equal to n that can be expressed as the sum of one or more consecutive prime numbers starting from 2. If no such number exists, return 0.
+
+ 
+
+Example 1:
+
+Input: n = 20
+
+Output: 17
+
+Explanation:
+
+The prime numbers less than or equal to n = 20 which are consecutive prime sums are:
+
+- 
+
+2 = 2
+
+- 
+
+5 = 2 + 3
+
+- 
+
+17 = 2 + 3 + 5 + 7
+
+The largest is 17, so it is the answer.
+
+Example 2:
+
+Input: n = 2
+
+Output: 2
+
+Explanation:
+
+The only consecutive prime sum less than or equal to 2 is 2 itself.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 5 * 105
+
+------------------------------
+3723. Maximize Sum of Squares of Digits 
+------------------------------
+
+You are given two positive integers num and sum.
+
+A positive integer n is good if it satisfies both of the following:
+
+- The number of digits in n is exactly num.
+
+- The sum of digits in n is exactly sum.
+
+The score of a good integer n is the sum of the squares of digits in n.
+
+Return a string denoting the good integer n that achieves the maximum score. If there are multiple possible integers, return the maximum ​​​​​​​one. If no such integer exists, return an empty string.
+
+ 
+
+Example 1:
+
+Input: num = 2, sum = 3
+
+Output: "30"
+
+Explanation:
+
+There are 3 good integers: 12, 21, and 30.
+
+- The score of 12 is 12 + 22 = 5.
+
+- The score of 21 is 22 + 12 = 5.
+
+- The score of 30 is 32 + 02 = 9.
+
+The maximum score is 9, which is achieved by the good integer 30. Therefore, the answer is "30".
+
+Example 2:
+
+Input: num = 2, sum = 17
+
+Output: "98"
+
+Explanation:
+
+There are 2 good integers: 89 and 98.
+
+- The score of 89 is 82 + 92 = 145.
+
+- The score of 98 is 92 + 82 = 145.
+
+The maximum score is 145. The maximum good integer that achieves this score is 98. Therefore, the answer is "98".
+
+Example 3:
+
+Input: num = 1, sum = 10
+
+Output: ""
+
+Explanation:
+
+There are no integers that have exactly 1 digit and whose digits sum to 10. Therefore, the answer is "".
+
+ 
+
+Constraints:
+
+- 1 <= num <= 2 * 105
+
+- 1 <= sum <= 2 * 106
+
+------------------------------
+3728. Stable Subarrays With Equal Boundary and Interior Sum 
+------------------------------
+
+You are given an integer array capacity.
+
+A subarray capacity[l..r] is considered stable if:
+
+- Its length is at least 3.
+
+- The first and last elements are each equal to the sum of all elements strictly between them (i.e., capacity[l] = capacity[r] = capacity[l + 1] + capacity[l + 2] + ... + capacity[r - 1]).
+
+Return an integer denoting the number of stable subarrays.
+
+ 
+
+Example 1:
+
+Input: capacity = [9,3,3,3,9]
+
+Output: 2
+
+Explanation:
+
+- [9,3,3,3,9] is stable because the first and last elements are both 9, and the sum of the elements strictly between them is 3 + 3 + 3 = 9.
+
+- [3,3,3] is stable because the first and last elements are both 3, and the sum of the elements strictly between them is 3.
+
+Example 2:
+
+Input: capacity = [1,2,3,4,5]
+
+Output: 0
+
+Explanation:
+
+No subarray of length at least 3 has equal first and last elements, so the answer is 0.
+
+Example 3:
+
+Input: capacity = [-4,4,0,0,-8,-4]
+
+Output: 1
+
+Explanation:
+
+[-4,4,0,0,-8,-4] is stable because the first and last elements are both -4, and the sum of the elements strictly between them is 4 + 0 + 0 + (-8) = -4
+
+ 
+
+Constraints:
+
+- 3 <= capacity.length <= 105
+
+- -109 <= capacity[i] <= 109
+
+------------------------------
+3711. Maximum Transactions Without Negative Balance 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3718. Smallest Missing Multiple of K 
+------------------------------
+
+Given an integer array nums and an integer k, return the smallest positive multiple of k that is missing from nums.
+
+A multiple of k is any positive integer divisible by k.
+
+ 
+
+Example 1:
+
+Input: nums = [8,2,3,4,6], k = 2
+
+Output: 10
+
+Explanation:
+
+The multiples of k = 2 are 2, 4, 6, 8, 10, 12... and the smallest multiple missing from nums is 10.
+
+Example 2:
+
+Input: nums = [1,4,7,10,15], k = 5
+
+Output: 5
+
+Explanation:
+
+The multiples of k = 5 are 5, 10, 15, 20... and the smallest multiple missing from nums is 5.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+- 1 <= k <= 100
+
+------------------------------
+3814. Maximum Capacity Within Budget 
+------------------------------
+
+You are given two integer arrays costs and capacity, both of length n, where costs[i] represents the purchase cost of the ith machine and capacity[i] represents its performance capacity.
+
+You are also given an integer budget.
+
+You may select at most two distinct machines such that the total cost of the selected machines is strictly less than budget.
+
+Return the maximum achievable total capacity of the selected machines.
+
+ 
+
+Example 1:
+
+Input: costs = [4,8,5,3], capacity = [1,5,2,7], budget = 8
+
+Output: 8
+
+Explanation:
+
+- Choose two machines with costs[0] = 4 and costs[3] = 3.
+
+- The total cost is 4 + 3 = 7, which is strictly less than budget = 8.
+
+- The maximum total capacity is capacity[0] + capacity[3] = 1 + 7 = 8.
+
+Example 2:
+
+Input: costs = [3,5,7,4], capacity = [2,4,3,6], budget = 7
+
+Output: 6
+
+Explanation:
+
+- Choose one machine with costs[3] = 4.
+
+- The total cost is 4, which is strictly less than budget = 7.
+
+- The maximum total capacity is capacity[3] = 6.
+
+Example 3:
+
+Input: costs = [2,2,2], capacity = [3,5,4], budget = 5
+
+Output: 9
+
+Explanation:
+
+- Choose two machines with costs[1] = 2 and costs[2] = 2.
+
+- The total cost is 2 + 2 = 4, which is strictly less than budget = 5.
+
+- The maximum total capacity is capacity[1] + capacity[2] = 5 + 4 = 9.
+
+ 
+
+Constraints:
+
+- 1 <= n == costs.length == capacity.length <= 105
+
+- 1 <= costs[i], capacity[i] <= 105
+
+- 1 <= budget <= 2 * 105
+
+------------------------------
+3727. Maximum Alternating Sum of Squares 
+------------------------------
+
+You are given an integer array nums. You may rearrange the elements in any order.
+
+The alternating score of an array arr is defined as:
+
+- score = arr[0]2 - arr[1]2 + arr[2]2 - arr[3]2 + ...
+
+Return an integer denoting the maximum possible alternating score of nums after rearranging its elements.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3]
+
+Output: 12
+
+Explanation:
+
+A possible rearrangement for nums is [2,1,3], which gives the maximum alternating score among all possible rearrangements.
+
+The alternating score is calculated as:
+
+score = 22 - 12 + 32 = 4 - 1 + 9 = 12
+
+Example 2:
+
+Input: nums = [1,-1,2,-2,3,-3]
+
+Output: 16
+
+Explanation:
+
+A possible rearrangement for nums is [-3,-1,-2,1,3,2], which gives the maximum alternating score among all possible rearrangements.
+
+The alternating score is calculated as:
+
+score = (-3)2 - (-1)2 + (-2)2 - (1)2 + (3)2 - (2)2 = 9 - 1 + 4 - 1 + 9 - 4 = 16
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -4 * 104 <= nums[i] <= 4 * 104
+
+------------------------------
+3752. Lexicographically Smallest Negated Permutation that Sums to Target 
+------------------------------
+
+You are given a positive integer n and an integer target.
+
+Return the lexicographically smallest array of integers of size n such that:
+
+- The sum of its elements equals target.
+
+- The absolute values of its elements form a permutation of size n.
+
+If no such array exists, return an empty array.
+
+A permutation of size n is a rearrangement of integers 1, 2, ..., n.
+
+ 
+
+Example 1:
+
+Input: n = 3, target = 0
+
+Output: [-3,1,2]
+
+Explanation:
+
+The arrays that sum to 0 and whose absolute values form a permutation of size 3 are:
+
+- [-3, 1, 2]
+
+- [-3, 2, 1]
+
+- [-2, -1, 3]
+
+- [-2, 3, -1]
+
+- [-1, -2, 3]
+
+- [-1, 3, -2]
+
+- [1, -3, 2]
+
+- [1, 2, -3]
+
+- [2, -3, 1]
+
+- [2, 1, -3]
+
+- [3, -2, -1]
+
+- [3, -1, -2]
+
+The lexicographically smallest one is [-3, 1, 2].
+
+Example 2:
+
+Input: n = 1, target = 10000000000
+
+Output: []
+
+Explanation:
+
+There are no arrays that sum to 10000000000 and whose absolute values form a permutation of size 1. Therefore, the answer is [].
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+- -1010 <= target <= 1010
+
+------------------------------
+3739. Count Subarrays With Majority Element II 
+------------------------------
+
+You are given an integer array nums and an integer target.
+
+Return the number of subarrays of nums in which target is the majority element.
+
+The majority element of a subarray is the element that appears strictly more than half of the times in that subarray.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,2,3], target = 2
+
+Output: 5
+
+Explanation:
+
+Valid subarrays with target = 2 as the majority element:
+
+- nums[1..1] = [2]
+
+- nums[2..2] = [2]
+
+- nums[1..2] = [2,2]
+
+- nums[0..2] = [1,2,2]
+
+- nums[1..3] = [2,2,3]
+
+So there are 5 such subarrays.
+
+Example 2:
+
+Input: nums = [1,1,1,1], target = 1
+
+Output: 10
+
+Explanation: 
+
+​​​​​​​All 10 subarrays have 1 as the majority element.
+
+Example 3:
+
+Input: nums = [1,2,3], target = 4
+
+Output: 0
+
+Explanation:
+
+target = 4 does not appear in nums at all. Therefore, there cannot be any subarray where 4 is the majority element. Hence the answer is 0.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 10​​​​​​​5
+
+- 1 <= nums[i] <= 10​​​​​​​9
+
+- 1 <= target <= 109
+
+------------------------------
+3737. Count Subarrays With Majority Element I 
+------------------------------
+
+You are given an integer array nums and an integer target.
+
+Return the number of subarrays of nums in which target is the majority element.
+
+The majority element of a subarray is the element that appears strictly more than half of the times in that subarray.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,2,3], target = 2
+
+Output: 5
+
+Explanation:
+
+Valid subarrays with target = 2 as the majority element:
+
+- nums[1..1] = [2]
+
+- nums[2..2] = [2]
+
+- nums[1..2] = [2,2]
+
+- nums[0..2] = [1,2,2]
+
+- nums[1..3] = [2,2,3]
+
+So there are 5 such subarrays.
+
+Example 2:
+
+Input: nums = [1,1,1,1], target = 1
+
+Output: 10
+
+Explanation: 
+
+​​​​​​​All 10 subarrays have 1 as the majority element.
+
+Example 3:
+
+Input: nums = [1,2,3], target = 4
+
+Output: 0
+
+Explanation:
+
+target = 4 does not appear in nums at all. Therefore, there cannot be any subarray where 4 is the majority element. Hence the answer is 0.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 1 <= nums[i] <= 10​​​​​​​9
+
+- 1 <= target <= 109
+
+------------------------------
+3722. Lexicographically Smallest String After Reverse 
+------------------------------
+
+You are given a string s of length n consisting of lowercase English letters.
+
+You must perform exactly one operation by choosing any integer k such that 1 <= k <= n and either:
+
+- reverse the first k characters of s, or
+
+- reverse the last k characters of s.
+
+Return the lexicographically smallest string that can be obtained after exactly one such operation.
+
+ 
+
+Example 1:
+
+Input: s = "dcab"
+
+Output: "acdb"
+
+Explanation:
+
+- Choose k = 3, reverse the first 3 characters.
+
+- Reverse "dca" to "acd", resulting string s = "acdb", which is the lexicographically smallest string achievable.
+
+Example 2:
+
+Input: s = "abba"
+
+Output: "aabb"
+
+Explanation:
+
+- Choose k = 3, reverse the last 3 characters.
+
+- Reverse "bba" to "abb", so the resulting string is "aabb", which is the lexicographically smallest string achievable.
+
+Example 3:
+
+Input: s = "zxy"
+
+Output: "xzy"
+
+Explanation:
+
+- Choose k = 2, reverse the first 2 characters.
+
+- Reverse "zx" to "xz", so the resulting string is "xzy", which is the lexicographically smallest string achievable.
+
+ 
+
+Constraints:
+
+- 1 <= n == s.length <= 1000
+
+- s consists of lowercase English letters.
+
+------------------------------
+3786. Total Sum of Interaction Cost in Tree Groups 
+------------------------------
+
+You are given an integer n and an undirected tree with n nodes numbered from 0 to n - 1. This is represented by a 2D array edges of length n - 1, where edges[i] = [ui, vi] indicates an undirected edge between nodes ui and vi.
+
+You are also given an integer array group of length n, where group[i] denotes the group label assigned to node i.
+
+- Two nodes u and v are considered part of the same group if group[u] == group[v].
+
+- The interaction cost between u and v is defined as the number of edges on the unique path connecting them in the tree.
+
+Return an integer denoting the sum of interaction costs over all unordered pairs (u, v) with u != v such that group[u] == group[v].
+
+ 
+
+Example 1:
+
+Input: n = 3, edges = [[0,1],[1,2]], group = [1,1,1]
+
+Output: 4
+
+Explanation:
+
+All nodes belong to group 1. The interaction costs between the pairs of nodes are:
+
+- Nodes (0, 1): 1
+
+- Nodes (1, 2): 1
+
+- Nodes (0, 2): 2
+
+Thus, the total interaction cost is 1 + 1 + 2 = 4.
+
+Example 2:
+
+Input: n = 3, edges = [[0,1],[1,2]], group = [3,2,3]
+
+Output: 2
+
+Explanation:
+
+- Nodes 0 and 2 belong to group 3. The interaction cost between this pair is 2.
+
+- Node 1 belongs to a different group and forms no valid pair. Therefore, the total interaction cost is 2.
+
+Example 3:
+
+Input: n = 4, edges = [[0,1],[0,2],[0,3]], group = [1,1,4,4]
+
+Output: 3
+
+Explanation:
+
+Nodes belonging to the same groups and their interaction costs are:
+
+- Group 1: Nodes (0, 1): 1
+
+- Group 4: Nodes (2, 3): 2
+
+Thus, the total interaction cost is 1 + 2 = 3.
+
+Example 4:
+
+Input: n = 2, edges = [[0,1]], group = [9,8]
+
+Output: 0
+
+Explanation:
+
+All nodes belong to different groups and there are no valid pairs. Therefore, the total interaction cost is 0.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+- edges.length == n - 1
+
+- edges[i] = [ui, vi]
+
+- 0 <= ui, vi <= n - 1
+
+- group.length == n
+
+- 1 <= group[i] <= 20
+
+- The input is generated such that edges represents a valid tree.
+
+------------------------------
+3799. Word Squares II 
+------------------------------
+
+You are given a string array words, consisting of distinct 4-letter strings, each containing lowercase English letters.
+
+A word square consists of 4 distinct words: top, left, right and bottom, arranged as follows:
+
+- top forms the top row.
+
+- bottom forms the bottom row.
+
+- left forms the left column (top to bottom).
+
+- right forms the right column (top to bottom).
+
+It must satisfy:
+
+- top[0] == left[0], top[3] == right[0]
+
+- bottom[0] == left[3], bottom[3] == right[3]
+
+Return all valid distinct word squares, sorted in ascending lexicographic order by the 4-tuple (top, left, right, bottom)​​​​​​​.
+
+ 
+
+Example 1:
+
+Input: words = ["able","area","echo","also"]
+
+Output: [["able","area","echo","also"],["area","able","also","echo"]]
+
+Explanation:
+
+There are exactly two valid 4-word squares that satisfy all corner constraints:
+
+- "able" (top), "area" (left), "echo" (right), "also" (bottom)
+
+	
+
+- top[0] == left[0] == 'a'
+
+- top[3] == right[0] == 'e'
+
+- bottom[0] == left[3] == 'a'
+
+- bottom[3] == right[3] == 'o'
+
+- "area" (top), "able" (left), "also" (right), "echo" (bottom)
+	
+
+- All corner constraints are satisfied.
+
+Thus, the answer is [["able","area","echo","also"],["area","able","also","echo"]].
+
+Example 2:
+
+Input: words = ["code","cafe","eden","edge"]
+
+Output: []
+
+Explanation:
+
+No combination of four words satisfies all four corner constraints. Thus, the answer is empty array [].
+
+ 
+
+Constraints:
+
+- 4 <= words.length <= 15
+
+- words[i].length == 4
+
+- words[i] consists of only lowercase English letters.
+
+- All words[i] are distinct.
+
+------------------------------
+3706. Maximum Distance Between Unequal Words in Array II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3725. Count Ways to Choose Coprime Integers from Rows 
+------------------------------
+
+You are given a m x n matrix mat of positive integers.
+
+Return an integer denoting the number of ways to choose exactly one integer from each row of mat such that the greatest common divisor of all chosen integers is 1.
+
+Since the answer may be very large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: mat = [[1,2],[3,4]]
+
+Output: 3
+
+Explanation:
+
+Chosen integer in the first row
+Chosen integer in the second row
+Greatest common divisor of chosen integers
+
+1
+3
+1
+
+1
+4
+1
+
+2
+3
+1
+
+2
+4
+2
+
+3 of these combinations have a greatest common divisor of 1. Therefore, the answer is 3.
+
+Example 2:
+
+Input: mat = [[2,2],[2,2]]
+
+Output: 0
+
+Explanation:
+
+Every combination has a greatest common divisor of 2. Therefore, the answer is 0.
+
+ 
+
+Constraints:
+
+- 1 <= m == mat.length <= 150
+
+- 1 <= n == mat[i].length <= 150
+
+- 1 <= mat[i][j] <= 150
+
+------------------------------
+3712. Sum of Elements With Frequency Divisible by K 
+------------------------------
+
+You are given an integer array nums and an integer k.
+
+Return an integer denoting the sum of all elements in nums whose frequency is divisible by k, or 0 if there are no such elements.
+
+Note: An element is included in the sum exactly as many times as it appears in the array if its total frequency is divisible by k.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,2,3,3,3,3,4], k = 2
+
+Output: 16
+
+Explanation:
+
+- The number 1 appears once (odd frequency).
+
+- The number 2 appears twice (even frequency).
+
+- The number 3 appears four times (even frequency).
+
+- The number 4 appears once (odd frequency).
+
+So, the total sum is 2 + 2 + 3 + 3 + 3 + 3 = 16.
+
+Example 2:
+
+Input: nums = [1,2,3,4,5], k = 2
+
+Output: 0
+
+Explanation:
+
+There are no elements that appear an even number of times, so the total sum is 0.
+
+Example 3:
+
+Input: nums = [4,4,4,1,2,3], k = 3
+
+Output: 12
+
+Explanation:
+
+- The number 1 appears once.
+
+- The number 2 appears once.
+
+- The number 3 appears once.
+
+- The number 4 appears three times.
+
+So, the total sum is 4 + 4 + 4 = 12.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+- 1 <= k <= 100
+
+------------------------------
+3815. Design Auction System 
+------------------------------
+
+You are asked to design an auction system that manages bids from multiple users in real time.
+
+Each bid is associated with a userId, an itemId, and a bidAmount.
+
+Implement the AuctionSystem class:​​​​​​​
+
+- AuctionSystem(): Initializes the AuctionSystem object.
+
+- void addBid(int userId, int itemId, int bidAmount): Adds a new bid for itemId by userId with bidAmount. If the same userId already has a bid on itemId, replace it with the new bidAmount.
+
+- void updateBid(int userId, int itemId, int newAmount): Updates the existing bid of userId for itemId to newAmount. It is guaranteed that this bid exists.
+
+- void removeBid(int userId, int itemId): Removes the bid of userId for itemId. It is guaranteed that this bid exists.
+
+- int getHighestBidder(int itemId): Returns the userId of the highest bidder for itemId. If multiple users have the same highest bidAmount, return the user with the highest userId. If no bids exist for the item, return -1.
+
+ 
+
+Example 1:
+
+Input:
+["AuctionSystem", "addBid", "addBid", "getHighestBidder", "updateBid", "getHighestBidder", "removeBid", "getHighestBidder", "getHighestBidder"]
+[[], [1, 7, 5], [2, 7, 6], [7], [1, 7, 8], [7], [2, 7], [7], [3]]
+
+Output:
+[null, null, null, 2, null, 1, null, 1, -1] 
+
+Explanation
+
+AuctionSystem auctionSystem = new AuctionSystem(); // Initialize the Auction system
+auctionSystem.addBid(1, 7, 5); // User 1 bids 5 on item 7
+auctionSystem.addBid(2, 7, 6); // User 2 bids 6 on item 7
+auctionSystem.getHighestBidder(7); // return 2 as User 2 has the highest bid
+auctionSystem.updateBid(1, 7, 8); // User 1 updates bid to 8 on item 7
+auctionSystem.getHighestBidder(7); // return 1 as User 1 now has the highest bid
+auctionSystem.removeBid(2, 7); // Remove User 2's bid on item 7
+auctionSystem.getHighestBidder(7); // return 1 as User 1 is the current highest bidder
+auctionSystem.getHighestBidder(3); // return -1 as no bids exist for item 3
+
+ 
+
+Constraints:
+
+- 1 <= userId, itemId <= 5 * 104
+
+- 1 <= bidAmount, newAmount <= 109
+
+- At most 5 * 104 total calls to addBid, updateBid, removeBid, and getHighestBidder.
+
+- The input is generated such that for updateBid and removeBid, the bid from the given userId for the given itemId will be valid.
+
+------------------------------
+3696. Maximum Distance Between Unequal Words in Array I 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3850. Count Sequences to K 
+------------------------------
+
+You are given an integer array nums, and an integer k.
+
+Start with an initial value val = 1 and process nums from left to right. At each index i, you must choose exactly one of the following actions:
+
+- Multiply val by nums[i].
+
+- Divide val by nums[i].
+
+- Leave val unchanged.
+
+After processing all elements, val is considered equal to k only if its final rational value exactly equals k.
+
+Return the count of distinct sequences of choices that result in val == k.
+
+Note: Division is rational (exact), not integer division. For example, 2 / 4 = 1 / 2.
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,2], k = 6
+
+Output: 2
+
+Explanation:
+
+The following 2 distinct sequences of choices result in val == k:
+
+Sequence
+Operation on nums[0]
+Operation on nums[1]
+Operation on nums[2]
+Final val
+
+1
+Multiply: val = 1 * 2 = 2
+Multiply: val = 2 * 3 = 6
+Leave val unchanged
+6
+
+2
+Leave val unchanged
+Multiply: val = 1 * 3 = 3
+Multiply: val = 3 * 2 = 6
+6
+
+Example 2:
+
+Input: nums = [4,6,3], k = 2
+
+Output: 2
+
+Explanation:
+
+The following 2 distinct sequences of choices result in val == k:
+
+Sequence
+Operation on nums[0]
+Operation on nums[1]
+Operation on nums[2]
+Final val
+
+1
+Multiply: val = 1 * 4 = 4
+Divide: val = 4 / 6 = 2 / 3
+Multiply: val = (2 / 3) * 3 = 2
+2
+
+2
+Leave val unchanged
+Multiply: val = 1 * 6 = 6
+Divide: val = 6 / 3 = 2
+2
+
+Example 3:
+
+Input: nums = [1,5], k = 1
+
+Output: 3
+
+Explanation:
+
+The following 3 distinct sequences of choices result in val == k:
+
+Sequence
+Operation on nums[0]
+Operation on nums[1]
+Final val
+
+1
+Multiply: val = 1 * 1 = 1
+Leave val unchanged
+1
+
+2
+Divide: val = 1 / 1 = 1
+Leave val unchanged
+1
+
+3
+Leave val unchanged
+Leave val unchanged
+1
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 19
+
+- 1 <= nums[i] <= 6
+
+- 1 <= k <= 1015
+
+------------------------------
+3777. Minimum Deletions to Make Alternating Substring 
+------------------------------
+
+You are given a string s of length n consisting only of the characters 'A' and 'B'.
+
+You are also given a 2D integer array queries of length q, where each queries[i] is one of the following:
+
+- [1, j]: Flip the character at index j of s i.e. 'A' changes to 'B' (and vice versa). This operation mutates s and affects subsequent queries.
+
+- [2, l, r]: Compute the minimum number of character deletions required to make the substring s[l..r] alternating. This operation does not modify s; the length of s remains n.
+
+A substring is alternating if no two adjacent characters are equal. A substring of length 1 is always alternating.
+
+Return an integer array answer, where answer[i] is the result of the ith query of type [2, l, r].
+
+ 
+
+Example 1:
+
+Input: s = "ABA", queries = [[2,1,2],[1,1],[2,0,2]]
+
+Output: [0,2]
+
+Explanation:
+
+i
+queries[i]
+j
+l
+r
+s before query
+s[l..r]
+Result
+Answer
+
+0
+[2, 1, 2]
+-
+1
+2
+"ABA"
+"BA"
+Already alternating
+0
+
+1
+[1, 1]
+1
+-
+-
+"ABA"
+-
+Flip s[1] from 'B' to 'A'
+-
+
+2
+[2, 0, 2]
+-
+0
+2
+"AAA"
+"AAA"
+Delete any two 'A's to get "A"
+2
+
+Thus, the answer is [0, 2].
+
+Example 2:
+
+Input: s = "ABB", queries = [[2,0,2],[1,2],[2,0,2]]
+
+Output: [1,0]
+
+Explanation:
+
+i
+queries[i]
+j
+l
+r
+s before query
+s[l..r]
+Result
+Answer
+
+0
+[2, 0, 2]
+-
+0
+2
+"ABB"
+"ABB"
+Delete one 'B' to get "AB"
+1
+
+1
+[1, 2]
+2
+-
+-
+"ABB"
+-
+Flip s[2] from 'B' to 'A'
+-
+
+2
+[2, 0, 2]
+-
+0
+2
+"ABA"
+"ABA"
+Already alternating
+0
+
+Thus, the answer is [1, 0].
+
+Example 3:
+
+Input: s = "BABA", queries = [[2,0,3],[1,1],[2,1,3]]
+
+Output: [0,1]
+
+Explanation:
+
+i
+queries[i]
+j
+l
+r
+s before query
+s[l..r]
+Result
+Answer
+
+0
+[2, 0, 3]
+-
+0
+3
+"BABA"
+"BABA"
+Already alternating
+0
+
+1
+[1, 1]
+1
+-
+-
+"BABA"
+-
+Flip s[1] from 'A' to 'B'
+-
+
+2
+[2, 1, 3]
+-
+1
+3
+"BBBA"
+"BBA"
+Delete one 'B' to get "BA"
+1
+
+Thus, the answer is [0, 1].
+
+ 
+
+Constraints:
+
+- 1 <= n == s.length <= 105
+
+- s[i] is either 'A' or 'B'.
+
+- 1 <= q == queries.length <= 105
+
+- queries[i].length == 2 or 3
+
+- queries[i] == [1, j] or,
+
+- queries[i] == [2, l, r]
+
+- 0 <= j <= n - 1
+
+- 0 <= l <= r <= n - 1
+
+------------------------------
+3729. Count Distinct Subarrays Divisible by K in Sorted Array 
+------------------------------
+
+You are given an integer array nums sorted in non-descending order and a positive integer k.
+
+A subarray of nums is good if the sum of its elements is divisible by k.
+
+Return an integer denoting the number of distinct good subarrays of nums.
+
+Subarrays are distinct if their sequences of values are. For example, there are 3 distinct subarrays in [1, 1, 1], namely [1], [1, 1], and [1, 1, 1].
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3], k = 3
+
+Output: 3
+
+Explanation:
+
+The good subarrays are [1, 2], [3], and [1, 2, 3]. For example, [1, 2, 3] is good because the sum of its elements is 1 + 2 + 3 = 6, and 6 % k = 6 % 3 = 0.
+
+Example 2:
+
+Input: nums = [2,2,2,2,2,2], k = 6
+
+Output: 2
+
+Explanation:
+
+The good subarrays are [2, 2, 2] and [2, 2, 2, 2, 2, 2]. For example, [2, 2, 2] is good because the sum of its elements is 2 + 2 + 2 = 6, and 6 % k = 6 % 6 = 0.
+
+Note that [2, 2, 2] is counted only once.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 109
+
+- nums is sorted in non-descending order.
+
+- 1 <= k <= 109
+
+------------------------------
+3840. House Robber V 
+------------------------------
+
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed and is protected by a security system with a color code.
+
+You are given two integer arrays nums and colors, both of length n, where nums[i] is the amount of money in the ith house and colors[i] is the color code of that house.
+
+You cannot rob two adjacent houses if they share the same color code.
+
+Return the maximum amount of money you can rob.
+
+ 
+
+Example 1:
+
+Input: nums = [1,4,3,5], colors = [1,1,2,2]
+
+Output: 9
+
+Explanation:
+
+- Choose houses i = 1 with nums[1] = 4 and i = 3 with nums[3] = 5 because they are non-adjacent.
+
+- Thus, the total amount robbed is 4 + 5 = 9.
+
+Example 2:
+
+Input: nums = [3,1,2,4], colors = [2,3,2,2]
+
+Output: 8
+
+Explanation:
+
+- Choose houses i = 0 with nums[0] = 3, i = 1 with nums[1] = 1, and i = 3 with nums[3] = 4.
+
+- This selection is valid because houses i = 0 and i = 1 have different colors, and house i = 3 is non-adjacent to i = 1.
+
+- Thus, the total amount robbed is 3 + 1 + 4 = 8.
+
+Example 3:
+
+Input: nums = [10,1,3,9], colors = [1,1,1,2]
+
+Output: 22
+
+Explanation:
+
+- Choose houses i = 0 with nums[0] = 10, i = 2 with nums[2] = 3, and i = 3 with nums[3] = 9.
+
+- This selection is valid because houses i = 0 and i = 2 are non-adjacent, and houses i = 2 and i = 3 have different colors.
+
+- Thus, the total amount robbed is 10 + 3 + 9 = 22.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length == colors.length <= 105
+
+- 1 <= nums[i], colors[i] <= 105
+
+------------------------------
+3785. Minimum Swaps to Avoid Forbidden Values 
+------------------------------
+
+You are given two integer arrays, nums and forbidden, each of length n.
+
+You may perform the following operation any number of times (including zero):
+
+- Choose two distinct indices i and j, and swap nums[i] with nums[j].
+
+Return the minimum number of swaps required such that, for every index i, the value of nums[i] is not equal to forbidden[i]. If no amount of swaps can ensure that every index avoids its forbidden value, return -1.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3], forbidden = [3,2,1]
+
+Output: 1
+
+Explanation:
+
+One optimal set of swaps:
+
+- Select indices i = 0 and j = 1 in nums and swap them, resulting in nums = [2, 1, 3].
+
+- After this swap, for every index i, nums[i] is not equal to forbidden[i].
+
+Example 2:
+
+Input: nums = [4,6,6,5], forbidden = [4,6,5,5]
+
+Output: 2
+
+Explanation:
+
+One optimal set of swaps:
+
+- Select indices i = 0 and j = 2 in nums and swap them, resulting in nums = [6, 6, 4, 5].
+
+- Select indices i = 1 and j = 3 in nums and swap them, resulting in nums = [6, 5, 4, 6].
+
+- After these swaps, for every index i, nums[i] is not equal to forbidden[i].
+
+Example 3:
+
+Input: nums = [7,7], forbidden = [8,7]
+
+Output: -1
+
+Explanation:
+
+It is not possible to make nums[i] different from forbidden[i] for all indices.
+
+Example 4:
+
+Input: nums = [1,2], forbidden = [2,1]
+
+Output: 0
+
+Explanation:
+
+No swaps are required because nums[i] is already different from forbidden[i] for all indices, so the answer is 0.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length == forbidden.length <= 105
+
+- 1 <= nums[i], forbidden[i] <= 109
+
+------------------------------
+3687. Library Late Fee Calculator 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3709. Design Exam Scores Tracker 
+------------------------------
+
+Alice frequently takes exams and wants to track her scores and calculate the total scores over specific time periods.
+
+Implement the ExamTracker class:
+
+- ExamTracker(): Initializes the ExamTracker object.
+
+- void record(int time, int score): Alice takes a new exam at time time and achieves the score score.
+
+- long long totalScore(int startTime, int endTime): Returns an integer that represents the total score of all exams taken by Alice between startTime and endTime (inclusive). If there are no recorded exams taken by Alice within the specified time interval, return 0.
+
+It is guaranteed that the function calls are made in chronological order. That is,
+
+- Calls to record() will be made with strictly increasing time.
+
+- Alice will never ask for total scores that require information from the future. That is, if the latest record() is called with time = t, then totalScore() will always be called with startTime <= endTime <= t.
+
+ 
+
+Example 1:
+
+Input:
+["ExamTracker", "record", "totalScore", "record", "totalScore", "totalScore", "totalScore", "totalScore"]
+[[], [1, 98], [1, 1], [5, 99], [1, 3], [1, 5], [3, 4], [2, 5]]
+
+Output:
+[null, null, 98, null, 98, 197, 0, 99] 
+
+Explanation
+
+ExamTracker examTracker = new ExamTracker();
+examTracker.record(1, 98); // Alice takes a new exam at time 1, scoring 98.
+examTracker.totalScore(1, 1); // Between time 1 and time 1, Alice took 1 exam at time 1, scoring 98. The total score is 98.
+examTracker.record(5, 99); // Alice takes a new exam at time 5, scoring 99.
+examTracker.totalScore(1, 3); // Between time 1 and time 3, Alice took 1 exam at time 1, scoring 98. The total score is 98.
+examTracker.totalScore(1, 5); // Between time 1 and time 5, Alice took 2 exams at time 1 and 5, scoring 98 and 99. The total score is 98 + 99 = 197.
+examTracker.totalScore(3, 4); // Alice did not take any exam between time 3 and time 4. Therefore, the answer is 0.
+examTracker.totalScore(2, 5); // Between time 2 and time 5, Alice took 1 exam at time 5, scoring 99. The total score is 99.
+
+ 
+
+Constraints:
+
+- 1 <= time <= 109
+
+- 1 <= score <= 109
+
+- 1 <= startTime <= endTime <= t, where t is the value of time from the most recent call of record().
+
+- Calls of record() will be made with strictly increasing time.
+
+- After ExamTracker(), the first function call will always be record().
+
+- At most 105 calls will be made in total to record() and totalScore().
+
+------------------------------
+3701. Compute Alternating Sum 
+------------------------------
+
+You are given an integer array nums.
+
+The alternating sum of nums is the value obtained by adding elements at even indices and subtracting elements at odd indices. That is, nums[0] - nums[1] + nums[2] - nums[3]...
+
+Return an integer denoting the alternating sum of nums.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,5,7]
+
+Output: -4
+
+Explanation:
+
+- Elements at even indices are nums[0] = 1 and nums[2] = 5 because 0 and 2 are even numbers.
+
+- Elements at odd indices are nums[1] = 3 and nums[3] = 7 because 1 and 3 are odd numbers.
+
+- The alternating sum is nums[0] - nums[1] + nums[2] - nums[3] = 1 - 3 + 5 - 7 = -4.
+
+Example 2:
+
+Input: nums = [100]
+
+Output: 100
+
+Explanation:
+
+- The only element at even indices is nums[0] = 100 because 0 is an even number.
+
+- There are no elements on odd indices.
+
+- The alternating sum is nums[0] = 100.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+------------------------------
+3751. Total Waviness of Numbers in Range I 
+------------------------------
+
+You are given two integers num1 and num2 representing an inclusive range [num1, num2].
+
+The waviness of a number is defined as the total count of its peaks and valleys:
+
+- A digit is a peak if it is strictly greater than both of its immediate neighbors.
+
+- A digit is a valley if it is strictly less than both of its immediate neighbors.
+
+- The first and last digits of a number cannot be peaks or valleys.
+
+- Any number with fewer than 3 digits has a waviness of 0.
+
+Return the total sum of waviness for all numbers in the range [num1, num2].
+
+ 
+
+Example 1:
+
+Input: num1 = 120, num2 = 130
+
+Output: 3
+
+Explanation:
+
+In the range [120, 130]:
+
+- 120: middle digit 2 is a peak, waviness = 1.
+
+- 121: middle digit 2 is a peak, waviness = 1.
+
+- 130: middle digit 3 is a peak, waviness = 1.
+
+- All other numbers in the range have a waviness of 0.
+
+Thus, total waviness is 1 + 1 + 1 = 3.
+
+Example 2:
+
+Input: num1 = 198, num2 = 202
+
+Output: 3
+
+Explanation:
+
+In the range [198, 202]:
+
+- 198: middle digit 9 is a peak, waviness = 1.
+
+- 201: middle digit 0 is a valley, waviness = 1.
+
+- 202: middle digit 0 is a valley, waviness = 1.
+
+- All other numbers in the range have a waviness of 0.
+
+Thus, total waviness is 1 + 1 + 1 = 3.
+
+Example 3:
+
+Input: num1 = 4848, num2 = 4848
+
+Output: 2
+
+Explanation:
+
+Number 4848: the second digit 8 is a peak, and the third digit 4 is a valley, giving a waviness of 2.
+
+ 
+
+Constraints:
+
+- 1 <= num1 <= num2 <= 105
+
+------------------------------
+3714. Longest Balanced Substring II 
+------------------------------
+
+You are given a string s consisting only of the characters 'a', 'b', and 'c'.
+
+A substring of s is called balanced if all distinct characters in the substring appear the same number of times.
+
+Return the length of the longest balanced substring of s.
+
+ 
+
+Example 1:
+
+Input: s = "abbac"
+
+Output: 4
+
+Explanation:
+
+The longest balanced substring is "abba" because both distinct characters 'a' and 'b' each appear exactly 2 times.
+
+Example 2:
+
+Input: s = "aabcc"
+
+Output: 3
+
+Explanation:
+
+The longest balanced substring is "abc" because all distinct characters 'a', 'b' and 'c' each appear exactly 1 time.
+
+Example 3:
+
+Input: s = "aba"
+
+Output: 2
+
+Explanation:
+
+One of the longest balanced substrings is "ab" because both distinct characters 'a' and 'b' each appear exactly 1 time. Another longest balanced substring is "ba".
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s contains only the characters 'a', 'b', and 'c'.
+
+------------------------------
+3713. Longest Balanced Substring I 
+------------------------------
+
+You are given a string s consisting of lowercase English letters.
+
+A substring of s is called balanced if all distinct characters in the substring appear the same number of times.
+
+Return the length of the longest balanced substring of s.
+
+ 
+
+Example 1:
+
+Input: s = "abbac"
+
+Output: 4
+
+Explanation:
+
+The longest balanced substring is "abba" because both distinct characters 'a' and 'b' each appear exactly 2 times.
+
+Example 2:
+
+Input: s = "zzabccy"
+
+Output: 4
+
+Explanation:
+
+The longest balanced substring is "zabc" because the distinct characters 'z', 'a', 'b', and 'c' each appear exactly 1 time.​​​​​​​
+
+Example 3:
+
+Input: s = "aba"
+
+Output: 2
+
+Explanation:
+
+​​​​​​​One of the longest balanced substrings is "ab" because both distinct characters 'a' and 'b' each appear exactly 1 time. Another longest balanced substring is "ba".
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 1000
+
+- s consists of lowercase English letters.
+
+------------------------------
+3747. Count Distinct Integers After Removing Zeros 
+------------------------------
+
+You are given a positive integer n.
+
+For every integer x from 1 to n, we write down the integer obtained by removing all zeros from the decimal representation of x.
+
+Return an integer denoting the number of distinct integers written down.
+
+ 
+
+Example 1:
+
+Input: n = 10
+
+Output: 9
+
+Explanation:
+
+The integers we wrote down are 1, 2, 3, 4, 5, 6, 7, 8, 9, 1. There are 9 distinct integers (1, 2, 3, 4, 5, 6, 7, 8, 9).
+
+Example 2:
+
+Input: n = 3
+
+Output: 3
+
+Explanation:
+
+The integers we wrote down are 1, 2, 3. There are 3 distinct integers (1, 2, 3).
+
+ 
+
+Constraints:
+
+- 1 <= n <= 1015
+
+------------------------------
+3692. Majority Frequency Characters 
+------------------------------
+
+You are given a string s consisting of lowercase English letters.
+
+The frequency group for a value k is the set of characters that appear exactly k times in s.
+
+The majority frequency group is the frequency group that contains the largest number of distinct characters.
+
+Return a string containing all characters in the majority frequency group, in any order. If two or more frequency groups tie for that largest size, pick the group whose frequency k is larger.
+
+ 
+
+Example 1:
+
+Input: s = "aaabbbccdddde"
+
+Output: "ab"
+
+Explanation:
+
+Frequency (k)
+Distinct characters in group
+Group size
+Majority?
+
+4
+{d}
+1
+No
+
+3
+{a, b}
+2
+Yes
+
+2
+{c}
+1
+No
+
+1
+{e}
+1
+No
+
+Both characters 'a' and 'b' share the same frequency 3, they are in the majority frequency group. "ba" is also a valid answer.
+
+Example 2:
+
+Input: s = "abcd"
+
+Output: "abcd"
+
+Explanation:
+
+Frequency (k)
+Distinct characters in group
+Group size
+Majority?
+
+1
+{a, b, c, d}
+4
+Yes
+
+All characters share the same frequency 1, they are all in the majority frequency group.
+
+Example 3:
+
+Input: s = "pfpfgi"
+
+Output: "fp"
+
+Explanation:
+
+Frequency (k)
+Distinct characters in group
+Group size
+Majority?
+
+2
+{p, f}
+2
+Yes
+
+1
+{g, i}
+2
+No (tied size, lower frequency)
+
+Both characters 'p' and 'f' share the same frequency 2, they are in the majority frequency group. There is a tie in group size with frequency 1, but we pick the higher frequency: 2.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 100
+
+- s consists only of lowercase English letters.
+
+------------------------------
+3707. Equal Score Substrings 
+------------------------------
+
+You are given a string s consisting of lowercase English letters.
+
+The score of a string is the sum of the positions of its characters in the alphabet, where 'a' = 1, 'b' = 2, ..., 'z' = 26.
+
+Determine whether there exists an index i such that the string can be split into two non-empty substrings s[0..i] and s[(i + 1)..(n - 1)] that have equal scores.
+
+Return true if such a split exists, otherwise return false.
+
+ 
+
+Example 1:
+
+Input: s = "adcb"
+
+Output: true
+
+Explanation:
+
+Split at index i = 1:
+
+- Left substring = s[0..1] = "ad" with score = 1 + 4 = 5
+
+- Right substring = s[2..3] = "cb" with score = 3 + 2 = 5
+
+Both substrings have equal scores, so the output is true.
+
+Example 2:
+
+Input: s = "bace"
+
+Output: false
+
+Explanation:​​​​​​
+
+​​​​​​​No split produces equal scores, so the output is false.
+
+ 
+
+Constraints:
+
+- 2 <= s.length <= 100
+
+- s consists of lowercase English letters.
+
+------------------------------
+3726. Remove Zeros in Decimal Representation 
+------------------------------
+
+You are given a positive integer n.
+
+Return the integer obtained by removing all zeros from the decimal representation of n.
+
+ 
+
+Example 1:
+
+Input: n = 1020030
+
+Output: 123
+
+Explanation:
+
+After removing all zeros from 1020030, we get 123.
+
+Example 2:
+
+Input: n = 1
+
+Output: 1
+
+Explanation:
+
+1 has no zero in its decimal representation. Therefore, the answer is 1.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 1015
+
+------------------------------
+3682. Minimum Index Sum of Common Elements 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3704. Count No-Zero Pairs That Sum to N 
+------------------------------
+
+A no-zero integer is a positive integer that does not contain the digit 0 in its decimal representation.
+
+Given an integer n, count the number of pairs (a, b) where:
+
+- a and b are no-zero integers.
+
+- a + b = n
+
+Return an integer denoting the number of such pairs.
+
+ 
+
+Example 1:
+
+Input: n = 2
+
+Output: 1
+
+Explanation:
+
+The only pair is (1, 1).
+
+Example 2:
+
+Input: n = 3
+
+Output: 2
+
+Explanation:
+
+The pairs are (1, 2) and (2, 1).
+
+Example 3:
+
+Input: n = 11
+
+Output: 8
+
+Explanation:
+
+The pairs are (2, 9), (3, 8), (4, 7), (5, 6), (6, 5), (7, 4), (8, 3), and (9, 2). Note that (1, 10) and (10, 1) do not satisfy the conditions because 10 contains 0 in its decimal representation.
+
+ 
+
+Constraints:
+
+- 2 <= n <= 1015
+
+------------------------------
+3733. Minimum Time to Complete All Deliveries 
+------------------------------
+
+You are given two integer arrays of size 2: d = [d1, d2] and r = [r1, r2].
+
+Two delivery drones are tasked with completing a specific number of deliveries. Drone i must complete di deliveries.
+
+Each delivery takes exactly one hour and only one drone can make a delivery at any given hour.
+
+Additionally, both drones require recharging at specific intervals during which they cannot make deliveries. Drone i must recharge every ri hours (i.e. at hours that are multiples of ri).
+
+Return an integer denoting the minimum total time (in hours) required to complete all deliveries.
+
+ 
+
+Example 1:
+
+Input: d = [3,1], r = [2,3]
+
+Output: 5
+
+Explanation:
+
+- The first drone delivers at hours 1, 3, 5 (recharges at hours 2, 4).
+
+- The second drone delivers at hour 2 (recharges at hour 3).
+
+Example 2:
+
+Input: d = [1,3], r = [2,2]
+
+Output: 7
+
+Explanation:
+
+- The first drone delivers at hour 3 (recharges at hours 2, 4, 6).
+
+- The second drone delivers at hours 1, 5, 7 (recharges at hours 2, 4, 6).
+
+Example 3:
+
+Input: d = [2,1], r = [3,4]
+
+Output: 3
+
+Explanation:
+
+- The first drone delivers at hours 1, 2 (recharges at hour 3).
+
+- The second drone delivers at hour 3.
+
+ 
+
+Constraints:
+
+- d = [d1, d2]
+
+- 1 <= di <= 109
+
+- r = [r1, r2]
+
+- 2 <= ri <= 3 * 104
+
+------------------------------
+3721. Longest Balanced Subarray II 
+------------------------------
+
+You are given an integer array nums.
+
+A subarray is called balanced if the number of distinct even numbers in the subarray is equal to the number of distinct odd numbers.
+
+Return the length of the longest balanced subarray.
+
+ 
+
+Example 1:
+
+Input: nums = [2,5,4,3]
+
+Output: 4
+
+Explanation:
+
+- The longest balanced subarray is [2, 5, 4, 3].
+
+- It has 2 distinct even numbers [2, 4] and 2 distinct odd numbers [5, 3]. Thus, the answer is 4.
+
+Example 2:
+
+Input: nums = [3,2,2,5,4]
+
+Output: 5
+
+Explanation:
+
+- The longest balanced subarray is [3, 2, 2, 5, 4].
+
+- It has 2 distinct even numbers [2, 4] and 2 distinct odd numbers [3, 5]. Thus, the answer is 5.
+
+Example 3:
+
+Input: nums = [1,2,3,2]
+
+Output: 3
+
+Explanation:
+
+- The longest balanced subarray is [2, 3, 2].
+
+- It has 1 distinct even number [2] and 1 distinct odd number [3]. Thus, the answer is 3.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 105
+
+------------------------------
+3719. Longest Balanced Subarray I 
+------------------------------
+
+You are given an integer array nums.
+
+A subarray is called balanced if the number of distinct even numbers in the subarray is equal to the number of distinct odd numbers.
+
+Return the length of the longest balanced subarray.
+
+ 
+
+Example 1:
+
+Input: nums = [2,5,4,3]
+
+Output: 4
+
+Explanation:
+
+- The longest balanced subarray is [2, 5, 4, 3].
+
+- It has 2 distinct even numbers [2, 4] and 2 distinct odd numbers [5, 3]. Thus, the answer is 4.
+
+Example 2:
+
+Input: nums = [3,2,2,5,4]
+
+Output: 5
+
+Explanation:
+
+- The longest balanced subarray is [3, 2, 2, 5, 4].
+
+- It has 2 distinct even numbers [2, 4] and 2 distinct odd numbers [3, 5]. Thus, the answer is 5.
+
+Example 3:
+
+Input: nums = [1,2,3,2]
+
+Output: 3
+
+Explanation:
+
+- The longest balanced subarray is [2, 3, 2].
+
+- It has 1 distinct even number [2] and 1 distinct odd number [3]. Thus, the answer is 3.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1500
+
+- 1 <= nums[i] <= 105
+
+------------------------------
+3849. Maximum Bitwise XOR After Rearrangement 
+------------------------------
+
+You are given two binary strings s and t​​​​​​​, each of length n.
+
+You may rearrange the characters of t in any order, but s must remain unchanged.
+
+Return a binary string of length n representing the maximum integer value obtainable by taking the bitwise XOR of s and rearranged t.
+
+ 
+
+Example 1:
+
+Input: s = "101", t = "011"
+
+Output: "110"
+
+Explanation:
+
+- One optimal rearrangement of t is "011".
+
+- The bitwise XOR of s and rearranged t is "101" XOR "011" = "110", which is the maximum possible.
+
+Example 2:
+
+Input: s = "0110", t = "1110"
+
+Output: "1101"
+
+Explanation:
+
+- One optimal rearrangement of t is "1011".
+
+- The bitwise XOR of s and rearranged t is "0110" XOR "1011" = "1101", which is the maximum possible.
+
+Example 3:
+
+Input: s = "0101", t = "1001"
+
+Output: "1111"
+
+Explanation:
+
+- One optimal rearrangement of t is "1010".
+
+- The bitwise XOR of s and rearranged t is "0101" XOR "1010" = "1111", which is the maximum possible.
+
+ 
+
+Constraints:
+
+- 1 <= n == s.length == t.length <= 2 * 105
+
+- s[i] and t[i] are either '0' or '1'.
+
+------------------------------
+3724. Minimum Operations to Transform Array 
+------------------------------
+
+You are given two integer arrays nums1 of length n and nums2 of length n + 1.
+
+You want to transform nums1 into nums2 using the minimum number of operations.
+
+You may perform the following operations any number of times, each time choosing an index i:
+
+- Increase nums1[i] by 1.
+
+- Decrease nums1[i] by 1.
+
+- Append nums1[i] to the end of the array.
+
+Return the minimum number of operations required to transform nums1 into nums2.
+
+ 
+
+Example 1:
+
+Input: nums1 = [2,8], nums2 = [1,7,3]
+
+Output: 4
+
+Explanation:
+
+Step
+i
+Operation
+nums1[i]
+Updated nums1
+
+1
+0
+Append
+-
+[2, 8, 2]
+
+2
+0
+Decrement
+Decreases to 1
+[1, 8, 2]
+
+3
+1
+Decrement
+Decreases to 7
+[1, 7, 2]
+
+4
+2
+Increment
+Increases to 3
+[1, 7, 3]
+
+Thus, after 4 operations nums1 is transformed into nums2.
+
+Example 2:
+
+Input: nums1 = [1,3,6], nums2 = [2,4,5,3]
+
+Output: 4
+
+Explanation:
+
+Step
+i
+Operation
+nums1[i]
+Updated nums1
+
+1
+1
+Append
+-
+[1, 3, 6, 3]
+
+2
+0
+Increment
+Increases to 2
+[2, 3, 6, 3]
+
+3
+1
+Increment
+Increases to 4
+[2, 4, 6, 3]
+
+4
+2
+Decrement
+Decreases to 5
+[2, 4, 5, 3]
+
+Thus, after 4 operations nums1 is transformed into nums2.
+
+Example 3:
+
+Input: nums1 = [2], nums2 = [3,4]
+
+Output: 3
+
+Explanation:
+
+Step
+i
+Operation
+nums1[i]
+Updated nums1
+
+1
+0
+Increment
+Increases to 3
+[3]
+
+2
+0
+Append
+-
+[3, 3]
+
+3
+1
+Increment
+Increases to 4
+[3, 4]
+
+Thus, after 3 operations nums1 is transformed into nums2.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums1.length <= 105
+
+- nums2.length == n + 1
+
+- 1 <= nums1[i], nums2[i] <= 105
+
+------------------------------
+3693. Climbing Stairs II 
+------------------------------
+
+You are climbing a staircase with n + 1 steps, numbered from 0 to n.
+
+You are also given a 1-indexed integer array costs of length n, where costs[i] is the cost of step i.
+
+From step i, you can jump only to step i + 1, i + 2, or i + 3. The cost of jumping from step i to step j is defined as: costs[j] + (j - i)2
+
+You start from step 0 with cost = 0.
+
+Return the minimum total cost to reach step n.
+
+ 
+
+Example 1:
+
+Input: n = 4, costs = [1,2,3,4]
+
+Output: 13
+
+Explanation:
+
+One optimal path is 0 → 1 → 2 → 4
+
+Jump
+Cost Calculation
+Cost
+
+0 → 1
+costs[1] + (1 - 0)2 = 1 + 1
+2
+
+1 → 2
+costs[2] + (2 - 1)2 = 2 + 1
+3
+
+2 → 4
+costs[4] + (4 - 2)2 = 4 + 4
+8
+
+Thus, the minimum total cost is 2 + 3 + 8 = 13
+
+Example 2:
+
+Input: n = 4, costs = [5,1,6,2]
+
+Output: 11
+
+Explanation:
+
+One optimal path is 0 → 2 → 4
+
+Jump
+Cost Calculation
+Cost
+
+0 → 2
+costs[2] + (2 - 0)2 = 1 + 4
+5
+
+2 → 4
+costs[4] + (4 - 2)2 = 2 + 4
+6
+
+Thus, the minimum total cost is 5 + 6 = 11
+
+Example 3:
+
+Input: n = 3, costs = [9,8,3]
+
+Output: 12
+
+Explanation:
+
+The optimal path is 0 → 3 with total cost = costs[3] + (3 - 0)2 = 3 + 9 = 12
+
+ 
+
+Constraints:
+
+- 1 <= n == costs.length <= 105​​​​​​​
+
+- 1 <= costs[i] <= 104
+
+------------------------------
+3697. Compute Decimal Representation 
+------------------------------
+
+You are given a positive integer n.
+
+A positive integer is a base-10 component if it is the product of a single digit from 1 to 9 and a non-negative power of 10. For example, 500, 30, and 7 are base-10 components, while 537, 102, and 11 are not.
+
+Express n as a sum of only base-10 components, using the fewest base-10 components possible.
+
+Return an array containing these base-10 components in descending order.
+
+ 
+
+Example 1:
+
+Input: n = 537
+
+Output: [500,30,7]
+
+Explanation:
+
+We can express 537 as 500 + 30 + 7. It is impossible to express 537 as a sum using fewer than 3 base-10 components.
+
+Example 2:
+
+Input: n = 102
+
+Output: [100,2]
+
+Explanation:
+
+We can express 102 as 100 + 2. 102 is not a base-10 component, which means 2 base-10 components are needed.
+
+Example 3:
+
+Input: n = 6
+
+Output: [6]
+
+Explanation:
+
+6 is a base-10 component.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 109
+
+------------------------------
+3734. Lexicographically Smallest Palindromic Permutation Greater Than Target 
+------------------------------
+
+You are given two strings s and target, each of length n, consisting of lowercase English letters.
+
+Return the lexicographically smallest string that is both a palindromic permutation of s and strictly greater than target. If no such permutation exists, return an empty string.
+
+ 
+
+Example 1:
+
+Input: s = "baba", target = "abba"
+
+Output: "baab"
+
+Explanation:
+
+- The palindromic permutations of s (in lexicographical order) are "abba" and "baab".
+
+- The lexicographically smallest permutation that is strictly greater than target is "baab".
+
+Example 2:
+
+Input: s = "baba", target = "bbaa"
+
+Output: ""
+
+Explanation:
+
+- The palindromic permutations of s (in lexicographical order) are "abba" and "baab".
+
+- None of them is lexicographically strictly greater than target. Therefore, the answer is "".
+
+Example 3:
+
+Input: s = "abc", target = "abb"
+
+Output: ""
+
+Explanation:
+
+s has no palindromic permutations. Therefore, the answer is "".
+
+Example 4:
+
+Input: s = "aac", target = "abb"
+
+Output: "aca"
+
+Explanation:
+
+- The only palindromic permutation of s is "aca".
+
+- "aca" is strictly greater than target. Therefore, the answer is "aca".
+
+ 
+
+Constraints:
+
+- 1 <= n == s.length == target.length <= 300
+
+- s and target consist of only lowercase English letters.
+
+------------------------------
+3672. Sum of Weighted Modes in Subarrays 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3710. Maximum Partition Factor 
+------------------------------
+
+You are given a 2D integer array points, where points[i] = [xi, yi] represents the coordinates of the ith point on the Cartesian plane.
+
+The Manhattan distance between two points points[i] = [xi, yi] and points[j] = [xj, yj] is |xi - xj| + |yi - yj|.
+
+Split the n points into exactly two non-empty groups. The partition factor of a split is the minimum Manhattan distance among all unordered pairs of points that lie in the same group.
+
+Return the maximum possible partition factor over all valid splits.
+
+Note: A group of size 1 contributes no intra-group pairs. When n = 2 (both groups size 1), there are no intra-group pairs, so define the partition factor as 0.
+
+ 
+
+Example 1:
+
+Input: points = [[0,0],[0,2],[2,0],[2,2]]
+
+Output: 4
+
+Explanation:
+
+We split the points into two groups: {[0, 0], [2, 2]} and {[0, 2], [2, 0]}.
+
+- 
+
+In the first group, the only pair has Manhattan distance |0 - 2| + |0 - 2| = 4.
+
+- 
+
+In the second group, the only pair also has Manhattan distance |0 - 2| + |2 - 0| = 4.
+
+The partition factor of this split is min(4, 4) = 4, which is maximal.
+
+Example 2:
+
+Input: points = [[0,0],[0,1],[10,0]]
+
+Output: 11
+
+Explanation:​​​​​​​
+
+We split the points into two groups: {[0, 1], [10, 0]} and {[0, 0]}.
+
+- 
+
+In the first group, the only pair has Manhattan distance |0 - 10| + |1 - 0| = 11.
+
+- 
+
+The second group is a singleton, so it contributes no pairs.
+
+The partition factor of this split is 11, which is maximal.
+
+ 
+
+Constraints:
+
+- 2 <= points.length <= 500
+
+- points[i] = [xi, yi]
+
+- -108 <= xi, yi <= 108
+
+------------------------------
+3702. Longest Subsequence With Non-Zero Bitwise XOR 
+------------------------------
+
+You are given an integer array nums.
+
+Return the length of the longest subsequence in nums whose bitwise XOR is non-zero. If no such subsequence exists, return 0.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3]
+
+Output: 2
+
+Explanation:
+
+One longest subsequence is [2, 3]. The bitwise XOR is computed as 2 XOR 3 = 1, which is non-zero.
+
+Example 2:
+
+Input: nums = [2,3,4]
+
+Output: 3
+
+Explanation:
+
+The longest subsequence is [2, 3, 4]. The bitwise XOR is computed as 2 XOR 3 XOR 4 = 5, which is non-zero.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 0 <= nums[i] <= 109
+
+------------------------------
+3825. Longest Strictly Increasing Subsequence With Non-Zero Bitwise AND 
+------------------------------
+
+You are given an integer array nums.
+
+Return the length of the longest strictly increasing subsequence in nums whose bitwise AND is non-zero. If no such subsequence exists, return 0.
+
+ 
+
+Example 1:
+
+Input: nums = [5,4,7]
+
+Output: 2
+
+Explanation:
+
+One longest strictly increasing subsequence is [5, 7]. The bitwise AND is 5 AND 7 = 5, which is non-zero.
+
+Example 2:
+
+Input: nums = [2,3,6]
+
+Output: 3
+
+Explanation:
+
+The longest strictly increasing subsequence is [2, 3, 6]. The bitwise AND is 2 AND 3 AND 6 = 2, which is non-zero.
+
+Example 3:
+
+Input: nums = [0,1]
+
+Output: 1
+
+Explanation:
+
+One longest strictly increasing subsequence is [1]. The bitwise AND is 1, which is non-zero.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 0 <= nums[i] <= 109​​​​​​​
+
+------------------------------
+3743. Maximize Cyclic Partition Score 
+------------------------------
+
+You are given a cyclic array nums and an integer k.
+
+Partition nums into at most k subarrays. As nums is cyclic, these subarrays may wrap around from the end of the array back to the beginning.
+
+The range of a subarray is the difference between its maximum and minimum values. The score of a partition is the sum of subarray ranges.
+
+Return the maximum possible score among all cyclic partitions.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,3], k = 2
+
+Output: 3
+
+Explanation:
+
+- Partition nums into [2, 3] and [3, 1] (wrapped around).
+
+- The range of [2, 3] is max(2, 3) - min(2, 3) = 3 - 2 = 1.
+
+- The range of [3, 1] is max(3, 1) - min(3, 1) = 3 - 1 = 2.
+
+- The score is 1 + 2 = 3.
+
+Example 2:
+
+Input: nums = [1,2,3,3], k = 1
+
+Output: 2
+
+Explanation:
+
+- Partition nums into [1, 2, 3, 3].
+
+- The range of [1, 2, 3, 3] is max(1, 2, 3, 3) - min(1, 2, 3, 3) = 3 - 1 = 2.
+
+- The score is 2.
+
+Example 3:
+
+Input: nums = [1,2,3,3], k = 4
+
+Output: 3
+
+Explanation:
+
+Identical to Example 1, we partition nums into [2, 3] and [3, 1]. Note that nums may be partitioned into fewer than k subarrays.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 1 <= nums[i] <= 109
+
+- 1 <= k <= nums.length
+
+------------------------------
+3667. Sort Array By Absolute Value 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3686. Number of Stable Subsequences 
+------------------------------
+
+You are given an integer array nums.
+
+A subsequence is stable if it does not contain three consecutive elements with the same parity when the subsequence is read in order (i.e., consecutive inside the subsequence).
+
+Return the number of stable subsequences.
+
+Since the answer may be too large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,5]
+
+Output: 6
+
+Explanation:
+
+- Stable subsequences are [1], [3], [5], [1, 3], [1, 5], and [3, 5].
+
+- Subsequence [1, 3, 5] is not stable because it contains three consecutive odd numbers. Thus, the answer is 6.
+
+Example 2:
+
+Input: nums = [2,3,4,2]
+
+Output: 14
+
+Explanation:
+
+- The only subsequence that is not stable is [2, 4, 2], which contains three consecutive even numbers.
+
+- All other subsequences are stable. Thus, the answer is 14.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 10​​​​​​​5
+
+------------------------------
+3857. Minimum Cost to Split into Ones 
+------------------------------
+
+You are given an integer n.
+
+In one operation, you may split an integer x into two positive integers a and b such that a + b = x.
+
+The cost of this operation is a * b.
+
+Return an integer denoting the minimum total cost required to split the integer n into n ones.
+
+ 
+
+Example 1:
+
+Input: n = 3
+
+Output: 3
+
+Explanation:
+
+One optimal set of operations is:
+
+x
+a
+b
+a + b
+a * b
+Cost
+
+3
+1
+2
+3
+2
+2
+
+2
+1
+1
+2
+1
+1
+
+Thus, the minimum total cost is 2 + 1 = 3.
+
+Example 2:
+
+Input: n = 4
+
+Output: 6
+
+Explanation:
+
+One optimal set of operations is:
+
+x
+a
+b
+a + b
+a * b
+Cost
+
+4
+2
+2
+4
+4
+4
+
+2
+1
+1
+2
+1
+1
+
+2
+1
+1
+2
+1
+1
+
+Thus, the minimum total cost is 4 + 1 + 1 = 6.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 500
+
+------------------------------
+3677. Count Binary Palindromic Numbers 
+------------------------------
+
+You are given a non-negative integer n.
+
+A non-negative integer is called binary-palindromic if its binary representation (written without leading zeros) reads the same forward and backward.
+
+Return the number of integers k such that 0 <= k <= n and the binary representation of k is a palindrome.
+
+Note: The number 0 is considered binary-palindromic, and its representation is "0".
+
+ 
+
+Example 1:
+
+Input: n = 9
+
+Output: 6
+
+Explanation:
+
+The integers k in the range [0, 9] whose binary representations are palindromes are:
+
+- 0 → "0"
+
+- 1 → "1"
+
+- 3 → "11"
+
+- 5 → "101"
+
+- 7 → "111"
+
+- 9 → "1001"
+
+All other values in [0, 9] have non-palindromic binary forms. Therefore, the count is 6.
+
+Example 2:
+
+Input: n = 0
+
+Output: 1
+
+Explanation:
+
+Since "0" is a palindrome, the count is 1.
+
+ 
+
+Constraints:
+
+- 0 <= n <= 1015
+
+------------------------------
+3762. Minimum Operations to Equalize Subarrays 
+------------------------------
+
+You are given an integer array nums and an integer k.
+
+In one operation, you can increase or decrease any element of nums by exactly k.
+
+You are also given a 2D integer array queries, where each queries[i] = [li, ri].
+
+For each query, find the minimum number of operations required to make all elements in the subarray nums[li..ri] equal. If it is impossible, the answer for that query is -1.
+
+Return an array ans, where ans[i] is the answer for the ith query.
+
+ 
+
+Example 1:
+
+Input: nums = [1,4,7], k = 3, queries = [[0,1],[0,2]]
+
+Output: [1,2]
+
+Explanation:
+
+One optimal set of operations:
+
+i
+[li, ri]
+nums[li..ri]
+Possibility
+Operations
+Final
+nums[li..ri]
+ans[i]
+
+0
+[0, 1]
+[1, 4]
+Yes
+nums[0] + k = 1 + 3 = 4 = nums[1]
+[4, 4]
+1
+
+1
+[0, 2]
+[1, 4, 7]
+Yes
+nums[0] + k = 1 + 3 = 4 = nums[1]
+			nums[2] - k = 7 - 3 = 4 = nums[1]
+[4, 4, 4]
+2
+
+Thus, ans = [1, 2].
+
+Example 2:
+
+Input: nums = [1,2,4], k = 2, queries = [[0,2],[0,0],[1,2]]
+
+Output: [-1,0,1]
+
+Explanation:
+
+One optimal set of operations:
+
+i
+[li, ri]
+nums[li..ri]
+Possibility
+Operations
+Final
+nums[li..ri]
+ans[i]
+
+0
+[0, 2]
+[1, 2, 4]
+No
+-
+[1, 2, 4]
+-1
+
+1
+[0, 0]
+[1]
+Yes
+Already equal
+[1]
+0
+
+2
+[1, 2]
+[2, 4]
+Yes
+nums[1] + k = 2 + 2 = 4 = nums[2]
+[4, 4]
+1
+
+Thus, ans = [-1, 0, 1].
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length <= 4 × 104
+
+- 1 <= nums[i] <= 109​​​​​​​
+
+- 1 <= k <= 109
+
+- 1 <= queries.length <= 4 × 104
+
+- ​​​​​​​queries[i] = [li, ri]
+
+- 0 <= li <= ri <= n - 1
+
+------------------------------
+3694. Distinct Points Reachable After Substring Removal 
+------------------------------
+
+You are given a string s consisting of characters 'U', 'D', 'L', and 'R', representing moves on an infinite 2D Cartesian grid.
+
+- 'U': Move from (x, y) to (x, y + 1).
+
+- 'D': Move from (x, y) to (x, y - 1).
+
+- 'L': Move from (x, y) to (x - 1, y).
+
+- 'R': Move from (x, y) to (x + 1, y).
+
+You are also given a positive integer k.
+
+You must choose and remove exactly one contiguous substring of length k from s. Then, start from coordinate (0, 0) and perform the remaining moves in order.
+
+Return an integer denoting the number of distinct final coordinates reachable.
+
+ 
+
+Example 1:
+
+Input: s = "LUL", k = 1
+
+Output: 2
+
+Explanation:
+
+After removing a substring of length 1, s can be "UL", "LL" or "LU". Following these moves, the final coordinates will be (-1, 1), (-2, 0) and (-1, 1) respectively. There are two distinct points (-1, 1) and (-2, 0) so the answer is 2.
+
+Example 2:
+
+Input: s = "UDLR", k = 4
+
+Output: 1
+
+Explanation:
+
+After removing a substring of length 4, s can only be the empty string. The final coordinates will be (0, 0). There is only one distinct point (0, 0) so the answer is 1.
+
+Example 3:
+
+Input: s = "UU", k = 1
+
+Output: 1
+
+Explanation:
+
+After removing a substring of length 1, s becomes "U", which always ends at (0, 1), so there is only one distinct final coordinate.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists of only 'U', 'D', 'L', and 'R'.
+
+- 1 <= k <= s.length
+
+------------------------------
+3720. Lexicographically Smallest Permutation Greater Than Target 
+------------------------------
+
+You are given two strings s and target, both having length n, consisting of lowercase English letters.
+
+Return the lexicographically smallest permutation of s that is strictly greater than target. If no permutation of s is lexicographically strictly greater than target, return an empty string.
+
+A string a is lexicographically strictly greater than a string b (of the same length) if in the first position where a and b differ, string a has a letter that appears later in the alphabet than the corresponding letter in b.
+
+ 
+
+Example 1:
+
+Input: s = "abc", target = "bba"
+
+Output: "bca"
+
+Explanation:
+
+- The permutations of s (in lexicographical order) are "abc", "acb", "bac", "bca", "cab", and "cba".
+
+- The lexicographically smallest permutation that is strictly greater than target is "bca".
+
+Example 2:
+
+Input: s = "leet", target = "code"
+
+Output: "eelt"
+
+Explanation:
+
+- The permutations of s (in lexicographical order) are "eelt", "eetl", "elet", "elte", "etel", "etle", "leet", "lete", "ltee", "teel", "tele", and "tlee".
+
+- The lexicographically smallest permutation that is strictly greater than target is "eelt".
+
+Example 3:
+
+Input: s = "baba", target = "bbaa"
+
+Output: ""
+
+Explanation:
+
+- The permutations of s (in lexicographical order) are "aabb", "abab", "abba", "baab", "baba", and "bbaa".
+
+- None of them is lexicographically strictly greater than target. Therefore, the answer is "".
+
+ 
+
+Constraints:
+
+- 1 <= s.length == target.length <= 300
+
+- s and target consist of only lowercase English letters.
+
+------------------------------
+3703. Remove K-Balanced Substrings 
+------------------------------
+
+You are given a string s consisting of '(' and ')', and an integer k.
+
+A string is k-balanced if it is exactly k consecutive '(' followed by k consecutive ')', i.e., '(' * k + ')' * k.
+
+For example, if k = 3, k-balanced is "((()))".
+
+You must repeatedly remove all non-overlapping k-balanced substrings from s, and then join the remaining parts. Continue this process until no k-balanced substring exists.
+
+Return the final string after all possible removals.
+
+ 
+
+​​​​​​​Example 1:
+
+Input: s = "(())", k = 1
+
+Output: ""
+
+Explanation:
+
+k-balanced substring is "()"
+
+Step
+Current s
+k-balanced
+Result s
+
+1
+(())
+(())
+()
+
+2
+()
+()
+Empty
+
+Thus, the final string is "".
+
+Example 2:
+
+Input: s = "(()(", k = 1
+
+Output: "(("
+
+Explanation:
+
+k-balanced substring is "()"
+
+Step
+Current s
+k-balanced
+Result s
+
+1
+(()(
+(()(
+((
+
+2
+((
+-
+((
+
+Thus, the final string is "((".
+
+Example 3:
+
+Input: s = "((()))()()()", k = 3
+
+Output: "()()()"
+
+Explanation:
+
+k-balanced substring is "((()))"
+
+Step
+Current s
+k-balanced
+Result s
+
+1
+((()))()()()
+((()))()()()
+()()()
+
+2
+()()()
+-
+()()()
+
+Thus, the final string is "()()()".
+
+ 
+
+Constraints:
+
+- 2 <= s.length <= 105
+
+- s consists only of '(' and ')'.
+
+- 1 <= k <= s.length / 2
+
+------------------------------
+3776. Minimum Moves to Balance Circular Array 
+------------------------------
+
+You are given a circular array balance of length n, where balance[i] is the net balance of person i.
+
+In one move, a person can transfer exactly 1 unit of balance to either their left or right neighbor.
+
+Return the minimum number of moves required so that every person has a non-negative balance. If it is impossible, return -1.
+
+Note: You are guaranteed that at most 1 index has a negative balance initially.
+
+ 
+
+Example 1:
+
+Input: balance = [5,1,-4]
+
+Output: 4
+
+Explanation:
+
+One optimal sequence of moves is:
+
+- Move 1 unit from i = 1 to i = 2, resulting in balance = [5, 0, -3]
+
+- Move 1 unit from i = 0 to i = 2, resulting in balance = [4, 0, -2]
+
+- Move 1 unit from i = 0 to i = 2, resulting in balance = [3, 0, -1]
+
+- Move 1 unit from i = 0 to i = 2, resulting in balance = [2, 0, 0]
+
+Thus, the minimum number of moves required is 4.
+
+Example 2:
+
+Input: balance = [1,2,-5,2]
+
+Output: 6
+
+Explanation:
+
+One optimal sequence of moves is:
+
+- Move 1 unit from i = 1 to i = 2, resulting in balance = [1, 1, -4, 2]
+
+- Move 1 unit from i = 1 to i = 2, resulting in balance = [1, 0, -3, 2]
+
+- Move 1 unit from i = 3 to i = 2, resulting in balance = [1, 0, -2, 1]
+
+- Move 1 unit from i = 3 to i = 2, resulting in balance = [1, 0, -1, 0]
+
+- Move 1 unit from i = 0 to i = 1, resulting in balance = [0, 1, -1, 0]
+
+- Move 1 unit from i = 1 to i = 2, resulting in balance = [0, 0, 0, 0]
+
+Thus, the minimum number of moves required is 6.​​​
+
+Example 3:
+
+Input: balance = [-3,2]
+
+Output: -1
+
+Explanation:
+
+​​​​​​​It is impossible to make all balances non-negative for balance = [-3, 2], so the answer is -1.
+
+ 
+
+Constraints:
+
+- 1 <= n == balance.length <= 105
+
+- -109 <= balance[i] <= 109
+
+- There is at most one negative value in balance initially.
+
+------------------------------
+3662. Filter Characters by Frequency 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3698. Split Array With Minimum Difference 
+------------------------------
+
+You are given an integer array nums.
+
+Split the array into exactly two subarrays, left and right, such that left is strictly increasing  and right is strictly decreasing.
+
+Return the minimum possible absolute difference between the sums of left and right. If no valid split exists, return -1.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,2]
+
+Output: 2
+
+Explanation:
+
+i
+left
+right
+Validity
+left sum
+right sum
+Absolute difference
+
+0
+[1]
+[3, 2]
+Yes
+1
+5
+|1 - 5| = 4
+
+1
+[1, 3]
+[2]
+Yes
+4
+2
+|4 - 2| = 2
+
+Thus, the minimum absolute difference is 2.
+
+Example 2:
+
+Input: nums = [1,2,4,3]
+
+Output: 4
+
+Explanation:
+
+i
+left
+right
+Validity
+left sum
+right sum
+Absolute difference
+
+0
+[1]
+[2, 4, 3]
+No
+1
+9
+-
+
+1
+[1, 2]
+[4, 3]
+Yes
+3
+7
+|3 - 7| = 4
+
+2
+[1, 2, 4]
+[3]
+Yes
+7
+3
+|7 - 3| = 4
+
+Thus, the minimum absolute difference is 4.
+
+Example 3:
+
+Input: nums = [3,1,2]
+
+Output: -1
+
+Explanation:
+
+No valid split exists, so the answer is -1.
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 105
+
+- 1 <= nums[i] <= 105
+
+------------------------------
+3853. Merge Close Characters 
+------------------------------
+
+You are given a string s consisting of lowercase English letters and an integer k.
+
+Two equal characters in the current string s are considered close if the distance between their indices is at most k.
+
+When two characters are close, the right one merges into the left. Merges happen one at a time, and after each merge, the string updates until no more merges are possible.
+
+Return the resulting string after performing all possible merges.
+
+Note: If multiple merges are possible, always merge the pair with the smallest left index. If multiple pairs share the smallest left index, choose the pair with the smallest right index.
+
+ 
+
+Example 1:
+
+Input: s = "abca", k = 3
+
+Output: "abc"
+
+Explanation:
+
+- ​​​​​​​Characters 'a' at indices i = 0 and i = 3 are close as 3 - 0 = 3 <= k.
+
+- Merge them into the left 'a' and s = "abc".
+
+- No other equal characters are close, so no further merges occur.
+
+Example 2:
+
+Input: s = "aabca", k = 2
+
+Output: "abca"
+
+Explanation:
+
+- Characters 'a' at indices i = 0 and i = 1 are close as 1 - 0 = 1 <= k.
+
+- Merge them into the left 'a' and s = "abca".
+
+- Now the remaining 'a' characters at indices i = 0 and i = 3 are not close as k < 3, so no further merges occur.
+
+Example 3:
+
+Input: s = "yybyzybz", k = 2
+
+Output: "ybzybz"
+
+Explanation:
+
+- Characters 'y' at indices i = 0 and i = 1 are close as 1 - 0 = 1 <= k.
+
+- Merge them into the left 'y' and s = "ybyzybz".
+
+- Now the characters 'y' at indices i = 0 and i = 2 are close as 2 - 0 = 2 <= k.
+
+- Merge them into the left 'y' and s = "ybzybz".
+
+- No other equal characters are close, so no further merges occur.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 100
+
+- 1 <= k <= s.length
+
+- s consists of lowercase English letters.
+
+------------------------------
+3683. Earliest Time to Finish One Task 
+------------------------------
+
+You are given a 2D integer array tasks where tasks[i] = [si, ti].
+
+Each [si, ti] in tasks represents a task with start time si that takes ti units of time to finish.
+
+Return the earliest time at which at least one task is finished.
+
+ 
+
+Example 1:
+
+Input: tasks = [[1,6],[2,3]]
+
+Output: 5
+
+Explanation:
+
+The first task starts at time t = 1 and finishes at time 1 + 6 = 7. The second task finishes at time 2 + 3 = 5. You can finish one task at time 5.
+
+Example 2:
+
+Input: tasks = [[100,100],[100,100],[100,100]]
+
+Output: 200
+
+Explanation:
+
+All three tasks finish at time 100 + 100 = 200.
+
+ 
+
+Constraints:
+
+- 1 <= tasks.length <= 100
+
+- tasks[i] = [si, ti]
+
+- 1 <= si, ti <= 100
+
+------------------------------
+3678. Smallest Absent Positive Greater Than Average 
+------------------------------
+
+You are given an integer array nums.
+
+Return the smallest absent positive integer in nums such that it is strictly greater than the average of all elements in nums.
+
+The average of an array is defined as the sum of all its elements divided by the number of elements.
+
+ 
+
+Example 1:
+
+Input: nums = [3,5]
+
+Output: 6
+
+Explanation:
+
+- The average of nums is (3 + 5) / 2 = 8 / 2 = 4.
+
+- The smallest absent positive integer greater than 4 is 6.
+
+Example 2:
+
+Input: nums = [-1,1,2]
+
+Output: 3
+
+Explanation:
+
+- ​​​​​​​The average of nums is (-1 + 1 + 2) / 3 = 2 / 3 = 0.667.
+
+- The smallest absent positive integer greater than 0.667 is 3.
+
+Example 3:
+
+Input: nums = [4,-1]
+
+Output: 2
+
+Explanation:
+
+- The average of nums is (4 + (-1)) / 2 = 3 / 2 = 1.50.
+
+- The smallest absent positive integer greater than 1.50 is 2.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- -100 <= nums[i] <= 100​​​​​​​
+
+------------------------------
+3695. Maximize Alternating Sum Using Swaps 
+------------------------------
+
+You are given an integer array nums.
+
+You want to maximize the alternating sum of nums, which is defined as the value obtained by adding elements at even indices and subtracting elements at odd indices. That is, nums[0] - nums[1] + nums[2] - nums[3]...
+
+You are also given a 2D integer array swaps where swaps[i] = [pi, qi]. For each pair [pi, qi] in swaps, you are allowed to swap the elements at indices pi and qi. These swaps can be performed any number of times and in any order.
+
+Return the maximum possible alternating sum of nums.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3], swaps = [[0,2],[1,2]]
+
+Output: 4
+
+Explanation:
+
+The maximum alternating sum is achieved when nums is [2, 1, 3] or [3, 1, 2]. As an example, you can obtain nums = [2, 1, 3] as follows.
+
+- Swap nums[0] and nums[2]. nums is now [3, 2, 1].
+
+- Swap nums[1] and nums[2]. nums is now [3, 1, 2].
+
+- Swap nums[0] and nums[2]. nums is now [2, 1, 3].
+
+Example 2:
+
+Input: nums = [1,2,3], swaps = [[1,2]]
+
+Output: 2
+
+Explanation:
+
+The maximum alternating sum is achieved by not performing any swaps.
+
+Example 3:
+
+Input: nums = [1,1000000000,1,1000000000,1,1000000000], swaps = []
+
+Output: -2999999997
+
+Explanation:
+
+Since we cannot perform any swaps, the maximum alternating sum is achieved by not performing any swaps.
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 105
+
+- 1 <= nums[i] <= 109
+
+- 0 <= swaps.length <= 105
+
+- swaps[i] = [pi, qi]
+
+- 0 <= pi < qi <= nums.length - 1
+
+- [pi, qi] != [pj, qj]
+
+------------------------------
+3688. Bitwise OR of Even Numbers in an Array 
+------------------------------
+
+You are given an integer array nums.
+
+Return the bitwise OR of all even numbers in the array.
+
+If there are no even numbers in nums, return 0.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6]
+
+Output: 6
+
+Explanation:
+
+The even numbers are 2, 4, and 6. Their bitwise OR equals 6.
+
+Example 2:
+
+Input: nums = [7,9,11]
+
+Output: 0
+
+Explanation:
+
+There are no even numbers, so the result is 0.
+
+Example 3:
+
+Input: nums = [1,8,16]
+
+Output: 24
+
+Explanation:
+
+The even numbers are 8 and 16. Their bitwise OR equals 24.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+------------------------------
+3668. Restore Finishing Order 
+------------------------------
+
+You are given an integer array order of length n and an integer array friends.
+
+- order contains every integer from 1 to n exactly once, representing the IDs of the participants of a race in their finishing order.
+
+- friends contains the IDs of your friends in the race sorted in strictly increasing order. Each ID in friends is guaranteed to appear in the order array.
+
+Return an array containing your friends' IDs in their finishing order.
+
+ 
+
+Example 1:
+
+Input: order = [3,1,2,5,4], friends = [1,3,4]
+
+Output: [3,1,4]
+
+Explanation:
+
+The finishing order is [3, 1, 2, 5, 4]. Therefore, the finishing order of your friends is [3, 1, 4].
+
+Example 2:
+
+Input: order = [1,4,5,3,2], friends = [2,5]
+
+Output: [5,2]
+
+Explanation:
+
+The finishing order is [1, 4, 5, 3, 2]. Therefore, the finishing order of your friends is [5, 2].
+
+ 
+
+Constraints:
+
+- 1 <= n == order.length <= 100
+
+- order contains every integer from 1 to n exactly once
+
+- 1 <= friends.length <= min(8, n)
+
+- 1 <= friends[i] <= n
+
+- friends is strictly increasing
+
+------------------------------
+3691. Maximum Total Subarray Value II 
+------------------------------
+
+You are given an integer array nums of length n and an integer k.
+
+You must select exactly k distinct non-empty subarrays nums[l..r] of nums. Subarrays may overlap, but the exact same subarray (same l and r) cannot be chosen more than once.
+
+The value of a subarray nums[l..r] is defined as: max(nums[l..r]) - min(nums[l..r]).
+
+The total value is the sum of the values of all chosen subarrays.
+
+Return the maximum possible total value you can achieve.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,2], k = 2
+
+Output: 4
+
+Explanation:
+
+One optimal approach is:
+
+- Choose nums[0..1] = [1, 3]. The maximum is 3 and the minimum is 1, giving a value of 3 - 1 = 2.
+
+- Choose nums[0..2] = [1, 3, 2]. The maximum is still 3 and the minimum is still 1, so the value is also 3 - 1 = 2.
+
+Adding these gives 2 + 2 = 4.
+
+Example 2:
+
+Input: nums = [4,2,5,1], k = 3
+
+Output: 12
+
+Explanation:
+
+One optimal approach is:
+
+- Choose nums[0..3] = [4, 2, 5, 1]. The maximum is 5 and the minimum is 1, giving a value of 5 - 1 = 4.
+
+- Choose nums[1..3] = [2, 5, 1]. The maximum is 5 and the minimum is 1, so the value is also 4.
+
+- Choose nums[2..3] = [5, 1]. The maximum is 5 and the minimum is 1, so the value is again 4.
+
+Adding these gives 4 + 4 + 4 = 12.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length <= 5 * 10​​​​​​​4
+
+- 0 <= nums[i] <= 109
+
+- 1 <= k <= min(105, n * (n + 1) / 2)
+
+------------------------------
+3656. Determine if a Simple Graph Exists 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+3689. Maximum Total Subarray Value I 
+------------------------------
+
+You are given an integer array nums of length n and an integer k.
+
+You need to choose exactly k non-empty subarrays nums[l..r] of nums. Subarrays may overlap, and the exact same subarray (same l and r) can be chosen more than once.
+
+The value of a subarray nums[l..r] is defined as: max(nums[l..r]) - min(nums[l..r]).
+
+The total value is the sum of the values of all chosen subarrays.
+
+Return the maximum possible total value you can achieve.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,2], k = 2
+
+Output: 4
+
+Explanation:
+
+One optimal approach is:
+
+- Choose nums[0..1] = [1, 3]. The maximum is 3 and the minimum is 1, giving a value of 3 - 1 = 2.
+
+- Choose nums[0..2] = [1, 3, 2]. The maximum is still 3 and the minimum is still 1, so the value is also 3 - 1 = 2.
+
+Adding these gives 2 + 2 = 4.
+
+Example 2:
+
+Input: nums = [4,2,5,1], k = 3
+
+Output: 12
+
+Explanation:
+
+One optimal approach is:
+
+- Choose nums[0..3] = [4, 2, 5, 1]. The maximum is 5 and the minimum is 1, giving a value of 5 - 1 = 4.
+
+- Choose nums[0..3] = [4, 2, 5, 1]. The maximum is 5 and the minimum is 1, so the value is also 4.
+
+- Choose nums[2..3] = [5, 1]. The maximum is 5 and the minimum is 1, so the value is again 4.
+
+Adding these gives 4 + 4 + 4 = 12.
+
+ 
+
+Constraints:
+
+- 1 <= n == nums.length <= 5 * 10​​​​​​​4
+
+- 0 <= nums[i] <= 109
+
+- 1 <= k <= 105
+
+------------------------------
+3708. Longest Fibonacci Subarray 
+------------------------------
+
+You are given an array of positive integers nums.
+
+A Fibonacci array is a contiguous sequence whose third and subsequent terms each equal the sum of the two preceding terms.
+
+Return the length of the longest Fibonacci subarray in nums.
+
+Note: Subarrays of length 1 or 2 are always Fibonacci.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,1,2,3,5,1]
+
+Output: 5
+
+Explanation:
+
+The longest Fibonacci subarray is nums[2..6] = [1, 1, 2, 3, 5].
+
+[1, 1, 2, 3, 5] is Fibonacci because 1 + 1 = 2, 1 + 2 = 3, and 2 + 3 = 5.
+
+Example 2:
+
+Input: nums = [5,2,7,9,16]
+
+Output: 5
+
+Explanation:
+
+The longest Fibonacci subarray is nums[0..4] = [5, 2, 7, 9, 16].
+
+[5, 2, 7, 9, 16] is Fibonacci because 5 + 2 = 7, 2 + 7 = 9, and 7 + 9 = 16.
+
+Example 3:
+
+Input: nums = [1000000000,1000000000,1000000000]
+
+Output: 2
+
+Explanation:
+
+The longest Fibonacci subarray is nums[1..2] = [1000000000, 1000000000].
+
+[1000000000, 1000000000] is Fibonacci because its length is 2.
+
+ 
+
+Constraints:
+
+- 3 <= nums.length <= 105
+
+- 1 <= nums[i] <= 109
+
+------------------------------
+3859. Count Subarrays With K Distinct Integers 
+------------------------------
+
+You are given an integer array nums and two integers k and m.
+
+Return an integer denoting the count of subarrays of nums such that:
+
+- The subarray contains exactly k distinct integers.
+
+- Within the subarray, each distinct integer appears at least m times.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,1,2,2], k = 2, m = 2
+
+Output: 2
+
+Explanation:
+
+The possible subarrays with k = 2 distinct integers, each appearing at least m = 2 times are:
+
+Subarray
+Distinct
+			numbers
+Frequency
+
+[1, 2, 1, 2]
+{1, 2} → 2
+{1: 2, 2: 2}
+
+[1, 2, 1, 2, 2]
+{1, 2} → 2
+{1: 2, 2: 3}
+
+Thus, the answer is 2.
+
+Example 2:
+
+Input: nums = [3,1,2,4], k = 2, m = 1
+
+Output: 3
+
+Explanation:
+
+The possible subarrays with k = 2 distinct integers, each appearing at least m = 1 times are:
+
+Subarray
+Distinct
+			numbers
+Frequency
+
+[3, 1]
+{3, 1} → 2
+{3: 1, 1: 1}
+
+[1, 2]
+{1, 2} → 2
+{1: 1, 2: 1}
+
+[2, 4]
+{2, 4} → 2
+{2: 1, 4: 1}
+
+Thus, the answer is 3.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 105
+
+- 1 <= k, m <= nums.length
+
+------------------------------
+3676. Count Bowl Subarrays 
+------------------------------
+
+You are given an integer array nums with distinct elements.
+
+A subarray nums[l...r] of nums is called a bowl if:
+
+- The subarray has length at least 3. That is, r - l + 1 >= 3.
+
+- The minimum of its two ends is strictly greater than the maximum of all elements in between. That is, min(nums[l], nums[r]) > max(nums[l + 1], ..., nums[r - 1]).
+
+Return the number of bowl subarrays in nums.
+
+ 
+
+Example 1:
+
+Input: nums = [2,5,3,1,4]
+
+Output: 2
+
+Explanation:
+
+The bowl subarrays are [3, 1, 4] and [5, 3, 1, 4].
+
+- [3, 1, 4] is a bowl because min(3, 4) = 3 > max(1) = 1.
+
+- [5, 3, 1, 4] is a bowl because min(5, 4) = 4 > max(3, 1) = 3.
+
+Example 2:
+
+Input: nums = [5,1,2,3,4]
+
+Output: 3
+
+Explanation:
+
+The bowl subarrays are [5, 1, 2], [5, 1, 2, 3] and [5, 1, 2, 3, 4].
+
+Example 3:
+
+Input: nums = [1000000000,999999999,999999998]
+
+Output: 0
+
+Explanation:
+
+No subarray is a bowl.
+
+ 
+
+Constraints:
+
+- 3 <= nums.length <= 105
+
+- 1 <= nums[i] <= 109
+
+- nums consists of distinct elements.
+
+------------------------------
+3675. Minimum Operations to Transform String 
+------------------------------
+
+You are given a string s consisting only of lowercase English letters.
+
+You can perform the following operation any number of times (including zero):
+
+- 
+
+Choose any character c in the string and replace every occurrence of c with the next lowercase letter in the English alphabet.
+
+Return the minimum number of operations required to transform s into a string consisting of only 'a' characters.
+
+Note: Consider the alphabet as circular, thus 'a' comes after 'z'.
+
+ 
+
+Example 1:
+
+Input: s = "yz"
+
+Output: 2
+
+Explanation:
+
+- Change 'y' to 'z' to get "zz".
+
+- Change 'z' to 'a' to get "aa".
+
+- Thus, the answer is 2.
+
+Example 2:
+
+Input: s = "a"
+
+Output: 0
+
+Explanation:
+
+- The string "a" only consists of 'a'​​​​​​​ characters. Thus, the answer is 0.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 5 * 105
+
+- s consists only of lowercase English letters.
+
