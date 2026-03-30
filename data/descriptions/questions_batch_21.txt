@@ -1,0 +1,3953 @@
+------------------------------
+1553. Minimum Number of Days to Eat N Oranges 
+------------------------------
+
+There are n oranges in the kitchen and you decided to eat some of these oranges every day as follows:
+
+- Eat one orange.
+
+- If the number of remaining oranges n is divisible by 2 then you can eat n / 2 oranges.
+
+- If the number of remaining oranges n is divisible by 3 then you can eat 2 * (n / 3) oranges.
+
+You can only choose one of the actions per day.
+
+Given the integer n, return the minimum number of days to eat n oranges.
+
+ 
+
+Example 1:
+
+Input: n = 10
+Output: 4
+Explanation: You have 10 oranges.
+Day 1: Eat 1 orange,  10 - 1 = 9.  
+Day 2: Eat 6 oranges, 9 - 2*(9/3) = 9 - 6 = 3. (Since 9 is divisible by 3)
+Day 3: Eat 2 oranges, 3 - 2*(3/3) = 3 - 2 = 1. 
+Day 4: Eat the last orange  1 - 1  = 0.
+You need at least 4 days to eat the 10 oranges.
+
+Example 2:
+
+Input: n = 6
+Output: 3
+Explanation: You have 6 oranges.
+Day 1: Eat 3 oranges, 6 - 6/2 = 6 - 3 = 3. (Since 6 is divisible by 2).
+Day 2: Eat 2 oranges, 3 - 2*(3/3) = 3 - 2 = 1. (Since 3 is divisible by 3)
+Day 3: Eat the last orange  1 - 1  = 0.
+You need at least 3 days to eat the 6 oranges.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 2 * 109
+
+------------------------------
+1552. Magnetic Force Between Two Balls 
+------------------------------
+
+In the universe Earth C-137, Rick discovered a special form of magnetic force between two balls if they are put in his new invented basket. Rick has n empty baskets, the ith basket is at position[i], Morty has m balls and needs to distribute the balls into the baskets such that the minimum magnetic force between any two balls is maximum.
+
+Rick stated that magnetic force between two different balls at positions x and y is |x - y|.
+
+Given the integer array position and the integer m. Return the required force.
+
+ 
+
+Example 1:
+
+Input: position = [1,2,3,4,7], m = 3
+Output: 3
+Explanation: Distributing the 3 balls into baskets 1, 4 and 7 will make the magnetic force between ball pairs [3, 3, 6]. The minimum magnetic force is 3. We cannot achieve a larger minimum magnetic force than 3.
+
+Example 2:
+
+Input: position = [5,4,3,2,1,1000000000], m = 2
+Output: 999999999
+Explanation: We can use baskets 1 and 1000000000.
+
+ 
+
+Constraints:
+
+- n == position.length
+
+- 2 <= n <= 105
+
+- 1 <= position[i] <= 109
+
+- All integers in position are distinct.
+
+- 2 <= m <= position.length
+
+------------------------------
+1551. Minimum Operations to Make Array Equal 
+------------------------------
+
+You have an array arr of length n where arr[i] = (2 * i) + 1 for all valid values of i (i.e., 0 <= i < n).
+
+In one operation, you can select two indices x and y where 0 <= x, y < n and subtract 1 from arr[x] and add 1 to arr[y] (i.e., perform arr[x] -=1 and arr[y] += 1). The goal is to make all the elements of the array equal. It is guaranteed that all the elements of the array can be made equal using some operations.
+
+Given an integer n, the length of the array, return the minimum number of operations needed to make all the elements of arr equal.
+
+ 
+
+Example 1:
+
+Input: n = 3
+Output: 2
+Explanation: arr = [1, 3, 5]
+First operation choose x = 2 and y = 0, this leads arr to be [2, 3, 4]
+In the second operation choose x = 2 and y = 0 again, thus arr = [3, 3, 3].
+
+Example 2:
+
+Input: n = 6
+Output: 9
+
+ 
+
+Constraints:
+
+- 1 <= n <= 104
+
+------------------------------
+1533. Find the Index of the Large Integer 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1547. Minimum Cost to Cut a Stick 
+------------------------------
+
+Given a wooden stick of length n units. The stick is labelled from 0 to n. For example, a stick of length 6 is labelled as follows:
+
+Given an integer array cuts where cuts[i] denotes a position you should perform a cut at.
+
+You should perform the cuts in order, you can change the order of the cuts as you wish.
+
+The cost of one cut is the length of the stick to be cut, the total cost is the sum of costs of all cuts. When you cut a stick, it will be split into two smaller sticks (i.e. the sum of their lengths is the length of the stick before the cut). Please refer to the first example for a better explanation.
+
+Return the minimum total cost of the cuts.
+
+ 
+
+Example 1:
+
+Input: n = 7, cuts = [1,3,4,5]
+Output: 16
+Explanation: Using cuts order = [1, 3, 4, 5] as in the input leads to the following scenario:
+
+The first cut is done to a rod of length 7 so the cost is 7. The second cut is done to a rod of length 6 (i.e. the second part of the first cut), the third is done to a rod of length 4 and the last cut is to a rod of length 3. The total cost is 7 + 6 + 4 + 3 = 20.
+Rearranging the cuts to be [3, 5, 1, 4] for example will lead to a scenario with total cost = 16 (as shown in the example photo 7 + 4 + 3 + 2 = 16).
+
+Example 2:
+
+Input: n = 9, cuts = [5,6,1,4,2]
+Output: 22
+Explanation: If you try the given cuts ordering the cost will be 25.
+There are much ordering with total cost <= 25, for example, the order [4, 6, 5, 2, 1] has total cost = 22 which is the minimum possible.
+
+ 
+
+Constraints:
+
+- 2 <= n <= 106
+
+- 1 <= cuts.length <= min(n - 1, 100)
+
+- 1 <= cuts[i] <= n - 1
+
+- All the integers in cuts array are distinct.
+
+------------------------------
+1542. Find Longest Awesome Substring 
+------------------------------
+
+You are given a string s. An awesome substring is a non-empty substring of s such that we can make any number of swaps in order to make it a palindrome.
+
+Return the length of the maximum length awesome substring of s.
+
+ 
+
+Example 1:
+
+Input: s = "3242415"
+Output: 5
+Explanation: "24241" is the longest awesome substring, we can form the palindrome "24142" with some swaps.
+
+Example 2:
+
+Input: s = "12345678"
+Output: 1
+
+Example 3:
+
+Input: s = "213123"
+Output: 6
+Explanation: "213123" is the longest awesome substring, we can form the palindrome "231132" with some swaps.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists only of digits.
+
+------------------------------
+1545. Find Kth Bit in Nth Binary String 
+------------------------------
+
+Given two positive integers n and k, the binary string Sn is formed as follows:
+
+- S1 = "0"
+
+- Si = Si - 1 + "1" + reverse(invert(Si - 1)) for i > 1
+
+Where + denotes the concatenation operation, reverse(x) returns the reversed string x, and invert(x) inverts all the bits in x (0 changes to 1 and 1 changes to 0).
+
+For example, the first four strings in the above sequence are:
+
+- S1 = "0"
+
+- S2 = "011"
+
+- S3 = "0111001"
+
+- S4 = "011100110110001"
+
+Return the kth bit in Sn. It is guaranteed that k is valid for the given n.
+
+ 
+
+Example 1:
+
+Input: n = 3, k = 1
+Output: "0"
+Explanation: S3 is "0111001".
+The 1st bit is "0".
+
+Example 2:
+
+Input: n = 4, k = 11
+Output: "1"
+Explanation: S4 is "011100110110001".
+The 11th bit is "1".
+
+ 
+
+Constraints:
+
+- 1 <= n <= 20
+
+- 1 <= k <= 2n - 1
+
+------------------------------
+1544. Make The String Great 
+------------------------------
+
+Given a string s of lower and upper case English letters.
+
+A good string is a string which doesn't have two adjacent characters s[i] and s[i + 1] where:
+
+- 0 <= i <= s.length - 2
+
+- s[i] is a lower-case letter and s[i + 1] is the same letter but in upper-case or vice-versa.
+
+To make the string good, you can choose two adjacent characters that make the string bad and remove them. You can keep doing this until the string becomes good.
+
+Return the string after making it good. The answer is guaranteed to be unique under the given constraints.
+
+Notice that an empty string is also good.
+
+ 
+
+Example 1:
+
+Input: s = "leEeetcode"
+Output: "leetcode"
+Explanation: In the first step, either you choose i = 1 or i = 2, both will result "leEeetcode" to be reduced to "leetcode".
+
+Example 2:
+
+Input: s = "abBAcC"
+Output: ""
+Explanation: We have many possible scenarios, and all lead to the same answer. For example:
+"abBAcC" --> "aAcC" --> "cC" --> ""
+"abBAcC" --> "abBA" --> "aA" --> ""
+
+Example 3:
+
+Input: s = "s"
+Output: "s"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 100
+
+- s contains only lower and upper case English letters.
+
+------------------------------
+1522. Diameter of N-Ary Tree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1559. Detect Cycles in 2D Grid 
+------------------------------
+
+Given a 2D array of characters grid of size m x n, you need to find if there exists any cycle consisting of the same value in grid.
+
+A cycle is a path of length 4 or more in the grid that starts and ends at the same cell. From a given cell, you can move to one of the cells adjacent to it - in one of the four directions (up, down, left, or right), if it has the same value of the current cell.
+
+Also, you cannot move to the cell that you visited in your last move. For example, the cycle (1, 1) -> (1, 2) -> (1, 1) is invalid because from (1, 2) we visited (1, 1) which was the last visited cell.
+
+Return true if any cycle of the same value exists in grid, otherwise, return false.
+
+ 
+
+Example 1:
+
+Input: grid = [["a","a","a","a"],["a","b","b","a"],["a","b","b","a"],["a","a","a","a"]]
+Output: true
+Explanation: There are two valid cycles shown in different colors in the image below:
+
+Example 2:
+
+Input: grid = [["c","c","c","a"],["c","d","c","c"],["c","c","e","c"],["f","c","c","c"]]
+Output: true
+Explanation: There is only one valid cycle highlighted in the image below:
+
+Example 3:
+
+Input: grid = [["a","b","b"],["b","z","b"],["b","b","a"]]
+Output: false
+
+ 
+
+Constraints:
+
+- m == grid.length
+
+- n == grid[i].length
+
+- 1 <= m, n <= 500
+
+- grid consists only of lowercase English letters.
+
+------------------------------
+1558. Minimum Numbers of Function Calls to Make Target Array 
+------------------------------
+
+You are given an integer array nums. You have an integer array arr of the same length with all values set to 0 initially. You also have the following modify function:
+
+You want to use the modify function to convert arr to nums using the minimum number of calls.
+
+Return the minimum number of function calls to make nums from arr.
+
+The test cases are generated so that the answer fits in a 32-bit signed integer.
+
+ 
+
+Example 1:
+
+Input: nums = [1,5]
+Output: 5
+Explanation: Increment by 1 (second element): [0, 0] to get [0, 1] (1 operation).
+Double all the elements: [0, 1] -> [0, 2] -> [0, 4] (2 operations).
+Increment by 1 (both elements)  [0, 4] -> [1, 4] -> [1, 5] (2 operations).
+Total of operations: 1 + 2 + 2 = 5.
+
+Example 2:
+
+Input: nums = [2,2]
+Output: 3
+Explanation: Increment by 1 (both elements) [0, 0] -> [0, 1] -> [1, 1] (2 operations).
+Double all the elements: [1, 1] -> [2, 2] (1 operation).
+Total of operations: 2 + 1 = 3.
+
+Example 3:
+
+Input: nums = [4,2,5]
+Output: 6
+Explanation: (initial)[0,0,0] -> [1,0,0] -> [1,0,1] -> [2,0,2] -> [2,1,2] -> [4,2,4] -> [4,2,5](nums).
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 0 <= nums[i] <= 109
+
+------------------------------
+1557. Minimum Number of Vertices to Reach All Nodes 
+------------------------------
+
+Given a directed acyclic graph, with n vertices numbered from 0 to n-1, and an array edges where edges[i] = [fromi, toi] represents a directed edge from node fromi to node toi.
+
+Find the smallest set of vertices from which all nodes in the graph are reachable. It's guaranteed that a unique solution exists.
+
+Notice that you can return the vertices in any order.
+
+ 
+
+Example 1:
+
+Input: n = 6, edges = [[0,1],[0,2],[2,5],[3,4],[4,2]]
+Output: [0,3]
+Explanation: It's not possible to reach all the nodes from a single vertex. From 0 we can reach [0,1,2,5]. From 3 we can reach [3,4,2,5]. So we output [0,3].
+
+Example 2:
+
+Input: n = 5, edges = [[0,1],[2,1],[3,1],[1,4],[2,4]]
+Output: [0,2,3]
+Explanation: Notice that vertices 0, 3 and 2 are not reachable from any other node, so we must include them. Also any of these vertices can reach nodes 1 and 4.
+
+ 
+
+Constraints:
+
+- 2 <= n <= 10^5
+
+- 1 <= edges.length <= min(10^5, n * (n - 1) / 2)
+
+- edges[i].length == 2
+
+- 0 <= fromi, toi < n
+
+- All pairs (fromi, toi) are distinct.
+
+------------------------------
+1556. Thousand Separator 
+------------------------------
+
+Given an integer n, add a dot (".") as the thousands separator and return it in string format.
+
+ 
+
+Example 1:
+
+Input: n = 987
+Output: "987"
+
+Example 2:
+
+Input: n = 1234
+Output: "1.234"
+
+ 
+
+Constraints:
+
+- 0 <= n <= 231 - 1
+
+------------------------------
+1537. Get the Maximum Score 
+------------------------------
+
+You are given two sorted arrays of distinct integers nums1 and nums2.
+
+A valid path is defined as follows:
+
+- Choose array nums1 or nums2 to traverse (from index-0).
+
+- Traverse the current array from left to right.
+
+- If you are reading any value that is present in nums1 and nums2 you are allowed to change your path to the other array. (Only one repeated value is considered in the valid path).
+
+The score is defined as the sum of unique values in a valid path.
+
+Return the maximum score you can obtain of all possible valid paths. Since the answer may be too large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: nums1 = [2,4,5,8,10], nums2 = [4,6,8,9]
+Output: 30
+Explanation: Valid paths:
+[2,4,5,8,10], [2,4,5,8,9], [2,4,6,8,9], [2,4,6,8,10],  (starting from nums1)
+[4,6,8,9], [4,5,8,10], [4,5,8,9], [4,6,8,10]    (starting from nums2)
+The maximum is obtained with the path in green [2,4,6,8,10].
+
+Example 2:
+
+Input: nums1 = [1,3,5,7,9], nums2 = [3,5,100]
+Output: 109
+Explanation: Maximum sum is obtained with the path [1,3,5,100].
+
+Example 3:
+
+Input: nums1 = [1,2,3,4,5], nums2 = [6,7,8,9,10]
+Output: 40
+Explanation: There are no common elements between nums1 and nums2.
+Maximum sum is obtained with the path [6,7,8,9,10].
+
+ 
+
+Constraints:
+
+- 1 <= nums1.length, nums2.length <= 105
+
+- 1 <= nums1[i], nums2[i] <= 107
+
+- nums1 and nums2 are strictly increasing.
+
+------------------------------
+1536. Minimum Swaps to Arrange a Binary Grid 
+------------------------------
+
+Given an n x n binary grid, in one step you can choose two adjacent rows of the grid and swap them.
+
+A grid is said to be valid if all the cells above the main diagonal are zeros.
+
+Return the minimum number of steps needed to make the grid valid, or -1 if the grid cannot be valid.
+
+The main diagonal of a grid is the diagonal that starts at cell (1, 1) and ends at cell (n, n).
+
+ 
+
+Example 1:
+
+Input: grid = [[0,0,1],[1,1,0],[1,0,0]]
+Output: 3
+
+Example 2:
+
+Input: grid = [[0,1,1,0],[0,1,1,0],[0,1,1,0],[0,1,1,0]]
+Output: -1
+Explanation: All rows are similar, swaps have no effect on the grid.
+
+Example 3:
+
+Input: grid = [[1,0,0],[1,1,0],[1,1,1]]
+Output: 0
+
+ 
+
+Constraints:
+
+- n == grid.length == grid[i].length
+
+- 1 <= n <= 200
+
+- grid[i][j] is either 0 or 1
+
+------------------------------
+1535. Find the Winner of an Array Game 
+------------------------------
+
+Given an integer array arr of distinct integers and an integer k.
+
+A game will be played between the first two elements of the array (i.e. arr[0] and arr[1]). In each round of the game, we compare arr[0] with arr[1], the larger integer wins and remains at position 0, and the smaller integer moves to the end of the array. The game ends when an integer wins k consecutive rounds.
+
+Return the integer which will win the game.
+
+It is guaranteed that there will be a winner of the game.
+
+ 
+
+Example 1:
+
+Input: arr = [2,1,3,5,4,6,7], k = 2
+Output: 5
+Explanation: Let's see the rounds of the game:
+Round |       arr       | winner | win_count
+  1   | [2,1,3,5,4,6,7] | 2      | 1
+  2   | [2,3,5,4,6,7,1] | 3      | 1
+  3   | [3,5,4,6,7,1,2] | 5      | 1
+  4   | [5,4,6,7,1,2,3] | 5      | 2
+So we can see that 4 rounds will be played and 5 is the winner because it wins 2 consecutive games.
+
+Example 2:
+
+Input: arr = [3,2,1], k = 10
+Output: 3
+Explanation: 3 will win the first 10 rounds consecutively.
+
+ 
+
+Constraints:
+
+- 2 <= arr.length <= 105
+
+- 1 <= arr[i] <= 106
+
+- arr contains distinct integers.
+
+- 1 <= k <= 109
+
+------------------------------
+1534. Count Good Triplets 
+------------------------------
+
+Given an array of integers arr, and three integers a, b and c. You need to find the number of good triplets.
+
+A triplet (arr[i], arr[j], arr[k]) is good if the following conditions are true:
+
+- 0 <= i < j < k < arr.length
+
+- |arr[i] - arr[j]| <= a
+
+- |arr[j] - arr[k]| <= b
+
+- |arr[i] - arr[k]| <= c
+
+Where |x| denotes the absolute value of x.
+
+Return the number of good triplets.
+
+ 
+
+Example 1:
+
+
+Input: arr = [3,0,1,1,9,7], a = 7, b = 2, c = 3
+Output: 4
+Explanation: There are 4 good triplets: [(3,0,1), (3,0,1), (3,1,1), (0,1,1)].
+
+Example 2:
+
+
+Input: arr = [1,1,2,2,3], a = 0, b = 0, c = 1
+Output: 0
+Explanation: No triplet satisfies all conditions.
+
+ 
+
+Constraints:
+
+- 3 <= arr.length <= 100
+
+- 0 <= arr[i] <= 1000
+
+- 0 <= a, b, c <= 1000
+
+------------------------------
+1516. Move Sub-Tree of N-Ary Tree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1530. Number of Good Leaf Nodes Pairs 
+------------------------------
+
+You are given the root of a binary tree and an integer distance. A pair of two different leaf nodes of a binary tree is said to be good if the length of the shortest path between them is less than or equal to distance.
+
+Return the number of good leaf node pairs in the tree.
+
+ 
+
+Example 1:
+
+Input: root = [1,2,3,null,4], distance = 3
+Output: 1
+Explanation: The leaf nodes of the tree are 3 and 4 and the length of the shortest path between them is 3. This is the only good pair.
+
+Example 2:
+
+Input: root = [1,2,3,4,5,6,7], distance = 3
+Output: 2
+Explanation: The good pairs are [4,5] and [6,7] with shortest path = 2. The pair [4,6] is not good because the length of ther shortest path between them is 4.
+
+Example 3:
+
+Input: root = [7,1,4,6,null,5,3,null,null,null,null,null,2], distance = 3
+Output: 1
+Explanation: The only good pair is [2,5].
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 210].
+
+- 1 <= Node.val <= 100
+
+- 1 <= distance <= 10
+
+------------------------------
+1529. Minimum Suffix Flips 
+------------------------------
+
+You are given a 0-indexed binary string target of length n. You have another binary string s of length n that is initially set to all zeros. You want to make s equal to target.
+
+In one operation, you can pick an index i where 0 <= i < n and flip all bits in the inclusive range [i, n - 1]. Flip means changing '0' to '1' and '1' to '0'.
+
+Return the minimum number of operations needed to make s equal to target.
+
+ 
+
+Example 1:
+
+Input: target = "10111"
+Output: 3
+Explanation: Initially, s = "00000".
+Choose index i = 2: "00000" -> "00111"
+Choose index i = 0: "00111" -> "11000"
+Choose index i = 1: "11000" -> "10111"
+We need at least 3 flip operations to form target.
+
+Example 2:
+
+Input: target = "101"
+Output: 3
+Explanation: Initially, s = "000".
+Choose index i = 0: "000" -> "111"
+Choose index i = 1: "111" -> "100"
+Choose index i = 2: "100" -> "101"
+We need at least 3 flip operations to form target.
+
+Example 3:
+
+Input: target = "00000"
+Output: 0
+Explanation: We do not need any operations since the initial s already equals target.
+
+ 
+
+Constraints:
+
+- n == target.length
+
+- 1 <= n <= 105
+
+- target[i] is either '0' or '1'.
+
+------------------------------
+1528. Shuffle String 
+------------------------------
+
+You are given a string s and an integer array indices of the same length. The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+
+Return the shuffled string.
+
+ 
+
+Example 1:
+
+Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+Output: "leetcode"
+Explanation: As shown, "codeleet" becomes "leetcode" after shuffling.
+
+Example 2:
+
+Input: s = "abc", indices = [0,1,2]
+Output: "abc"
+Explanation: After shuffling, each character remains in its position.
+
+ 
+
+Constraints:
+
+- s.length == indices.length == n
+
+- 1 <= n <= 100
+
+- s consists of only lowercase English letters.
+
+- 0 <= indices[i] < n
+
+- All values of indices are unique.
+
+------------------------------
+1506. Find Root of N-Ary Tree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1546. Maximum Number of Non-Overlapping Subarrays With Sum Equals Target 
+------------------------------
+
+Given an array nums and an integer target, return the maximum number of non-empty non-overlapping subarrays such that the sum of values in each subarray is equal to target.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,1,1], target = 2
+Output: 2
+Explanation: There are 2 non-overlapping subarrays [1,1,1,1,1] with sum equals to target(2).
+
+Example 2:
+
+Input: nums = [-1,3,5,1,4,2,-9], target = 6
+Output: 2
+Explanation: There are 3 subarrays with sum equal to 6.
+([5,1], [4,2], [3,5,1,4,2,-9]) but only the first 2 are non-overlapping.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -104 <= nums[i] <= 104
+
+- 0 <= target <= 106
+
+------------------------------
+1541. Minimum Insertions to Balance a Parentheses String 
+------------------------------
+
+Given a parentheses string s containing only the characters '(' and ')'. A parentheses string is balanced if:
+
+- Any left parenthesis '(' must have a corresponding two consecutive right parenthesis '))'.
+
+- Left parenthesis '(' must go before the corresponding two consecutive right parenthesis '))'.
+
+In other words, we treat '(' as an opening parenthesis and '))' as a closing parenthesis.
+
+- For example, "())", "())(())))" and "(())())))" are balanced, ")()", "()))" and "(()))" are not balanced.
+
+You can insert the characters '(' and ')' at any position of the string to balance it if needed.
+
+Return the minimum number of insertions needed to make s balanced.
+
+ 
+
+Example 1:
+
+Input: s = "(()))"
+Output: 1
+Explanation: The second '(' has two matching '))', but the first '(' has only ')' matching. We need to add one more ')' at the end of the string to be "(())))" which is balanced.
+
+Example 2:
+
+Input: s = "())"
+Output: 0
+Explanation: The string is already balanced.
+
+Example 3:
+
+Input: s = "))())("
+Output: 3
+Explanation: Add '(' to match the first '))', Add '))' to match the last '('.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists of '(' and ')' only.
+
+------------------------------
+1540. Can Convert String in K Moves 
+------------------------------
+
+Given two strings s and t, your goal is to convert s into t in k moves or less.
+
+During the ith (1 <= i <= k) move you can:
+
+- Choose any index j (1-indexed) from s, such that 1 <= j <= s.length and j has not been chosen in any previous move, and shift the character at that index i times.
+
+- Do nothing.
+
+Shifting a character means replacing it by the next letter in the alphabet (wrapping around so that 'z' becomes 'a'). Shifting a character by i means applying the shift operations i times.
+
+Remember that any index j can be picked at most once.
+
+Return true if it's possible to convert s into t in no more than k moves, otherwise return false.
+
+ 
+
+Example 1:
+
+Input: s = "input", t = "ouput", k = 9
+Output: true
+Explanation: In the 6th move, we shift 'i' 6 times to get 'o'. And in the 7th move we shift 'n' to get 'u'.
+
+Example 2:
+
+Input: s = "abc", t = "bcd", k = 10
+Output: false
+Explanation: We need to shift each character in s one time to convert it into t. We can shift 'a' to 'b' during the 1st move. However, there is no way to shift the other characters in the remaining moves to obtain t from s.
+
+Example 3:
+
+Input: s = "aab", t = "bbb", k = 27
+Output: true
+Explanation: In the 1st move, we shift the first 'a' 1 time to get 'b'. In the 27th move, we shift the second 'a' 27 times to get 'b'.
+
+ 
+
+Constraints:
+
+- 1 <= s.length, t.length <= 10^5
+
+- 0 <= k <= 10^9
+
+- s, t contain only lowercase English letters.
+
+------------------------------
+1539. Kth Missing Positive Number 
+------------------------------
+
+Given an array arr of positive integers sorted in a strictly increasing order, and an integer k.
+
+Return the kth positive integer that is missing from this array.
+
+ 
+
+Example 1:
+
+Input: arr = [2,3,4,7,11], k = 5
+Output: 9
+Explanation: The missing positive integers are [1,5,6,8,9,10,12,13,...]. The 5th missing positive integer is 9.
+
+Example 2:
+
+Input: arr = [1,2,3,4], k = 2
+Output: 6
+Explanation: The missing positive integers are [5,6,7,...]. The 2nd missing positive integer is 6.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 1000
+
+- 1 <= arr[i] <= 1000
+
+- 1 <= k <= 1000
+
+- arr[i] < arr[j] for 1 <= i < j <= arr.length
+
+ 
+
+Follow up:
+
+Could you solve this problem in less than O(n) complexity?
+
+------------------------------
+1521. Find a Value of a Mysterious Function Closest to Target 
+------------------------------
+
+Winston was given the above mysterious function func. He has an integer array arr and an integer target and he wants to find the values l and r that make the value |func(arr, l, r) - target| minimum possible.
+
+Return the minimum possible value of |func(arr, l, r) - target|.
+
+Notice that func should be called with the values l and r where 0 <= l, r < arr.length.
+
+ 
+
+Example 1:
+
+Input: arr = [9,12,3,7,15], target = 5
+Output: 2
+Explanation: Calling func with all the pairs of [l,r] = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,1],[1,2],[2,3],[3,4],[0,2],[1,3],[2,4],[0,3],[1,4],[0,4]], Winston got the following results [9,12,3,7,15,8,0,3,7,0,0,3,0,0,0]. The value closest to 5 is 7 and 3, thus the minimum difference is 2.
+
+Example 2:
+
+Input: arr = [1000000,1000000,1000000], target = 1
+Output: 999999
+Explanation: Winston called the func with all possible values of [l,r] and he always got 1000000, thus the min difference is 999999.
+
+Example 3:
+
+Input: arr = [1,2,4,8,16], target = 0
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 105
+
+- 1 <= arr[i] <= 106
+
+- 0 <= target <= 107
+
+------------------------------
+1520. Maximum Number of Non-Overlapping Substrings 
+------------------------------
+
+Given a string s of lowercase letters, you need to find the maximum number of non-empty substrings of s that meet the following conditions:
+
+- The substrings do not overlap, that is for any two substrings s[i..j] and s[x..y], either j < x or i > y is true.
+
+- A substring that contains a certain character c must also contain all occurrences of c.
+
+Find the maximum number of substrings that meet the above conditions. If there are multiple solutions with the same number of substrings, return the one with minimum total length. It can be shown that there exists a unique solution of minimum total length.
+
+Notice that you can return the substrings in any order.
+
+ 
+
+Example 1:
+
+Input: s = "adefaddaccc"
+Output: ["e","f","ccc"]
+Explanation: The following are all the possible substrings that meet the conditions:
+[
+  "adefaddaccc"
+  "adefadda",
+  "ef",
+  "e",
+  "f",
+  "ccc",
+]
+If we choose the first string, we cannot choose anything else and we'd get only 1. If we choose "adefadda", we are left with "ccc" which is the only one that doesn't overlap, thus obtaining 2 substrings. Notice also, that it's not optimal to choose "ef" since it can be split into two. Therefore, the optimal way is to choose ["e","f","ccc"] which gives us 3 substrings. No other solution of the same number of substrings exist.
+
+Example 2:
+
+Input: s = "abbaccd"
+Output: ["d","bb","cc"]
+Explanation: Notice that while the set of substrings ["d","abba","cc"] also has length 3, it's considered incorrect since it has larger total length.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s contains only lowercase English letters.
+
+------------------------------
+1519. Number of Nodes in the Sub-Tree With the Same Label 
+------------------------------
+
+You are given a tree (i.e. a connected, undirected graph that has no cycles) consisting of n nodes numbered from 0 to n - 1 and exactly n - 1 edges. The root of the tree is the node 0, and each node of the tree has a label which is a lower-case character given in the string labels (i.e. The node with the number i has the label labels[i]).
+
+The edges array is given on the form edges[i] = [ai, bi], which means there is an edge between nodes ai and bi in the tree.
+
+Return an array of size n where ans[i] is the number of nodes in the subtree of the ith node which have the same label as node i.
+
+A subtree of a tree T is the tree consisting of a node in T and all of its descendant nodes.
+
+ 
+
+Example 1:
+
+Input: n = 7, edges = [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], labels = "abaedcd"
+Output: [2,1,1,1,1,1,1]
+Explanation: Node 0 has label 'a' and its sub-tree has node 2 with label 'a' as well, thus the answer is 2. Notice that any node is part of its sub-tree.
+Node 1 has a label 'b'. The sub-tree of node 1 contains nodes 1,4 and 5, as nodes 4 and 5 have different labels than node 1, the answer is just 1 (the node itself).
+
+Example 2:
+
+Input: n = 4, edges = [[0,1],[1,2],[0,3]], labels = "bbbb"
+Output: [4,2,1,1]
+Explanation: The sub-tree of node 2 contains only node 2, so the answer is 1.
+The sub-tree of node 3 contains only node 3, so the answer is 1.
+The sub-tree of node 1 contains nodes 1 and 2, both have label 'b', thus the answer is 2.
+The sub-tree of node 0 contains nodes 0, 1, 2 and 3, all with label 'b', thus the answer is 4.
+
+Example 3:
+
+Input: n = 5, edges = [[0,1],[0,2],[1,3],[0,4]], labels = "aabab"
+Output: [3,2,1,1,1]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+- edges.length == n - 1
+
+- edges[i].length == 2
+
+- 0 <= ai, bi < n
+
+- ai != bi
+
+- labels.length == n
+
+- labels is consisting of only of lowercase English letters.
+
+------------------------------
+1518. Water Bottles 
+------------------------------
+
+There are numBottles water bottles that are initially full of water. You can exchange numExchange empty water bottles from the market with one full water bottle.
+
+The operation of drinking a full water bottle turns it into an empty bottle.
+
+Given the two integers numBottles and numExchange, return the maximum number of water bottles you can drink.
+
+ 
+
+Example 1:
+
+Input: numBottles = 9, numExchange = 3
+Output: 13
+Explanation: You can exchange 3 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 9 + 3 + 1 = 13.
+
+Example 2:
+
+Input: numBottles = 15, numExchange = 4
+Output: 19
+Explanation: You can exchange 4 empty bottles to get 1 full water bottle. 
+Number of water bottles you can drink: 15 + 3 + 1 = 19.
+
+ 
+
+Constraints:
+
+- 1 <= numBottles <= 100
+
+- 2 <= numExchange <= 100
+
+------------------------------
+1500. Design a File Sharing System 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1515. Best Position for a Service Centre 
+------------------------------
+
+A delivery company wants to build a new service center in a new city. The company knows the positions of all the customers in this city on a 2D-Map and wants to build the new center in a position such that the sum of the euclidean distances to all customers is minimum.
+
+Given an array positions where positions[i] = [xi, yi] is the position of the ith customer on the map, return the minimum sum of the euclidean distances to all customers.
+
+In other words, you need to choose the position of the service center [xcentre, ycentre] such that the following formula is minimized:
+
+Answers within 10-5 of the actual value will be accepted.
+
+ 
+
+Example 1:
+
+Input: positions = [[0,1],[1,0],[1,2],[2,1]]
+Output: 4.00000
+Explanation: As shown, you can see that choosing [xcentre, ycentre] = [1, 1] will make the distance to each customer = 1, the sum of all distances is 4 which is the minimum possible we can achieve.
+
+Example 2:
+
+Input: positions = [[1,1],[3,3]]
+Output: 2.82843
+Explanation: The minimum possible sum of distances = sqrt(2) + sqrt(2) = 2.82843
+
+ 
+
+Constraints:
+
+- 1 <= positions.length <= 50
+
+- positions[i].length == 2
+
+- 0 <= xi, yi <= 100
+
+------------------------------
+1531. String Compression II 
+------------------------------
+
+Run-length encoding is a string compression method that works by replacing consecutive identical characters (repeated 2 or more times) with the concatenation of the character and the number marking the count of the characters (length of the run). For example, to compress the string "aabccc" we replace "aa" by "a2" and replace "ccc" by "c3". Thus the compressed string becomes "a2bc3".
+
+Notice that in this problem, we are not adding '1' after single characters.
+
+Given a string s and an integer k. You need to delete at most k characters from s such that the run-length encoded version of s has minimum length.
+
+Find the minimum length of the run-length encoded version of s after deleting at most k characters.
+
+ 
+
+Example 1:
+
+Input: s = "aaabcccd", k = 2
+Output: 4
+Explanation: Compressing s without deleting anything will give us "a3bc3d" of length 6. Deleting any of the characters 'a' or 'c' would at most decrease the length of the compressed string to 5, for instance delete 2 'a' then we will have s = "abcccd" which compressed is abc3d. Therefore, the optimal way is to delete 'b' and 'd', then the compressed version of s will be "a3c3" of length 4.
+
+Example 2:
+
+Input: s = "aabbaa", k = 2
+Output: 2
+Explanation: If we delete both 'b' characters, the resulting compressed string would be "a4" of length 2.
+
+Example 3:
+
+Input: s = "aaaaaaaaaaa", k = 0
+Output: 3
+Explanation: Since k is zero, we cannot delete anything. The compressed string is "a11" of length 3.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 100
+
+- 0 <= k <= s.length
+
+- s contains only lowercase English letters.
+
+------------------------------
+1513. Number of Substrings With Only 1s 
+------------------------------
+
+Given a binary string s, return the number of substrings with all characters 1's. Since the answer may be too large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: s = "0110111"
+Output: 9
+Explanation: There are 9 substring in total with only 1's characters.
+"1" -> 5 times.
+"11" -> 3 times.
+"111" -> 1 time.
+
+Example 2:
+
+Input: s = "101"
+Output: 2
+Explanation: Substring "1" is shown 2 times in s.
+
+Example 3:
+
+Input: s = "111111"
+Output: 21
+Explanation: Each substring contains only 1's characters.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s[i] is either '0' or '1'.
+
+------------------------------
+1512. Number of Good Pairs 
+------------------------------
+
+Given an array of integers nums, return the number of good pairs.
+
+A pair (i, j) is called good if nums[i] == nums[j] and i < j.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,1,1,3]
+Output: 4
+Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.
+
+Example 2:
+
+Input: nums = [1,1,1,1]
+Output: 6
+Explanation: Each pair in the array are good.
+
+Example 3:
+
+Input: nums = [1,2,3]
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 100
+
+- 1 <= nums[i] <= 100
+
+------------------------------
+1490. Clone N-ary Tree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1526. Minimum Number of Increments on Subarrays to Form a Target Array 
+------------------------------
+
+You are given an integer array target. You have an integer array initial of the same size as target with all elements initially zeros.
+
+In one operation you can choose any subarray from initial and increment each value by one.
+
+Return the minimum number of operations to form a target array from initial.
+
+The test cases are generated so that the answer fits in a 32-bit integer.
+
+ 
+
+Example 1:
+
+Input: target = [1,2,3,2,1]
+Output: 3
+Explanation: We need at least 3 operations to form the target array from the initial array.
+[0,0,0,0,0] increment 1 from index 0 to 4 (inclusive).
+[1,1,1,1,1] increment 1 from index 1 to 3 (inclusive).
+[1,2,2,2,1] increment 1 at index 2.
+[1,2,3,2,1] target array is formed.
+
+Example 2:
+
+Input: target = [3,1,1,2]
+Output: 4
+Explanation: [0,0,0,0] -> [1,1,1,1] -> [1,1,1,2] -> [2,1,1,2] -> [3,1,1,2]
+
+Example 3:
+
+Input: target = [3,1,5,4,2]
+Output: 7
+Explanation: [0,0,0,0,0] -> [1,1,1,1,1] -> [2,1,1,1,1] -> [3,1,1,1,1] -> [3,1,2,2,2] -> [3,1,3,3,2] -> [3,1,4,4,2] -> [3,1,5,4,2].
+
+ 
+
+Constraints:
+
+- 1 <= target.length <= 105
+
+- 1 <= target[i] <= 105
+
+- ​​​​​​​The input is generated such that the answer fits inside a 32 bit integer.
+
+------------------------------
+1525. Number of Good Ways to Split a String 
+------------------------------
+
+You are given a string s.
+
+A split is called good if you can split s into two non-empty strings sleft and sright where their concatenation is equal to s (i.e., sleft + sright = s) and the number of distinct letters in sleft and sright is the same.
+
+Return the number of good splits you can make in s.
+
+ 
+
+Example 1:
+
+Input: s = "aacaba"
+Output: 2
+Explanation: There are 5 ways to split "aacaba" and 2 of them are good. 
+("a", "acaba") Left string and right string contains 1 and 3 different letters respectively.
+("aa", "caba") Left string and right string contains 1 and 3 different letters respectively.
+("aac", "aba") Left string and right string contains 2 and 2 different letters respectively (good split).
+("aaca", "ba") Left string and right string contains 2 and 2 different letters respectively (good split).
+("aacab", "a") Left string and right string contains 3 and 1 different letters respectively.
+
+Example 2:
+
+Input: s = "abcd"
+Output: 1
+Explanation: Split the string as follows ("ab", "cd").
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists of only lowercase English letters.
+
+------------------------------
+1524. Number of Sub-arrays With Odd Sum 
+------------------------------
+
+Given an array of integers arr, return the number of subarrays with an odd sum.
+
+Since the answer can be very large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: arr = [1,3,5]
+Output: 4
+Explanation: All subarrays are [[1],[1,3],[1,3,5],[3],[3,5],[5]]
+All sub-arrays sum are [1,4,9,3,8,5].
+Odd sums are [1,9,3,5] so the answer is 4.
+
+Example 2:
+
+Input: arr = [2,4,6]
+Output: 0
+Explanation: All subarrays are [[2],[2,4],[2,4,6],[4],[4,6],[6]]
+All sub-arrays sum are [2,6,12,4,10,6].
+All sub-arrays have even sum and the answer is 0.
+
+Example 3:
+
+Input: arr = [1,2,3,4,5,6,7]
+Output: 16
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 105
+
+- 1 <= arr[i] <= 100
+
+------------------------------
+1523. Count Odd Numbers in an Interval Range 
+------------------------------
+
+Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
+
+ 
+
+Example 1:
+
+
+Input: low = 3, high = 7
+Output: 3
+Explanation: The odd numbers between 3 and 7 are [3,5,7].
+
+Example 2:
+
+
+Input: low = 8, high = 10
+Output: 1
+Explanation: The odd numbers between 8 and 10 are [9].
+
+ 
+
+Constraints:
+
+- 0 <= low <= high <= 10^9
+
+------------------------------
+1505. Minimum Possible Integer After at Most K Adjacent Swaps On Digits 
+------------------------------
+
+You are given a string num representing the digits of a very large integer and an integer k. You are allowed to swap any two adjacent digits of the integer at most k times.
+
+Return the minimum integer you can obtain also as a string.
+
+ 
+
+Example 1:
+
+Input: num = "4321", k = 4
+Output: "1342"
+Explanation: The steps to obtain the minimum integer from 4321 with 4 adjacent swaps are shown.
+
+Example 2:
+
+Input: num = "100", k = 1
+Output: "010"
+Explanation: It's ok for the output to have leading zeros, but the input is guaranteed not to have any leading zeros.
+
+Example 3:
+
+Input: num = "36789", k = 1000
+Output: "36789"
+Explanation: We can keep the number without any swaps.
+
+ 
+
+Constraints:
+
+- 1 <= num.length <= 3 * 104
+
+- num consists of only digits and does not contain leading zeros.
+
+- 1 <= k <= 109
+
+------------------------------
+1504. Count Submatrices With All Ones 
+------------------------------
+
+Given an m x n binary matrix mat, return the number of submatrices that have all ones.
+
+ 
+
+Example 1:
+
+Input: mat = [[1,0,1],[1,1,0],[1,1,0]]
+Output: 13
+Explanation: 
+There are 6 rectangles of side 1x1.
+There are 2 rectangles of side 1x2.
+There are 3 rectangles of side 2x1.
+There is 1 rectangle of side 2x2. 
+There is 1 rectangle of side 3x1.
+Total number of rectangles = 6 + 2 + 3 + 1 + 1 = 13.
+
+Example 2:
+
+Input: mat = [[0,1,1,0],[0,1,1,1],[1,1,1,0]]
+Output: 24
+Explanation: 
+There are 8 rectangles of side 1x1.
+There are 5 rectangles of side 1x2.
+There are 2 rectangles of side 1x3. 
+There are 4 rectangles of side 2x1.
+There are 2 rectangles of side 2x2. 
+There are 2 rectangles of side 3x1. 
+There is 1 rectangle of side 3x2. 
+Total number of rectangles = 8 + 5 + 2 + 4 + 2 + 2 + 1 = 24.
+
+ 
+
+Constraints:
+
+- 1 <= m, n <= 150
+
+- mat[i][j] is either 0 or 1.
+
+------------------------------
+1503. Last Moment Before All Ants Fall Out of a Plank 
+------------------------------
+
+We have a wooden plank of the length n units. Some ants are walking on the plank, each ant moves with a speed of 1 unit per second. Some of the ants move to the left, the other move to the right.
+
+When two ants moving in two different directions meet at some point, they change their directions and continue moving again. Assume changing directions does not take any additional time.
+
+When an ant reaches one end of the plank at a time t, it falls out of the plank immediately.
+
+Given an integer n and two integer arrays left and right, the positions of the ants moving to the left and the right, return the moment when the last ant(s) fall out of the plank.
+
+ 
+
+Example 1:
+
+Input: n = 4, left = [4,3], right = [0,1]
+Output: 4
+Explanation: In the image above:
+-The ant at index 0 is named A and going to the right.
+-The ant at index 1 is named B and going to the right.
+-The ant at index 3 is named C and going to the left.
+-The ant at index 4 is named D and going to the left.
+The last moment when an ant was on the plank is t = 4 seconds. After that, it falls immediately out of the plank. (i.e., We can say that at t = 4.0000000001, there are no ants on the plank).
+
+Example 2:
+
+Input: n = 7, left = [], right = [0,1,2,3,4,5,6,7]
+Output: 7
+Explanation: All ants are going to the right, the ant at index 0 needs 7 seconds to fall.
+
+Example 3:
+
+Input: n = 7, left = [0,1,2,3,4,5,6,7], right = []
+Output: 7
+Explanation: All ants are going to the left, the ant at index 7 needs 7 seconds to fall.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 104
+
+- 0 <= left.length <= n + 1
+
+- 0 <= left[i] <= n
+
+- 0 <= right.length <= n + 1
+
+- 0 <= right[i] <= n
+
+- 1 <= left.length + right.length <= n + 1
+
+- All values of left and right are unique, and each value can appear only in one of the two arrays.
+
+------------------------------
+1502. Can Make Arithmetic Progression From Sequence 
+------------------------------
+
+A sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.
+
+Given an array of numbers arr, return true if the array can be rearranged to form an arithmetic progression. Otherwise, return false.
+
+ 
+
+Example 1:
+
+Input: arr = [3,5,1]
+Output: true
+Explanation: We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.
+
+Example 2:
+
+Input: arr = [1,2,4]
+Output: false
+Explanation: There is no way to reorder the elements to obtain an arithmetic progression.
+
+ 
+
+Constraints:
+
+- 2 <= arr.length <= 1000
+
+- -106 <= arr[i] <= 106
+
+------------------------------
+1485. Clone Binary Tree With Random Pointer 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1499. Max Value of Equation 
+------------------------------
+
+You are given an array points containing the coordinates of points on a 2D plane, sorted by the x-values, where points[i] = [xi, yi] such that xi < xj for all 1 <= i < j <= points.length. You are also given an integer k.
+
+Return the maximum value of the equation yi + yj + |xi - xj| where |xi - xj| <= k and 1 <= i < j <= points.length.
+
+It is guaranteed that there exists at least one pair of points that satisfy the constraint |xi - xj| <= k.
+
+ 
+
+Example 1:
+
+Input: points = [[1,3],[2,0],[5,10],[6,-10]], k = 1
+Output: 4
+Explanation: The first two points satisfy the condition |xi - xj| <= 1 and if we calculate the equation we get 3 + 0 + |1 - 2| = 4. Third and fourth points also satisfy the condition and give a value of 10 + -10 + |5 - 6| = 1.
+No other pairs satisfy the condition, so we return the max of 4 and 1.
+
+Example 2:
+
+Input: points = [[0,0],[3,0],[9,2]], k = 3
+Output: 3
+Explanation: Only the first two points have an absolute difference of 3 or less in the x-values, and give the value of 0 + 0 + |0 - 3| = 3.
+
+ 
+
+Constraints:
+
+- 2 <= points.length <= 105
+
+- points[i].length == 2
+
+- -108 <= xi, yi <= 108
+
+- 0 <= k <= 2 * 108
+
+- xi < xj for all 1 <= i < j <= points.length
+
+- xi form a strictly increasing sequence.
+
+------------------------------
+1498. Number of Subsequences That Satisfy the Given Sum Condition 
+------------------------------
+
+You are given an array of integers nums and an integer target.
+
+Return the number of non-empty subsequences of nums such that the sum of the minimum and maximum element on it is less or equal to target. Since the answer may be too large, return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: nums = [3,5,6,7], target = 9
+Output: 4
+Explanation: There are 4 subsequences that satisfy the condition.
+[3] -> Min value + max value <= target (3 + 3 <= 9)
+[3,5] -> (3 + 5 <= 9)
+[3,5,6] -> (3 + 6 <= 9)
+[3,6] -> (3 + 6 <= 9)
+
+Example 2:
+
+Input: nums = [3,3,6,8], target = 10
+Output: 6
+Explanation: There are 6 subsequences that satisfy the condition. (nums can have repeated numbers).
+[3] , [3] , [3,3], [3,6] , [3,6] , [3,3,6]
+
+Example 3:
+
+Input: nums = [2,3,3,4,6,7], target = 12
+Output: 61
+Explanation: There are 63 non-empty subsequences, two of them do not satisfy the condition ([6,7], [7]).
+Number of valid subsequences (63 - 2 = 61).
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 106
+
+- 1 <= target <= 106
+
+------------------------------
+1497. Check If Array Pairs Are Divisible by k 
+------------------------------
+
+Given an array of integers arr of even length n and an integer k.
+
+We want to divide the array into exactly n / 2 pairs such that the sum of each pair is divisible by k.
+
+Return true If you can find a way to do that or false otherwise.
+
+ 
+
+Example 1:
+
+Input: arr = [1,2,3,4,5,10,6,7,8,9], k = 5
+Output: true
+Explanation: Pairs are (1,9),(2,8),(3,7),(4,6) and (5,10).
+
+Example 2:
+
+Input: arr = [1,2,3,4,5,6], k = 7
+Output: true
+Explanation: Pairs are (1,6),(2,5) and(3,4).
+
+Example 3:
+
+Input: arr = [1,2,3,4,5,6], k = 10
+Output: false
+Explanation: You can try all possible pairs to see that there is no way to divide arr into 3 pairs each with sum divisible by 10.
+
+ 
+
+Constraints:
+
+- arr.length == n
+
+- 1 <= n <= 105
+
+- n is even.
+
+- -109 <= arr[i] <= 109
+
+- 1 <= k <= 105
+
+------------------------------
+1496. Path Crossing 
+------------------------------
+
+Given a string path, where path[i] = 'N', 'S', 'E' or 'W', each representing moving one unit north, south, east, or west, respectively. You start at the origin (0, 0) on a 2D plane and walk on the path specified by path.
+
+Return true if the path crosses itself at any point, that is, if at any time you are on a location you have previously visited. Return false otherwise.
+
+ 
+
+Example 1:
+
+Input: path = "NES"
+Output: false 
+Explanation: Notice that the path doesn't cross any point more than once.
+
+Example 2:
+
+Input: path = "NESWW"
+Output: true
+Explanation: Notice that the path visits the origin twice.
+
+ 
+
+Constraints:
+
+- 1 <= path.length <= 104
+
+- path[i] is either 'N', 'S', 'E', or 'W'.
+
+------------------------------
+1474. Delete N Nodes After M Nodes of a Linked List 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1510. Stone Game IV 
+------------------------------
+
+Alice and Bob take turns playing a game, with Alice starting first.
+
+Initially, there are n stones in a pile. On each player's turn, that player makes a move consisting of removing any non-zero square number of stones in the pile.
+
+Also, if a player cannot make a move, he/she loses the game.
+
+Given a positive integer n, return true if and only if Alice wins the game otherwise return false, assuming both players play optimally.
+
+ 
+
+Example 1:
+
+Input: n = 1
+Output: true
+Explanation: Alice can remove 1 stone winning the game because Bob doesn't have any moves.
+
+Example 2:
+
+Input: n = 2
+Output: false
+Explanation: Alice can only remove 1 stone, after that Bob removes the last one winning the game (2 -> 1 -> 0).
+
+Example 3:
+
+Input: n = 4
+Output: true
+Explanation: n is already a perfect square, Alice can win with one move, removing 4 stones (4 -> 0).
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+------------------------------
+1509. Minimum Difference Between Largest and Smallest Value in Three Moves 
+------------------------------
+
+You are given an integer array nums.
+
+In one move, you can choose one element of nums and change it to any value.
+
+Return the minimum difference between the largest and smallest value of nums after performing at most three moves.
+
+ 
+
+Example 1:
+
+Input: nums = [5,3,2,4]
+Output: 0
+Explanation: We can make at most 3 moves.
+In the first move, change 2 to 3. nums becomes [5,3,3,4].
+In the second move, change 4 to 3. nums becomes [5,3,3,3].
+In the third move, change 5 to 3. nums becomes [3,3,3,3].
+After performing 3 moves, the difference between the minimum and maximum is 3 - 3 = 0.
+
+Example 2:
+
+Input: nums = [1,5,0,10,14]
+Output: 1
+Explanation: We can make at most 3 moves.
+In the first move, change 5 to 0. nums becomes [1,0,0,10,14].
+In the second move, change 10 to 0. nums becomes [1,0,0,0,14].
+In the third move, change 14 to 1. nums becomes [1,0,0,0,1].
+After performing 3 moves, the difference between the minimum and maximum is 1 - 0 = 1.
+It can be shown that there is no way to make the difference 0 in 3 moves.
+
+Example 3:
+
+Input: nums = [3,100,20]
+Output: 0
+Explanation: We can make at most 3 moves.
+In the first move, change 100 to 7. nums becomes [3,7,20].
+In the second move, change 20 to 7. nums becomes [3,7,7].
+In the third move, change 3 to 7. nums becomes [7,7,7].
+After performing 3 moves, the difference between the minimum and maximum is 7 - 7 = 0.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -109 <= nums[i] <= 109
+
+------------------------------
+1508. Range Sum of Sorted Subarray Sums 
+------------------------------
+
+You are given the array nums consisting of n positive integers. You computed the sum of all non-empty continuous subarrays from the array and then sorted them in non-decreasing order, creating a new array of n * (n + 1) / 2 numbers.
+
+Return the sum of the numbers from index left to index right (indexed from 1), inclusive, in the new array. Since the answer can be a huge number return it modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4], n = 4, left = 1, right = 5
+Output: 13 
+Explanation: All subarray sums are 1, 3, 6, 10, 2, 5, 9, 3, 7, 4. After sorting them in non-decreasing order we have the new array [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]. The sum of the numbers from index le = 1 to ri = 5 is 1 + 2 + 3 + 3 + 4 = 13. 
+
+Example 2:
+
+Input: nums = [1,2,3,4], n = 4, left = 3, right = 4
+Output: 6
+Explanation: The given array is the same as example 1. We have the new array [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]. The sum of the numbers from index le = 3 to ri = 4 is 3 + 3 = 6.
+
+Example 3:
+
+Input: nums = [1,2,3,4], n = 4, left = 1, right = 10
+Output: 50
+
+ 
+
+Constraints:
+
+- n == nums.length
+
+- 1 <= nums.length <= 1000
+
+- 1 <= nums[i] <= 100
+
+- 1 <= left <= right <= n * (n + 1) / 2
+
+------------------------------
+1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree 
+------------------------------
+
+Given a weighted undirected connected graph with n vertices numbered from 0 to n - 1, and an array edges where edges[i] = [ai, bi, weighti] represents a bidirectional and weighted edge between nodes ai and bi. A minimum spanning tree (MST) is a subset of the graph's edges that connects all vertices without cycles and with the minimum possible total edge weight.
+
+Find all the critical and pseudo-critical edges in the given graph's minimum spanning tree (MST). An MST edge whose deletion from the graph would cause the MST weight to increase is called a critical edge. On the other hand, a pseudo-critical edge is that which can appear in some MSTs but not all.
+
+Note that you can return the indices of the edges in any order.
+
+ 
+
+Example 1:
+
+Input: n = 5, edges = [[0,1,1],[1,2,1],[2,3,2],[0,3,2],[0,4,3],[3,4,3],[1,4,6]]
+Output: [[0,1],[2,3,4,5]]
+Explanation: The figure above describes the graph.
+The following figure shows all the possible MSTs:
+
+Notice that the two edges 0 and 1 appear in all MSTs, therefore they are critical edges, so we return them in the first list of the output.
+The edges 2, 3, 4, and 5 are only part of some MSTs, therefore they are considered pseudo-critical edges. We add them to the second list of the output.
+
+Example 2:
+
+Input: n = 4, edges = [[0,1,1],[1,2,1],[2,3,1],[0,3,1]]
+Output: [[],[0,1,2,3]]
+Explanation: We can observe that since all 4 edges have equal weight, choosing any 3 edges from the given 4 will yield an MST. Therefore all 4 edges are pseudo-critical.
+
+ 
+
+Constraints:
+
+- 2 <= n <= 100
+
+- 1 <= edges.length <= min(200, n * (n - 1) / 2)
+
+- edges[i].length == 3
+
+- 0 <= ai < bi < n
+
+- 1 <= weighti <= 1000
+
+- All pairs (ai, bi) are distinct.
+
+------------------------------
+1488. Avoid Flood in The City 
+------------------------------
+
+Your country has 109 lakes. Initially, all the lakes are empty, but when it rains over the nth lake, the nth lake becomes full of water. If it rains over a lake that is full of water, there will be a flood. Your goal is to avoid floods in any lake.
+
+Given an integer array rains where:
+
+- rains[i] > 0 means there will be rains over the rains[i] lake.
+
+- rains[i] == 0 means there are no rains this day and you must choose one lake this day and dry it.
+
+Return an array ans where:
+
+- ans.length == rains.length
+
+- ans[i] == -1 if rains[i] > 0.
+
+- ans[i] is the lake you choose to dry in the ith day if rains[i] == 0.
+
+If there are multiple valid answers return any of them. If it is impossible to avoid flood return an empty array.
+
+Notice that if you chose to dry a full lake, it becomes empty, but if you chose to dry an empty lake, nothing changes.
+
+ 
+
+Example 1:
+
+Input: rains = [1,2,3,4]
+Output: [-1,-1,-1,-1]
+Explanation: After the first day full lakes are [1]
+After the second day full lakes are [1,2]
+After the third day full lakes are [1,2,3]
+After the fourth day full lakes are [1,2,3,4]
+There's no day to dry any lake and there is no flood in any lake.
+
+Example 2:
+
+Input: rains = [1,2,0,0,2,1]
+Output: [-1,-1,2,1,-1,-1]
+Explanation: After the first day full lakes are [1]
+After the second day full lakes are [1,2]
+After the third day, we dry lake 2. Full lakes are [1]
+After the fourth day, we dry lake 1. There is no full lakes.
+After the fifth day, full lakes are [2].
+After the sixth day, full lakes are [1,2].
+It is easy that this scenario is flood-free. [-1,-1,1,2,-1,-1] is another acceptable scenario.
+
+Example 3:
+
+Input: rains = [1,2,0,1,2]
+Output: []
+Explanation: After the second day, full lakes are  [1,2]. We have to dry one lake in the third day.
+After that, it will rain over lakes [1,2]. It's easy to prove that no matter which lake you choose to dry in the 3rd day, the other one will flood.
+
+ 
+
+Constraints:
+
+- 1 <= rains.length <= 105
+
+- 0 <= rains[i] <= 109
+
+------------------------------
+1487. Making File Names Unique 
+------------------------------
+
+Given an array of strings names of size n. You will create n folders in your file system such that, at the ith minute, you will create a folder with the name names[i].
+
+Since two files cannot have the same name, if you enter a folder name that was previously used, the system will have a suffix addition to its name in the form of (k), where, k is the smallest positive integer such that the obtained name remains unique.
+
+Return an array of strings of length n where ans[i] is the actual name the system will assign to the ith folder when you create it.
+
+ 
+
+Example 1:
+
+Input: names = ["pes","fifa","gta","pes(2019)"]
+Output: ["pes","fifa","gta","pes(2019)"]
+Explanation: Let's see how the file system creates folder names:
+"pes" --> not assigned before, remains "pes"
+"fifa" --> not assigned before, remains "fifa"
+"gta" --> not assigned before, remains "gta"
+"pes(2019)" --> not assigned before, remains "pes(2019)"
+
+Example 2:
+
+Input: names = ["gta","gta(1)","gta","avalon"]
+Output: ["gta","gta(1)","gta(2)","avalon"]
+Explanation: Let's see how the file system creates folder names:
+"gta" --> not assigned before, remains "gta"
+"gta(1)" --> not assigned before, remains "gta(1)"
+"gta" --> the name is reserved, system adds (k), since "gta(1)" is also reserved, systems put k = 2. it becomes "gta(2)"
+"avalon" --> not assigned before, remains "avalon"
+
+Example 3:
+
+Input: names = ["onepiece","onepiece(1)","onepiece(2)","onepiece(3)","onepiece"]
+Output: ["onepiece","onepiece(1)","onepiece(2)","onepiece(3)","onepiece(4)"]
+Explanation: When the last folder is created, the smallest positive valid k is 4, and it becomes "onepiece(4)".
+
+ 
+
+Constraints:
+
+- 1 <= names.length <= 5 * 104
+
+- 1 <= names[i].length <= 20
+
+- names[i] consists of lowercase English letters, digits, and/or round brackets.
+
+------------------------------
+1486. XOR Operation in an Array 
+------------------------------
+
+You are given an integer n and an integer start.
+
+Define an array nums where nums[i] = start + 2 * i (0-indexed) and n == nums.length.
+
+Return the bitwise XOR of all elements of nums.
+
+ 
+
+Example 1:
+
+Input: n = 5, start = 0
+Output: 8
+Explanation: Array nums is equal to [0, 2, 4, 6, 8] where (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8.
+Where "^" corresponds to bitwise XOR operator.
+
+Example 2:
+
+Input: n = 4, start = 3
+Output: 8
+Explanation: Array nums is equal to [3, 5, 7, 9] where (3 ^ 5 ^ 7 ^ 9) = 8.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 1000
+
+- 0 <= start <= 1000
+
+- n == nums.length
+
+------------------------------
+1469. Find All The Lonely Nodes 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+1482. Minimum Number of Days to Make m Bouquets 
+------------------------------
+
+You are given an integer array bloomDay, an integer m and an integer k.
+
+You want to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden.
+
+The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet.
+
+Return the minimum number of days you need to wait to be able to make m bouquets from the garden. If it is impossible to make m bouquets return -1.
+
+ 
+
+Example 1:
+
+Input: bloomDay = [1,10,3,10,2], m = 3, k = 1
+Output: 3
+Explanation: Let us see what happened in the first three days. x means flower bloomed and _ means flower did not bloom in the garden.
+We need 3 bouquets each should contain 1 flower.
+After day 1: [x, _, _, _, _]   // we can only make one bouquet.
+After day 2: [x, _, _, _, x]   // we can only make two bouquets.
+After day 3: [x, _, x, _, x]   // we can make 3 bouquets. The answer is 3.
+
+Example 2:
+
+Input: bloomDay = [1,10,3,10,2], m = 3, k = 2
+Output: -1
+Explanation: We need 3 bouquets each has 2 flowers, that means we need 6 flowers. We only have 5 flowers so it is impossible to get the needed bouquets and we return -1.
+
+Example 3:
+
+Input: bloomDay = [7,7,7,7,12,7,7], m = 2, k = 3
+Output: 12
+Explanation: We need 2 bouquets each should have 3 flowers.
+Here is the garden after the 7 and 12 days:
+After day 7: [x, x, x, x, _, x, x]
+We can make one bouquet of the first three flowers that bloomed. We cannot make another bouquet from the last three flowers that bloomed because they are not adjacent.
+After day 12: [x, x, x, x, x, x, x]
+It is obvious that we can make two bouquets in different ways.
+
+ 
+
+Constraints:
+
+- bloomDay.length == n
+
+- 1 <= n <= 105
+
+- 1 <= bloomDay[i] <= 109
+
+- 1 <= m <= 106
+
+- 1 <= k <= n
+
+------------------------------
+1481. Least Number of Unique Integers after K Removals 
+------------------------------
+
+Given an array of integers arr and an integer k. Find the least number of unique integers after removing exactly k elements.
+
+ 
+
+Example 1:
+
+
+Input: arr = [5,5,4], k = 1
+Output: 1
+Explanation: Remove the single 4, only 5 is left.
+
+Example 2:
+
+
+Input: arr = [4,3,1,1,3,3,2], k = 3
+Output: 2
+Explanation: Remove 4, 2 and either one of the two 1s or three 3s. 1 and 3 will be left.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 10^5
+
+- 1 <= arr[i] <= 10^9
+
+- 0 <= k <= arr.length
+
+------------------------------
+1480. Running Sum of 1d Array 
+------------------------------
+
+Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+Return the running sum of nums.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: [1,3,6,10]
+Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
+
+Example 2:
+
+Input: nums = [1,1,1,1,1]
+Output: [1,2,3,4,5]
+Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
+
+Example 3:
+
+Input: nums = [3,1,2,10,1]
+Output: [3,4,6,16,17]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- -10^6 <= nums[i] <= 10^6
+
+------------------------------
+1494. Parallel Courses II 
+------------------------------
+
+You are given an integer n, which indicates that there are n courses labeled from 1 to n. You are also given an array relations where relations[i] = [prevCoursei, nextCoursei], representing a prerequisite relationship between course prevCoursei and course nextCoursei: course prevCoursei has to be taken before course nextCoursei. Also, you are given the integer k.
+
+In one semester, you can take at most k courses as long as you have taken all the prerequisites in the previous semesters for the courses you are taking.
+
+Return the minimum number of semesters needed to take all courses. The testcases will be generated such that it is possible to take every course.
+
+ 
+
+Example 1:
+
+Input: n = 4, relations = [[2,1],[3,1],[1,4]], k = 2
+Output: 3
+Explanation: The figure above represents the given graph.
+In the first semester, you can take courses 2 and 3.
+In the second semester, you can take course 1.
+In the third semester, you can take course 4.
+
+Example 2:
+
+Input: n = 5, relations = [[2,1],[3,1],[4,1],[1,5]], k = 2
+Output: 4
+Explanation: The figure above represents the given graph.
+In the first semester, you can only take courses 2 and 3 since you cannot take more than two per semester.
+In the second semester, you can take course 4.
+In the third semester, you can take course 1.
+In the fourth semester, you can take course 5.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 15
+
+- 1 <= k <= n
+
+- 0 <= relations.length <= n * (n-1) / 2
+
+- relations[i].length == 2
+
+- 1 <= prevCoursei, nextCoursei <= n
+
+- prevCoursei != nextCoursei
+
+- All the pairs [prevCoursei, nextCoursei] are unique.
+
+- The given graph is a directed acyclic graph.
+
+------------------------------
+1493. Longest Subarray of 1's After Deleting One Element 
+------------------------------
+
+Given a binary array nums, you should delete one element from it.
+
+Return the size of the longest non-empty subarray containing only 1's in the resulting array. Return 0 if there is no such subarray.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,0,1]
+Output: 3
+Explanation: After deleting the number in position 2, [1,1,1] contains 3 numbers with value of 1's.
+
+Example 2:
+
+Input: nums = [0,1,1,1,0,1,1,0,1]
+Output: 5
+Explanation: After deleting the number in position 4, [0,1,1,1,1,1,0,1] longest subarray with value of 1's is [1,1,1,1,1].
+
+Example 3:
+
+Input: nums = [1,1,1]
+Output: 2
+Explanation: You must delete one element.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- nums[i] is either 0 or 1.
+
+------------------------------
+1492. The kth Factor of n 
+------------------------------
+
+You are given two positive integers n and k. A factor of an integer n is defined as an integer i where n % i == 0.
+
+Consider a list of all factors of n sorted in ascending order, return the kth factor in this list or return -1 if n has less than k factors.
+
+ 
+
+Example 1:
+
+Input: n = 12, k = 3
+Output: 3
+Explanation: Factors list is [1, 2, 3, 4, 6, 12], the 3rd factor is 3.
+
+Example 2:
+
+Input: n = 7, k = 2
+Output: 7
+Explanation: Factors list is [1, 7], the 2nd factor is 7.
+
+Example 3:
+
+Input: n = 4, k = 4
+Output: -1
+Explanation: Factors list is [1, 2, 4], there is only 3 factors. We should return -1.
+
+ 
+
+Constraints:
+
+- 1 <= k <= n <= 1000
+
+ 
+
+Follow up:
+
+Could you solve this problem in less than O(n) complexity?
+
+------------------------------
+1491. Average Salary Excluding the Minimum and Maximum Salary 
+------------------------------
+
+You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
+
+Return the average salary of employees excluding the minimum and maximum salary. Answers within 10-5 of the actual answer will be accepted.
+
+ 
+
+Example 1:
+
+Input: salary = [4000,3000,1000,2000]
+Output: 2500.00000
+Explanation: Minimum salary and maximum salary are 1000 and 4000 respectively.
+Average salary excluding minimum and maximum salary is (2000+3000) / 2 = 2500
+
+Example 2:
+
+Input: salary = [1000,2000,3000]
+Output: 2000.00000
+Explanation: Minimum salary and maximum salary are 1000 and 3000 respectively.
+Average salary excluding minimum and maximum salary is (2000) / 1 = 2000
+
+ 
+
+Constraints:
+
+- 3 <= salary.length <= 100
+
+- 1000 <= salary[i] <= 106
+
+- All the integers of salary are unique.
+
+------------------------------
+1473. Paint House III 
+------------------------------
+
+There is a row of m houses in a small city, each house must be painted with one of the n colors (labeled from 1 to n), some houses that have been painted last summer should not be painted again.
+
+A neighborhood is a maximal group of continuous houses that are painted with the same color.
+
+- For example: houses = [1,2,2,3,3,2,1,1] contains 5 neighborhoods [{1}, {2,2}, {3,3}, {2}, {1,1}].
+
+Given an array houses, an m x n matrix cost and an integer target where:
+
+- houses[i]: is the color of the house i, and 0 if the house is not painted yet.
+
+- cost[i][j]: is the cost of paint the house i with the color j + 1.
+
+Return the minimum cost of painting all the remaining houses in such a way that there are exactly target neighborhoods. If it is not possible, return -1.
+
+ 
+
+Example 1:
+
+Input: houses = [0,0,0,0,0], cost = [[1,10],[10,1],[10,1],[1,10],[5,1]], m = 5, n = 2, target = 3
+Output: 9
+Explanation: Paint houses of this way [1,2,2,1,1]
+This array contains target = 3 neighborhoods, [{1}, {2,2}, {1,1}].
+Cost of paint all houses (1 + 1 + 1 + 1 + 5) = 9.
+
+Example 2:
+
+Input: houses = [0,2,1,2,0], cost = [[1,10],[10,1],[10,1],[1,10],[5,1]], m = 5, n = 2, target = 3
+Output: 11
+Explanation: Some houses are already painted, Paint the houses of this way [2,2,1,2,2]
+This array contains target = 3 neighborhoods, [{2,2}, {1}, {2,2}]. 
+Cost of paint the first and last house (10 + 1) = 11.
+
+Example 3:
+
+Input: houses = [3,1,2,3], cost = [[1,1,1],[1,1,1],[1,1,1],[1,1,1]], m = 4, n = 3, target = 3
+Output: -1
+Explanation: Houses are already painted with a total of 4 neighborhoods [{3},{1},{2},{3}] different of target = 3.
+
+ 
+
+Constraints:
+
+- m == houses.length == cost.length
+
+- n == cost[i].length
+
+- 1 <= m <= 100
+
+- 1 <= n <= 20
+
+- 1 <= target <= m
+
+- 0 <= houses[i] <= n
+
+- 1 <= cost[i][j] <= 104
+
+------------------------------
+1472. Design Browser History 
+------------------------------
+
+You have a browser of one tab where you start on the homepage and you can visit another url, get back in the history number of steps or move forward in the history number of steps.
+
+Implement the BrowserHistory class:
+
+- BrowserHistory(string homepage) Initializes the object with the homepage of the browser.
+
+- void visit(string url) Visits url from the current page. It clears up all the forward history.
+
+- string back(int steps) Move steps back in history. If you can only return x steps in the history and steps > x, you will return only x steps. Return the current url after moving back in history at most steps.
+
+- string forward(int steps) Move steps forward in history. If you can only forward x steps in the history and steps > x, you will forward only x steps. Return the current url after forwarding in history at most steps.
+
+ 
+
+Example:
+
+Input:
+["BrowserHistory","visit","visit","visit","back","back","forward","visit","forward","back","back"]
+[["leetcode.com"],["google.com"],["facebook.com"],["youtube.com"],[1],[1],[1],["linkedin.com"],[2],[2],[7]]
+Output:
+[null,null,null,null,"facebook.com","google.com","facebook.com",null,"linkedin.com","google.com","leetcode.com"]
+
+Explanation:
+BrowserHistory browserHistory = new BrowserHistory("leetcode.com");
+browserHistory.visit("google.com");       // You are in "leetcode.com". Visit "google.com"
+browserHistory.visit("facebook.com");     // You are in "google.com". Visit "facebook.com"
+browserHistory.visit("youtube.com");      // You are in "facebook.com". Visit "youtube.com"
+browserHistory.back(1);                   // You are in "youtube.com", move back to "facebook.com" return "facebook.com"
+browserHistory.back(1);                   // You are in "facebook.com", move back to "google.com" return "google.com"
+browserHistory.forward(1);                // You are in "google.com", move forward to "facebook.com" return "facebook.com"
+browserHistory.visit("linkedin.com");     // You are in "facebook.com". Visit "linkedin.com"
+browserHistory.forward(2);                // You are in "linkedin.com", you cannot move forward any steps.
+browserHistory.back(2);                   // You are in "linkedin.com", move back two steps to "facebook.com" then to "google.com". return "google.com"
+browserHistory.back(7);                   // You are in "google.com", you can move back only one step to "leetcode.com". return "leetcode.com"
+
+ 
+
+Constraints:
+
+- 1 <= homepage.length <= 20
+
+- 1 <= url.length <= 20
+
+- 1 <= steps <= 100
+
+- homepage and url consist of  '.' or lower case English letters.
+
+- At most 5000 calls will be made to visit, back, and forward.
+
+------------------------------
+1471. The k Strongest Values in an Array 
+------------------------------
+
+Given an array of integers arr and an integer k.
+
+A value arr[i] is said to be stronger than a value arr[j] if |arr[i] - m| > |arr[j] - m| where m is the centre of the array.
+If |arr[i] - m| == |arr[j] - m|, then arr[i] is said to be stronger than arr[j] if arr[i] > arr[j].
+
+Return a list of the strongest k values in the array. Return the answer in any arbitrary order.
+
+The centre is the middle value in an ordered integer list. More formally, if the length of the list is n, the centre is the element in position ((n - 1) / 2) in the sorted list (0-indexed).
+
+- For arr = [6, -3, 7, 2, 11], n = 5 and the centre is obtained by sorting the array arr = [-3, 2, 6, 7, 11] and the centre is arr[m] where m = ((5 - 1) / 2) = 2. The centre is 6.
+
+- For arr = [-7, 22, 17, 3], n = 4 and the centre is obtained by sorting the array arr = [-7, 3, 17, 22] and the centre is arr[m] where m = ((4 - 1) / 2) = 1. The centre is 3.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Example 1:
+
+Input: arr = [1,2,3,4,5], k = 2
+Output: [5,1]
+Explanation: Centre is 3, the elements of the array sorted by the strongest are [5,1,4,2,3]. The strongest 2 elements are [5, 1]. [1, 5] is also accepted answer.
+Please note that although |5 - 3| == |1 - 3| but 5 is stronger than 1 because 5 > 1.
+
+Example 2:
+
+Input: arr = [1,1,3,5,5], k = 2
+Output: [5,5]
+Explanation: Centre is 3, the elements of the array sorted by the strongest are [5,5,1,1,3]. The strongest 2 elements are [5, 5].
+
+Example 3:
+
+Input: arr = [6,7,11,7,6,8], k = 5
+Output: [11,8,6,6,7]
+Explanation: Centre is 7, the elements of the array sorted by the strongest are [11,8,6,6,7,7].
+Any permutation of [11,8,6,6,7] is accepted.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 105
+
+- -105 <= arr[i] <= 105
+
+- 1 <= k <= arr.length
+
+------------------------------
+1470. Shuffle the Array 
+------------------------------
+
+Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+
+Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+ 
+
+Example 1:
+
+
+Input: nums = [2,5,1,3,4,7], n = 3
+Output: [2,3,5,4,1,7] 
+Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
+
+Example 2:
+
+
+Input: nums = [1,2,3,4,4,3,2,1], n = 4
+Output: [1,4,2,3,3,2,4,1]
+
+Example 3:
+
+
+Input: nums = [1,1,2,2], n = 2
+Output: [1,2,1,2]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 500
+
+- nums.length == 2n
+
+- 1 <= nums[i] <= 10^3
+
+------------------------------
+1467. Probability of a Two Boxes Having The Same Number of Distinct Balls 
+------------------------------
+
+Given 2n balls of k distinct colors. You will be given an integer array balls of size k where balls[i] is the number of balls of color i.
+
+All the balls will be shuffled uniformly at random, then we will distribute the first n balls to the first box and the remaining n balls to the other box (Please read the explanation of the second example carefully).
+
+Please note that the two boxes are considered different. For example, if we have two balls of colors a and b, and two boxes [] and (), then the distribution [a] (b) is considered different than the distribution [b] (a) (Please read the explanation of the first example carefully).
+
+Return the probability that the two boxes have the same number of distinct balls. Answers within 10-5 of the actual value will be accepted as correct.
+
+ 
+
+Example 1:
+
+Input: balls = [1,1]
+Output: 1.00000
+Explanation: Only 2 ways to divide the balls equally:
+- A ball of color 1 to box 1 and a ball of color 2 to box 2
+- A ball of color 2 to box 1 and a ball of color 1 to box 2
+In both ways, the number of distinct colors in each box is equal. The probability is 2/2 = 1
+
+Example 2:
+
+Input: balls = [2,1,1]
+Output: 0.66667
+Explanation: We have the set of balls [1, 1, 2, 3]
+This set of balls will be shuffled randomly and we may have one of the 12 distinct shuffles with equal probability (i.e. 1/12):
+[1,1 / 2,3], [1,1 / 3,2], [1,2 / 1,3], [1,2 / 3,1], [1,3 / 1,2], [1,3 / 2,1], [2,1 / 1,3], [2,1 / 3,1], [2,3 / 1,1], [3,1 / 1,2], [3,1 / 2,1], [3,2 / 1,1]
+After that, we add the first two balls to the first box and the second two balls to the second box.
+We can see that 8 of these 12 possible random distributions have the same number of distinct colors of balls in each box.
+Probability is 8/12 = 0.66667
+
+Example 3:
+
+Input: balls = [1,2,1,2]
+Output: 0.60000
+Explanation: The set of balls is [1, 2, 2, 3, 4, 4]. It is hard to display all the 180 possible random shuffles of this set but it is easy to check that 108 of them will have the same number of distinct colors in each box.
+Probability = 108 / 180 = 0.6
+
+ 
+
+Constraints:
+
+- 1 <= balls.length <= 8
+
+- 1 <= balls[i] <= 6
+
+- sum(balls) is even.
+
+------------------------------
+1466. Reorder Routes to Make All Paths Lead to the City Zero 
+------------------------------
+
+There are n cities numbered from 0 to n - 1 and n - 1 roads such that there is only one way to travel between two different cities (this network form a tree). Last year, The ministry of transport decided to orient the roads in one direction because they are too narrow.
+
+Roads are represented by connections where connections[i] = [ai, bi] represents a road from city ai to city bi.
+
+This year, there will be a big event in the capital (city 0), and many people want to travel to this city.
+
+Your task consists of reorienting some roads such that each city can visit the city 0. Return the minimum number of edges changed.
+
+It's guaranteed that each city can reach city 0 after reorder.
+
+ 
+
+Example 1:
+
+Input: n = 6, connections = [[0,1],[1,3],[2,3],[4,0],[4,5]]
+Output: 3
+Explanation: Change the direction of edges show in red such that each node can reach the node 0 (capital).
+
+Example 2:
+
+Input: n = 5, connections = [[1,0],[1,2],[3,2],[3,4]]
+Output: 2
+Explanation: Change the direction of edges show in red such that each node can reach the node 0 (capital).
+
+Example 3:
+
+Input: n = 3, connections = [[1,0],[2,0]]
+Output: 0
+
+ 
+
+Constraints:
+
+- 2 <= n <= 5 * 104
+
+- connections.length == n - 1
+
+- connections[i].length == 2
+
+- 0 <= ai, bi <= n - 1
+
+- ai != bi
+
+------------------------------
+1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts 
+------------------------------
+
+You are given a rectangular cake of size h x w and two arrays of integers horizontalCuts and verticalCuts where:
+
+- horizontalCuts[i] is the distance from the top of the rectangular cake to the ith horizontal cut and similarly, and
+
+- verticalCuts[j] is the distance from the left of the rectangular cake to the jth vertical cut.
+
+Return the maximum area of a piece of cake after you cut at each horizontal and vertical position provided in the arrays horizontalCuts and verticalCuts. Since the answer can be a large number, return this modulo 109 + 7.
+
+ 
+
+Example 1:
+
+Input: h = 5, w = 4, horizontalCuts = [1,2,4], verticalCuts = [1,3]
+Output: 4 
+Explanation: The figure above represents the given rectangular cake. Red lines are the horizontal and vertical cuts. After you cut the cake, the green piece of cake has the maximum area.
+
+Example 2:
+
+Input: h = 5, w = 4, horizontalCuts = [3,1], verticalCuts = [1]
+Output: 6
+Explanation: The figure above represents the given rectangular cake. Red lines are the horizontal and vertical cuts. After you cut the cake, the green and yellow pieces of cake have the maximum area.
+
+Example 3:
+
+Input: h = 5, w = 4, horizontalCuts = [3], verticalCuts = [3]
+Output: 9
+
+ 
+
+Constraints:
+
+- 2 <= h, w <= 109
+
+- 1 <= horizontalCuts.length <= min(h - 1, 105)
+
+- 1 <= verticalCuts.length <= min(w - 1, 105)
+
+- 1 <= horizontalCuts[i] < h
+
+- 1 <= verticalCuts[i] < w
+
+- All the elements in horizontalCuts are distinct.
+
+- All the elements in verticalCuts are distinct.
+
+------------------------------
+1464. Maximum Product of Two Elements in an Array 
+------------------------------
+
+Given the array of integers nums, you will choose two different indices i and j of that array. Return the maximum value of (nums[i]-1)*(nums[j]-1).
+
+ 
+
+Example 1:
+
+Input: nums = [3,4,5,2]
+Output: 12 
+Explanation: If you choose the indices i=1 and j=2 (indexed from 0), you will get the maximum value, that is, (nums[1]-1)*(nums[2]-1) = (4-1)*(5-1) = 3*4 = 12. 
+
+Example 2:
+
+Input: nums = [1,5,4,5]
+Output: 16
+Explanation: Choosing the indices i=1 and j=3 (indexed from 0), you will get the maximum value of (5-1)*(5-1) = 16.
+
+Example 3:
+
+Input: nums = [3,7]
+Output: 12
+
+ 
+
+Constraints:
+
+- 2 <= nums.length <= 500
+
+- 1 <= nums[i] <= 10^3
+
+------------------------------
+1477. Find Two Non-overlapping Sub-arrays Each With Target Sum 
+------------------------------
+
+You are given an array of integers arr and an integer target.
+
+You have to find two non-overlapping sub-arrays of arr each with a sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum.
+
+Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot find such two sub-arrays.
+
+ 
+
+Example 1:
+
+Input: arr = [3,2,2,4,3], target = 3
+Output: 2
+Explanation: Only two sub-arrays have sum = 3 ([3] and [3]). The sum of their lengths is 2.
+
+Example 2:
+
+Input: arr = [7,3,4,7], target = 7
+Output: 2
+Explanation: Although we have three non-overlapping sub-arrays of sum = 7 ([7], [3,4] and [7]), but we will choose the first and third sub-arrays as the sum of their lengths is 2.
+
+Example 3:
+
+Input: arr = [4,3,2,6,2,3,4], target = 6
+Output: -1
+Explanation: We have only one sub-array of sum = 6.
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 105
+
+- 1 <= arr[i] <= 1000
+
+- 1 <= target <= 108
+
+------------------------------
+1476. Subrectangle Queries 
+------------------------------
+
+Implement the class SubrectangleQueries which receives a rows x cols rectangle as a matrix of integers in the constructor and supports two methods:
+
+1. updateSubrectangle(int row1, int col1, int row2, int col2, int newValue)
+
+- Updates all values with newValue in the subrectangle whose upper left coordinate is (row1,col1) and bottom right coordinate is (row2,col2).
+
+2. getValue(int row, int col)
+
+- Returns the current value of the coordinate (row,col) from the rectangle.
+
+ 
+
+Example 1:
+
+Input
+["SubrectangleQueries","getValue","updateSubrectangle","getValue","getValue","updateSubrectangle","getValue","getValue"]
+[[[[1,2,1],[4,3,4],[3,2,1],[1,1,1]]],[0,2],[0,0,3,2,5],[0,2],[3,1],[3,0,3,2,10],[3,1],[0,2]]
+Output
+[null,1,null,5,5,null,10,5]
+Explanation
+SubrectangleQueries subrectangleQueries = new SubrectangleQueries([[1,2,1],[4,3,4],[3,2,1],[1,1,1]]);  
+// The initial rectangle (4x3) looks like:
+// 1 2 1
+// 4 3 4
+// 3 2 1
+// 1 1 1
+subrectangleQueries.getValue(0, 2); // return 1
+subrectangleQueries.updateSubrectangle(0, 0, 3, 2, 5);
+// After this update the rectangle looks like:
+// 5 5 5
+// 5 5 5
+// 5 5 5
+// 5 5 5 
+subrectangleQueries.getValue(0, 2); // return 5
+subrectangleQueries.getValue(3, 1); // return 5
+subrectangleQueries.updateSubrectangle(3, 0, 3, 2, 10);
+// After this update the rectangle looks like:
+// 5   5   5
+// 5   5   5
+// 5   5   5
+// 10  10  10 
+subrectangleQueries.getValue(3, 1); // return 10
+subrectangleQueries.getValue(0, 2); // return 5
+
+Example 2:
+
+Input
+["SubrectangleQueries","getValue","updateSubrectangle","getValue","getValue","updateSubrectangle","getValue"]
+[[[[1,1,1],[2,2,2],[3,3,3]]],[0,0],[0,0,2,2,100],[0,0],[2,2],[1,1,2,2,20],[2,2]]
+Output
+[null,1,null,100,100,null,20]
+Explanation
+SubrectangleQueries subrectangleQueries = new SubrectangleQueries([[1,1,1],[2,2,2],[3,3,3]]);
+subrectangleQueries.getValue(0, 0); // return 1
+subrectangleQueries.updateSubrectangle(0, 0, 2, 2, 100);
+subrectangleQueries.getValue(0, 0); // return 100
+subrectangleQueries.getValue(2, 2); // return 100
+subrectangleQueries.updateSubrectangle(1, 1, 2, 2, 20);
+subrectangleQueries.getValue(2, 2); // return 20
+
+ 
+
+Constraints:
+
+- There will be at most 500 operations considering both methods: updateSubrectangle and getValue.
+
+- 1 <= rows, cols <= 100
+
+- rows == rectangle.length
+
+- cols == rectangle[i].length
+
+- 0 <= row1 <= row2 < rows
+
+- 0 <= col1 <= col2 < cols
+
+- 1 <= newValue, rectangle[i][j] <= 10^9
+
+- 0 <= row < rows
+
+- 0 <= col < cols
+
+------------------------------
+1478. Allocate Mailboxes 
+------------------------------
+
+Given the array houses where houses[i] is the location of the ith house along a street and an integer k, allocate k mailboxes in the street.
+
+Return the minimum total distance between each house and its nearest mailbox.
+
+The test cases are generated so that the answer fits in a 32-bit integer.
+
+ 
+
+Example 1:
+
+Input: houses = [1,4,8,10,20], k = 3
+Output: 5
+Explanation: Allocate mailboxes in position 3, 9 and 20.
+Minimum total distance from each houses to nearest mailboxes is |3-1| + |4-3| + |9-8| + |10-9| + |20-20| = 5 
+
+Example 2:
+
+Input: houses = [2,3,5,12,18], k = 2
+Output: 9
+Explanation: Allocate mailboxes in position 3 and 14.
+Minimum total distance from each houses to nearest mailboxes is |2-3| + |3-3| + |5-3| + |12-14| + |18-14| = 9.
+
+ 
+
+Constraints:
+
+- 1 <= k <= houses.length <= 100
+
+- 1 <= houses[i] <= 104
+
+- All the integers of houses are unique.
+
+------------------------------
+1475. Final Prices With a Special Discount in a Shop 
+------------------------------
+
+You are given an integer array prices where prices[i] is the price of the ith item in a shop.
+
+There is a special discount for items in the shop. If you buy the ith item, then you will receive a discount equivalent to prices[j] where j is the minimum index such that j > i and prices[j] <= prices[i]. Otherwise, you will not receive any discount at all.
+
+Return an integer array answer where answer[i] is the final price you will pay for the ith item of the shop, considering the special discount.
+
+ 
+
+Example 1:
+
+Input: prices = [8,4,6,2,3]
+Output: [4,2,4,2,3]
+Explanation: 
+For item 0 with price[0]=8 you will receive a discount equivalent to prices[1]=4, therefore, the final price you will pay is 8 - 4 = 4.
+For item 1 with price[1]=4 you will receive a discount equivalent to prices[3]=2, therefore, the final price you will pay is 4 - 2 = 2.
+For item 2 with price[2]=6 you will receive a discount equivalent to prices[3]=2, therefore, the final price you will pay is 6 - 2 = 4.
+For items 3 and 4 you will not receive any discount at all.
+
+Example 2:
+
+Input: prices = [1,2,3,4,5]
+Output: [1,2,3,4,5]
+Explanation: In this case, for all items, you will not receive any discount at all.
+
+Example 3:
+
+Input: prices = [10,1,1,6]
+Output: [9,0,1,6]
+
+ 
+
+Constraints:
+
+- 1 <= prices.length <= 500
+
+- 1 <= prices[i] <= 1000
+
+------------------------------
+1458. Max Dot Product of Two Subsequences 
+------------------------------
+
+Given two arrays nums1 and nums2.
+
+Return the maximum dot product between non-empty subsequences of nums1 and nums2 with the same length.
+
+A subsequence of an array is a new array which is formed from the original array by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, [2,3,5] is a subsequence of [1,2,3,4,5] while [1,5,3] is not).
+
+ 
+
+Example 1:
+
+Input: nums1 = [2,1,-2,5], nums2 = [3,0,-6]
+Output: 18
+Explanation: Take subsequence [2,-2] from nums1 and subsequence [3,-6] from nums2.
+Their dot product is (2*3 + (-2)*(-6)) = 18.
+
+Example 2:
+
+Input: nums1 = [3,-2], nums2 = [2,-6,7]
+Output: 21
+Explanation: Take subsequence [3] from nums1 and subsequence [7] from nums2.
+Their dot product is (3*7) = 21.
+
+Example 3:
+
+Input: nums1 = [-1,-1], nums2 = [1,1]
+Output: -1
+Explanation: Take subsequence [-1] from nums1 and subsequence [1] from nums2.
+Their dot product is -1.
+
+ 
+
+Constraints:
+
+- 1 <= nums1.length, nums2.length <= 500
+
+- -1000 <= nums1[i], nums2[i] <= 1000
+
+------------------------------
+1457. Pseudo-Palindromic Paths in a Binary Tree 
+------------------------------
+
+Given a binary tree where node values are digits from 1 to 9. A path in the binary tree is said to be pseudo-palindromic if at least one permutation of the node values in the path is a palindrome.
+
+Return the number of pseudo-palindromic paths going from the root node to leaf nodes.
+
+ 
+
+Example 1:
+
+Input: root = [2,3,1,3,1,null,1]
+Output: 2 
+Explanation: The figure above represents the given binary tree. There are three paths going from the root node to leaf nodes: the red path [2,3,3], the green path [2,1,1], and the path [2,3,1]. Among these paths only red path and green path are pseudo-palindromic paths since the red path [2,3,3] can be rearranged in [3,2,3] (palindrome) and the green path [2,1,1] can be rearranged in [1,2,1] (palindrome).
+
+Example 2:
+
+Input: root = [2,1,1,1,3,null,null,null,null,null,1]
+Output: 1 
+Explanation: The figure above represents the given binary tree. There are three paths going from the root node to leaf nodes: the green path [2,1,1], the path [2,1,3,1], and the path [2,1]. Among these paths only the green path is pseudo-palindromic since [2,1,1] can be rearranged in [1,2,1] (palindrome).
+
+Example 3:
+
+Input: root = [9]
+Output: 1
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 105].
+
+- 1 <= Node.val <= 9
+
+------------------------------
+1456. Maximum Number of Vowels in a Substring of Given Length 
+------------------------------
+
+Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
+
+Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
+
+ 
+
+Example 1:
+
+Input: s = "abciiidef", k = 3
+Output: 3
+Explanation: The substring "iii" contains 3 vowel letters.
+
+Example 2:
+
+Input: s = "aeiou", k = 2
+Output: 2
+Explanation: Any substring of length 2 contains 2 vowels.
+
+Example 3:
+
+Input: s = "leetcode", k = 3
+Output: 2
+Explanation: "lee", "eet" and "ode" contain 2 vowels.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s consists of lowercase English letters.
+
+- 1 <= k <= s.length
+
+------------------------------
+1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence 
+------------------------------
+
+Given a sentence that consists of some words separated by a single space, and a searchWord, check if searchWord is a prefix of any word in sentence.
+
+Return the index of the word in sentence (1-indexed) where searchWord is a prefix of this word. If searchWord is a prefix of more than one word, return the index of the first word (minimum index). If there is no such word return -1.
+
+A prefix of a string s is any leading contiguous substring of s.
+
+ 
+
+Example 1:
+
+Input: sentence = "i love eating burger", searchWord = "burg"
+Output: 4
+Explanation: "burg" is prefix of "burger" which is the 4th word in the sentence.
+
+Example 2:
+
+Input: sentence = "this problem is an easy problem", searchWord = "pro"
+Output: 2
+Explanation: "pro" is prefix of "problem" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.
+
+Example 3:
+
+Input: sentence = "i am tired", searchWord = "you"
+Output: -1
+Explanation: "you" is not a prefix of any word in the sentence.
+
+ 
+
+Constraints:
+
+- 1 <= sentence.length <= 100
+
+- 1 <= searchWord.length <= 10
+
+- sentence consists of lowercase English letters and spaces.
+
+- searchWord consists of lowercase English letters.
+
+------------------------------
+1453. Maximum Number of Darts Inside of a Circular Dartboard 
+------------------------------
+
+Alice is throwing n darts on a very large wall. You are given an array darts where darts[i] = [xi, yi] is the position of the ith dart that Alice threw on the wall.
+
+Bob knows the positions of the n darts on the wall. He wants to place a dartboard of radius r on the wall so that the maximum number of darts that Alice throws lie on the dartboard.
+
+Given the integer r, return the maximum number of darts that can lie on the dartboard.
+
+ 
+
+Example 1:
+
+Input: darts = [[-2,0],[2,0],[0,2],[0,-2]], r = 2
+Output: 4
+Explanation: Circle dartboard with center in (0,0) and radius = 2 contain all points.
+
+Example 2:
+
+Input: darts = [[-3,0],[3,0],[2,6],[5,4],[0,9],[7,8]], r = 5
+Output: 5
+Explanation: Circle dartboard with center in (0,4) and radius = 5 contain all points except the point (7,8).
+
+ 
+
+Constraints:
+
+- 1 <= darts.length <= 100
+
+- darts[i].length == 2
+
+- -104 <= xi, yi <= 104
+
+- All the darts are unique
+
+- 1 <= r <= 5000
+
+------------------------------
+1452. People Whose List of Favorite Companies Is Not a Subset of Another List 
+------------------------------
+
+Given the array favoriteCompanies where favoriteCompanies[i] is the list of favorites companies for the ith person (indexed from 0).
+
+Return the indices of people whose list of favorite companies is not a subset of any other list of favorites companies. You must return the indices in increasing order.
+
+ 
+
+Example 1:
+
+Input: favoriteCompanies = [["leetcode","google","facebook"],["google","microsoft"],["google","facebook"],["google"],["amazon"]]
+Output: [0,1,4] 
+Explanation: 
+Person with index=2 has favoriteCompanies[2]=["google","facebook"] which is a subset of favoriteCompanies[0]=["leetcode","google","facebook"] corresponding to the person with index 0. 
+Person with index=3 has favoriteCompanies[3]=["google"] which is a subset of favoriteCompanies[0]=["leetcode","google","facebook"] and favoriteCompanies[1]=["google","microsoft"]. 
+Other lists of favorite companies are not a subset of another list, therefore, the answer is [0,1,4].
+
+Example 2:
+
+Input: favoriteCompanies = [["leetcode","google","facebook"],["leetcode","amazon"],["facebook","google"]]
+Output: [0,1] 
+Explanation: In this case favoriteCompanies[2]=["facebook","google"] is a subset of favoriteCompanies[0]=["leetcode","google","facebook"], therefore, the answer is [0,1].
+
+Example 3:
+
+Input: favoriteCompanies = [["leetcode"],["google"],["facebook"],["amazon"]]
+Output: [0,1,2,3]
+
+ 
+
+Constraints:
+
+- 1 <= favoriteCompanies.length <= 100
+
+- 1 <= favoriteCompanies[i].length <= 500
+
+- 1 <= favoriteCompanies[i][j].length <= 20
+
+- All strings in favoriteCompanies[i] are distinct.
+
+- All lists of favorite companies are distinct, that is, If we sort alphabetically each list then favoriteCompanies[i] != favoriteCompanies[j].
+
+- All strings consist of lowercase English letters only.
+
+------------------------------
+1451. Rearrange Words in a Sentence 
+------------------------------
+
+Given a sentence text (A sentence is a string of space-separated words) in the following format:
+
+- First letter is in upper case.
+
+- Each word in text are separated by a single space.
+
+Your task is to rearrange the words in text such that all words are rearranged in an increasing order of their lengths. If two words have the same length, arrange them in their original order.
+
+Return the new text following the format shown above.
+
+ 
+
+Example 1:
+
+Input: text = "Leetcode is cool"
+Output: "Is cool leetcode"
+Explanation: There are 3 words, "Leetcode" of length 8, "is" of length 2 and "cool" of length 4.
+Output is ordered by length and the new first word starts with capital letter.
+
+Example 2:
+
+Input: text = "Keep calm and code on"
+Output: "On and keep calm code"
+Explanation: Output is ordered as follows:
+"On" 2 letters.
+"and" 3 letters.
+"keep" 4 letters in case of tie order by position in original text.
+"calm" 4 letters.
+"code" 4 letters.
+
+Example 3:
+
+Input: text = "To be or not to be"
+Output: "To be or to be not"
+
+ 
+
+Constraints:
+
+- text begins with a capital letter and then contains lowercase letters and single space between words.
+
+- 1 <= text.length <= 10^5
+
+------------------------------
+1450. Number of Students Doing Homework at a Given Time 
+------------------------------
+
+Given two integer arrays startTime and endTime and given an integer queryTime.
+
+The ith student started doing their homework at the time startTime[i] and finished it at time endTime[i].
+
+Return the number of students doing their homework at time queryTime. More formally, return the number of students where queryTime lays in the interval [startTime[i], endTime[i]] inclusive.
+
+ 
+
+Example 1:
+
+Input: startTime = [1,2,3], endTime = [3,2,7], queryTime = 4
+Output: 1
+Explanation: We have 3 students where:
+The first student started doing homework at time 1 and finished at time 3 and wasn't doing anything at time 4.
+The second student started doing homework at time 2 and finished at time 2 and also wasn't doing anything at time 4.
+The third student started doing homework at time 3 and finished at time 7 and was the only student doing homework at time 4.
+
+Example 2:
+
+Input: startTime = [4], endTime = [4], queryTime = 4
+Output: 1
+Explanation: The only student was doing their homework at the queryTime.
+
+ 
+
+Constraints:
+
+- startTime.length == endTime.length
+
+- 1 <= startTime.length <= 100
+
+- 1 <= startTime[i] <= endTime[i] <= 1000
+
+- 1 <= queryTime <= 1000
+
+------------------------------
+1463. Cherry Pickup II 
+------------------------------
+
+You are given a rows x cols matrix grid representing a field of cherries where grid[i][j] represents the number of cherries that you can collect from the (i, j) cell.
+
+You have two robots that can collect cherries for you:
+
+- Robot #1 is located at the top-left corner (0, 0), and
+
+- Robot #2 is located at the top-right corner (0, cols - 1).
+
+Return the maximum number of cherries collection using both robots by following the rules below:
+
+- From a cell (i, j), robots can move to cell (i + 1, j - 1), (i + 1, j), or (i + 1, j + 1).
+
+- When any robot passes through a cell, It picks up all cherries, and the cell becomes an empty cell.
+
+- When both robots stay in the same cell, only one takes the cherries.
+
+- Both robots cannot move outside of the grid at any moment.
+
+- Both robots should reach the bottom row in grid.
+
+ 
+
+Example 1:
+
+Input: grid = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]
+Output: 24
+Explanation: Path of robot #1 and #2 are described in color green and blue respectively.
+Cherries taken by Robot #1, (3 + 2 + 5 + 2) = 12.
+Cherries taken by Robot #2, (1 + 5 + 5 + 1) = 12.
+Total of cherries: 12 + 12 = 24.
+
+Example 2:
+
+Input: grid = [[1,0,0,0,0,0,1],[2,0,0,0,0,3,0],[2,0,9,0,0,0,0],[0,3,0,5,4,0,0],[1,0,2,3,0,0,6]]
+Output: 28
+Explanation: Path of robot #1 and #2 are described in color green and blue respectively.
+Cherries taken by Robot #1, (1 + 9 + 5 + 2) = 17.
+Cherries taken by Robot #2, (1 + 3 + 4 + 3) = 11.
+Total of cherries: 17 + 11 = 28.
+
+ 
+
+Constraints:
+
+- rows == grid.length
+
+- cols == grid[i].length
+
+- 2 <= rows, cols <= 70
+
+- 0 <= grid[i][j] <= 100
+
+------------------------------
+1462. Course Schedule IV 
+------------------------------
+
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course ai first if you want to take course bi.
+
+- For example, the pair [0, 1] indicates that you have to take course 0 before you can take course 1.
+
+Prerequisites can also be indirect. If course a is a prerequisite of course b, and course b is a prerequisite of course c, then course a is a prerequisite of course c.
+
+You are also given an array queries where queries[j] = [uj, vj]. For the jth query, you should answer whether course uj is a prerequisite of course vj or not.
+
+Return a boolean array answer, where answer[j] is the answer to the jth query.
+
+ 
+
+Example 1:
+
+Input: numCourses = 2, prerequisites = [[1,0]], queries = [[0,1],[1,0]]
+Output: [false,true]
+Explanation: The pair [1, 0] indicates that you have to take course 1 before you can take course 0.
+Course 0 is not a prerequisite of course 1, but the opposite is true.
+
+Example 2:
+
+Input: numCourses = 2, prerequisites = [], queries = [[1,0],[0,1]]
+Output: [false,false]
+Explanation: There are no prerequisites, and each course is independent.
+
+Example 3:
+
+Input: numCourses = 3, prerequisites = [[1,2],[1,0],[2,0]], queries = [[1,0],[1,2]]
+Output: [true,true]
+
+ 
+
+Constraints:
+
+- 2 <= numCourses <= 100
+
+- 0 <= prerequisites.length <= (numCourses * (numCourses - 1) / 2)
+
+- prerequisites[i].length == 2
+
+- 0 <= ai, bi <= numCourses - 1
+
+- ai != bi
+
+- All the pairs [ai, bi] are unique.
+
+- The prerequisites graph has no cycles.
+
+- 1 <= queries.length <= 104
+
+- 0 <= ui, vi <= numCourses - 1
+
+- ui != vi
+
+------------------------------
+1461. Check If a String Contains All Binary Codes of Size K 
+------------------------------
+
+Given a binary string s and an integer k, return true if every binary code of length k is a substring of s. Otherwise, return false.
+
+ 
+
+Example 1:
+
+Input: s = "00110110", k = 2
+Output: true
+Explanation: The binary codes of length 2 are "00", "01", "10" and "11". They can be all found as substrings at indices 0, 1, 3 and 2 respectively.
+
+Example 2:
+
+Input: s = "0110", k = 1
+Output: true
+Explanation: The binary codes of length 1 are "0" and "1", it is clear that both exist as a substring. 
+
+Example 3:
+
+Input: s = "0110", k = 2
+Output: false
+Explanation: The binary code "00" is of length 2 and does not exist in the array.
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 5 * 105
+
+- s[i] is either '0' or '1'.
+
+- 1 <= k <= 20
+
+------------------------------
+1460. Make Two Arrays Equal by Reversing Subarrays 
+------------------------------
+
+You are given two integer arrays of equal length target and arr. In one step, you can select any non-empty subarray of arr and reverse it. You are allowed to make any number of steps.
+
+Return true if you can make arr equal to target or false otherwise.
+
+ 
+
+Example 1:
+
+Input: target = [1,2,3,4], arr = [2,4,1,3]
+Output: true
+Explanation: You can follow the next steps to convert arr to target:
+1- Reverse subarray [2,4,1], arr becomes [1,4,2,3]
+2- Reverse subarray [4,2], arr becomes [1,2,4,3]
+3- Reverse subarray [4,3], arr becomes [1,2,3,4]
+There are multiple ways to convert arr to target, this is not the only way to do so.
+
+Example 2:
+
+Input: target = [7], arr = [7]
+Output: true
+Explanation: arr is equal to target without any reverses.
+
+Example 3:
+
+Input: target = [3,7,9], arr = [3,7,11]
+Output: false
+Explanation: arr does not have value 9 and it can never be converted to target.
+
+ 
+
+Constraints:
+
+- target.length == arr.length
+
+- 1 <= target.length <= 1000
+
+- 1 <= target[i] <= 1000
+
+- 1 <= arr[i] <= 1000
+
+------------------------------
+1444. Number of Ways of Cutting a Pizza 
+------------------------------
+
+Given a rectangular pizza represented as a rows x cols matrix containing the following characters: 'A' (an apple) and '.' (empty cell) and given the integer k. You have to cut the pizza into k pieces using k-1 cuts. 
+
+For each cut you choose the direction: vertical or horizontal, then you choose a cut position at the cell boundary and cut the pizza into two pieces. If you cut the pizza vertically, give the left part of the pizza to a person. If you cut the pizza horizontally, give the upper part of the pizza to a person. Give the last piece of pizza to the last person.
+
+Return the number of ways of cutting the pizza such that each piece contains at least one apple. Since the answer can be a huge number, return this modulo 10^9 + 7.
+
+ 
+
+Example 1:
+
+Input: pizza = ["A..","AAA","..."], k = 3
+Output: 3 
+Explanation: The figure above shows the three ways to cut the pizza. Note that pieces must contain at least one apple.
+
+Example 2:
+
+Input: pizza = ["A..","AA.","..."], k = 3
+Output: 1
+
+Example 3:
+
+Input: pizza = ["A..","A..","..."], k = 1
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= rows, cols <= 50
+
+- rows == pizza.length
+
+- cols == pizza[i].length
+
+- 1 <= k <= 10
+
+- pizza consists of characters 'A' and '.' only.
+
+------------------------------
+1443. Minimum Time to Collect All Apples in a Tree 
+------------------------------
+
+Given an undirected tree consisting of n vertices numbered from 0 to n-1, which has some apples in their vertices. You spend 1 second to walk over one edge of the tree. Return the minimum time in seconds you have to spend to collect all apples in the tree, starting at vertex 0 and coming back to this vertex.
+
+The edges of the undirected tree are given in the array edges, where edges[i] = [ai, bi] means that exists an edge connecting the vertices ai and bi. Additionally, there is a boolean array hasApple, where hasApple[i] = true means that vertex i has an apple; otherwise, it does not have any apple.
+
+ 
+
+Example 1:
+
+Input: n = 7, edges = [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], hasApple = [false,false,true,false,true,true,false]
+Output: 8 
+Explanation: The figure above represents the given tree where red vertices have an apple. One optimal path to collect all apples is shown by the green arrows.  
+
+Example 2:
+
+Input: n = 7, edges = [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], hasApple = [false,false,true,false,false,true,false]
+Output: 6
+Explanation: The figure above represents the given tree where red vertices have an apple. One optimal path to collect all apples is shown by the green arrows.  
+
+Example 3:
+
+Input: n = 7, edges = [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], hasApple = [false,false,false,false,false,false,false]
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+- edges.length == n - 1
+
+- edges[i].length == 2
+
+- 0 <= ai < bi <= n - 1
+
+- hasApple.length == n
+
+------------------------------
+1442. Count Triplets That Can Form Two Arrays of Equal XOR 
+------------------------------
+
+Given an array of integers arr.
+
+We want to select three indices i, j and k where (0 <= i < j <= k < arr.length).
+
+Let's define a and b as follows:
+
+- a = arr[i] ^ arr[i + 1] ^ ... ^ arr[j - 1]
+
+- b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k]
+
+Note that ^ denotes the bitwise-xor operation.
+
+Return the number of triplets (i, j and k) Where a == b.
+
+ 
+
+Example 1:
+
+Input: arr = [2,3,1,6,7]
+Output: 4
+Explanation: The triplets are (0,1,2), (0,2,2), (2,3,4) and (2,4,4)
+
+Example 2:
+
+Input: arr = [1,1,1,1,1]
+Output: 10
+
+ 
+
+Constraints:
+
+- 1 <= arr.length <= 300
+
+- 1 <= arr[i] <= 108
+
+------------------------------
+1441. Build an Array With Stack Operations 
+------------------------------
+
+You are given an integer array target and an integer n.
+
+You have an empty stack with the two following operations:
+
+- "Push": pushes an integer to the top of the stack.
+
+- "Pop": removes the integer on the top of the stack.
+
+You also have a stream of the integers in the range [1, n].
+
+Use the two stack operations to make the numbers in the stack (from the bottom to the top) equal to target. You should follow the following rules:
+
+- If the stream of the integers is not empty, pick the next integer from the stream and push it to the top of the stack.
+
+- If the stack is not empty, pop the integer at the top of the stack.
+
+- If, at any moment, the elements in the stack (from the bottom to the top) are equal to target, do not read new integers from the stream and do not do more operations on the stack.
+
+Return the stack operations needed to build target following the mentioned rules. If there are multiple valid answers, return any of them.
+
+ 
+
+Example 1:
+
+Input: target = [1,3], n = 3
+Output: ["Push","Push","Pop","Push"]
+Explanation: Initially the stack s is empty. The last element is the top of the stack.
+Read 1 from the stream and push it to the stack. s = [1].
+Read 2 from the stream and push it to the stack. s = [1,2].
+Pop the integer on the top of the stack. s = [1].
+Read 3 from the stream and push it to the stack. s = [1,3].
+
+Example 2:
+
+Input: target = [1,2,3], n = 3
+Output: ["Push","Push","Push"]
+Explanation: Initially the stack s is empty. The last element is the top of the stack.
+Read 1 from the stream and push it to the stack. s = [1].
+Read 2 from the stream and push it to the stack. s = [1,2].
+Read 3 from the stream and push it to the stack. s = [1,2,3].
+
+Example 3:
+
+Input: target = [1,2], n = 4
+Output: ["Push","Push"]
+Explanation: Initially the stack s is empty. The last element is the top of the stack.
+Read 1 from the stream and push it to the stack. s = [1].
+Read 2 from the stream and push it to the stack. s = [1,2].
+Since the stack (from the bottom to the top) is equal to target, we stop the stack operations.
+The answers that read integer 3 from the stream are not accepted.
+
+ 
+
+Constraints:
+
+- 1 <= target.length <= 100
+
+- 1 <= n <= 100
+
+- 1 <= target[i] <= n
+
+- target is strictly increasing.
+
+------------------------------
+1439. Find the Kth Smallest Sum of a Matrix With Sorted Rows 
+------------------------------
+
+You are given an m x n matrix mat that has its rows sorted in non-decreasing order and an integer k.
+
+You are allowed to choose exactly one element from each row to form an array.
+
+Return the kth smallest array sum among all possible arrays.
+
+ 
+
+Example 1:
+
+Input: mat = [[1,3,11],[2,4,6]], k = 5
+Output: 7
+Explanation: Choosing one element from each row, the first k smallest sum are:
+[1,2], [1,4], [3,2], [3,4], [1,6]. Where the 5th sum is 7.
+
+Example 2:
+
+Input: mat = [[1,3,11],[2,4,6]], k = 9
+Output: 17
+
+Example 3:
+
+Input: mat = [[1,10,10],[1,4,5],[2,3,6]], k = 7
+Output: 9
+Explanation: Choosing one element from each row, the first k smallest sum are:
+[1,1,2], [1,1,3], [1,4,2], [1,4,3], [1,1,6], [1,5,2], [1,5,3]. Where the 7th sum is 9.  
+
+ 
+
+Constraints:
+
+- m == mat.length
+
+- n == mat.length[i]
+
+- 1 <= m, n <= 40
+
+- 1 <= mat[i][j] <= 5000
+
+- 1 <= k <= min(200, nm)
+
+- mat[i] is a non-decreasing array.
+
+------------------------------
+1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit 
+------------------------------
+
+Given an array of integers nums and an integer limit, return the size of the longest non-empty subarray such that the absolute difference between any two elements of this subarray is less than or equal to limit.
+
+ 
+
+Example 1:
+
+Input: nums = [8,2,4,7], limit = 4
+Output: 2 
+Explanation: All subarrays are: 
+[8] with maximum absolute diff |8-8| = 0 <= 4.
+[8,2] with maximum absolute diff |8-2| = 6 > 4. 
+[8,2,4] with maximum absolute diff |8-2| = 6 > 4.
+[8,2,4,7] with maximum absolute diff |8-2| = 6 > 4.
+[2] with maximum absolute diff |2-2| = 0 <= 4.
+[2,4] with maximum absolute diff |2-4| = 2 <= 4.
+[2,4,7] with maximum absolute diff |2-7| = 5 > 4.
+[4] with maximum absolute diff |4-4| = 0 <= 4.
+[4,7] with maximum absolute diff |4-7| = 3 <= 4.
+[7] with maximum absolute diff |7-7| = 0 <= 4. 
+Therefore, the size of the longest subarray is 2.
+
+Example 2:
+
+Input: nums = [10,1,2,4,7,2], limit = 5
+Output: 4 
+Explanation: The subarray [2,4,7,2] is the longest since the maximum absolute diff is |2-7| = 5 <= 5.
+
+Example 3:
+
+Input: nums = [4,2,2,2,4,4,2,2], limit = 0
+Output: 3
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 1 <= nums[i] <= 109
+
+- 0 <= limit <= 109
+
+------------------------------
+1437. Check If All 1's Are at Least Length K Places Away 
+------------------------------
+
+Given an binary array nums and an integer k, return true if all 1's are at least k places away from each other, otherwise return false.
+
+ 
+
+Example 1:
+
+Input: nums = [1,0,0,0,1,0,0,1], k = 2
+Output: true
+Explanation: Each of the 1s are at least 2 places away from each other.
+
+Example 2:
+
+Input: nums = [1,0,0,1,0,1], k = 2
+Output: false
+Explanation: The second 1 and third 1 are only one apart from each other.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- 0 <= k <= nums.length
+
+- nums[i] is 0 or 1
+
+------------------------------
+1436. Destination City 
+------------------------------
+
+You are given the array paths, where paths[i] = [cityAi, cityBi] means there exists a direct path going from cityAi to cityBi. Return the destination city, that is, the city without any path outgoing to another city.
+
+It is guaranteed that the graph of paths forms a line without any loop, therefore, there will be exactly one destination city.
+
+ 
+
+Example 1:
+
+Input: paths = [["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]
+Output: "Sao Paulo" 
+Explanation: Starting at "London" city you will reach "Sao Paulo" city which is the destination city. Your trip consist of: "London" -> "New York" -> "Lima" -> "Sao Paulo".
+
+Example 2:
+
+Input: paths = [["B","C"],["D","B"],["C","A"]]
+Output: "A"
+Explanation: All possible trips are: 
+"D" -> "B" -> "C" -> "A". 
+"B" -> "C" -> "A". 
+"C" -> "A". 
+"A". 
+Clearly the destination city is "A".
+
+Example 3:
+
+Input: paths = [["A","Z"]]
+Output: "Z"
+
+ 
+
+Constraints:
+
+- 1 <= paths.length <= 100
+
+- paths[i].length == 2
+
+- 1 <= cityAi.length, cityBi.length <= 10
+
+- cityAi != cityBi
+
+- All strings consist of lowercase and uppercase English letters and the space character.
+
+------------------------------
+1449. Form Largest Integer With Digits That Add up to Target 
+------------------------------
+
+Given an array of integers cost and an integer target, return the maximum integer you can paint under the following rules:
+
+- The cost of painting a digit (i + 1) is given by cost[i] (0-indexed).
+
+- The total cost used must be equal to target.
+
+- The integer does not have 0 digits.
+
+Since the answer may be very large, return it as a string. If there is no way to paint any integer given the condition, return "0".
+
+ 
+
+Example 1:
+
+Input: cost = [4,3,2,5,6,7,2,5,5], target = 9
+Output: "7772"
+Explanation: The cost to paint the digit '7' is 2, and the digit '2' is 3. Then cost("7772") = 2*3+ 3*1 = 9. You could also paint "977", but "7772" is the largest number.
+Digit    cost
+  1  ->   4
+  2  ->   3
+  3  ->   2
+  4  ->   5
+  5  ->   6
+  6  ->   7
+  7  ->   2
+  8  ->   5
+  9  ->   5
+
+Example 2:
+
+Input: cost = [7,6,5,5,5,6,8,7,8], target = 12
+Output: "85"
+Explanation: The cost to paint the digit '8' is 7, and the digit '5' is 5. Then cost("85") = 7 + 5 = 12.
+
+Example 3:
+
+Input: cost = [2,4,6,2,4,6,4,4,4], target = 5
+Output: "0"
+Explanation: It is impossible to paint any integer with total cost equal to target.
+
+ 
+
+Constraints:
+
+- cost.length == 9
+
+- 1 <= cost[i], target <= 5000
+
+------------------------------
+1448. Count Good Nodes in Binary Tree 
+------------------------------
+
+Given a binary tree root, a node X in the tree is named good if in the path from root to X there are no nodes with a value greater than X.
+
+Return the number of good nodes in the binary tree.
+
+ 
+
+Example 1:
+
+
+Input: root = [3,1,4,3,null,1,5]
+Output: 4
+Explanation: Nodes in blue are good.
+Root Node (3) is always a good node.
+Node 4 -> (3,4) is the maximum value in the path starting from the root.
+Node 5 -> (3,4,5) is the maximum value in the path
+Node 3 -> (3,1,3) is the maximum value in the path.
+
+Example 2:
+
+
+Input: root = [3,3,null,4,2]
+Output: 3
+Explanation: Node 2 -> (3, 3, 2) is not good, because "3" is higher than it.
+
+Example 3:
+
+
+Input: root = [1]
+Output: 1
+Explanation: Root is considered as good.
+
+ 
+
+Constraints:
+
+- The number of nodes in the binary tree is in the range [1, 10^5].
+
+- Each node's value is between [-10^4, 10^4].
+
+------------------------------
+1447. Simplified Fractions 
+------------------------------
+
+Given an integer n, return a list of all simplified fractions between 0 and 1 (exclusive) such that the denominator is less-than-or-equal-to n. You can return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: ["1/2"]
+Explanation: "1/2" is the only unique fraction with a denominator less-than-or-equal-to 2.
+
+Example 2:
+
+Input: n = 3
+Output: ["1/2","1/3","2/3"]
+
+Example 3:
+
+Input: n = 4
+Output: ["1/2","1/3","1/4","2/3","3/4"]
+Explanation: "2/4" is not a simplified fraction because it can be simplified to "1/2".
+
+ 
+
+Constraints:
+
+- 1 <= n <= 100
+

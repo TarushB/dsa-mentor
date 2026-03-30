@@ -1,0 +1,2897 @@
+------------------------------
+386. Lexicographical Numbers 
+------------------------------
+
+Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order.
+
+You must write an algorithm that runs in O(n) time and uses O(1) extra space. 
+
+ 
+
+Example 1:
+
+Input: n = 13
+Output: [1,10,11,12,13,2,3,4,5,6,7,8,9]
+
+Example 2:
+
+Input: n = 2
+Output: [1,2]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 5 * 104
+
+------------------------------
+385. Mini Parser 
+------------------------------
+
+Given a string s represents the serialization of a nested list, implement a parser to deserialize it and return the deserialized NestedInteger.
+
+Each element is either an integer or a list whose elements may also be integers or other lists.
+
+ 
+
+Example 1:
+
+Input: s = "324"
+Output: 324
+Explanation: You should return a NestedInteger object which contains a single integer 324.
+
+Example 2:
+
+Input: s = "[123,[456,[789]]]"
+Output: [123,[456,[789]]]
+Explanation: Return a NestedInteger object containing a nested list with 2 elements:
+1. An integer containing value 123.
+2. A nested list containing two elements:
+    i.  An integer containing value 456.
+    ii. A nested list with one element:
+         a. An integer containing value 789
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 5 * 104
+
+- s consists of digits, square brackets "[]", negative sign '-', and commas ','.
+
+- s is the serialization of valid NestedInteger.
+
+- All the values in the input are in the range [-106, 106].
+
+------------------------------
+384. Shuffle an Array 
+------------------------------
+
+Given an integer array nums, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling.
+
+Implement the Solution class:
+
+- Solution(int[] nums) Initializes the object with the integer array nums.
+
+- int[] reset() Resets the array to its original configuration and returns it.
+
+- int[] shuffle() Returns a random shuffling of the array.
+
+ 
+
+Example 1:
+
+Input
+["Solution", "shuffle", "reset", "shuffle"]
+[[[1, 2, 3]], [], [], []]
+Output
+[null, [3, 1, 2], [1, 2, 3], [1, 3, 2]]
+
+Explanation
+Solution solution = new Solution([1, 2, 3]);
+solution.shuffle();    // Shuffle the array [1,2,3] and return its result.
+                       // Any permutation of [1,2,3] must be equally likely to be returned.
+                       // Example: return [3, 1, 2]
+solution.reset();      // Resets the array back to its original configuration [1,2,3]. Return [1, 2, 3]
+solution.shuffle();    // Returns the random shuffling of array [1,2,3]. Example: return [1, 3, 2]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 50
+
+- -106 <= nums[i] <= 106
+
+- All the elements of nums are unique.
+
+- At most 104 calls in total will be made to reset and shuffle.
+
+------------------------------
+383. Ransom Note 
+------------------------------
+
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+Each letter in magazine can only be used once in ransomNote.
+
+ 
+
+Example 1:
+
+Input: ransomNote = "a", magazine = "b"
+Output: false
+
+Example 2:
+
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+
+Example 3:
+
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+
+ 
+
+Constraints:
+
+- 1 <= ransomNote.length, magazine.length <= 105
+
+- ransomNote and magazine consist of lowercase English letters.
+
+------------------------------
+382. Linked List Random Node 
+------------------------------
+
+Given a singly linked list, return a random node's value from the linked list. Each node must have the same probability of being chosen.
+
+Implement the Solution class:
+
+- Solution(ListNode head) Initializes the object with the head of the singly-linked list head.
+
+- int getRandom() Chooses a node randomly from the list and returns its value. All the nodes of the list should be equally likely to be chosen.
+
+ 
+
+Example 1:
+
+Input
+["Solution", "getRandom", "getRandom", "getRandom", "getRandom", "getRandom"]
+[[[1, 2, 3]], [], [], [], [], []]
+Output
+[null, 1, 3, 2, 2, 3]
+
+Explanation
+Solution solution = new Solution([1, 2, 3]);
+solution.getRandom(); // return 1
+solution.getRandom(); // return 3
+solution.getRandom(); // return 2
+solution.getRandom(); // return 2
+solution.getRandom(); // return 3
+// getRandom() should return either 1, 2, or 3 randomly. Each element should have equal probability of returning.
+
+ 
+
+Constraints:
+
+- The number of nodes in the linked list will be in the range [1, 104].
+
+- -104 <= Node.val <= 104
+
+- At most 104 calls will be made to getRandom.
+
+ 
+
+Follow up:
+
+- What if the linked list is extremely large and its length is unknown to you?
+
+- Could you solve this efficiently without using extra space?
+
+------------------------------
+381. Insert Delete GetRandom O(1) - Duplicates allowed 
+------------------------------
+
+RandomizedCollection is a data structure that contains a collection of numbers, possibly duplicates (i.e., a multiset). It should support inserting and removing specific elements and also reporting a random element.
+
+Implement the RandomizedCollection class:
+
+- RandomizedCollection() Initializes the empty RandomizedCollection object.
+
+- bool insert(int val) Inserts an item val into the multiset, even if the item is already present. Returns true if the item is not present, false otherwise.
+
+- bool remove(int val) Removes an item val from the multiset if present. Returns true if the item is present, false otherwise. Note that if val has multiple occurrences in the multiset, we only remove one of them.
+
+- int getRandom() Returns a random element from the current multiset of elements. The probability of each element being returned is linearly related to the number of the same values the multiset contains.
+
+You must implement the functions of the class such that each function works on average O(1) time complexity.
+
+Note: The test cases are generated such that getRandom will only be called if there is at least one item in the RandomizedCollection.
+
+ 
+
+Example 1:
+
+Input
+["RandomizedCollection", "insert", "insert", "insert", "getRandom", "remove", "getRandom"]
+[[], [1], [1], [2], [], [1], []]
+Output
+[null, true, false, true, 2, true, 1]
+
+Explanation
+RandomizedCollection randomizedCollection = new RandomizedCollection();
+randomizedCollection.insert(1);   // return true since the collection does not contain 1.
+                                  // Inserts 1 into the collection.
+randomizedCollection.insert(1);   // return false since the collection contains 1.
+                                  // Inserts another 1 into the collection. Collection now contains [1,1].
+randomizedCollection.insert(2);   // return true since the collection does not contain 2.
+                                  // Inserts 2 into the collection. Collection now contains [1,1,2].
+randomizedCollection.getRandom(); // getRandom should:
+                                  // - return 1 with probability 2/3, or
+                                  // - return 2 with probability 1/3.
+randomizedCollection.remove(1);   // return true since the collection contains 1.
+                                  // Removes 1 from the collection. Collection now contains [1,2].
+randomizedCollection.getRandom(); // getRandom should return 1 or 2, both equally likely.
+
+ 
+
+Constraints:
+
+- -231 <= val <= 231 - 1
+
+- At most 2 * 105 calls in total will be made to insert, remove, and getRandom.
+
+- There will be at least one element in the data structure when getRandom is called.
+
+------------------------------
+380. Insert Delete GetRandom O(1) 
+------------------------------
+
+Implement the RandomizedSet class:
+
+- RandomizedSet() Initializes the RandomizedSet object.
+
+- bool insert(int val) Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.
+
+- bool remove(int val) Removes an item val from the set if present. Returns true if the item was present, false otherwise.
+
+- int getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.
+
+You must implement the functions of the class such that each function works in average O(1) time complexity.
+
+ 
+
+Example 1:
+
+Input
+["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+[[], [1], [2], [2], [], [1], [2], []]
+Output
+[null, true, false, true, 2, true, false, 2]
+
+Explanation
+RandomizedSet randomizedSet = new RandomizedSet();
+randomizedSet.insert(1); // Inserts 1 to the set. Returns true as 1 was inserted successfully.
+randomizedSet.remove(2); // Returns false as 2 does not exist in the set.
+randomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].
+randomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.
+randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
+randomizedSet.insert(2); // 2 was already in the set, so return false.
+randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
+
+ 
+
+Constraints:
+
+- -231 <= val <= 231 - 1
+
+- At most 2 * 105 calls will be made to insert, remove, and getRandom.
+
+- There will be at least one element in the data structure when getRandom is called.
+
+------------------------------
+379. Design Phone Directory 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+378. Kth Smallest Element in a Sorted Matrix 
+------------------------------
+
+Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix.
+
+Note that it is the kth smallest element in the sorted order, not the kth distinct element.
+
+You must find a solution with a memory complexity better than O(n2).
+
+ 
+
+Example 1:
+
+Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8
+Output: 13
+Explanation: The elements in the matrix are [1,5,9,10,11,12,13,13,15], and the 8th smallest number is 13
+
+Example 2:
+
+Input: matrix = [[-5]], k = 1
+Output: -5
+
+ 
+
+Constraints:
+
+- n == matrix.length == matrix[i].length
+
+- 1 <= n <= 300
+
+- -109 <= matrix[i][j] <= 109
+
+- All the rows and columns of matrix are guaranteed to be sorted in non-decreasing order.
+
+- 1 <= k <= n2
+
+ 
+
+Follow up:
+
+- Could you solve the problem with a constant memory (i.e., O(1) memory complexity)?
+
+- Could you solve the problem in O(n) time complexity? The solution may be too advanced for an interview but you may find reading this paper fun.
+
+------------------------------
+377. Combination Sum IV 
+------------------------------
+
+Given an array of distinct integers nums and a target integer target, return the number of possible combinations that add up to target.
+
+The test cases are generated so that the answer can fit in a 32-bit integer.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3], target = 4
+Output: 7
+Explanation:
+The possible combination ways are:
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+Note that different sequences are counted as different combinations.
+
+Example 2:
+
+Input: nums = [9], target = 3
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 200
+
+- 1 <= nums[i] <= 1000
+
+- All the elements of nums are unique.
+
+- 1 <= target <= 1000
+
+ 
+
+Follow up: What if negative numbers are allowed in the given array? How does it change the problem? What limitation we need to add to the question to allow negative numbers?
+
+------------------------------
+376. Wiggle Subsequence 
+------------------------------
+
+A wiggle sequence is a sequence where the differences between successive numbers strictly alternate between positive and negative. The first difference (if one exists) may be either positive or negative. A sequence with one element and a sequence with two non-equal elements are trivially wiggle sequences.
+
+- For example, [1, 7, 4, 9, 2, 5] is a wiggle sequence because the differences (6, -3, 5, -7, 3) alternate between positive and negative.
+
+- In contrast, [1, 4, 7, 2, 5] and [1, 7, 4, 5, 5] are not wiggle sequences. The first is not because its first two differences are positive, and the second is not because its last difference is zero.
+
+A subsequence is obtained by deleting some elements (possibly zero) from the original sequence, leaving the remaining elements in their original order.
+
+Given an integer array nums, return the length of the longest wiggle subsequence of nums.
+
+ 
+
+Example 1:
+
+Input: nums = [1,7,4,9,2,5]
+Output: 6
+Explanation: The entire sequence is a wiggle sequence with differences (6, -3, 5, -7, 3).
+
+Example 2:
+
+Input: nums = [1,17,5,10,13,15,10,5,16,8]
+Output: 7
+Explanation: There are several subsequences that achieve this length.
+One is [1, 17, 10, 13, 10, 16, 8] with differences (16, -7, 3, -3, 6, -8).
+
+Example 3:
+
+Input: nums = [1,2,3,4,5,6,7,8,9]
+Output: 2
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 0 <= nums[i] <= 1000
+
+ 
+
+Follow up: Could you solve this in O(n) time?
+
+------------------------------
+375. Guess Number Higher or Lower II 
+------------------------------
+
+We are playing the Guessing Game. The game will work as follows:
+
+- I pick a number between 1 and n.
+
+- You guess a number.
+
+- If you guess the right number, you win the game.
+
+- If you guess the wrong number, then I will tell you whether the number I picked is higher or lower, and you will continue guessing.
+
+- Every time you guess a wrong number x, you will pay x dollars. If you run out of money, you lose the game.
+
+Given a particular n, return the minimum amount of money you need to guarantee a win regardless of what number I pick.
+
+ 
+
+Example 1:
+
+Input: n = 10
+Output: 16
+Explanation: The winning strategy is as follows:
+- The range is [1,10]. Guess 7.
+    - If this is my number, your total is $0. Otherwise, you pay $7.
+    - If my number is higher, the range is [8,10]. Guess 9.
+        - If this is my number, your total is $7. Otherwise, you pay $9.
+        - If my number is higher, it must be 10. Guess 10. Your total is $7 + $9 = $16.
+        - If my number is lower, it must be 8. Guess 8. Your total is $7 + $9 = $16.
+    - If my number is lower, the range is [1,6]. Guess 3.
+        - If this is my number, your total is $7. Otherwise, you pay $3.
+        - If my number is higher, the range is [4,6]. Guess 5.
+            - If this is my number, your total is $7 + $3 = $10. Otherwise, you pay $5.
+            - If my number is higher, it must be 6. Guess 6. Your total is $7 + $3 + $5 = $15.
+            - If my number is lower, it must be 4. Guess 4. Your total is $7 + $3 + $5 = $15.
+        - If my number is lower, the range is [1,2]. Guess 1.
+            - If this is my number, your total is $7 + $3 = $10. Otherwise, you pay $1.
+            - If my number is higher, it must be 2. Guess 2. Your total is $7 + $3 + $1 = $11.
+The worst case in all these scenarios is that you pay $16. Hence, you only need $16 to guarantee a win.
+
+Example 2:
+
+Input: n = 1
+Output: 0
+Explanation: There is only one possible number, so you can guess 1 and not have to pay anything.
+
+Example 3:
+
+Input: n = 2
+Output: 1
+Explanation: There are two possible numbers, 1 and 2.
+- Guess 1.
+    - If this is my number, your total is $0. Otherwise, you pay $1.
+    - If my number is higher, it must be 2. Guess 2. Your total is $1.
+The worst case is that you pay $1.
+
+ 
+
+Constraints:
+
+- 1 <= n <= 200
+
+------------------------------
+374. Guess Number Higher or Lower 
+------------------------------
+
+We are playing the Guess Game. The game is as follows:
+
+I pick a number from 1 to n. You have to guess which number I picked (the number I picked stays the same throughout the game).
+
+Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.
+
+You call a pre-defined API int guess(int num), which returns three possible results:
+
+- -1: Your guess is higher than the number I picked (i.e. num > pick).
+
+- 1: Your guess is lower than the number I picked (i.e. num < pick).
+
+- 0: your guess is equal to the number I picked (i.e. num == pick).
+
+Return the number that I picked.
+
+ 
+
+Example 1:
+
+Input: n = 10, pick = 6
+Output: 6
+
+Example 2:
+
+Input: n = 1, pick = 1
+Output: 1
+
+Example 3:
+
+Input: n = 2, pick = 1
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= n <= 231 - 1
+
+- 1 <= pick <= n
+
+------------------------------
+373. Find K Pairs with Smallest Sums 
+------------------------------
+
+You are given two integer arrays nums1 and nums2 sorted in non-decreasing order and an integer k.
+
+Define a pair (u, v) which consists of one element from the first array and one element from the second array.
+
+Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,7,11], nums2 = [2,4,6], k = 3
+Output: [[1,2],[1,4],[1,6]]
+Explanation: The first 3 pairs are returned from the sequence: [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
+
+Example 2:
+
+Input: nums1 = [1,1,2], nums2 = [1,2,3], k = 2
+Output: [[1,1],[1,1]]
+Explanation: The first 2 pairs are returned from the sequence: [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
+
+ 
+
+Constraints:
+
+- 1 <= nums1.length, nums2.length <= 105
+
+- -109 <= nums1[i], nums2[i] <= 109
+
+- nums1 and nums2 both are sorted in non-decreasing order.
+
+- 1 <= k <= 104
+
+- k <= nums1.length * nums2.length
+
+------------------------------
+372. Super Pow 
+------------------------------
+
+Your task is to calculate ab mod 1337 where a is a positive integer and b is an extremely large positive integer given in the form of an array.
+
+ 
+
+Example 1:
+
+Input: a = 2, b = [3]
+Output: 8
+
+Example 2:
+
+Input: a = 2, b = [1,0]
+Output: 1024
+
+Example 3:
+
+Input: a = 1, b = [4,3,3,8,5,2]
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= a <= 231 - 1
+
+- 1 <= b.length <= 2000
+
+- 0 <= b[i] <= 9
+
+- b does not contain leading zeros.
+
+------------------------------
+371. Sum of Two Integers 
+------------------------------
+
+Given two integers a and b, return the sum of the two integers without using the operators + and -.
+
+ 
+
+Example 1:
+
+Input: a = 1, b = 2
+Output: 3
+
+Example 2:
+
+Input: a = 2, b = 3
+Output: 5
+
+ 
+
+Constraints:
+
+- -1000 <= a, b <= 1000
+
+------------------------------
+370. Range Addition 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+369. Plus One Linked List 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+368. Largest Divisible Subset 
+------------------------------
+
+Given a set of distinct positive integers nums, return the largest subset answer such that every pair (answer[i], answer[j]) of elements in this subset satisfies:
+
+- answer[i] % answer[j] == 0, or
+
+- answer[j] % answer[i] == 0
+
+If there are multiple solutions, return any of them.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3]
+Output: [1,2]
+Explanation: [1,3] is also accepted.
+
+Example 2:
+
+Input: nums = [1,2,4,8]
+Output: [1,2,4,8]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 1 <= nums[i] <= 2 * 109
+
+- All the integers in nums are unique.
+
+------------------------------
+367. Valid Perfect Square 
+------------------------------
+
+Given a positive integer num, return true if num is a perfect square or false otherwise.
+
+A perfect square is an integer that is the square of an integer. In other words, it is the product of some integer with itself.
+
+You must not use any built-in library function, such as sqrt.
+
+ 
+
+Example 1:
+
+Input: num = 16
+Output: true
+Explanation: We return true because 4 * 4 = 16 and 4 is an integer.
+
+Example 2:
+
+Input: num = 14
+Output: false
+Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an integer.
+
+ 
+
+Constraints:
+
+- 1 <= num <= 231 - 1
+
+------------------------------
+366. Find Leaves of Binary Tree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+365. Water and Jug Problem 
+------------------------------
+
+You are given two jugs with capacities x liters and y liters. You have an infinite water supply. Return whether the total amount of water in both jugs may reach target using the following operations:
+
+- Fill either jug completely with water.
+
+- Completely empty either jug.
+
+- Pour water from one jug into another until the receiving jug is full, or the transferring jug is empty.
+
+ 
+
+Example 1: 
+
+Input:   x = 3, y = 5, target = 4 
+
+Output:   true 
+
+Explanation:
+
+Follow these steps to reach a total of 4 liters:
+
+- Fill the 5-liter jug (0, 5).
+
+- Pour from the 5-liter jug into the 3-liter jug, leaving 2 liters (3, 2).
+
+- Empty the 3-liter jug (0, 2).
+
+- Transfer the 2 liters from the 5-liter jug to the 3-liter jug (2, 0).
+
+- Fill the 5-liter jug again (2, 5).
+
+- Pour from the 5-liter jug into the 3-liter jug until the 3-liter jug is full. This leaves 4 liters in the 5-liter jug (3, 4).
+
+- Empty the 3-liter jug. Now, you have exactly 4 liters in the 5-liter jug (0, 4).
+
+Reference: The Die Hard example.
+
+Example 2: 
+
+Input:   x = 2, y = 6, target = 5 
+
+Output:   false 
+
+Example 3: 
+
+Input:   x = 1, y = 2, target = 3 
+
+Output:   true 
+
+Explanation: Fill both jugs. The total amount of water in both jugs is equal to 3 now.
+
+ 
+
+Constraints:
+
+- 1 <= x, y, target <= 103
+
+------------------------------
+364. Nested List Weight Sum II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+363. Max Sum of Rectangle No Larger Than K 
+------------------------------
+
+Given an m x n matrix matrix and an integer k, return the max sum of a rectangle in the matrix such that its sum is no larger than k.
+
+It is guaranteed that there will be a rectangle with a sum no larger than k.
+
+ 
+
+Example 1:
+
+Input: matrix = [[1,0,1],[0,-2,3]], k = 2
+Output: 2
+Explanation: Because the sum of the blue rectangle [[0, 1], [-2, 3]] is 2, and 2 is the max number no larger than k (k = 2).
+
+Example 2:
+
+Input: matrix = [[2,2,-1]], k = 3
+Output: 3
+
+ 
+
+Constraints:
+
+- m == matrix.length
+
+- n == matrix[i].length
+
+- 1 <= m, n <= 100
+
+- -100 <= matrix[i][j] <= 100
+
+- -105 <= k <= 105
+
+ 
+
+Follow up: What if the number of rows is much larger than the number of columns?
+
+------------------------------
+362. Design Hit Counter 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+361. Bomb Enemy 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+360. Sort Transformed Array 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+359. Logger Rate Limiter 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+358. Rearrange String k Distance Apart 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+357. Count Numbers with Unique Digits 
+------------------------------
+
+Given an integer n, return the count of all numbers with unique digits, x, where 0 <= x < 10n.
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: 91
+Explanation: The answer should be the total numbers in the range of 0 ≤ x < 100, excluding 11,22,33,44,55,66,77,88,99
+
+Example 2:
+
+Input: n = 0
+Output: 1
+
+ 
+
+Constraints:
+
+- 0 <= n <= 8
+
+------------------------------
+356. Line Reflection 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+355. Design Twitter 
+------------------------------
+
+Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and is able to see the 10 most recent tweets in the user's news feed.
+
+Implement the Twitter class:
+
+- Twitter() Initializes your twitter object.
+
+- void postTweet(int userId, int tweetId) Composes a new tweet with ID tweetId by the user userId. Each call to this function will be made with a unique tweetId.
+
+- List<Integer> getNewsFeed(int userId) Retrieves the 10 most recent tweet IDs in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user themself. Tweets must be ordered from most recent to least recent.
+
+- void follow(int followerId, int followeeId) The user with ID followerId started following the user with ID followeeId.
+
+- void unfollow(int followerId, int followeeId) The user with ID followerId started unfollowing the user with ID followeeId.
+
+ 
+
+Example 1:
+
+Input
+["Twitter", "postTweet", "getNewsFeed", "follow", "postTweet", "getNewsFeed", "unfollow", "getNewsFeed"]
+[[], [1, 5], [1], [1, 2], [2, 6], [1], [1, 2], [1]]
+Output
+[null, null, [5], null, null, [6, 5], null, [5]]
+
+Explanation
+Twitter twitter = new Twitter();
+twitter.postTweet(1, 5); // User 1 posts a new tweet (id = 5).
+twitter.getNewsFeed(1);  // User 1's news feed should return a list with 1 tweet id -> [5]. return [5]
+twitter.follow(1, 2);    // User 1 follows user 2.
+twitter.postTweet(2, 6); // User 2 posts a new tweet (id = 6).
+twitter.getNewsFeed(1);  // User 1's news feed should return a list with 2 tweet ids -> [6, 5]. Tweet id 6 should precede tweet id 5 because it is posted after tweet id 5.
+twitter.unfollow(1, 2);  // User 1 unfollows user 2.
+twitter.getNewsFeed(1);  // User 1's news feed should return a list with 1 tweet id -> [5], since user 1 is no longer following user 2.
+
+ 
+
+Constraints:
+
+- 1 <= userId, followerId, followeeId <= 500
+
+- 0 <= tweetId <= 104
+
+- All the tweets have unique IDs.
+
+- At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfollow.
+
+- A user cannot follow himself.
+
+------------------------------
+354. Russian Doll Envelopes 
+------------------------------
+
+You are given a 2D array of integers envelopes where envelopes[i] = [wi, hi] represents the width and the height of an envelope.
+
+One envelope can fit into another if and only if both the width and height of one envelope are greater than the other envelope's width and height.
+
+Return the maximum number of envelopes you can Russian doll (i.e., put one inside the other).
+
+Note: You cannot rotate an envelope.
+
+ 
+
+Example 1:
+
+Input: envelopes = [[5,4],[6,4],[6,7],[2,3]]
+Output: 3
+Explanation: The maximum number of envelopes you can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
+
+Example 2:
+
+Input: envelopes = [[1,1],[1,1],[1,1]]
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= envelopes.length <= 105
+
+- envelopes[i].length == 2
+
+- 1 <= wi, hi <= 105
+
+------------------------------
+353. Design Snake Game 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+352. Data Stream as Disjoint Intervals 
+------------------------------
+
+Given a data stream input of non-negative integers a1, a2, ..., an, summarize the numbers seen so far as a list of disjoint intervals.
+
+Implement the SummaryRanges class:
+
+- SummaryRanges() Initializes the object with an empty stream.
+
+- void addNum(int value) Adds the integer value to the stream.
+
+- int[][] getIntervals() Returns a summary of the integers in the stream currently as a list of disjoint intervals [starti, endi]. The answer should be sorted by starti.
+
+ 
+
+Example 1:
+
+Input
+["SummaryRanges", "addNum", "getIntervals", "addNum", "getIntervals", "addNum", "getIntervals", "addNum", "getIntervals", "addNum", "getIntervals"]
+[[], [1], [], [3], [], [7], [], [2], [], [6], []]
+Output
+[null, null, [[1, 1]], null, [[1, 1], [3, 3]], null, [[1, 1], [3, 3], [7, 7]], null, [[1, 3], [7, 7]], null, [[1, 3], [6, 7]]]
+
+Explanation
+SummaryRanges summaryRanges = new SummaryRanges();
+summaryRanges.addNum(1);      // arr = [1]
+summaryRanges.getIntervals(); // return [[1, 1]]
+summaryRanges.addNum(3);      // arr = [1, 3]
+summaryRanges.getIntervals(); // return [[1, 1], [3, 3]]
+summaryRanges.addNum(7);      // arr = [1, 3, 7]
+summaryRanges.getIntervals(); // return [[1, 1], [3, 3], [7, 7]]
+summaryRanges.addNum(2);      // arr = [1, 2, 3, 7]
+summaryRanges.getIntervals(); // return [[1, 3], [7, 7]]
+summaryRanges.addNum(6);      // arr = [1, 2, 3, 6, 7]
+summaryRanges.getIntervals(); // return [[1, 3], [6, 7]]
+
+ 
+
+Constraints:
+
+- 0 <= value <= 104
+
+- At most 3 * 104 calls will be made to addNum and getIntervals.
+
+- At most 102 calls will be made to getIntervals.
+
+ 
+
+Follow up: What if there are lots of merges and the number of disjoint intervals is small compared to the size of the data stream?
+
+------------------------------
+351. Android Unlock Patterns 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+350. Intersection of Two Arrays II 
+------------------------------
+
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2,2]
+
+Example 2:
+
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [4,9]
+Explanation: [9,4] is also accepted.
+
+ 
+
+Constraints:
+
+- 1 <= nums1.length, nums2.length <= 1000
+
+- 0 <= nums1[i], nums2[i] <= 1000
+
+ 
+
+Follow up:
+
+- What if the given array is already sorted? How would you optimize your algorithm?
+
+- What if nums1's size is small compared to nums2's size? Which algorithm is better?
+
+- What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+
+------------------------------
+349. Intersection of Two Arrays 
+------------------------------
+
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+
+Example 2:
+
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [9,4]
+Explanation: [4,9] is also accepted.
+
+ 
+
+Constraints:
+
+- 1 <= nums1.length, nums2.length <= 1000
+
+- 0 <= nums1[i], nums2[i] <= 1000
+
+------------------------------
+348. Design Tic-Tac-Toe 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+347. Top K Frequent Elements 
+------------------------------
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+
+Output: [1,2]
+
+Example 2:
+
+Input: nums = [1], k = 1
+
+Output: [1]
+
+Example 3:
+
+Input: nums = [1,2,1,2,1,2,3,1,3,2], k = 2
+
+Output: [1,2]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -104 <= nums[i] <= 104
+
+- k is in the range [1, the number of unique elements in the array].
+
+- It is guaranteed that the answer is unique.
+
+ 
+
+Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
+
+------------------------------
+346. Moving Average from Data Stream 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+345. Reverse Vowels of a String 
+------------------------------
+
+Given a string s, reverse only all the vowels in the string and return it.
+
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+ 
+
+Example 1:
+
+Input: s = "IceCreAm"
+
+Output: "AceCreIm"
+
+Explanation:
+
+The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+
+Example 2:
+
+Input: s = "leetcode"
+
+Output: "leotcede"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 3 * 105
+
+- s consist of printable ASCII characters.
+
+------------------------------
+344. Reverse String 
+------------------------------
+
+Write a function that reverses a string. The input string is given as an array of characters s.
+
+You must do this by modifying the input array in-place with O(1) extra memory.
+
+ 
+
+Example 1:
+
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+
+Example 2:
+
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 105
+
+- s[i] is a printable ascii character.
+
+------------------------------
+343. Integer Break 
+------------------------------
+
+Given an integer n, break it into the sum of k positive integers, where k >= 2, and maximize the product of those integers.
+
+Return the maximum product you can get.
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: 1
+Explanation: 2 = 1 + 1, 1 × 1 = 1.
+
+Example 2:
+
+Input: n = 10
+Output: 36
+Explanation: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36.
+
+ 
+
+Constraints:
+
+- 2 <= n <= 58
+
+------------------------------
+342. Power of Four 
+------------------------------
+
+Given an integer n, return true if it is a power of four. Otherwise, return false.
+
+An integer n is a power of four, if there exists an integer x such that n == 4x.
+
+ 
+
+Example 1:
+
+Input: n = 16
+Output: true
+
+Example 2:
+
+Input: n = 5
+Output: false
+
+Example 3:
+
+Input: n = 1
+Output: true
+
+ 
+
+Constraints:
+
+- -231 <= n <= 231 - 1
+
+ 
+
+Follow up: Could you solve it without loops/recursion?
+
+------------------------------
+341. Flatten Nested List Iterator 
+------------------------------
+
+You are given a nested list of integers nestedList. Each element is either an integer or a list whose elements may also be integers or other lists. Implement an iterator to flatten it.
+
+Implement the NestedIterator class:
+
+- NestedIterator(List<NestedInteger> nestedList) Initializes the iterator with the nested list nestedList.
+
+- int next() Returns the next integer in the nested list.
+
+- boolean hasNext() Returns true if there are still some integers in the nested list and false otherwise.
+
+Your code will be tested with the following pseudocode:
+
+initialize iterator with nestedList
+res = []
+while iterator.hasNext()
+    append iterator.next() to the end of res
+return res
+
+If res matches the expected flattened list, then your code will be judged as correct.
+
+ 
+
+Example 1:
+
+Input: nestedList = [[1,1],2,[1,1]]
+Output: [1,1,2,1,1]
+Explanation: By calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1,1,2,1,1].
+
+Example 2:
+
+Input: nestedList = [1,[4,[6]]]
+Output: [1,4,6]
+Explanation: By calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1,4,6].
+
+ 
+
+Constraints:
+
+- 1 <= nestedList.length <= 500
+
+- The values of the integers in the nested list is in the range [-106, 106].
+
+------------------------------
+340. Longest Substring with At Most K Distinct Characters 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+339. Nested List Weight Sum 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+338. Counting Bits 
+------------------------------
+
+Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: [0,1,1]
+Explanation:
+0 --> 0
+1 --> 1
+2 --> 10
+
+Example 2:
+
+Input: n = 5
+Output: [0,1,1,2,1,2]
+Explanation:
+0 --> 0
+1 --> 1
+2 --> 10
+3 --> 11
+4 --> 100
+5 --> 101
+
+ 
+
+Constraints:
+
+- 0 <= n <= 105
+
+ 
+
+Follow up:
+
+- It is very easy to come up with a solution with a runtime of O(n log n). Can you do it in linear time O(n) and possibly in a single pass?
+
+- Can you do it without using any built-in function (i.e., like __builtin_popcount in C++)?
+
+------------------------------
+337. House Robber III 
+------------------------------
+
+The thief has found himself a new place for his thievery again. There is only one entrance to this area, called root.
+
+Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that all houses in this place form a binary tree. It will automatically contact the police if two directly-linked houses were broken into on the same night.
+
+Given the root of the binary tree, return the maximum amount of money the thief can rob without alerting the police.
+
+ 
+
+Example 1:
+
+Input: root = [3,2,3,null,3,null,1]
+Output: 7
+Explanation: Maximum amount of money the thief can rob = 3 + 3 + 1 = 7.
+
+Example 2:
+
+Input: root = [3,4,5,1,3,null,1]
+Output: 9
+Explanation: Maximum amount of money the thief can rob = 4 + 5 = 9.
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [1, 104].
+
+- 0 <= Node.val <= 104
+
+------------------------------
+336. Palindrome Pairs 
+------------------------------
+
+You are given a 0-indexed array of unique strings words.
+
+A palindrome pair is a pair of integers (i, j) such that:
+
+- 0 <= i, j < words.length,
+
+- i != j, and
+
+- words[i] + words[j] (the concatenation of the two strings) is a palindrome.
+
+Return an array of all the palindrome pairs of words.
+
+You must write an algorithm with O(sum of words[i].length) runtime complexity.
+
+ 
+
+Example 1:
+
+Input: words = ["abcd","dcba","lls","s","sssll"]
+Output: [[0,1],[1,0],[3,2],[2,4]]
+Explanation: The palindromes are ["abcddcba","dcbaabcd","slls","llssssll"]
+
+Example 2:
+
+Input: words = ["bat","tab","cat"]
+Output: [[0,1],[1,0]]
+Explanation: The palindromes are ["battab","tabbat"]
+
+Example 3:
+
+Input: words = ["a",""]
+Output: [[0,1],[1,0]]
+Explanation: The palindromes are ["a","a"]
+
+ 
+
+Constraints:
+
+- 1 <= words.length <= 5000
+
+- 0 <= words[i].length <= 300
+
+- words[i] consists of lowercase English letters.
+
+------------------------------
+335. Self Crossing 
+------------------------------
+
+You are given an array of integers distance.
+
+You start at the point (0, 0) on an X-Y plane, and you move distance[0] meters to the north, then distance[1] meters to the west, distance[2] meters to the south, distance[3] meters to the east, and so on. In other words, after each move, your direction changes counter-clockwise.
+
+Return true if your path crosses itself or false if it does not.
+
+ 
+
+Example 1:
+
+Input: distance = [2,1,1,2]
+Output: true
+Explanation: The path crosses itself at the point (0, 1).
+
+Example 2:
+
+Input: distance = [1,2,3,4]
+Output: false
+Explanation: The path does not cross itself at any point.
+
+Example 3:
+
+Input: distance = [1,1,1,2,1]
+Output: true
+Explanation: The path crosses itself at the point (0, 0).
+
+ 
+
+Constraints:
+
+- 1 <= distance.length <= 105
+
+- 1 <= distance[i] <= 105
+
+------------------------------
+334. Increasing Triplet Subsequence 
+------------------------------
+
+Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4,5]
+Output: true
+Explanation: Any triplet where i < j < k is valid.
+
+Example 2:
+
+Input: nums = [5,4,3,2,1]
+Output: false
+Explanation: No triplet exists.
+
+Example 3:
+
+Input: nums = [2,1,5,0,4,6]
+Output: true
+Explanation: One of the valid triplet is (1, 4, 5), because nums[1] == 1 < nums[4] == 4 < nums[5] == 6.
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 5 * 105
+
+- -231 <= nums[i] <= 231 - 1
+
+ 
+
+Follow up: Could you implement a solution that runs in O(n) time complexity and O(1) space complexity?
+
+------------------------------
+333. Largest BST Subtree 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+332. Reconstruct Itinerary 
+------------------------------
+
+You are given a list of airline tickets where tickets[i] = [fromi, toi] represent the departure and the arrival airports of one flight. Reconstruct the itinerary in order and return it.
+
+All of the tickets belong to a man who departs from "JFK", thus, the itinerary must begin with "JFK". If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.
+
+- For example, the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"].
+
+You may assume all tickets form at least one valid itinerary. You must use all the tickets once and only once.
+
+ 
+
+Example 1:
+
+Input: tickets = [["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]
+Output: ["JFK","MUC","LHR","SFO","SJC"]
+
+Example 2:
+
+Input: tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
+Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"] but it is larger in lexical order.
+
+ 
+
+Constraints:
+
+- 1 <= tickets.length <= 300
+
+- tickets[i].length == 2
+
+- fromi.length == 3
+
+- toi.length == 3
+
+- fromi and toi consist of uppercase English letters.
+
+- fromi != toi
+
+------------------------------
+331. Verify Preorder Serialization of a Binary Tree 
+------------------------------
+
+One way to serialize a binary tree is to use preorder traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as '#'.
+
+For example, the above binary tree can be serialized to the string "9,3,4,#,#,1,#,#,2,#,6,#,#", where '#' represents a null node.
+
+Given a string of comma-separated values preorder, return true if it is a correct preorder traversal serialization of a binary tree.
+
+It is guaranteed that each comma-separated value in the string must be either an integer or a character '#' representing null pointer.
+
+You may assume that the input format is always valid.
+
+- For example, it could never contain two consecutive commas, such as "1,,3".
+
+Note: You are not allowed to reconstruct the tree.
+
+ 
+
+Example 1:
+
+Input: preorder = "9,3,4,#,#,1,#,#,2,#,6,#,#"
+Output: true
+
+Example 2:
+
+Input: preorder = "1,#"
+Output: false
+
+Example 3:
+
+Input: preorder = "9,#,#,1"
+Output: false
+
+ 
+
+Constraints:
+
+- 1 <= preorder.length <= 104
+
+- preorder consist of integers in the range [0, 100] and '#' separated by commas ','.
+
+------------------------------
+330. Patching Array 
+------------------------------
+
+Given a sorted integer array nums and an integer n, add/patch elements to the array such that any number in the range [1, n] inclusive can be formed by the sum of some elements in the array.
+
+Return the minimum number of patches required.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3], n = 6
+Output: 1
+Explanation:
+Combinations of nums are [1], [3], [1,3], which form possible sums of: 1, 3, 4.
+Now if we add/patch 2 to nums, the combinations are: [1], [2], [3], [1,3], [2,3], [1,2,3].
+Possible sums are 1, 2, 3, 4, 5, 6, which now covers the range [1, 6].
+So we only need 1 patch.
+
+Example 2:
+
+Input: nums = [1,5,10], n = 20
+Output: 2
+Explanation: The two patches can be [2, 4].
+
+Example 3:
+
+Input: nums = [1,2,2], n = 5
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 1000
+
+- 1 <= nums[i] <= 104
+
+- nums is sorted in ascending order.
+
+- 1 <= n <= 231 - 1
+
+------------------------------
+329. Longest Increasing Path in a Matrix 
+------------------------------
+
+Given an m x n integers matrix, return the length of the longest increasing path in matrix.
+
+From each cell, you can either move in four directions: left, right, up, or down. You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
+
+ 
+
+Example 1:
+
+Input: matrix = [[9,9,4],[6,6,8],[2,1,1]]
+Output: 4
+Explanation: The longest increasing path is [1, 2, 6, 9].
+
+Example 2:
+
+Input: matrix = [[3,4,5],[3,2,6],[2,2,1]]
+Output: 4
+Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
+
+Example 3:
+
+Input: matrix = [[1]]
+Output: 1
+
+ 
+
+Constraints:
+
+- m == matrix.length
+
+- n == matrix[i].length
+
+- 1 <= m, n <= 200
+
+- 0 <= matrix[i][j] <= 231 - 1
+
+------------------------------
+328. Odd Even Linked List 
+------------------------------
+
+Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
+
+The first node is considered odd, and the second node is even, and so on.
+
+Note that the relative order inside both the even and odd groups should remain as it was in the input.
+
+You must solve the problem in O(1) extra space complexity and O(n) time complexity.
+
+ 
+
+Example 1:
+
+Input: head = [1,2,3,4,5]
+Output: [1,3,5,2,4]
+
+Example 2:
+
+Input: head = [2,1,3,5,6,4,7]
+Output: [2,3,6,7,1,5,4]
+
+ 
+
+Constraints:
+
+- The number of nodes in the linked list is in the range [0, 104].
+
+- -106 <= Node.val <= 106
+
+------------------------------
+327. Count of Range Sum 
+------------------------------
+
+Given an integer array nums and two integers lower and upper, return the number of range sums that lie in [lower, upper] inclusive.
+
+Range sum S(i, j) is defined as the sum of the elements in nums between indices i and j inclusive, where i <= j.
+
+ 
+
+Example 1:
+
+Input: nums = [-2,5,-1], lower = -2, upper = 2
+Output: 3
+Explanation: The three ranges are: [0,0], [2,2], and [0,2] and their respective sums are: -2, -1, 2.
+
+Example 2:
+
+Input: nums = [0], lower = 0, upper = 0
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -231 <= nums[i] <= 231 - 1
+
+- -105 <= lower <= upper <= 105
+
+- The answer is guaranteed to fit in a 32-bit integer.
+
+------------------------------
+326. Power of Three 
+------------------------------
+
+Given an integer n, return true if it is a power of three. Otherwise, return false.
+
+An integer n is a power of three, if there exists an integer x such that n == 3x.
+
+ 
+
+Example 1:
+
+Input: n = 27
+Output: true
+Explanation: 27 = 33
+
+Example 2:
+
+Input: n = 0
+Output: false
+Explanation: There is no x where 3x = 0.
+
+Example 3:
+
+Input: n = -1
+Output: false
+Explanation: There is no x where 3x = (-1).
+
+ 
+
+Constraints:
+
+- -231 <= n <= 231 - 1
+
+ 
+
+Follow up: Could you solve it without loops/recursion?
+
+------------------------------
+325. Maximum Size Subarray Sum Equals k 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+324. Wiggle Sort II 
+------------------------------
+
+Given an integer array nums, reorder it such that nums[0] < nums[1] > nums[2] < nums[3]....
+
+You may assume the input array always has a valid answer.
+
+ 
+
+Example 1:
+
+Input: nums = [1,5,1,1,6,4]
+Output: [1,6,1,5,1,4]
+Explanation: [1,4,1,5,1,6] is also accepted.
+
+Example 2:
+
+Input: nums = [1,3,2,2,3,1]
+Output: [2,3,1,3,1,2]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 5 * 104
+
+- 0 <= nums[i] <= 5000
+
+- It is guaranteed that there will be an answer for the given input nums.
+
+ 
+
+Follow Up: Can you do it in O(n) time and/or in-place with O(1) extra space?
+
+------------------------------
+323. Number of Connected Components in an Undirected Graph 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+322. Coin Change 
+------------------------------
+
+You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+
+ 
+
+Example 1:
+
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+
+Example 2:
+
+Input: coins = [2], amount = 3
+Output: -1
+
+Example 3:
+
+Input: coins = [1], amount = 0
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= coins.length <= 12
+
+- 1 <= coins[i] <= 231 - 1
+
+- 0 <= amount <= 104
+
+------------------------------
+321. Create Maximum Number 
+------------------------------
+
+You are given two integer arrays nums1 and nums2 of lengths m and n respectively. nums1 and nums2 represent the digits of two numbers. You are also given an integer k.
+
+Create the maximum number of length k <= m + n from digits of the two numbers. The relative order of the digits from the same array must be preserved.
+
+Return an array of the k digits representing the answer.
+
+ 
+
+Example 1:
+
+Input: nums1 = [3,4,6,5], nums2 = [9,1,2,5,8,3], k = 5
+Output: [9,8,6,5,3]
+
+Example 2:
+
+Input: nums1 = [6,7], nums2 = [6,0,4], k = 5
+Output: [6,7,6,0,4]
+
+Example 3:
+
+Input: nums1 = [3,9], nums2 = [8,9], k = 3
+Output: [9,8,9]
+
+ 
+
+Constraints:
+
+- m == nums1.length
+
+- n == nums2.length
+
+- 1 <= m, n <= 500
+
+- 0 <= nums1[i], nums2[i] <= 9
+
+- 1 <= k <= m + n
+
+- nums1 and nums2 do not have leading zeros.
+
+------------------------------
+320. Generalized Abbreviation 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+319. Bulb Switcher 
+------------------------------
+
+There are n bulbs that are initially off. You first turn on all the bulbs, then you turn off every second bulb.
+
+On the third round, you toggle every third bulb (turning on if it's off or turning off if it's on). For the ith round, you toggle every i bulb. For the nth round, you only toggle the last bulb.
+
+Return the number of bulbs that are on after n rounds.
+
+ 
+
+Example 1:
+
+Input: n = 3
+Output: 1
+Explanation: At first, the three bulbs are [off, off, off].
+After the first round, the three bulbs are [on, on, on].
+After the second round, the three bulbs are [on, off, on].
+After the third round, the three bulbs are [on, off, off]. 
+So you should return 1 because there is only one bulb is on.
+
+Example 2:
+
+Input: n = 0
+Output: 0
+
+Example 3:
+
+Input: n = 1
+Output: 1
+
+ 
+
+Constraints:
+
+- 0 <= n <= 109
+
+------------------------------
+318. Maximum Product of Word Lengths 
+------------------------------
+
+Given a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.
+
+ 
+
+Example 1:
+
+Input: words = ["abcw","baz","foo","bar","xtfn","abcdef"]
+Output: 16
+Explanation: The two words can be "abcw", "xtfn".
+
+Example 2:
+
+Input: words = ["a","ab","abc","d","cd","bcd","abcd"]
+Output: 4
+Explanation: The two words can be "ab", "cd".
+
+Example 3:
+
+Input: words = ["a","aa","aaa","aaaa"]
+Output: 0
+Explanation: No such pair of words.
+
+ 
+
+Constraints:
+
+- 2 <= words.length <= 1000
+
+- 1 <= words[i].length <= 1000
+
+- words[i] consists only of lowercase English letters.
+
+------------------------------
+317. Shortest Distance from All Buildings 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+316. Remove Duplicate Letters 
+------------------------------
+
+Given a string s, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.
+
+ 
+
+Example 1:
+
+Input: s = "bcabc"
+Output: "abc"
+
+Example 2:
+
+Input: s = "cbacdcbc"
+Output: "acdb"
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 104
+
+- s consists of lowercase English letters.
+
+ 
+
+Note: This question is the same as 1081: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+
+------------------------------
+315. Count of Smaller Numbers After Self 
+------------------------------
+
+Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
+
+ 
+
+Example 1:
+
+Input: nums = [5,2,6,1]
+Output: [2,1,1,0]
+Explanation:
+To the right of 5 there are 2 smaller elements (2 and 1).
+To the right of 2 there is only 1 smaller element (1).
+To the right of 6 there is 1 smaller element (1).
+To the right of 1 there is 0 smaller element.
+
+Example 2:
+
+Input: nums = [-1]
+Output: [0]
+
+Example 3:
+
+Input: nums = [-1,-1]
+Output: [0,0]
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 105
+
+- -104 <= nums[i] <= 104
+
+------------------------------
+314. Binary Tree Vertical Order Traversal 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+313. Super Ugly Number 
+------------------------------
+
+A super ugly number is a positive integer whose prime factors are in the array primes.
+
+Given an integer n and an array of integers primes, return the nth super ugly number.
+
+The nth super ugly number is guaranteed to fit in a 32-bit signed integer.
+
+ 
+
+Example 1:
+
+Input: n = 12, primes = [2,7,13,19]
+Output: 32
+Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes = [2,7,13,19].
+
+Example 2:
+
+Input: n = 1, primes = [2,3,5]
+Output: 1
+Explanation: 1 has no prime factors, therefore all of its prime factors are in the array primes = [2,3,5].
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+- 1 <= primes.length <= 100
+
+- 2 <= primes[i] <= 1000
+
+- primes[i] is guaranteed to be a prime number.
+
+- All the values of primes are unique and sorted in ascending order.
+
+------------------------------
+312. Burst Balloons 
+------------------------------
+
+You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number on it represented by an array nums. You are asked to burst all the balloons.
+
+If you burst the ith balloon, you will get nums[i - 1] * nums[i] * nums[i + 1] coins. If i - 1 or i + 1 goes out of bounds of the array, then treat it as if there is a balloon with a 1 painted on it.
+
+Return the maximum coins you can collect by bursting the balloons wisely.
+
+ 
+
+Example 1:
+
+Input: nums = [3,1,5,8]
+Output: 167
+Explanation:
+nums = [3,1,5,8] --> [3,5,8] --> [3,8] --> [8] --> []
+coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167
+
+Example 2:
+
+Input: nums = [1,5]
+Output: 10
+
+ 
+
+Constraints:
+
+- n == nums.length
+
+- 1 <= n <= 300
+
+- 0 <= nums[i] <= 100
+
+------------------------------
+311. Sparse Matrix Multiplication 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+310. Minimum Height Trees 
+------------------------------
+
+A tree is an undirected graph in which any two vertices are connected by exactly one path. In other words, any connected graph without simple cycles is a tree.
+
+Given a tree of n nodes labelled from 0 to n - 1, and an array of n - 1 edges where edges[i] = [ai, bi] indicates that there is an undirected edge between the two nodes ai and bi in the tree, you can choose any node of the tree as the root. When you select a node x as the root, the result tree has height h. Among all possible rooted trees, those with minimum height (i.e. min(h))  are called minimum height trees (MHTs).
+
+Return a list of all MHTs' root labels. You can return the answer in any order.
+
+The height of a rooted tree is the number of edges on the longest downward path between the root and a leaf.
+
+ 
+
+Example 1:
+
+Input: n = 4, edges = [[1,0],[1,2],[1,3]]
+Output: [1]
+Explanation: As shown, the height of the tree is 1 when the root is the node with label 1 which is the only MHT.
+
+Example 2:
+
+Input: n = 6, edges = [[3,0],[3,1],[3,2],[3,4],[5,4]]
+Output: [3,4]
+
+ 
+
+Constraints:
+
+- 1 <= n <= 2 * 104
+
+- edges.length == n - 1
+
+- 0 <= ai, bi < n
+
+- ai != bi
+
+- All the pairs (ai, bi) are distinct.
+
+- The given input is guaranteed to be a tree and there will be no repeated edges.
+
+------------------------------
+309. Best Time to Buy and Sell Stock with Cooldown 
+------------------------------
+
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+Find the maximum profit you can achieve. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times) with the following restrictions:
+
+- After you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day).
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+ 
+
+Example 1:
+
+Input: prices = [1,2,3,0,2]
+Output: 3
+Explanation: transactions = [buy, sell, cooldown, buy, sell]
+
+Example 2:
+
+Input: prices = [1]
+Output: 0
+
+ 
+
+Constraints:
+
+- 1 <= prices.length <= 5000
+
+- 0 <= prices[i] <= 1000
+
+------------------------------
+308. Range Sum Query 2D - Mutable 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+307. Range Sum Query - Mutable 
+------------------------------
+
+Given an integer array nums, handle multiple queries of the following types:
+
+- Update the value of an element in nums.
+
+- Calculate the sum of the elements of nums between indices left and right inclusive where left <= right.
+
+Implement the NumArray class:
+
+- NumArray(int[] nums) Initializes the object with the integer array nums.
+
+- void update(int index, int val) Updates the value of nums[index] to be val.
+
+- int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive (i.e. nums[left] + nums[left + 1] + ... + nums[right]).
+
+ 
+
+Example 1:
+
+Input
+["NumArray", "sumRange", "update", "sumRange"]
+[[[1, 3, 5]], [0, 2], [1, 2], [0, 2]]
+Output
+[null, 9, null, 8]
+
+Explanation
+NumArray numArray = new NumArray([1, 3, 5]);
+numArray.sumRange(0, 2); // return 1 + 3 + 5 = 9
+numArray.update(1, 2);   // nums = [1, 2, 5]
+numArray.sumRange(0, 2); // return 1 + 2 + 5 = 8
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 3 * 104
+
+- -100 <= nums[i] <= 100
+
+- 0 <= index < nums.length
+
+- -100 <= val <= 100
+
+- 0 <= left <= right < nums.length
+
+- At most 3 * 104 calls will be made to update and sumRange.
+
+------------------------------
+306. Additive Number 
+------------------------------
+
+An additive number is a string whose digits can form an additive sequence.
+
+A valid additive sequence should contain at least three numbers. Except for the first two numbers, each subsequent number in the sequence must be the sum of the preceding two.
+
+Given a string containing only digits, return true if it is an additive number or false otherwise.
+
+Note: Numbers in the additive sequence cannot have leading zeros, so sequence 1, 2, 03 or 1, 02, 3 is invalid.
+
+ 
+
+Example 1:
+
+Input: "112358"
+Output: true
+Explanation: 
+The digits can form an additive sequence: 1, 1, 2, 3, 5, 8. 
+1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8
+
+Example 2:
+
+Input: "199100199"
+Output: true
+Explanation: 
+The additive sequence is: 1, 99, 100, 199. 
+1 + 99 = 100, 99 + 100 = 199
+
+ 
+
+Constraints:
+
+- 1 <= num.length <= 35
+
+- num consists only of digits.
+
+ 
+
+Follow up: How would you handle overflow for very large input integers?
+
+------------------------------
+305. Number of Islands II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+304. Range Sum Query 2D - Immutable 
+------------------------------
+
+Given a 2D matrix matrix, handle multiple queries of the following type:
+
+- Calculate the sum of the elements of matrix inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
+
+Implement the NumMatrix class:
+
+- NumMatrix(int[][] matrix) Initializes the object with the integer matrix matrix.
+
+- int sumRegion(int row1, int col1, int row2, int col2) Returns the sum of the elements of matrix inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
+
+You must design an algorithm where sumRegion works on O(1) time complexity.
+
+ 
+
+Example 1:
+
+Input
+["NumMatrix", "sumRegion", "sumRegion", "sumRegion"]
+[[[[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]], [2, 1, 4, 3], [1, 1, 2, 2], [1, 2, 2, 4]]
+Output
+[null, 8, 11, 12]
+
+Explanation
+NumMatrix numMatrix = new NumMatrix([[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]);
+numMatrix.sumRegion(2, 1, 4, 3); // return 8 (i.e sum of the red rectangle)
+numMatrix.sumRegion(1, 1, 2, 2); // return 11 (i.e sum of the green rectangle)
+numMatrix.sumRegion(1, 2, 2, 4); // return 12 (i.e sum of the blue rectangle)
+
+ 
+
+Constraints:
+
+- m == matrix.length
+
+- n == matrix[i].length
+
+- 1 <= m, n <= 200
+
+- -104 <= matrix[i][j] <= 104
+
+- 0 <= row1 <= row2 < m
+
+- 0 <= col1 <= col2 < n
+
+- At most 104 calls will be made to sumRegion.
+
+------------------------------
+303. Range Sum Query - Immutable 
+------------------------------
+
+Given an integer array nums, handle multiple queries of the following type:
+
+- Calculate the sum of the elements of nums between indices left and right inclusive where left <= right.
+
+Implement the NumArray class:
+
+- NumArray(int[] nums) Initializes the object with the integer array nums.
+
+- int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive (i.e. nums[left] + nums[left + 1] + ... + nums[right]).
+
+ 
+
+Example 1:
+
+Input
+["NumArray", "sumRange", "sumRange", "sumRange"]
+[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
+Output
+[null, 1, -1, -3]
+
+Explanation
+NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
+numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
+numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
+numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 104
+
+- -105 <= nums[i] <= 105
+
+- 0 <= left <= right < nums.length
+
+- At most 104 calls will be made to sumRange.
+
+------------------------------
+302. Smallest Rectangle Enclosing Black Pixels 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+301. Remove Invalid Parentheses 
+------------------------------
+
+Given a string s that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid.
+
+Return a list of unique strings that are valid with the minimum number of removals. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: s = "()())()"
+Output: ["(())()","()()()"]
+
+Example 2:
+
+Input: s = "(a)())()"
+Output: ["(a())()","(a)()()"]
+
+Example 3:
+
+Input: s = ")("
+Output: [""]
+
+ 
+
+Constraints:
+
+- 1 <= s.length <= 25
+
+- s consists of lowercase English letters and parentheses '(' and ')'.
+
+- There will be at most 20 parentheses in s.
+
+------------------------------
+300. Longest Increasing Subsequence 
+------------------------------
+
+Given an integer array nums, return the length of the longest strictly increasing subsequence.
+
+ 
+
+Example 1:
+
+Input: nums = [10,9,2,5,3,7,101,18]
+Output: 4
+Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+
+Example 2:
+
+Input: nums = [0,1,0,3,2,3]
+Output: 4
+
+Example 3:
+
+Input: nums = [7,7,7,7,7,7,7]
+Output: 1
+
+ 
+
+Constraints:
+
+- 1 <= nums.length <= 2500
+
+- -104 <= nums[i] <= 104
+
+ 
+
+Follow up: Can you come up with an algorithm that runs in O(n log(n)) time complexity?
+
+------------------------------
+299. Bulls and Cows 
+------------------------------
+
+You are playing the Bulls and Cows game with your friend.
+
+You write down a secret number and ask your friend to guess what the number is. When your friend makes a guess, you provide a hint with the following info:
+
+- The number of "bulls", which are digits in the guess that are in the correct position.
+
+- The number of "cows", which are digits in the guess that are in your secret number but are located in the wrong position. Specifically, the non-bull digits in the guess that could be rearranged such that they become bulls.
+
+Given the secret number secret and your friend's guess guess, return the hint for your friend's guess.
+
+The hint should be formatted as "xAyB", where x is the number of bulls and y is the number of cows. Note that both secret and guess may contain duplicate digits.
+
+ 
+
+Example 1:
+
+Input: secret = "1807", guess = "7810"
+Output: "1A3B"
+Explanation: Bulls are connected with a '|' and cows are underlined:
+"1807"
+  |
+"7810"
+
+Example 2:
+
+Input: secret = "1123", guess = "0111"
+Output: "1A1B"
+Explanation: Bulls are connected with a '|' and cows are underlined:
+"1123"        "1123"
+  |      or     |
+"0111"        "0111"
+Note that only one of the two unmatched 1s is counted as a cow since the non-bull digits can only be rearranged to allow one 1 to be a bull.
+
+ 
+
+Constraints:
+
+- 1 <= secret.length, guess.length <= 1000
+
+- secret.length == guess.length
+
+- secret and guess consist of digits only.
+
+------------------------------
+298. Binary Tree Longest Consecutive Sequence 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+297. Serialize and Deserialize Binary Tree 
+------------------------------
+
+Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+
+Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.
+
+Clarification: The input/output format is the same as how LeetCode serializes a binary tree. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
+
+ 
+
+Example 1:
+
+Input: root = [1,2,3,null,null,4,5]
+Output: [1,2,3,null,null,4,5]
+
+Example 2:
+
+Input: root = []
+Output: []
+
+ 
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, 104].
+
+- -1000 <= Node.val <= 1000
+
+------------------------------
+296. Best Meeting Point 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+295. Find Median from Data Stream 
+------------------------------
+
+The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.
+
+- For example, for arr = [2,3,4], the median is 3.
+
+- For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5.
+
+Implement the MedianFinder class:
+
+- MedianFinder() initializes the MedianFinder object.
+
+- void addNum(int num) adds the integer num from the data stream to the data structure.
+
+- double findMedian() returns the median of all elements so far. Answers within 10-5 of the actual answer will be accepted.
+
+ 
+
+Example 1:
+
+Input
+["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]
+[[], [1], [2], [], [3], []]
+Output
+[null, null, null, 1.5, null, 2.0]
+
+Explanation
+MedianFinder medianFinder = new MedianFinder();
+medianFinder.addNum(1);    // arr = [1]
+medianFinder.addNum(2);    // arr = [1, 2]
+medianFinder.findMedian(); // return 1.5 (i.e., (1 + 2) / 2)
+medianFinder.addNum(3);    // arr[1, 2, 3]
+medianFinder.findMedian(); // return 2.0
+
+ 
+
+Constraints:
+
+- -105 <= num <= 105
+
+- There will be at least one element in the data structure before calling findMedian.
+
+- At most 5 * 104 calls will be made to addNum and findMedian.
+
+ 
+
+Follow up:
+
+- If all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?
+
+- If 99% of all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?
+
+------------------------------
+294. Flip Game II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+293. Flip Game 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+292. Nim Game 
+------------------------------
+
+You are playing the following Nim Game with your friend:
+
+- Initially, there is a heap of stones on the table.
+
+- You and your friend will alternate taking turns, and you go first.
+
+- On each turn, the person whose turn it is will remove 1 to 3 stones from the heap.
+
+- The one who removes the last stone is the winner.
+
+Given n, the number of stones in the heap, return true if you can win the game assuming both you and your friend play optimally, otherwise return false.
+
+ 
+
+Example 1:
+
+Input: n = 4
+Output: false
+Explanation: These are the possible outcomes:
+1. You remove 1 stone. Your friend removes 3 stones, including the last stone. Your friend wins.
+2. You remove 2 stones. Your friend removes 2 stones, including the last stone. Your friend wins.
+3. You remove 3 stones. Your friend removes the last stone. Your friend wins.
+In all outcomes, your friend wins.
+
+Example 2:
+
+Input: n = 1
+Output: true
+
+Example 3:
+
+Input: n = 2
+Output: true
+
+ 
+
+Constraints:
+
+- 1 <= n <= 231 - 1
+
+------------------------------
+291. Word Pattern II 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+290. Word Pattern 
+------------------------------
+
+Given a pattern and a string s, find if s follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s. Specifically:
+
+- Each letter in pattern maps to exactly one unique word in s.
+
+- Each unique word in s maps to exactly one letter in pattern.
+
+- No two letters map to the same word, and no two words map to the same letter.
+
+ 
+
+Example 1:
+
+Input: pattern = "abba", s = "dog cat cat dog"
+
+Output: true
+
+Explanation:
+
+The bijection can be established as:
+
+- 'a' maps to "dog".
+
+- 'b' maps to "cat".
+
+Example 2:
+
+Input: pattern = "abba", s = "dog cat cat fish"
+
+Output: false
+
+Example 3:
+
+Input: pattern = "aaaa", s = "dog cat cat dog"
+
+Output: false
+
+ 
+
+Constraints:
+
+- 1 <= pattern.length <= 300
+
+- pattern contains only lower-case English letters.
+
+- 1 <= s.length <= 3000
+
+- s contains only lowercase English letters and spaces ' '.
+
+- s does not contain any leading or trailing spaces.
+
+- All the words in s are separated by a single space.
+
+------------------------------
+289. Game of Life 
+------------------------------
+
+According to Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
+
+The board is made up of an m x n grid of cells, where each cell has an initial state: live (represented by a 1) or dead (represented by a 0). Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):
+
+- Any live cell with fewer than two live neighbors dies as if caused by under-population.
+
+- Any live cell with two or three live neighbors lives on to the next generation.
+
+- Any live cell with more than three live neighbors dies, as if by over-population.
+
+- Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+
+The next state of the board is determined by applying the above rules simultaneously to every cell in the current state of the m x n grid board. In this process, births and deaths occur simultaneously.
+
+Given the current state of the board, update the board to reflect its next state.
+
+Note that you do not need to return anything.
+
+ 
+
+Example 1:
+
+Input: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
+Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
+
+Example 2:
+
+Input: board = [[1,1],[1,0]]
+Output: [[1,1],[1,1]]
+
+ 
+
+Constraints:
+
+- m == board.length
+
+- n == board[i].length
+
+- 1 <= m, n <= 25
+
+- board[i][j] is 0 or 1.
+
+ 
+
+Follow up:
+
+- Could you solve it in-place? Remember that the board needs to be updated simultaneously: You cannot update some cells first and then use their updated values to update other cells.
+
+- In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches upon the border of the array (i.e., live cells reach the border). How would you address these problems?
+
+------------------------------
+288. Unique Word Abbreviation 
+------------------------------
+
+This question requires LeetCode Premium.
+
+------------------------------
+287. Find the Duplicate Number 
+------------------------------
+
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+There is only one repeated number in nums, return this repeated number.
+
+You must solve the problem without modifying the array nums and using only constant extra space.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,4,2,2]
+Output: 2
+
+Example 2:
+
+Input: nums = [3,1,3,4,2]
+Output: 3
+
+Example 3:
+
+Input: nums = [3,3,3,3,3]
+Output: 3
+
+ 
+
+Constraints:
+
+- 1 <= n <= 105
+
+- nums.length == n + 1
+
+- 1 <= nums[i] <= n
+
+- All the integers in nums appear only once except for precisely one integer which appears two or more times.
+
+ 
+
+Follow up:
+
+- How can we prove that at least one duplicate number must exist in nums?
+
+- Can you solve the problem in linear runtime complexity?
+
