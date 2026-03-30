@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import LEETCODE_GRAPHQL_URL, LEETCODE_REQUEST_DELAY, OFFLINE_PROBLEMS_PATH
 
 
-# ── Offline problem cache ─────────────────────────────────────────
+#  Offline problem cache 
 
 _offline_cache: Optional[dict] = None
 
@@ -64,7 +64,7 @@ def _slugify(text: str) -> str:
     return text.lower().strip().replace(" ", "-").replace("'", "").replace(",", "")
 
 
-# ── LeetCode GraphQL client (read-only problem lookup) ───────────
+#  LeetCode GraphQL client (read-only problem lookup) 
 
 class LeetCodeClient:
     """
@@ -103,7 +103,7 @@ class LeetCodeClient:
             resp.raise_for_status()
             return resp.json()
 
-    # ── Problem description lookup ────────────────────────────────
+    #  Problem description lookup 
 
     def get_problem_description(self, slug: str) -> Optional[Dict[str, Any]]:
         """
@@ -233,7 +233,7 @@ class LeetCodeClient:
 
         return self.get_problem_description(slug)
 
-    # ── All-solved sync (public GraphQL, no auth) ────────────────
+    #  All-solved sync (public GraphQL, no auth) 
 
     def get_all_solved(self, username: str, limit: int = 3000) -> List[Dict[str, Any]]:
         """
@@ -271,7 +271,7 @@ class LeetCodeClient:
             try:
                 meta = self._get_problem_metadata(slug)
             except Exception as e:
-                print(f"[LeetCode]   ⚠  metadata failed for '{slug}': {e}")
+                print(f"[LeetCode]     metadata failed for '{slug}': {e}")
                 meta = None
 
             if meta:
@@ -326,7 +326,7 @@ class LeetCodeClient:
         result = self._graphql_request(query, {"titleSlug": slug})
         return result.get("data", {}).get("question")
 
-    # ── CSV import (bulk ingestion) ───────────────────────────────
+    #  CSV import (bulk ingestion) 
 
     @staticmethod
     def import_from_csv(csv_path: str) -> List[Dict[str, Any]]:

@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import CONFIDENCE_LOW_MAX, CONFIDENCE_MED_MAX, USER_DATA_PATH
 
 
-# ── Models ───────────────────────────────────────────────────────
+#  Models 
 
 class PatternMastery(BaseModel):
     """Tracks mastery of a single algorithmic pattern."""
@@ -56,7 +56,7 @@ class UserProfile(BaseModel):
         return "\n".join(lines)
 
 
-# ── Helpers ──────────────────────────────────────────────────────
+#  Helpers 
 
 def _compute_confidence(count: int) -> str:
     if count < CONFIDENCE_LOW_MAX:
@@ -66,7 +66,7 @@ def _compute_confidence(count: int) -> str:
     return "HIGH"
 
 
-# ── Builder ──────────────────────────────────────────────────────
+#  Builder 
 
 def build_profile(problems: list) -> UserProfile:
     """Build a UserProfile from a list of ProblemRecord objects."""
@@ -117,7 +117,7 @@ def build_profile(problems: list) -> UserProfile:
     return profile
 
 
-# ── Single-user JSON storage ──────────────────────────────────────
+#  Single-user JSON storage 
 
 def _load_data() -> dict:
     """Load the full user data store. Returns empty dict if not found."""
