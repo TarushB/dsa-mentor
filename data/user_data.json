@@ -1,8 +1,8 @@
 {
   "profile": {
-    "total_solved": 428,
+    "total_solved": 429,
     "by_difficulty": {
-      "EASY": 178,
+      "EASY": 179,
       "MEDIUM": 223,
       "HARD": 27
     },
@@ -52,7 +52,7 @@
         "confidence": "MEDIUM"
       },
       "greedy": {
-        "solved": 46,
+        "solved": 47,
         "confidence": "HIGH"
       },
       "hashing": {
@@ -112,7 +112,7 @@
         "confidence": "LOW"
       },
       "two_pointers": {
-        "solved": 61,
+        "solved": 62,
         "confidence": "HIGH"
       },
       "union_find": {
@@ -148,6 +148,17 @@
     ],
     "recent_activity": [
       {
+        "problem_id": "minimum-absolute-difference-between-two-values",
+        "title": "Minimum Absolute Difference Between Two Values",
+        "difficulty": "EASY",
+        "patterns": [
+          "two_pointers",
+          "greedy"
+        ],
+        "outcome": "SOLVED",
+        "solved_at": "2026-03-31T01:15:30.774767"
+      },
+      {
         "problem_id": "reverse-pairs",
         "title": "Reverse Pairs",
         "difficulty": "EASY",
@@ -178,7 +189,7 @@
         "solved_at": "2026-03-29T16:19:01.906398"
       }
     ],
-    "last_updated": "2026-03-29T17:11:10.009651"
+    "last_updated": "2026-03-31T01:15:30.774767"
   },
   "problems": [
     {
@@ -7558,6 +7569,19 @@
       "outcome": "GAVE_UP",
       "hints_used": 1,
       "hint_tier_reached": 1
+    },
+    {
+      "date": "2026-03-31",
+      "problem_id": "minimum-absolute-difference-between-two-values",
+      "problem_title": "Minimum Absolute Difference Between Two Values",
+      "difficulty": "EASY",
+      "patterns": [
+        "two_pointers",
+        "greedy"
+      ],
+      "outcome": "SOLVED",
+      "hints_used": 0,
+      "hint_tier_reached": 0
     }
   ]
 }
