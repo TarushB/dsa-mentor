@@ -70,7 +70,6 @@ class MentorAgent:
         # Pattern-specific lookup: if query mentions a known pattern, inject ALL
         # matching solved problems directly from user_data.json (not just FAISS top-k)
         pattern_history = self._get_pattern_history(user_message)
-
         # Get user profile summary
         profile_summary = self._get_profile_summary()
 
