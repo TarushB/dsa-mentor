@@ -520,19 +520,29 @@ _PATTERN_DISPLAY = {
 }
 
 _TAG_TO_PATTERN_KEYWORDS = {
-    "two_pointers":    ["Two Pointers", "Array"],
-    "sliding_window":  ["Sliding Window"],
-    "binary_search":   ["Binary Search"],
-    "dp_1d":           ["Dynamic Programming"],
-    "bfs":             ["Graph", "BFS"],
-    "dfs":             ["Tree", "DFS", "Depth-First Search"],
-    "backtracking":    ["Backtracking"],
-    "greedy":          ["Greedy"],
-    "hashing":         ["Hash Table", "Hash Map"],
-    "linked_list":     ["Linked List"],
-    "stack_queue":     ["Stack", "Queue"],
-    "math":            ["Math"],
-    "bit_manipulation":["Bit Manipulation"],
+    "two_pointers":      ["Two Pointers", "Array"],
+    "sliding_window":    ["Sliding Window"],
+    "binary_search":     ["Binary Search"],
+    "prefix_sum":        ["prefix sum", "prefix"],
+    "monotonic_stack":   ["Stack", "monotonic"],
+    "bfs":               ["Graph", "BFS"],
+    "dfs":               ["Tree", "DFS", "Depth-First Search"],
+    "backtracking":      ["Backtracking"],
+    "dp_1d":             ["Dynamic Programming"],
+    "dp_2d":             ["Dynamic Programming"],
+    "greedy":            ["Greedy"],
+    "union_find":        ["union find", "disjoint", "number of province", "number of island", "number of connected"],
+    "trie":              ["trie", "prefix tree", "word search"],
+    "heap_kth_element":  ["Heap", "kth", "top-k", "k largest", "k smallest", "top k"],
+    "graph_topological": ["topolog", "course schedule", "alien", "prerequisite"],
+    "bit_manipulation":  ["Bit Manipulation"],
+    "math":              ["Math"],
+    "hashing":           ["Hash Table", "Hash Map"],
+    "linked_list":       ["Linked List"],
+    "stack_queue":       ["Stack", "Queue"],
+    "intervals":         ["interval", "meeting room"],
+    "string_matching":   ["substring", "palindrome", "anagram"],
+    "recursion":         ["Backtracking"],
 }
 
 
@@ -802,6 +812,8 @@ def show_hints_tab(problem: dict):
     st.markdown("---")
     col_h1, col_h2, col_h3 = st.columns([2, 2, 2])
 
+    pending_action = None
+
     with col_h1:
         next_tier = min(tier + 1, 5)
         if tier < 5:
@@ -809,7 +821,7 @@ def show_hints_tab(problem: dict):
                 f"💡 Hint {hints_given + 1} — {HINT_TIER_LABELS.get(next_tier, '')}",
                 type="primary", use_container_width=True
             ):
-                _give_hint(problem, next_tier)
+                pending_action = ("hint", next_tier)
 
     with col_h2:
         if st.button("❓ Ask a specific question", use_container_width=True):
@@ -824,7 +836,7 @@ def show_hints_tab(problem: dict):
             )
         else:
             if st.button("✅ Show Full Solution", type="secondary", use_container_width=True):
-                _give_solution(problem)
+                pending_action = ("solution",)
 
     if st.session_state.get("show_question_input"):
         with st.form("custom_q_form", clear_on_submit=True):
@@ -836,7 +848,7 @@ def show_hints_tab(problem: dict):
             if st.form_submit_button("Send", type="primary"):
                 if user_q:
                     st.session_state["show_question_input"] = False
-                    _ask_question(problem, user_q)
+                    pending_action = ("question", user_q)
 
     if hints_given > 0:
         st.markdown("")
@@ -847,6 +859,15 @@ def show_hints_tab(problem: dict):
                 prog_cols[i-1].markdown(f"✅ ~~{label}~~")
             else:
                 prog_cols[i-1].markdown(f"⬜ {label}")
+
+    # Execute outside column context so streaming fills full width
+    if pending_action:
+        if pending_action[0] == "hint":
+            _give_hint(problem, pending_action[1])
+        elif pending_action[0] == "solution":
+            _give_solution(problem)
+        elif pending_action[0] == "question":
+            _ask_question(problem, pending_action[1])
 
 
 def _give_hint(problem: dict, tier: int):

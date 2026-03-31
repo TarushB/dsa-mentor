@@ -1,9 +1,9 @@
 {
   "profile": {
-    "total_solved": 429,
+    "total_solved": 433,
     "by_difficulty": {
-      "EASY": 179,
-      "MEDIUM": 223,
+      "EASY": 180,
+      "MEDIUM": 226,
       "HARD": 27
     },
     "pattern_mastery": {
@@ -16,7 +16,7 @@
         "confidence": "HIGH"
       },
       "binary_search": {
-        "solved": 34,
+        "solved": 35,
         "confidence": "HIGH"
       },
       "bit_manipulation": {
@@ -40,7 +40,7 @@
         "confidence": "HIGH"
       },
       "dp_2d": {
-        "solved": 13,
+        "solved": 14,
         "confidence": "HIGH"
       },
       "graph_shortest_path": {
@@ -56,7 +56,7 @@
         "confidence": "HIGH"
       },
       "hashing": {
-        "solved": 54,
+        "solved": 55,
         "confidence": "HIGH"
       },
       "heap_kth_element": {
@@ -72,7 +72,7 @@
         "confidence": "HIGH"
       },
       "math": {
-        "solved": 61,
+        "solved": 60,
         "confidence": "HIGH"
       },
       "monotonic_stack": {
@@ -104,7 +104,7 @@
         "confidence": "HIGH"
       },
       "string_matching": {
-        "solved": 46,
+        "solved": 48,
         "confidence": "HIGH"
       },
       "trie": {
@@ -148,48 +148,63 @@
     ],
     "recent_activity": [
       {
+        "problem_id": "is-subsequence",
+        "title": "Is Subsequence",
+        "difficulty": "EASY",
+        "patterns": [
+          "two_pointers"
+        ],
+        "solved_at": "2026-03-31T11:10:16"
+      },
+      {
+        "problem_id": "check-if-strings-can-be-made-equal-with-operations-ii",
+        "title": "Check if Strings Can be Made Equal With Operations II",
+        "difficulty": "MEDIUM",
+        "patterns": [
+          "hashing",
+          "string_matching"
+        ],
+        "solved_at": "2026-03-30T12:40:26"
+      },
+      {
+        "problem_id": "check-if-strings-can-be-made-equal-with-operations-i",
+        "title": "Check if Strings Can be Made Equal With Operations I",
+        "difficulty": "EASY",
+        "patterns": [
+          "string_matching"
+        ],
+        "solved_at": "2026-03-29T13:45:22"
+      },
+      {
+        "problem_id": "minimum-xor-path-in-a-grid",
+        "title": "Minimum XOR Path in a Grid",
+        "difficulty": "MEDIUM",
+        "patterns": [
+          "dp_2d",
+          "greedy"
+        ],
+        "solved_at": "2026-03-28T20:57:47"
+      },
+      {
+        "problem_id": "direction-assignments-with-exactly-k-visible-people",
+        "title": "Direction Assignments with Exactly K Visible People",
+        "difficulty": "MEDIUM",
+        "patterns": [
+          "two_pointers"
+        ],
+        "solved_at": "2026-03-28T20:29:49"
+      },
+      {
         "problem_id": "minimum-absolute-difference-between-two-values",
         "title": "Minimum Absolute Difference Between Two Values",
         "difficulty": "EASY",
         "patterns": [
-          "two_pointers",
-          "greedy"
+          "binary_search"
         ],
-        "outcome": "SOLVED",
-        "solved_at": "2026-03-31T01:15:30.774767"
-      },
-      {
-        "problem_id": "reverse-pairs",
-        "title": "Reverse Pairs",
-        "difficulty": "EASY",
-        "patterns": [
-          "two_pointers",
-          "math"
-        ],
-        "outcome": "GAVE_UP",
-        "solved_at": "2026-03-29T17:11:10.009636"
-      },
-      {
-        "problem_id": "count-partitions-with-even-sum-difference",
-        "title": "Count Partitions with Even Sum Difference",
-        "difficulty": "EASY",
-        "patterns": [
-          "two_pointers",
-          "math"
-        ],
-        "outcome": "SOLVED",
-        "solved_at": "2026-03-29T16:31:51.123694"
-      },
-      {
-        "problem_id": "3432",
-        "title": "3432",
-        "difficulty": "MEDIUM",
-        "patterns": [],
-        "outcome": "GAVE_UP",
-        "solved_at": "2026-03-29T16:19:01.906398"
+        "solved_at": "2026-03-28T20:02:18"
       }
     ],
-    "last_updated": "2026-03-31T01:15:30.774767"
+    "last_updated": "2026-03-31T11:56:39.453953"
   },
   "problems": [
     {
@@ -7531,6 +7546,96 @@
         "string_matching"
       ],
       "personal_notes": ""
+    },
+    {
+      "problem_id": "is-subsequence",
+      "title": "Is Subsequence",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Two Pointers",
+        "String",
+        "Dynamic Programming"
+      ],
+      "solved_at": "2026-03-31T11:10:16",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-strings-can-be-made-equal-with-operations-ii",
+      "title": "Check if Strings Can be Made Equal With Operations II",
+      "difficulty": "MEDIUM",
+      "topic_tags": [
+        "Hash Table",
+        "String",
+        "Sorting"
+      ],
+      "solved_at": "2026-03-30T12:40:26",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "check-if-strings-can-be-made-equal-with-operations-i",
+      "title": "Check if Strings Can be Made Equal With Operations I",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "String"
+      ],
+      "solved_at": "2026-03-29T13:45:22",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "string_matching"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-xor-path-in-a-grid",
+      "title": "Minimum XOR Path in a Grid",
+      "difficulty": "MEDIUM",
+      "topic_tags": [],
+      "solved_at": "2026-03-28T20:57:47",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "dp_2d",
+        "greedy"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "direction-assignments-with-exactly-k-visible-people",
+      "title": "Direction Assignments with Exactly K Visible People",
+      "difficulty": "MEDIUM",
+      "topic_tags": [],
+      "solved_at": "2026-03-28T20:29:49",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "two_pointers"
+      ],
+      "personal_notes": ""
+    },
+    {
+      "problem_id": "minimum-absolute-difference-between-two-values",
+      "title": "Minimum Absolute Difference Between Two Values",
+      "difficulty": "EASY",
+      "topic_tags": [],
+      "solved_at": "2026-03-28T20:02:18",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "binary_search"
+      ],
+      "personal_notes": ""
     }
   ],
   "session_logs": [
@@ -7580,6 +7685,19 @@
         "greedy"
       ],
       "outcome": "SOLVED",
+      "hints_used": 0,
+      "hint_tier_reached": 0
+    },
+    {
+      "date": "2026-03-31",
+      "problem_id": "difference-between-ones-and-zeros-in-row-and-column",
+      "problem_title": "Difference Between Ones and Zeros in Row and Column",
+      "difficulty": "EASY",
+      "patterns": [
+        "two_pointers",
+        "math"
+      ],
+      "outcome": "GAVE_UP",
       "hints_used": 0,
       "hint_tier_reached": 0
     }

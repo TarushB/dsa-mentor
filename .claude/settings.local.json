@@ -10,7 +10,8 @@
       "Bash(rm -f scripts/build_concept_index.py scripts/build_problem_index.py test_local_fetch.py stash.diff reset)",
       "Bash(rm -f \"h origin maingit status\")",
       "Bash(find \"C:/Users/Tarush Banke/OneDrive/Desktop/dsa-mentor\" -not -path \"*/venv/*\" -not -path \"*/.git/*\" -type d -name \"__pycache__\" -exec rm -rf {} +)",
-      "Bash(curl -s http://localhost:11434/api/tags)"
+      "Bash(curl -s http://localhost:11434/api/tags)",
+      "Bash(find \"C:/Users/Tarush Banke/Downloads/dsa-mentor-main/dsa-mentor-main\" -type d -name \"__pycache__\" -exec rm -rf {} +)"
     ]
   }
 }
