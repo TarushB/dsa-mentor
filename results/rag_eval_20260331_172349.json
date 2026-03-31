@@ -1,0 +1,56 @@
+{
+  "total_time_seconds": 49.15,
+  "overall_score": 1.0,
+  "sections": {
+    "Hallucination Detection": {
+      "score": 1.0,
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "query": "What is the time complexity of merge sort?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response accurately describes the time complexity of Merge Sort and its application to the problem of merging k sorted lists."
+          }
+        },
+        {
+          "query": "Explain how Dijkstra's algorithm works step by step",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response accurately describes Dijkstra's algorithm and its steps."
+          }
+        },
+        {
+          "query": "How many problems have I solved using dynamic programming?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response does not contain any factual errors or invented information about DSA algorithms or data structures."
+          }
+        },
+        {
+          "query": "What are the problems I solved yesterday?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response does not contain any factual errors or invented information about DSA algorithms or data structures."
+          }
+        }
+      ]
+    }
+  }
+}

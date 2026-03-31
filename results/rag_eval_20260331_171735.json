@@ -1,0 +1,165 @@
+{
+  "total_time_seconds": 46.95,
+  "overall_score": 0.3529,
+  "sections": {
+    "Intent Classification": {
+      "score": 0.3529,
+      "pass_rate": 0.3529,
+      "cases": [
+        {
+          "query": "Give me a hint",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "HINT_REQUEST",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "I'm stuck, can you nudge me?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "HINT_REQUEST",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "How do I start this problem?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "HINT_REQUEST",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Show me the full solution",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "SOLUTION_REQUEST",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "I give up, just tell me the answer",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "SOLUTION_REQUEST",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Explain dynamic programming",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "CONCEPT_QUESTION",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "When should I use BFS vs DFS?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "CONCEPT_QUESTION",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "What is the sliding window technique?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "CONCEPT_QUESTION",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "What is Two Sum?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "42",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "QUESTION_LOOKUP"
+          }
+        },
+        {
+          "query": "LeetCode 121",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Tell me about Merge Intervals",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Hello!",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "GENERAL_CHAT",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Thanks for the explanation",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "GENERAL_CHAT",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Can you say more about that?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "GENERAL_CHAT",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "```python\ndef two_sum(nums): pass\n```\nFix this",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CODE_FIX",
+            "actual": "CODE_FIX"
+          }
+        },
+        {
+          "query": "My code crashes:\n```\nx = arr[n]\n```\nwhat's wrong?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CODE_FIX",
+            "actual": "CODE_FIX"
+          }
+        }
+      ]
+    }
+  }
+}

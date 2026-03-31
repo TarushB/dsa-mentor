@@ -1,0 +1,732 @@
+{
+  "total_time_seconds": 220.0,
+  "overall_score": 0.7501,
+  "sections": {
+    "Intent Classification": {
+      "score": 0.8824,
+      "pass_rate": 0.8824,
+      "cases": [
+        {
+          "query": "Give me a hint",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "HINT_REQUEST",
+            "actual": "HINT_REQUEST"
+          }
+        },
+        {
+          "query": "I'm stuck, can you nudge me?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "HINT_REQUEST",
+            "actual": "HINT_REQUEST"
+          }
+        },
+        {
+          "query": "How do I start this problem?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "HINT_REQUEST",
+            "actual": "HINT_REQUEST"
+          }
+        },
+        {
+          "query": "Show me the full solution",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "SOLUTION_REQUEST",
+            "actual": "SOLUTION_REQUEST"
+          }
+        },
+        {
+          "query": "I give up, just tell me the answer",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "SOLUTION_REQUEST",
+            "actual": "SOLUTION_REQUEST"
+          }
+        },
+        {
+          "query": "Explain dynamic programming",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CONCEPT_QUESTION",
+            "actual": "CONCEPT_QUESTION"
+          }
+        },
+        {
+          "query": "When should I use BFS vs DFS?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CONCEPT_QUESTION",
+            "actual": "CONCEPT_QUESTION"
+          }
+        },
+        {
+          "query": "What is the sliding window technique?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CONCEPT_QUESTION",
+            "actual": "CONCEPT_QUESTION"
+          }
+        },
+        {
+          "query": "What is Two Sum?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "CONCEPT_QUESTION"
+          }
+        },
+        {
+          "query": "42",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "QUESTION_LOOKUP"
+          }
+        },
+        {
+          "query": "LeetCode 121",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "QUESTION_LOOKUP"
+          }
+        },
+        {
+          "query": "Tell me about Merge Intervals",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "expected": "QUESTION_LOOKUP",
+            "actual": "CONCEPT_QUESTION"
+          }
+        },
+        {
+          "query": "Hello!",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "GENERAL_CHAT",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Thanks for the explanation",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "GENERAL_CHAT",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "Can you say more about that?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "GENERAL_CHAT",
+            "actual": "GENERAL_CHAT"
+          }
+        },
+        {
+          "query": "```python\ndef two_sum(nums): pass\n```\nFix this",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CODE_FIX",
+            "actual": "CODE_FIX"
+          }
+        },
+        {
+          "query": "My code crashes:\n```\nx = arr[n]\n```\nwhat's wrong?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "expected": "CODE_FIX",
+            "actual": "CODE_FIX"
+          }
+        }
+      ]
+    },
+    "Retrieval Precision@K": {
+      "score": 0.9886,
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "query": "dynamic programming 1D array memoization",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "DP retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Partition Array for Maximum Sum",
+              "Partition Equal Subset Sum",
+              "Find All Possible Stable Binary Arrays I",
+              "Pascal's Triangle",
+              "Solving Questions With Brainpower"
+            ],
+            "patterns_found": [
+              [
+                "dp_1d"
+              ],
+              [
+                "dp_1d"
+              ],
+              [
+                "dp_1d",
+                "prefix_sum"
+              ],
+              [
+                "dp_1d"
+              ],
+              [
+                "dp_1d",
+                "dp_2d"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "two pointers sorted array pair sum",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Two-pointer retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Two Sum II - Input Array Is Sorted",
+              "Minimize Maximum Pair Sum in Array",
+              "Count Pairs Whose Sum is Less than Target",
+              "Merge Sorted Array",
+              "Merge Two 2D Arrays by Summing Values"
+            ],
+            "patterns_found": [
+              [
+                "two_pointers",
+                "binary_search"
+              ],
+              [
+                "two_pointers",
+                "greedy"
+              ],
+              [
+                "two_pointers",
+                "binary_search"
+              ],
+              [
+                "two_pointers"
+              ],
+              [
+                "two_pointers"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "sliding window maximum subarray length",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Sliding window retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Maximum Average Subarray I",
+              "Longest Nice Subarray",
+              "Longest Subarray of 1's After Deleting One Element",
+              "Maximum Points You Can Obtain from Cards",
+              "Minimum Removals to Balance Array"
+            ],
+            "patterns_found": [
+              [
+                "sliding_window"
+              ],
+              [
+                "sliding_window",
+                "bit_manipulation"
+              ],
+              [
+                "sliding_window",
+                "dp_1d"
+              ],
+              [
+                "sliding_window"
+              ],
+              [
+                "sliding_window",
+                "binary_search"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "binary search rotated sorted array find target",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Binary search retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Find Minimum in Rotated Sorted Array",
+              "Search in Rotated Sorted Array",
+              "Search in Rotated Sorted Array II",
+              "Find First and Last Position of Element in Sorted Array",
+              "Check if Array Is Sorted and Rotated"
+            ],
+            "patterns_found": [
+              [
+                "binary_search",
+                "two_pointers"
+              ],
+              [
+                "binary_search",
+                "two_pointers"
+              ],
+              [
+                "binary_search",
+                "sliding_window"
+              ],
+              [
+                "binary_search",
+                "two_pointers"
+              ],
+              [
+                "sliding_window",
+                "binary_search"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "BFS graph shortest path level order",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "BFS retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Shortest Path in Binary Matrix",
+              "Map of Highest Peak",
+              "Binary Tree Level Order Traversal",
+              "Find Eventual Safe States",
+              "Course Schedule II"
+            ],
+            "patterns_found": [
+              [
+                "bfs",
+                "linked_list"
+              ],
+              [
+                "bfs",
+                "graph_shortest_path"
+              ],
+              [
+                "bfs"
+              ],
+              [
+                "bfs",
+                "dfs",
+                "graph_topological"
+              ],
+              [
+                "bfs",
+                "dfs",
+                "graph_topological"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "backtracking combinations subsets permutations",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Backtracking retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Permutations",
+              "Permutations II",
+              "Combinations",
+              "Subsets II",
+              "Combination Sum"
+            ],
+            "patterns_found": [
+              [
+                "backtracking"
+              ],
+              [
+                "backtracking"
+              ],
+              [
+                "backtracking"
+              ],
+              [
+                "bit_manipulation",
+                "backtracking"
+              ],
+              [
+                "backtracking",
+                "dp_1d"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "linked list reversal cycle detection",
+          "score": 0.92,
+          "passed": true,
+          "details": {
+            "desc": "Linked list retrieval",
+            "hits": 4,
+            "total": 5,
+            "precision": 0.8,
+            "hit_rate": 1.0,
+            "titles": [
+              "Linked List Cycle",
+              "Linked List Cycle II",
+              "Matrix Similarity After Cyclic Shifts",
+              "Swap Nodes in Pairs",
+              "Reverse Linked List II"
+            ],
+            "patterns_found": [
+              [
+                "two_pointers"
+              ],
+              [
+                "two_pointers"
+              ],
+              [
+                "dp_1d",
+                "simulation"
+              ],
+              [
+                "linked_list",
+                "recursion"
+              ],
+              [
+                "linked_list",
+                "backtracking"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "Context Relevance": {
+      "score": 0.0,
+      "pass_rate": 0.0,
+      "cases": [
+        {
+          "query": "dynamic programming 1D array memoization",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "doc_scores": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "query": "two pointers sorted array pair sum",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "doc_scores": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "query": "sliding window maximum subarray length",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "doc_scores": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "query": "binary search rotated sorted array find target",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "doc_scores": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "query": "BFS graph shortest path level order",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "doc_scores": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ]
+    },
+    "Faithfulness": {
+      "score": 0.82,
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "query": "Explain the sliding window technique for arrays",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "context_docs": 5,
+            "answer_len": 2736,
+            "unsupported_claims": [
+              "The size of this window remains constant throughout the process.",
+              "Here are the key steps involved in applying the Sliding Window technique."
+            ],
+            "reasoning": "The AI response provides a general overview of the Sliding Window technique, but two minor claims about the window's size and the application steps are not supported by the context."
+          }
+        },
+        {
+          "query": "How do I approach dynamic programming problems?",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "context_docs": 5,
+            "answer_len": 2393,
+            "unsupported_claims": [
+              "Look for patterns in the problem",
+              "Define the State and Transition"
+            ],
+            "reasoning": "The AI response provides a general guide to approaching dynamic programming problems, but it lacks specific details and examples from the retrieved context."
+          }
+        },
+        {
+          "query": "What is the two-pointer technique?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "context_docs": 5,
+            "answer_len": 2481,
+            "unsupported_claims": [],
+            "reasoning": ""
+          }
+        },
+        {
+          "query": "When should I use a hash map?",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "context_docs": 5,
+            "answer_len": 1314,
+            "unsupported_claims": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "reasoning": "Claims 1-4 are general facts about hash maps and their use cases, but the specific examples (e.g. 'ema validation') are not supported by the context."
+          }
+        },
+        {
+          "query": "How does BFS differ from DFS?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "context_docs": 5,
+            "answer_len": 1490,
+            "unsupported_claims": [],
+            "reasoning": ""
+          }
+        }
+      ]
+    },
+    "Answer Relevance": {
+      "score": 0.56,
+      "pass_rate": 0.8,
+      "cases": [
+        {
+          "query": "Explain the sliding window technique for arrays",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "reasoning": "The response provides a clear explanation of the Sliding Window technique and its key steps, but lacks specific examples or code to illustrate the concept."
+          }
+        },
+        {
+          "query": "How do I approach dynamic programming problems?",
+          "score": 0.0,
+          "passed": false,
+          "details": {
+            "reasoning": "The response does not provide a clear step-by-step guide to approaching dynamic programming problems and instead offers a general introduction to the topic."
+          }
+        },
+        {
+          "query": "What is the two-pointer technique?",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "reasoning": "The response provides a clear explanation of the two-pointer technique and its basic idea, but lacks specific examples or how it works in practice."
+          }
+        },
+        {
+          "query": "When should I use a hash map?",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "reasoning": "The response provides several scenarios and use cases for using a hash map, but it does not provide a direct answer to the question of when to use a hash map."
+          }
+        },
+        {
+          "query": "How does BFS differ from DFS?",
+          "score": 0.7,
+          "passed": true,
+          "details": {
+            "reasoning": "The response provides a clear explanation of the differences between BFS and DFS, but it lacks specific examples or code snippets to illustrate the concepts."
+          }
+        }
+      ]
+    },
+    "Hallucination Detection": {
+      "score": 1.0,
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "query": "What is the time complexity of merge sort?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response provides a correct explanation of the time complexity of Merge Sort."
+          }
+        },
+        {
+          "query": "Explain how Dijkstra's algorithm works step by step",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response accurately describes Dijkstra's algorithm and its steps."
+          }
+        },
+        {
+          "query": "How many problems have I solved using dynamic programming?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response does not contain any factual errors or invented information about DSA algorithms or data structures."
+          }
+        },
+        {
+          "query": "What are the problems I solved yesterday?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "hallucination_detected": false,
+            "severity": "none",
+            "examples": [],
+            "reasoning": "The AI response does not contain any factual errors or invented information about DSA algorithms or data structures."
+          }
+        }
+      ]
+    },
+    "Query Rewriting": {
+      "score": 1.0,
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "query": "Can you give me a hint?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "rewritten": "Can I get a hint on how to find two indices in an array that sum up to a given target?",
+            "was_rewritten": true,
+            "keyword_hit": true,
+            "expected_keywords": [
+              "two sum",
+              "hint",
+              "approach"
+            ]
+          }
+        },
+        {
+          "query": "Can you show an example?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "rewritten": "Can you provide a simple example of how dynamic programming is applied to solve a common problem?",
+            "was_rewritten": true,
+            "keyword_hit": true,
+            "expected_keywords": [
+              "dynamic programming",
+              "dp",
+              "example"
+            ]
+          }
+        },
+        {
+          "query": "What's the time complexity?",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "rewritten": "What is the time complexity of using a monotonic deque to solve the sliding window maximum problem?",
+            "was_rewritten": true,
+            "keyword_hit": true,
+            "expected_keywords": [
+              "sliding window",
+              "time complexity",
+              "complexity"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

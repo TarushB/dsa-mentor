@@ -1,0 +1,288 @@
+{
+  "total_time_seconds": 14.09,
+  "overall_score": 0.9886,
+  "sections": {
+    "Retrieval Precision@K": {
+      "score": 0.9886,
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "query": "dynamic programming 1D array memoization",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "DP retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Partition Array for Maximum Sum",
+              "Partition Equal Subset Sum",
+              "Find All Possible Stable Binary Arrays I",
+              "Pascal's Triangle",
+              "Solving Questions With Brainpower"
+            ],
+            "patterns_found": [
+              [
+                "dp_1d"
+              ],
+              [
+                "dp_1d"
+              ],
+              [
+                "dp_1d",
+                "prefix_sum"
+              ],
+              [
+                "dp_1d"
+              ],
+              [
+                "dp_1d",
+                "dp_2d"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "two pointers sorted array pair sum",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Two-pointer retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Two Sum II - Input Array Is Sorted",
+              "Minimize Maximum Pair Sum in Array",
+              "Count Pairs Whose Sum is Less than Target",
+              "Merge Sorted Array",
+              "Merge Two 2D Arrays by Summing Values"
+            ],
+            "patterns_found": [
+              [
+                "two_pointers",
+                "binary_search"
+              ],
+              [
+                "two_pointers",
+                "greedy"
+              ],
+              [
+                "two_pointers",
+                "binary_search"
+              ],
+              [
+                "two_pointers"
+              ],
+              [
+                "two_pointers"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "sliding window maximum subarray length",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Sliding window retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Maximum Average Subarray I",
+              "Longest Nice Subarray",
+              "Longest Subarray of 1's After Deleting One Element",
+              "Maximum Points You Can Obtain from Cards",
+              "Minimum Removals to Balance Array"
+            ],
+            "patterns_found": [
+              [
+                "sliding_window"
+              ],
+              [
+                "sliding_window",
+                "bit_manipulation"
+              ],
+              [
+                "sliding_window",
+                "dp_1d"
+              ],
+              [
+                "sliding_window"
+              ],
+              [
+                "sliding_window",
+                "binary_search"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "binary search rotated sorted array find target",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Binary search retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Find Minimum in Rotated Sorted Array",
+              "Search in Rotated Sorted Array",
+              "Search in Rotated Sorted Array II",
+              "Find First and Last Position of Element in Sorted Array",
+              "Check if Array Is Sorted and Rotated"
+            ],
+            "patterns_found": [
+              [
+                "binary_search",
+                "two_pointers"
+              ],
+              [
+                "binary_search",
+                "two_pointers"
+              ],
+              [
+                "binary_search",
+                "sliding_window"
+              ],
+              [
+                "binary_search",
+                "two_pointers"
+              ],
+              [
+                "sliding_window",
+                "binary_search"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "BFS graph shortest path level order",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "BFS retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Shortest Path in Binary Matrix",
+              "Map of Highest Peak",
+              "Binary Tree Level Order Traversal",
+              "Find Eventual Safe States",
+              "Course Schedule II"
+            ],
+            "patterns_found": [
+              [
+                "bfs",
+                "linked_list"
+              ],
+              [
+                "bfs",
+                "graph_shortest_path"
+              ],
+              [
+                "bfs"
+              ],
+              [
+                "bfs",
+                "dfs",
+                "graph_topological"
+              ],
+              [
+                "bfs",
+                "dfs",
+                "graph_topological"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "backtracking combinations subsets permutations",
+          "score": 1.0,
+          "passed": true,
+          "details": {
+            "desc": "Backtracking retrieval",
+            "hits": 5,
+            "total": 5,
+            "precision": 1.0,
+            "hit_rate": 1.0,
+            "titles": [
+              "Permutations",
+              "Permutations II",
+              "Combinations",
+              "Subsets II",
+              "Combination Sum"
+            ],
+            "patterns_found": [
+              [
+                "backtracking"
+              ],
+              [
+                "backtracking"
+              ],
+              [
+                "backtracking"
+              ],
+              [
+                "bit_manipulation",
+                "backtracking"
+              ],
+              [
+                "backtracking",
+                "dp_1d"
+              ]
+            ]
+          }
+        },
+        {
+          "query": "linked list reversal cycle detection",
+          "score": 0.92,
+          "passed": true,
+          "details": {
+            "desc": "Linked list retrieval",
+            "hits": 4,
+            "total": 5,
+            "precision": 0.8,
+            "hit_rate": 1.0,
+            "titles": [
+              "Linked List Cycle",
+              "Linked List Cycle II",
+              "Matrix Similarity After Cyclic Shifts",
+              "Swap Nodes in Pairs",
+              "Reverse Linked List II"
+            ],
+            "patterns_found": [
+              [
+                "two_pointers"
+              ],
+              [
+                "two_pointers"
+              ],
+              [
+                "dp_1d",
+                "simulation"
+              ],
+              [
+                "linked_list",
+                "recursion"
+              ],
+              [
+                "linked_list",
+                "backtracking"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
