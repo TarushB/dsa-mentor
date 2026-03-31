@@ -1,8 +1,8 @@
 {
   "profile": {
-    "total_solved": 433,
+    "total_solved": 434,
     "by_difficulty": {
-      "EASY": 180,
+      "EASY": 181,
       "MEDIUM": 226,
       "HARD": 27
     },
@@ -56,7 +56,7 @@
         "confidence": "HIGH"
       },
       "hashing": {
-        "solved": 55,
+        "solved": 56,
         "confidence": "HIGH"
       },
       "heap_kth_element": {
@@ -72,7 +72,7 @@
         "confidence": "HIGH"
       },
       "math": {
-        "solved": 60,
+        "solved": 61,
         "confidence": "HIGH"
       },
       "monotonic_stack": {
@@ -148,6 +148,16 @@
     ],
     "recent_activity": [
       {
+        "problem_id": "roman-to-integer",
+        "title": "Roman to Integer",
+        "difficulty": "EASY",
+        "patterns": [
+          "hashing",
+          "math"
+        ],
+        "solved_at": "2026-03-31T21:04:16"
+      },
+      {
         "problem_id": "is-subsequence",
         "title": "Is Subsequence",
         "difficulty": "EASY",
@@ -204,7 +214,7 @@
         "solved_at": "2026-03-28T20:02:18"
       }
     ],
-    "last_updated": "2026-03-31T11:56:39.453953"
+    "last_updated": "2026-03-31T22:15:22.732193"
   },
   "problems": [
     {
@@ -7636,6 +7646,24 @@
         "binary_search"
       ],
       "personal_notes": ""
+    },
+    {
+      "problem_id": "roman-to-integer",
+      "title": "Roman to Integer",
+      "difficulty": "EASY",
+      "topic_tags": [
+        "Hash Table",
+        "Math",
+        "String"
+      ],
+      "solved_at": "2026-03-31T21:04:16",
+      "num_attempts": 1,
+      "time_to_solve": null,
+      "patterns": [
+        "hashing",
+        "math"
+      ],
+      "personal_notes": ""
     }
   ],
   "session_logs": [
@@ -7695,6 +7723,21 @@
       "difficulty": "EASY",
       "patterns": [
         "two_pointers",
+        "math"
+      ],
+      "outcome": "GAVE_UP",
+      "hints_used": 0,
+      "hint_tier_reached": 0
+    },
+    {
+      "date": "2026-03-31",
+      "problem_id": "sliding-window-maximum",
+      "problem_title": "Sliding Window Maximum",
+      "difficulty": "EASY",
+      "patterns": [
+        "two_pointers",
+        "sliding_window",
+        "greedy",
         "math"
       ],
       "outcome": "GAVE_UP",
