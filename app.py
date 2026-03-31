@@ -201,14 +201,25 @@ def show_sidebar():
         st.markdown("### 🧠 DSA Mentor")
         st.markdown("---")
 
-        page = st.radio(
+        _nav_options = ["🎯 Solve Problems", "📊 Dashboard", "📥 Import CSV"]
+        _page_to_nav = {"solve": "🎯 Solve Problems", "dashboard": "📊 Dashboard", "sync": "📥 Import CSV"}
+        _nav_to_page = {"🎯 Solve Problems": "solve", "📊 Dashboard": "dashboard", "📥 Import CSV": "sync"}
+
+        def _on_nav_change():
+            st.session_state.current_page = _nav_to_page.get(
+                st.session_state.get("_nav_sidebar", "🎯 Solve Problems"), "solve"
+            )
+
+        # Force the radio to reflect current_page on every rerun (handles programmatic navigation)
+        st.session_state["_nav_sidebar"] = _page_to_nav.get(st.session_state.current_page, "🎯 Solve Problems")
+
+        st.radio(
             "Navigation",
-            ["🎯 Solve Problems", "📊 Dashboard", "📥 Import CSV"],
+            _nav_options,
+            key="_nav_sidebar",
+            on_change=_on_nav_change,
             label_visibility="collapsed",
         )
-        if "Solve" in page:     st.session_state.current_page = "solve"
-        elif "Dashboard" in page: st.session_state.current_page = "dashboard"
-        elif "Import" in page:  st.session_state.current_page = "sync"
 
         st.markdown("---")
 
